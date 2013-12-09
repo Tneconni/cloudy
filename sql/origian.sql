@@ -299,7 +299,7 @@ insert  into `wp_users`(`ID`,`user_login`,`user_pass`,`user_nicename`,`user_emai
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-
+-- 添加项目表 --
 CREATE TABLE `cld_project`(
   `project_id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(64) NOT NULL DEFAULT 'none',
