@@ -2,7 +2,8 @@
 SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.5.16 : Database - cloudy
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -297,3 +298,13 @@ insert  into `wp_users`(`ID`,`user_login`,`user_pass`,`user_nicename`,`user_emai
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+CREATE TABLE `cld_project`(
+  `project_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(64) NOT NULL DEFAULT 'none',
+  `description` TEXT NOT NULL,
+  `work_date` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `update` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+   PRIMARY KEY (`project_id`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT '个人作品表';
