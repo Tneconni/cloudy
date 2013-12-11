@@ -751,3 +751,57 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/
 ---
+2013/12/11 16:51:10 [error] [exception.Exception] exception 'Exception' with message 'load error: failed to find /var/www/cloudy/protected/assets/less/index.less' in /var/www/cloudy/protected/components/less/lessc.inc.php:1818
+Stack trace:
+#0 /var/www/cloudy/protected/components/less/lessc.inc.php(1844): lessc->compileFile('/var/www/cloudy...', '/var/www/cloudy...')
+#1 /var/www/cloudy/protected/components/Controller.php(44): lessc->checkedCompile('/var/www/cloudy...', '/var/www/cloudy...')
+#2 /var/www/cloudy/protected/components/Controller.php(33): Controller->compileLess()
+#3 /var/www/cloudy/yii/framework/web/CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#4 /var/www/cloudy/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/cloudy/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/cloudy/yii/framework/web/CWebApplication.php(282): CController->run('')
+#7 /var/www/cloudy/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#8 /var/www/cloudy/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/cloudy/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/
+---
+2013/12/11 16:51:11 [error] [exception.Exception] exception 'Exception' with message 'load error: failed to find /var/www/cloudy/protected/assets/less/index.less' in /var/www/cloudy/protected/components/less/lessc.inc.php:1818
+Stack trace:
+#0 /var/www/cloudy/protected/components/less/lessc.inc.php(1844): lessc->compileFile('/var/www/cloudy...', '/var/www/cloudy...')
+#1 /var/www/cloudy/protected/components/Controller.php(44): lessc->checkedCompile('/var/www/cloudy...', '/var/www/cloudy...')
+#2 /var/www/cloudy/protected/components/Controller.php(33): Controller->compileLess()
+#3 /var/www/cloudy/yii/framework/web/CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#4 /var/www/cloudy/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/cloudy/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/cloudy/yii/framework/web/CWebApplication.php(282): CController->run('')
+#7 /var/www/cloudy/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#8 /var/www/cloudy/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/cloudy/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/
+---
+2013/12/11 18:50:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "oldIndex".' in /var/www/cloudy/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/cloudy/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('oldIndex')
+#1 /var/www/cloudy/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/cloudy/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=oldIndex
+---
+2013/12/11 18:50:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "oldIndex".' in /var/www/cloudy/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/cloudy/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('oldIndex')
+#1 /var/www/cloudy/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/cloudy/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=oldIndex
+---
+2013/12/11 18:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/cloudy/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/cloudy/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('index')
+#1 /var/www/cloudy/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/cloudy/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=index
+---

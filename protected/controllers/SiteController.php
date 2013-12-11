@@ -37,6 +37,18 @@ class SiteController extends Controller
         ));
 	}
 
+    public function actionOldIndex()
+    {
+        // renders the view file 'protected/views/site/index.php'
+        // using the default layout 'protected/views/layouts/main.php'
+
+        $menuTable = new Menu();
+        $res = $menuTable->getAllMenu();
+        $this->render('oldIndex',array(
+            'menu' => $res
+        ));
+    }
+
 	/**
 	 * This is the action to handle external exceptions.
 	 */

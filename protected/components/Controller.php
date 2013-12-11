@@ -30,8 +30,22 @@ class Controller extends CController
 
         $menes = new Menu();
         $this->menu = $menes->getAllMenu();
-
+        if( LESS_COMPILE ){
+            $this->compileLess();
+        }
         return true;
+    }
+
+    private function compileLess(){
+
+            $lessModulePath = dirname(__FILE__).'/less/lessc.inc.php';
+            require_once( $lessModulePath );
+            $lessc = new lessc();
+            $lessIndexPath = dirname( dirname(__FILE__) ).'/assets/less/index.less';
+            $cssIndexPath = BASE_URL . '/css/index.css';
+
+            $lessc->checkedCompile( $lessIndexPath, $cssIndexPath);
+
     }
 
 

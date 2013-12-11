@@ -1,0 +1,36 @@
+ul.img-queue li {
+  margin-top: 10px;
+}
+ul.img-queue li a img {
+  width: 100%;
+}
+ul.img-queue li p {
+  font-size: 12px;
+  color: #121212;
+}
+.right-win {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 200px;
+}
+.blog-list {
+  margin-top: 10px;
+}
+.blog-list li.first a img {
+  float: left;
+  margin-right: 10px;
+}
+.blog-list li.first h4 {
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.blog-list li.first p {
+  color: #999;
+  font-size: 12px;
+}
+.blog-list li a {
+  font-size: 12px;
+  color: #044E8E;
+}

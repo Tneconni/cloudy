@@ -7,6 +7,9 @@
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
+
+
+
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/global_nav.css" media="screen" rel="stylesheet" type="text/css" /><!-- Reset -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset-cb1274462936.css" media="screen" rel="stylesheet" type="text/css" /><!-- Reset -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen-cb1359557040.css" media="screen" rel="stylesheet" type="text/css" /><!-- Controls Top Hat Elements -->
@@ -166,182 +169,13 @@
                 </nav>
             </li>
             <?php } ?>
-            <!--
-            <li class="video"><a href="http://www.nationalgeographic.com/video/">Video</a>
-                <nav class="sub_nav">
-                    <ul class="secondary_nav">
-                        <li><a href="http://www.nationalgeographic.com/video/">Video Home</a></li>
-                        <li><a href="http://www.nationalgeographic.com/video/national-geographic-channel/">Nat Geo TV</a></li>
-                        <li><a href="http://www.nationalgeographic.com/video/nat-geo-wild/">Nat Geo Wild</a></li>
-                        <li><a href="http://www.nationalgeographic.com/video/animals/">Animals</a></li>
-                        <li><a href="http://www.nationalgeographic.com/video/kids/">Kids</a></li>
-                        <li><a href="http://www.nationalgeographic.com/video/news/">News</a></li>
-                        <li><a href="http://www.nationalgeographic.com/video/more/">More</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-            <li class="photography"><a href="http://www.nationalgeographic.com/photography/">Photography</a>
-                <nav class="sub_nav">
-                    <ul class="secondary_nav">
-                        <li ><a href="http://www.nationalgeographic.com/photography/">Photography Home</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/photography/photo-of-the-day/">Photo of the Day</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/photography/photogalleries/">Galleries</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/photography/wallpapers/">Wallpapers</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/photography/photo-tips/">Photo Tips</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/photography/photographers/">Photographers</a></li>
-                        <li ><a href="http://ngm.nationalgeographic.com/your-shot/">Your Shot</a></li>
-                        <li ><a href="http://national-geographic.cafepress.com/art">Buy Prints</a></li>
-                        <li ><a href="http://video.nationalgeographic.com/video/player/photography/">Video</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/newsletter/">Newsletters</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-            <li class="animals"><a href="http://www.nationalgeographic.com/animals/">Animals</a>
-                <nav class="sub_nav">
-                    <ul class="secondary_nav">
-                        <li ><a href="http://www.nationalgeographic.com/animals/">Animals Home</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/animals/facts/">Facts</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/animals/photos/">Photos</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/video/player/animals/">Video</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/animals/conservation/">Animal Conservation</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-            <li class="environment"><a href="http://www.nationalgeographic.com/environment/">Environment</a>
-                <nav class="sub_nav">
-                    <ul class="secondary_nav">
-                        <li ><a href="http://www.nationalgeographic.com/environment/">Environment Home</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/environment/energy/">Energy</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/environment/freshwater/">Freshwater</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/environment/global-warming/">Global Warming</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/environment/habitats/">Habitats</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/environment/natural-disasters/">Natural Disasters</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/ocean/">The Ocean</a></li>
-                        <li ><a href="http://greenliving.nationalgeographic.com/">The Green Guide</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/newsletter/">Newsletters</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-            <li class="travel"><a href="http://www.nationalgeographic.com/travel/">Travel</a>
-                <nav class="sub_nav">
-                    <ul class="secondary_nav">
-                        <li ><a href="http://www.nationalgeographic.com/travel/">Travel Home</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/travel/top-10/">Top 10</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/travel/destinations-a-z/">Destinations A-Z</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/travel/trip-ideas/">Trip Ideas</a></li>
-                        <li ><a href="http://intelligenttravel.nationalgeographic.com/">Travel Blogs</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/travel/traveler-magazine/">Traveler Magazine</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/travel/travel-photos/">Photos</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/video/player/places/">Video</a></li>
-                        <li ><a href="http://www.nationalgeographicexpeditions.com/?utm_source=travel.nationalgeographic.com&utm_medium=Link&utm_content=TopNav_Our_Trips&utm_campaign=NGdotcom">Our Trips</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/newsletter/">Newsletters</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-            <li class="adventure"><a href="http://www.nationalgeographic.com/adventure/">Adventure</a>
-                <nav class="sub_nav">
-                    <ul class="secondary_nav">
-                        <li ><a href="http://www.nationalgeographic.com/adventure/">Adventure Home</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/adventure/gear/?source=NavAdvHome ">Gear</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/adventure/ultimate-adventurers/">Ultimate Adventurers</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/adventure/trip-ideas/">Trip Ideas</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/travel/national-parks/">Parks</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/adventure/adventure-photos/">Photos</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/video/player/adventure/">Video</a></li>
-                        <li ><a href="http://adventureblog.nationalgeographic.com/">Blog</a></li>
-                        <li ><a href="http://www.nationalgeographicexpeditions.com/?utm_source=NGdotcom-Adventure&utm_medium=Link&utm_content=TopNav_Nat_Geo_Trips&utm_campaign=NGdotcom">Nat Geo Trips</a></li>
-                        <li ><a href="http://alltrails.com/a/100077/">AllTrails</a></li>
-                        <li ><a href="http://www.nationalgeographic.com/newsletter/">Newsletters</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-            <li class="television"><a href="http://channel.nationalgeographic.com/channel/">Television</a>
-                <nav class="sub_nav left">
-                    <ul class="secondary_nav">
-                        <li ><a href="http://channel.nationalgeographic.com/channel/">National Geographic Channel</a></li>
-                        <li ><a href="http://channel.nationalgeographic.com/wild/">Nat Geo Wild</a></li>
-                        <li ><a href="http://channel.nationalgeographic.com/channel/schedule/daily/">TV Schedule</a></li>
-                        <li ><a href="http://channel.nationalgeographic.com/channel/shows/">Shows</a></li>
-                        <li ><a href="http://video.nationalgeographic.com/video/national-geographic-channel/">Video</a></li>
-                        <li ><a href="http://tvblogs.nationalgeographic.com">Blogs</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-            <li class="kids"><a href="http://www.nationalgeographic.com/kids/">Kids</a>
-                <nav class="sub_nav left">
-                    <ul class="secondary_nav">
-                        <li ><a href="http://www.nationalgeographic.com/kids/">Kids Home</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kids.nationalgeographic.com/kids/games/">Games</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://video.nationalgeographic.com/video/player/kids/">Videos</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kids.nationalgeographic.com/kids/animals/">Animals &amp; Pets</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kids.nationalgeographic.com/kids/photos/">Photos</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kids.nationalgeographic.com/kids/places/">Countries</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kids.nationalgeographic.com/kids/activities/">Fun Stuff</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kids.nationalgeographic.com/kids/community/">Community</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kids.nationalgeographic.com/kids/stories/">News</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kids.nationalgeographic.com/kids/animal-jam/">Animal Jam</a></li>
-                        <li ><a href="http://ad.doubleclick.net/clk;218355739;8304489;w?http://kidsblogs.nationalgeographic.com/littlekids/">Little Kids</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
 
-            <li class="subscriptions"><a href="http://www.nationalgeographic.com/magazines/lp/20121024/nav-rdpg/">Subscriptions</a>
-                <nav class="sub_nav left">
-                    <ul class="secondary_nav">
-                        <li ><a href="https://secure.customersvc.com/servlet/Show?WESPAGE=OrderPages/ng/1209/order_15A1.jsp&MSRSMAG=NG&EFK1=NGB0F69&EFK2=NGB0F85&EFK3=NGB0GA9&MSCCMPLX=RBMULTINV3">National Geographic Magazine</a></li>
-                        <li ><a href="https://kidsubs.nationalgeographic.com/servlet/ConvertibleGateway?cds_mag_code=NWO&cds_page_id=118275&cds_misc_5=FLYOUT7">National Geographic Kids</a></li>
-                        <li ><a href="https://littlekidsubs.nationalgeographic.com/servlet/ConvertibleGateway?cds_mag_code=NLK&cds_page_id=118233&cds_misc_5=FLYOUT7">National Geographic Little Kids</a></li>
-                        <li ><a href="https://travelersubs.nationalgeographic.com/servlet/OrdersGateway?cds_mag_code=NGT&cds_page_id=118786&cds_misc_5=FLYOUT7">National Geographic Traveler</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-
-            <li class="shop"><a href="http://shop.nationalgeographic.com/ngs/index.jsp?code=NG94000&amp;source=NavShopHome">Shop</a>
-                <nav class="sub_nav left">
-                    <ul class="secondary_nav">
-                        <li><a href="http://shop.nationalgeographic.com/ngs/index.jsp?code=NG94001&amp;source=NavShopHome" title="National Geographic Shop - Home">Store Home</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/browse/categorySeries.jsp?categoryId=S061&amp;addFacet=9004:S061&amp;code=NG94007&amp;source=NavShopServ" title="National Geographic Shop - Genographic Kits">Genographic Kits</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/browse/category_bestsellers.jsp?categoryId=A200&addFacet=9004:A200&code=NG94232" title="National Geographic Shop - Best Sellers">Best Sellers</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/browse/category_new.jsp?categoryId=A211&addFacet=9004:A211&code=NG94233" title="National Geographic Shop - New">New</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/browse/category.jsp?categoryId=A091&amp;addFacet=9004:A091&amp;code=NG94004&amp;source=NavShopKids" title="National Geographic Shop - Kids">Kids Shop</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/browse/category.jsp?categoryId=A245&amp;addFacet=9004:A245&amp;code=NG94002&amp;source=NavShopGift" title="National Geographic Shop - Gift Finder">Gift Finder</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/browse/category.jsp?categoryId=A236&amp;addFacet=9004:A236&amp;code=NG94003&amp;source=NavShopChan" title="National Geographic Shop - Channel">Channel Shop</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/browse/category_sale.jsp?categoryId=A223&amp;addFacet=9004:A223&amp;code=NG94008&amp;source=NavShopSale" title="National Geographic Shop - Sale">Sale</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/category/shop-by-catalog?code=NG94005&amp;source=NavShopCat" title="National Geographic Shop - Shop By Catalog">Shop by Catalog</a></li>
-                        <li><a href="http://shop.nationalgeographic.com/ngs/browse/emailRegistration.jsp?code=NG94056" title="National Geographic Shop - Email Signup">Email Signup</a></li>
-                    </ul>
-                    <div class="spotlight">
-                    </div>
-                </nav>
-            </li>
-             -->
         </ul><!-- .primary_nav -->
     </div><!-- .navigation_mainB_container -->
 </nav><!-- #navigation_mainB -->
 </div>
 
 <?php echo $content; ?>
-
-
-
 
 <div class="footer section" id="footer_global">
     <ul class="nav nav_global_tierA">
