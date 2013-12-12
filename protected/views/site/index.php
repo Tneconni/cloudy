@@ -6,7 +6,7 @@
 <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/index.css" rel="stylesheet" type="text/css" />
 
 <div class='row'>
-    <div class='small-8 large-8 columns'>
+    <div class='large-8 columns'>
         <!-- 博客列表 -->
         <ol class='blog-list'>
             <li class='first'>
@@ -55,8 +55,63 @@
         </ul>
         <div class='clear'></div>
 
+        <!-- 前端作品展示 -->
+        <ul class='img-queue inline-list' >
+            <li>
+                <a href='#'>
+                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
+                </a>
+                <p>I like this car~</p>
+            </li>
+            <li>
+                <a href='#'>
+                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
+                </a>
+                <p>I like this car ...</p>
+            </li>
+            <li>
+                <a href='#'>
+                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
+                </a>
+                <p>I really like this car..</p>
+            </li>
+        </ul>
+        <div class='clear'></div>
     </div>
-    <div class='right-win small-4 large-4 columns left-line '>
+    <div class='right-win large-4 columns left-line '>
 
+        <!-- 广告位 -->
+        <div>
+
+        </div>
+        <!-- 可信任站点登陆 -->
+        <div class='connect-links btm-line'>
+            <h3>可用以下站点账号登陆</h3>
+            <ul class='inline-list '>
+                <li>
+                    <a href=''><img src='http://images.nationalgeographic.com/wpf/sites/common/i/icons/fb_cng-cb1315395346.png' /></a>
+                </li>
+                <li>
+                    <a href=''><img src='http://images.nationalgeographic.com/wpf/sites/common/i/icons/twitter_cng-cb1315395346.png' /></a>
+                </li>
+                <li>
+                    <a href=''><img src='http://images.nationalgeographic.com/wpf/sites/common/i/icons/fb_cng-cb1315395346.png' /></a>
+                </li>
+                <li>
+                    <a href=''><img src='http://images.nationalgeographic.com/wpf/sites/common/i/icons/twitter_cng-cb1315395346.png' /></a>
+                </li>
+            </ul>
+        </div>
+        <!-- News Watch Blog -->
+        <div class='news btm-line'>
+            <h3>News Watch Blog </h3>
+            <ol>
+                <li><a href=''>Healing Journey 2013: Tribes and Schools Cleaning Up Alaska</a></li>
+                <li><a href=''>Healing Journey 2013: Tribes and Schools Cleaning Up Alaska</a></li>
+                <li><a href=''>Healing Journey 2013: Tribes and Schools Cleaning Up Alaska</a></li>
+                <li><a href=''>Healing Journey 2013: Tribes and Schools Cleaning Up Alaska</a></li>
+                <li><a href=''>Healing Journey 2013: Tribes and Schools Cleaning Up Alaska</a></li>
+            </ol>
+        </div>
     </div>
 </div>
