@@ -1,25 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "cld_parts".
+ * This is the model class for table "cld_project".
  *
- * The followings are the available columns in table 'cld_parts':
- * @property integer $id
- * @property integer $menu_id
+ * The followings are the available columns in table 'cld_project':
+ * @property integer $project_id
  * @property string $name
- * @property string $contents
- * @property integer $sort_order
- * @property string $seoKeyword
- * @property string $js_file
+ * @property string $description
+ * @property string $work_date
+ * @property string $update
  */
-class Parts extends CActiveRecord
+class Project extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'cld_parts';
+		return 'cld_project';
 	}
 
 	/**
@@ -30,13 +28,12 @@ class Parts extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('menu_id, name, contents, sort_order', 'required'),
-			array('menu_id, sort_order', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>256),
-			array('seoKeyword, js_file', 'length', 'max'=>200),
+			array('description', 'required'),
+			array('name', 'length', 'max'=>64),
+			array('work_date, update', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, menu_id, name, contents, sort_order, seoKeyword, js_file', 'safe', 'on'=>'search'),
+			array('project_id, name, description, work_date, update', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,13 +54,11 @@ class Parts extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'menu_id' => 'Menu',
+			'project_id' => 'Project',
 			'name' => 'Name',
-			'contents' => 'Contents',
-			'sort_order' => 'Sort Order',
-			'seoKeyword' => 'Seo Keyword',
-			'js_file' => 'Js File',
+			'description' => 'Description',
+			'work_date' => 'Work Date',
+			'update' => 'Update',
 		);
 	}
 
@@ -85,13 +80,11 @@ class Parts extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('menu_id',$this->menu_id);
+		$criteria->compare('project_id',$this->project_id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('contents',$this->contents,true);
-		$criteria->compare('sort_order',$this->sort_order);
-		$criteria->compare('seoKeyword',$this->seoKeyword,true);
-		$criteria->compare('js_file',$this->js_file,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('work_date',$this->work_date,true);
+		$criteria->compare('update',$this->update,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -102,24 +95,21 @@ class Parts extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Parts the static model class
+	 * @return Project the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 
-    /******************** written by developer ***********************/
-    public function getPartsByOrder( $order = null){
+    //////////////////////////////// project ///////////////////////////////////////////////
 
-        $sql = 'SELECT * FROM ' . DB_PRE . 'parts ';
-        if( !empty($order) ){
-            $sql .= ' ORDER BY ' . $order['key'] . ' ' . $order['value'];
-        }
+    public function getProject(){
 
-        $res = $this->findAllBySql($sql);
-        return $res;
+        $sql = "SELECT * FROM " . DB_PRE . "project ORDER BY work_date DESC  LIMIT 0,10";
+        $sqlCmd = Yii::app()->db->createCommand( $sql );
+        $query = $sqlCmd->queryAll();
+        return $query;
 
     }
-
 }

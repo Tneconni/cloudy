@@ -9,21 +9,23 @@
     <div class='large-8 columns'>
         <!-- 博客列表 -->
         <ol class='blog-list'>
-            <li class='first'>
-                <a href=''>
-                    <img src='http://images.nationalgeographic.com/wpf/media-live/photos/000/657/overrides/101-new-beetle-species-discovered-viridescens_65788_100x75.jpg' />
-                </a>
-                <h4>Phone Book Used to Name Beetles</h4>
-                <p>March 29, 2013</p>
-                <div class='clear'></div>
+            <?php if( !empty($posts) ){ ?>
+            <?php foreach( $posts as $k=>$post ){ ?>
+            <li <?php if($k == 0){ ?> class='first' <?php } ?> >
+            <?php if($k == 0){ ?>
+                    <a href="/blog/index.php?p=<?php echo $post['ID']; ?>">
+                        <img src="<?php echo UPLOAD_FILE . $post['image_url']; ?>" />
+                    </a>
+                    <h4><?php echo $post['post_title']; ?></h4>
+                    <p><?php echo date('M d Y',strtotime($post['post_modified']));?></p>
+                    <div class='clear'></div>
+            <?php }else{ ?>
+                    <a href="/blog/index.php?p=<?php echo $post['ID']; ?>"><?php echo $post['post_title']; ?></a>
+            <?php }?>
             </li>
-            <li><a href=''>Space Pictures This Week</a></li>
-            <li><a href=''>Oil Industry Likely Caused U.S. Quake</a></li>
-            <li><a href=''>Cicadas Are Coming</a></li>
-            <li><a href=''>Dolphin Attacks Are on the Rise</a></li>
-            <li><a href=''>Top 10: Mars Pic, Critters Glow...</a></li>
+            <?php } ?>
+            <?php } ?>
         </ol>
-
         <dl class="sub-nav">
             <dt>Filter:</dt>
             <dd class="active"><a href="#">More</a></dd>
@@ -34,6 +36,7 @@
         <div class='clear'></div>
         <!-- 项目展示 -->
         <ul class='img-queue inline-list' >
+
             <li>
                 <a href='#'>
                     <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
@@ -46,16 +49,20 @@
                 </a>
                 <p>I like this car ...</p>
             </li>
+            <?php if(!empty($projects)){ ?>
+            <?php foreach($projects as $p){ ?>
             <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
+                <a href='index.php?r=project/project&id=<?php echo $p['project_id']; ?>'>
+                    <img src="" width="160" height="120" />
                 </a>
-                <p>I really like this car..</p>
+                <p><?php echo $p['name']; ?></p>
             </li>
+            <?php }?>
+            <?php }?>
         </ul>
         <div class='clear'></div>
 
-        <!-- 前端作品展示 -->
+        <!-- 前端js作品展示 -->
         <ul class='img-queue inline-list' >
             <li>
                 <a href='#'>

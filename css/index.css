@@ -14,6 +14,7 @@ ul.img-queue li p {
   min-height: 200px;
   padding-right: 10px;
   padding-left: 10px;
+  padding-bottom: 10px;
 }
 .blog-list {
   margin-top: 10px;
@@ -21,6 +22,8 @@ ul.img-queue li p {
 .blog-list li.first a img {
   float: left;
   margin-right: 10px;
+  width: 100px;
+  height: 75px;
 }
 .blog-list li.first h4 {
   color: #333;
