@@ -308,3 +308,6 @@ CREATE TABLE `cld_project`(
   `update` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
    PRIMARY KEY (`project_id`)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT '个人作品表';
+
+-- 2013-12-12 18:40 在项目表中添加图片路径字段 --
+ALTER TABLE cld_project ADD `iamge_url` VARCHAR(255) NOT NULL  AFTER `description`;
