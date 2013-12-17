@@ -1,10 +1,3 @@
-<!-- foundation -->
-<link href="<?php echo Yii::app()->request->baseUrl; ?>/foundation/css/foundation.min.css" rel="stylesheet" type="text/css" />
-<!-- 公共css -->
-<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/global.css" rel="stylesheet" type="text/css" />
-<!-- less 编译而成的css -->
-<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/index.css" rel="stylesheet" type="text/css" />
-
 <div class='row'>
     <div class='large-8 columns'>
         <!-- 博客列表 -->

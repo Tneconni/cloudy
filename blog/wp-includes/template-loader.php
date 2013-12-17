@@ -3,6 +3,7 @@
  * Loads the correct template based on the visitor's url
  * @package WordPress
  */
+
 if ( defined('WP_USE_THEMES') && WP_USE_THEMES )
 	do_action('template_redirect');
 
@@ -43,6 +44,7 @@ if ( defined('WP_USE_THEMES') && WP_USE_THEMES ) :
 	else :
 		$template = get_index_template();
 	endif;
+
 	if ( $template = apply_filters( 'template_include', $template ) )
 		include( $template );
 	return;

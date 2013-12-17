@@ -7,7 +7,12 @@
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-
+    <!-- foundation -->
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/foundation/css/foundation.min.css" rel="stylesheet" type="text/css" />
+    <!-- 公共css -->
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/global.css" rel="stylesheet" type="text/css" />
+    <!-- less 编译而成的css -->
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/index.css" rel="stylesheet" type="text/css" />
 
 
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/global_nav.css" media="screen" rel="stylesheet" type="text/css" /><!-- Reset -->
@@ -31,148 +36,28 @@
     <script src='<?php echo Yii::app()->request->baseUrl; ?>/js/'></script>
 </head>
 <body>
-<div id="navigation_tophat_container">
-<p id="skip_navigation" class="hidden"><a href="#content">Skip to this page's content</a></p>
-<div id="navigation_mainA">
+<div class="navigation_container">
+    <div class='blank20'></div>
 
-
-    <!-- HEADER ADVERTISEMENT -->
-    <div id="headerboard">
-
-        <div class="pushdown advertisement hidden">
-            <h3 class="hidden">Advertisement</h3>
-            <div id="advertisingModule970x66"></div>
-        </div><!-- .pushdown .advertisement -->
-        <div class="leaderboard advertisement hidden">
-            <h3 class="hidden">Advertisement</h3>
-
-            <div id="advertisingModule728x90">
-
-            </div>
-
-        </div><!-- .leaderboard .advertisement -->
-        <div class="secondary_ad hidden">
-            <h3 class="hidden">Advertisement</h3>
-
-            <div id="advertisingModule257x90">
-
-            </div>
-
-
-
-
-        </div><!-- .secondary_ad -->
-    </div><!-- #headerboard -->
-
-
-
-    <div id="header_logo" class="vcard">
-        <a class="url fn org hiddenText" href="http://www.nationalgeographic.com/">National Geographic Society</a>
-        <div class="adr hiddenText">
-            <span class="post-office-box">P.O. Box 98199</span>
-            <span class="locality">Washington</span>,
-            <abbr title="District of Columbia" class="region">DC</abbr>
-            <span class="postal-code">20090-8199</span>
-            <span class="country-name">USA</span>
+    <div class='row'>
+        <div class="header-logo large-8 columns">
+            <a class="logo-text" href="#">Clown</a>
+        </div><!-- #header_logo -->
+        <div class='large-4 columns fr'>
+            <input class='search-inp fr' type="search" name="search" placeholder="Search" maxlength="256" value="" />
         </div>
-        <div class="geo hiddenText">
-            <span class="latitude">38.90531943278526</span>,
-            <span class="longitude">-77.0376992225647</span>
-        </div>
-        <div class="tel hiddenText">800-647-5463</div>
-    </div><!-- #header_logo -->
-
-    <div id="shared-header"></div>
-
-    <!-- google search parameters -->
-    <form name="global_search" method="GET" id="global_search" action="http://www.nationalgeographic.com/search/">
-        <div class="hidden">
-
-            <input type="hidden" name="frontend" value="default_frontend">
-
-
-            <input type="hidden" name="output_format" value="xml_no_dtd">
-            <input type="hidden" name="num_results" value="25">
-            <input type="hidden" name="filter" value="p">
-
-
-            <input type="hidden" name="collection" value="default_collection">
-
-
-
-            <input type="hidden" name="meta_field_to_return" value="ngs-gsa-feed-title">
-            <input type="hidden" name="meta_field_to_return" value="ngs-gsa-feed-slug">
-            <input type="hidden" name="meta_field_to_return" value="ngs-gsa-feed-description">
-            <input type="hidden" name="meta_field_to_return" value="ngs-gsa-feed-keywords">
-            <input type="hidden" name="meta_field_to_return" value="ngs-gsa-feed-thumbnail">
-
-
-
-            <input type="hidden" name="required_meta_field_1" value="ngs-gsa-feed-mediaType:video">
-
-            <input type="hidden" name="required_meta_field" value="ngs-gsa-feed-video-source:animals|ngs-gsa-feed-video-source:environment|ngs-gsa-feed-video-source:movies|ngs-gsa-feed-video-source:music|ngs-gsa-feed-video-source:news|ngs-gsa-feed-video-source:places|ngs-gsa-feed-video-source:specials|ngs-gsa-feed-video-source:science|ngs-gsa-feed-video-source:nat-geo-wild|ngs-gsa-feed-video-source:national-geographic-channel|ngs-gsa-feed-video-source:kids|ngs-gsa-feed-video-source:the-magazine">
-
-
-
-            <input type="hidden" name="meta_field_filter" value="ngs-gsa-feed-title">
-            <input type="hidden" name="meta_field_filter" value="ngs-gsa-feed-description">
-            <input type="hidden" name="meta_field_filter" value="ngs-gsa-feed-keywords">
-
-
-            <input type="hidden" name="oe" value="utf-8" />
-        </div>
-
-        <span class="hidden">Search National Geographic</span>
-
-        <div class="field">
-            <label for="header_search_input" class="hidden">Search<span class="hidden">nationalgeographic.com</span></label>
-
-
-            <input id="header_search_input" type="search" name="search" placeholder="Search" maxlength="256" value="">
-
-
-
-            <button type="submit" name="btnG" id="header_search_submit" value="Go" class="hidden">Submit</button>
-
-
-
-            <input type="hidden" name="start" value="0">
-
-
-
-            <input type="hidden" name="sort" value="">
-
-
-        </div>
-
-
-    </form><!-- #header_search -->
-
-    <ul id="social" class="inline_list">
-        <li>Connect:</li>
-        <li><a href="http://www.facebook.com/natgeo" class="facebook"></a></li>
-        <li><a href="http://www.twitter.com/NatGeo" class="twitter"></a></li>
-    </ul>
-</div><!-- #navigation_mainA -->
-
-<nav id="navigation_mainB" class="cf">
-    <div class="navigation_mainB_container">
-        <ul class="primary_nav inline-list">
+        <div class='clear'></div>
+        <dl class="sub-nav">
             <?php foreach($this->menu as $key => $v){ ?>
-            <li class="home active"><a href="<?php echo $v->href; ?>"><?php echo $v->name; ?></a>
-                <nav class="sub_nav">
-                    <ul class="secondary_nav">
-                        <li><a href="http://www.nationalgeographic.com/news/">Daily News</a></li>
-                        <li><a href="http://ngm.nationalgeographic.com">The Magazine</a></li>
-                        <li><a href="http://maps.nationalgeographic.com">Maps</a></li>
-                    </ul>
-                </nav>
-            </li>
+                <dd class="">
+                    <a href="<?php echo $v->href; ?>">
+                        <?php echo $v->name; ?>
+                    </a>
+                </dd>
             <?php } ?>
+        </dl>
+    </div>
 
-        </ul><!-- .primary_nav -->
-    </div><!-- .navigation_mainB_container -->
-</nav><!-- #navigation_mainB -->
 </div>
 
 <?php echo $content; ?>
@@ -235,7 +120,7 @@
         <li class="nav07"><a href="/community/terms/">Terms of Service</a></li>
         <li class="nav08"><a href="/community/privacy/">Privacy Policy</a></li>
     </ul>
-    <p id="copyright">&copy; 1996-2013 National Geographic Society. All rights reserved.</p>
+    <p >&copy; 1996-2013 National Geographic Society. All rights reserved.</p>
 </div>
 </body>
 </html>

@@ -21,7 +21,7 @@
 /** Define ABSPATH as this file's directory */
 define( 'ABSPATH', dirname(__FILE__) . '/' );
 
-define( 'HTTPSERVER', 'http://cloud.blog/' );
+define( 'HTTPSERVER', 'http://tneconni.gotoip55.com/blog' );
 
 define( 'BLOG_IMAGE_UPLOAD', HTTPSERVER . 'blog/wp-content/uploads/' );
 
