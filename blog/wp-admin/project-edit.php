@@ -9,11 +9,18 @@
 require_once( './admin.php' );
 
 require_once('./admin-header.php');
+
+require_once('./admin-header.php');
 ?>
 
 <?php
-function projectOutput(){
+require_once('./fix/project.php');
+    $pjt = new Project();
+    $pjt->edit();
+
+/*function projectOutput(){
     global $wpdb;
+
     if( isset($_GET['pjt_id']) ){
         $project_id = $_GET['pjt_id'];
         $sql = "SELECT * FROM cld_project WHERE project_id='" . $project_id . "'";
@@ -21,34 +28,49 @@ function projectOutput(){
 //        print_r($projects);
         $html = "";
         if( !empty($projects) ){
-            $html = "<ul>";
-            foreach( $projects as $project ){
-                $html .= '<li>';
-//                $html .= '<span><a href=\'\'>' . $project->project_id . '</span>';
-                $html .= '<span><a href=\'project_edit.php?pjt_id=' . $project->project_id . '\'>' . $project->name . '</a></span>';
 
-                $html .= '<span>' . $project->description . '</span>';
-                $html .= '<span>' . $project->iamge_url . '</span>';
-                $html .= '<span>' . $project->work_date . '</span>';
-                $html .= '<span>' . $project->update . '</span>';
-                $html .= '</li>';
-            }
-            $html .= "</ul>";
+            $project = array_shift($projects); print_r($project);
+            echo <<<EOT
+<div class=''>
+        <form action='' method="post" >
+            <input type='text' name='project_name' value="$project->name" />
+            <div id='' >
+                <button>图片</button>
+                <input type='hidden' name='project_image' />
+            </div>
+
+            <textarea name='project_description' >
+                $project->description;
+            </textarea>
+        </form>
+    </div>
+EOT;
         }else{
-            $html = '该项目不存在, 我的朋友.';
+            echo '项目不存在';
         }
 
     }else{
-        //添加新的项目
+        //add new project
+        echo <<<EOT
+<div class=''>
+        <form action='' method="post" >
+            <input type='text' name='project_name' value="" />
+            <div id='' >
+                <button>图片</button>
+                <input type='hidden' name='project_image' />
+            </div>
 
+            <textarea name='project_description' >
+            </textarea>
+        </form>
+    </div>
+EOT;
     }
 
-    echo $html;
-}
-
-projectOutput();
+}*/
 ?>
-
 <?php
-include('./admin-footer.php');
+//projectOutput();
 ?>
+
+<?php include('./admin-footer.php'); ?>
