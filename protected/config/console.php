@@ -25,10 +25,10 @@ return array(
 		),*/
 
         'db'=>array(
-			'connectionString' => 'mysql:host=cloudliu.gotoftp4.com;dbname=cloudliu',
+			'connectionString' => 'mysql:host=localhost;dbname=cloudliu',
             'emulatePrepare' => true,
-            'username' => 'cloudliu',
-            'password' => 'imaginato',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
         ),
 

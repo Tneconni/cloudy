@@ -34,6 +34,7 @@
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/print-cb1274471335.css" media="print" rel="stylesheet" type="text/css" /><!-- Controls Global Site Elements -->
 
     <script src='<?php echo Yii::app()->request->baseUrl; ?>/js/'></script>
+    <script src='<?php echo Yii::app()->request->baseUrl; ?>/js/jQuery/jQuery.1.10.2.js'></script>
 </head>
 <body>
 <div class="navigation_container">

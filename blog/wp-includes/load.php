@@ -350,11 +350,8 @@ function require_wp_db() {
  */
 function wp_set_wpdb_vars() {
 	global $wpdb, $table_prefix;
-	if ( !empty( $wpdb->error ) ){
-        dead_db();
-    }
-
-
+	if ( !empty( $wpdb->error ) )
+		dead_db();
 
 	$wpdb->field_types = array( 'post_author' => '%d', 'post_parent' => '%d', 'menu_order' => '%d', 'term_id' => '%d', 'term_group' => '%d', 'term_taxonomy_id' => '%d',
 		'parent' => '%d', 'count' => '%d','object_id' => '%d', 'term_order' => '%d', 'ID' => '%d', 'comment_ID' => '%d', 'comment_post_ID' => '%d', 'comment_parent' => '%d',

@@ -14,4 +14,14 @@ define('BASE_URL', dirname(__FILE__));
 define('LESS_COMPILE', true);
 define('UPLOAD_FILE', 'blog/wp-content/uploads/');
 require_once($yii);
+
+//load less module
+$dir = dirname(__FILE__);
+//$dir = str_replace('\\', "/", $dir);
+/*$lessPath = $dir.'/lessphp/less.inc.php';
+require_once( $lessPath );
+$less = new lessc();
+$less->checkedCompile("input.less", "output.css");*/
+
+
 Yii::createWebApplication($config)->run();
