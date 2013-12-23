@@ -85,25 +85,13 @@ WHERE project_id='" . $data['project_id'] . "' ";
     }
 
     private function output( $project ){
-
-        echo <<<EOT
-<div class=''>
-        <form action='' method="post" >
-            <input type='hidden' name='project_id' value="$project->project_id" />
-
-            <input type='text' name='project_name' value="$project->name" />
-            <div id='' >
-                <span>图片</span>
-                <input type='hidden' name='project_image' />
-            </div>
-            作品链接：<input type='text' name='link' value="$project->link" />
-
-            <textarea name='project_description' >
-                $project->description;
-            </textarea>
-            <button>提交</button>
-        </form>
-    </div>
-EOT;
+//        include('./project-edit-tmp.php');
+        $dir = dirname( __file__ );
+        $data = "the parameter is vaild";
+        if( file_exists($dir .'/project-edit-tmp.php') ){
+            include($dir . '/project-edit-tmp.php');
+        }else{
+            echo 'not existed';
+        }
     }
 }
