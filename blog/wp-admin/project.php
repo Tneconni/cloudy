@@ -16,14 +16,19 @@ require_once('./admin-header.php');
     this is the project page
 </div>
 <?php
+
+
     function projectOutput(){
         global $wpdb;
         $sql = 'SELECT * FROM cld_project';
         $projects = $wpdb->get_results( $sql );
-//        print_r($projects);
+
+
         $html = "";
+        $addProject = "<a href='project-edit.php'>Add new project</a>";
+        $html .= $addProject;
         if( !empty($projects) ){
-            $html = "<ul>";
+            $html .= "<ul>";
             foreach( $projects as $project ){
                 $html .= '<li>';
 //                $html .= '<span><a href=\'\'>' . $project->project_id . '</span>';
