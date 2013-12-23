@@ -21,8 +21,10 @@ class Project{
         global $wpdb;
         $sql = "UPDATE cld_project SET `name`='" . $data['project_name'] . "',
 description='" . $data['project_description'] . "',
-iamge_url='" . $data['project_image'] . "'
+iamge_url='" . $data['project_image'] . "',
+link='" . $data['link'] . "'
 WHERE project_id='" . $data['project_id'] . "' ";
+
         $ret = $wpdb->get_results( $sql );
         return $ret;
     }
@@ -51,9 +53,7 @@ WHERE project_id='" . $data['project_id'] . "' ";
                 header('location: ' . $url);
             }else{
                 $ret = $this->addProject( $_POST );
-
                 header('location: ' . $url);
-
             }
 
         }
@@ -90,11 +90,13 @@ WHERE project_id='" . $data['project_id'] . "' ";
 <div class=''>
         <form action='' method="post" >
             <input type='hidden' name='project_id' value="$project->project_id" />
+
             <input type='text' name='project_name' value="$project->name" />
             <div id='' >
-                <button>图片</button>
+                <span>图片</span>
                 <input type='hidden' name='project_image' />
             </div>
+            作品链接：<input type='text' name='link' value="$project->link" />
 
             <textarea name='project_description' >
                 $project->description;
