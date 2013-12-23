@@ -13,16 +13,25 @@ class LotteryController extends Controller{
 
         $lotteryCustomer = new LotteryCustomer();
         $members = $lotteryCustomer->getNonwinners();
-
+        $luckyDogs = $lotteryCustomer->getLuckyDogs();
+        $lotteryType = array(
+            '抽奖完毕',
+            'First Prize',
+            'Second Prize',
+            'Third Prize'
+        );
+        $luckyDogsCount = count( $luckyDogs );
         $this->render('index',array(
-            'members' => $members
+            'members'   => $members,
+            'luckyDogs' => $luckyDogs,
+            'luckyDogsCount' => $luckyDogsCount,
+            'lotteryType'=>$lotteryType
         ));
     }
 
     public function actionGetLuckyDog(){
         $res = array(
             `status`=>false,
-            'luckyDog'=>'',
             'no'=>'',
             'prize'=>'2'
         );
@@ -74,12 +83,38 @@ class LotteryController extends Controller{
         }
         closedir($handle);
         print_r( $memberList );
-        $ret = LotteryCustomer::adParticipant( $memberList );
+        $ret = LotteryCustomer::addParticipant( $memberList );
         if( $ret ){
             echo '导入成功';
         }else{
             echo '导入失败';
         }
 
+    }
+
+    public function actionSetLottery(){
+        $param = array();
+
+        if( isset( $_POST['name'] )){
+            $param['name'] = $_POST['name'];
+        }
+
+        if( isset( $_POST['lottery_customer_id'] )){
+            $param['lottery_customer_id'] = $_POST['lottery_customer_id'];
+        }
+
+        if( isset( $_POST['lottery_level'] )){
+            $param['lottery_level'] = $_POST['lottery_level'];
+        }
+        $lotteryCustomer = new LotteryCustomer();
+        $prize = $lotteryCustomer->setLottery( $param );
+
+        echo json_encode( $prize );
+    }
+
+    public function actionInitLottery(){
+        $lotteryCustomer = new LotteryCustomer();
+        $ret = $lotteryCustomer->initLottery();
+        echo json_encode( $ret );
     }
 }

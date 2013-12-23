@@ -48,7 +48,7 @@
             <input class='search-inp fr' type="search" name="search" placeholder="Search" maxlength="256" value="" />
         </div>
         <div class='clear'></div>
-        <dl class="sub-nav">
+        <dl class="sub-nav" style='display: none'>
             <?php foreach($this->menu as $key => $v){ ?>
                 <dd class="">
                     <a href="<?php echo $v->href; ?>">
@@ -63,7 +63,7 @@
 
 <?php echo $content; ?>
 
-<div class="footer section" id="footer_global">
+<div class="footer section" id="footer_global" style='display:none'>
     <ul class="nav nav_global_tierA">
         <li class="nav1"><a href="http://www.nationalgeographic.com/" id="intl_link_footer_home">Home</a></li>
         <li class="nav2"><a href="http://video.nationalgeographic.com/video/player/">Video</a></li>

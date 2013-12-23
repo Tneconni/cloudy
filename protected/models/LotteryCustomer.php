@@ -109,7 +109,7 @@ class LotteryCustomer extends CActiveRecord
     /*
      * 添加抽奖者
      * */
-    public static function adParticipant( $memberList ){
+    public static function addParticipant( $memberList ){
 
         $sql = "INSERT INTO " . DB_PRE . "lottery_customer (`name`, `img_url`)
 VALUES";
@@ -149,6 +149,14 @@ VALUES";
         return $luckyDog;
     }
 
+    public function getLuckyDogs(){
+        $sql = "SELECT * FROM " . DB_PRE . "lottery_customer  WHERE lottery_level != '0' ORDER BY `lottery_level` DESC";
+        $sqlCmd = Yii::app()->db->createCommand( $sql );
+        $luckyDogs = $sqlCmd->queryAll();
+        return $luckyDogs;
+    }
+
+
     public function setLuckyDogPrize($lottery_customer_id, $lottery_level){
         $sql = "UPDATE
   " . DB_PRE . "lottery_customer
@@ -158,5 +166,23 @@ WHERE lottery_customer_id = '" . $lottery_customer_id . "'";
         $sqlCmd = Yii::app()->db->createCommand( $sql );
         $success = $sqlCmd->execute();
         return $success;
+    }
+
+    public function setLottery( $param ){
+        $sql = "UPDATE " . DB_PRE . "lottery_customer SET
+lottery_level = '" . $param['lottery_level'] . "'
+WHERE lottery_customer_id='" . $param['lottery_customer_id'] . "'";
+        $sqlCmd = Yii::app()->db->createCommand( $sql );
+        $success = $sqlCmd->execute();
+        return $success;
+    }
+
+    public function initLottery(){
+
+        $sql = "UPDATE " . DB_PRE . "lottery_customer SET lottery_level='0'";
+        $sqlCmd = Yii::app()->db->createCommand( $sql );
+        $success = $sqlCmd->execute();
+        return $success;
+
     }
 }
