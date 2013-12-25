@@ -2238,10 +2238,13 @@
 		},
 
 		click: function( event ) {
-			if ( '#' === this.attributes.href )
-				event.preventDefault();
+			if ( '#' === this.attributes.href ) {
+                event.preventDefault();
 
-			if ( this.options.click && ! this.model.get('disabled') )
+            }
+            console.log(this);
+            console.log(this.options);
+            if ( this.options.click && ! this.model.get('disabled') )
 				this.options.click.apply( this, arguments );
 		}
 	});

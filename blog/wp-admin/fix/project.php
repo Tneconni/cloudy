@@ -22,9 +22,9 @@ class Project{
         $sql = "UPDATE cld_project SET `name`='" . $data['project_name'] . "',
 description='" . $data['project_description'] . "',
 iamge_url='" . $data['project_image'] . "',
-link='" . $data['link'] . "'
+link='" . $data['link'] . "',
+`update` = '" . Date('Y-m-d H:i:s') . "'
 WHERE project_id='" . $data['project_id'] . "' ";
-
         $ret = $wpdb->get_results( $sql );
         return $ret;
     }
@@ -35,6 +35,8 @@ WHERE project_id='" . $data['project_id'] . "' ";
         $sql = "INSERT INTO cld_project SET
             `name` = '" . $data['project_name'] . "',
             description = '" . $data['project_description'] . "',
+            iamge_url='" . $data['project_image'] . "',
+            link='" . $data['link'] . "',
             work_date = '" . Date('Y-m-d H:i:s') . "',
             `update` = '" . Date('Y-m-d H:i:s') . "'";
 
@@ -84,6 +86,22 @@ WHERE project_id='" . $data['project_id'] . "' ";
 
     }
 
+    public function delete(){
+        global $wpdb;
+        $projectIdArr = array();
+        $projectIds = '';
+        if( isset($_POST['projectIds']) ){
+            $projectIdArr = explode('|', $_POST['projectIds']);
+            $projectIds = implode(',',$projectIdArr);
+        }
+
+        global $wpdb;
+        $sql = "DELETE FROM cld_project WHERE project_id IN (" . $projectIds . ")";
+        $ret = $wpdb->query( $sql );
+        echo json_encode($ret);
+        die();
+    }
+
     private function output( $project ){
 //        include('./project-edit-tmp.php');
         $dir = dirname( __file__ );
@@ -93,5 +111,7 @@ WHERE project_id='" . $data['project_id'] . "' ";
         }else{
             echo 'not existed';
         }
+
+
     }
 }

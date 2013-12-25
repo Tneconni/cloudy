@@ -2,7 +2,7 @@
 
 var wpActiveEditor;
 
-function send_to_editor(h) {
+function send_to_editor(h) {     alert('add-post-image-asdd');
 	var ed, mce = typeof(tinymce) != 'undefined', qt = typeof(QTags) != 'undefined';
 
 	if ( !wpActiveEditor ) {
@@ -35,7 +35,10 @@ function send_to_editor(h) {
 				h = ed.plugins.wordpress._setEmbed(h);
 		}
 
+
+
         if( $('#add-post-image')[0].className.indexOf('hanging') > -1 ){
+            alert('add-post-image');
             $('#add-post-image').removeClass('hanging');
             $('#post-image-frm').html( h );
             var path = $('#post-image-frm').find('img').attr('src');

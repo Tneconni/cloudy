@@ -34,7 +34,9 @@ class SiteController extends Controller
         $res = $menuTable->getAllMenu();
         $wpPost = new WpPosts();
         $posts = $wpPost->getPosts();
+
 //        print_r( $posts );
+
         $Project = new Project();
         $projects = $Project->getProject();
 

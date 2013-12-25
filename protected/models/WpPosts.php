@@ -164,12 +164,15 @@ class WpPosts extends CActiveRecord
     /*
      * */
     public function getPosts(){
+
         $sql = "SELECT
   *
 FROM
   " . DB_BLOG_PRE ."posts AS p
-  INNER JOIN " . DB_BLOG_PRE ."posts_image AS `pimg`
-    ON p.`ID` = pimg.`post_ID` WHERE pimg.`post_image_ID` IS NOT NULL ORDER BY p.`post_modified` DESC";
+  LEFT JOIN " . DB_BLOG_PRE ."posts_image AS `pimg`
+    ON p.`ID` = pimg.`post_ID`
+    WHERE `post_status`='publish'
+ORDER BY p.`post_modified` DESC  LIMIT 0,10;";
         if( !empty($order) ){
             $sql .= ' ORDER BY ' . $order['key'] . ' ' . $order['value'];
         }

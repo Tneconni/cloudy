@@ -1,11 +1,11 @@
 <div class='row'>
     <div class='large-8 columns'>
         <!-- 博客列表 -->
-        <ol class='blog-list'>
+        <ol class='blog-list btm-line'>
             <?php if( !empty($posts) ){ ?>
             <?php foreach( $posts as $k=>$post ){ ?>
             <li <?php if($k == 0){ ?> class='first' <?php } ?> >
-            <?php if($k == 0){ ?>
+            <?php if($k == 0 && isset($post['image_url'])){ ?>
                     <a href="/blog/index.php?p=<?php echo $post['ID']; ?>">
                         <img src="<?php echo UPLOAD_FILE . $post['image_url']; ?>" />
                     </a>
@@ -19,7 +19,7 @@
             <?php } ?>
             <?php } ?>
         </ol>
-        <dl class="sub-nav">
+        <dl class="sub-nav" style='display:none'>
             <dt>Filter:</dt>
             <dd class="active"><a href="#">More</a></dd>
             <dd><a href="#">NewsNews</a></dd>
@@ -28,27 +28,28 @@
         </dl>
         <div class='clear'></div>
         <!-- 项目展示 -->
-        <ul class='img-queue inline-list' >
+        <ul class='img-queue inline-list btm-line' >
 
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I like this car~</p>
-            </li>
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I like this car ...</p>
-            </li>
             <?php if(!empty($projects)){ ?>
             <?php foreach($projects as $p){ ?>
             <li>
-                <a href='index.php?r=project/project&id=<?php echo $p['project_id']; ?>'>
-                    <img src="" width="160" height="120" />
+
+                <a
+                <?php if(!empty($p['link'])){ ?>
+                    href="<?php echo $p['link'];?>"
+                <?php }else{ ?>
+                    href="index.php?r=project/project&id=<?php echo $p['project_id']; ?>"
+                <?php }?>
+>
+                    <img src="/blog/wp-content/uploads/<?php echo $p['iamge_url']; ?>" width="160" height="120" />
                 </a>
-                <p><?php echo $p['name']; ?></p>
+                <p><a
+                        <?php if(!empty($p['link'])){ ?>
+                        href="<?php echo $p['link'];?>"
+                    <?php }else{ ?>
+                        href="index.php?r=project/project&id=<?php echo $p['project_id']; ?>"
+                    <?php }?>
+                        ><?php echo $p['name']; ?></a></p>
             </li>
             <?php }?>
             <?php }?>
