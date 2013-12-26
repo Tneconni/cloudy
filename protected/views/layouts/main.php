@@ -42,11 +42,13 @@
 
     <div class='row'>
         <div class="header-logo large-8 columns">
-            <a class="logo-text" href="#">Clown</a>
+            <a class="logo-text lottery-logo" href="#"></a>
         </div><!-- #header_logo -->
         <div class='large-4 columns fr'>
-            <input class='search-inp fr' type="search" name="search" placeholder="Search" maxlength="256" value="" />
+            <input class='search-inp fr' type="search" name="search" placeholder="Search" maxlength="256" value=""  style='display:none'/>
+            <div id='init-lottery' style=''>init</div>
         </div>
+
         <div class='clear'></div>
         <dl class="sub-nav" style='display: none'>
             <?php foreach($this->menu as $key => $v){ ?>

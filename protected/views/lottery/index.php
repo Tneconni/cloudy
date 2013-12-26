@@ -2,65 +2,60 @@
     body{background:black;color:white;line-height:29px;}
     span{border:1px solid gray;background:#333;padding:4px;font-weight:bold;}
 </style>
-<h3 class='lottery-title'>Imaginato Christmas lottery</h3>
-<div id="imgContainer" style="width:1200px; height:400px;border:none; margin:10px auto">
-    <?php
-    $i = 0;
-    foreach($members as $member){
-        $i ++;
-        if( $i > 15){
-            break;
-        }
-        ?>
-    <img id="photo-<?php echo $member['lottery_customer_id'];?>"
-         name='<?php echo $member['name'];?>'
-         src="/assets/img/lottery/<?php echo $member['img_url']; ?>">
-    <?php } ?>
 
-    <input type='hidden' id='lottery-level' value="<?php echo 3 - $luckyDogsCount; ?>" />
-</div>
-<div class='lucky-dog-list'>
-    <!--
-    <div class='lucky-dog'>
-        <img src="/assets/img/lottery/<?php echo $member['img_url']?>" width="160px" />
-        <p><?php echo $member['lottery_customer_id'];?></p>
-        <h3>一等奖</h3>
-    </div>
-    <div class='lucky-dog'>
-        <img src="/assets/img/lottery/<?php echo $member['img_url']?>" width="160px"/>
-        <p><?php echo $member['lottery_customer_id'];?></p>
-        <h3>一等奖</h3>
-    </div>
-    <div class='lucky-dog'>
-        <img src="/assets/img/lottery/<?php echo $member['img_url']?>" width="160px"/>
-        <p><?php echo $member['lottery_customer_id'];?></p>
-        <h3>一等奖</h3>
-    </div>
-
-    -->
-    <?php foreach($luckyDogs as $luckyDog){ ?>
-        <div class='lucky-dog'>
-            <img src="/assets/img/lottery/<?php echo $luckyDog['img_url']?>" width="160px"/>
-            <p><?php echo $luckyDog['name'];?></p>
-            <h3><?php echo $luckyDog['lottery_level'];?>等奖</h3>
-        </div>
-    <?php } ?>
-</div>
-<div>
-    <div class='lottery-btn'>
-        <?php if( $luckyDogsCount < 3){ ?>
-            <button id='lottery-start'
-                    class="prize-<?php echo 3 - $luckyDogsCount;?>"><?php echo $lotteryType[3 - $luckyDogsCount]?>
-            </button>
-        <?php }else{ ?>
-            <button id='lottery-start' class='completed'><?php echo $lotteryType[3 - $luckyDogsCount]?></button>
+<div class='lottery-bg'>
+    <h3 class='lottery-title'>Imaginato Christmas lottery</h3>
+    <div id="imgContainer" style="width:1200px; height:280px;border:none; margin:10px auto">
+        <?php
+        $i = 0;
+        foreach($members as $member){
+//        $i ++;
+//        if( $i > 15){
+//            break;
+//        }
+            ?>
+            <img id="photo-<?php echo $member['lottery_customer_id'];?>"
+                 name='<?php echo $member['name'];?>'
+                 src="/assets/img/lottery/<?php echo $member['img_url']; ?>">
         <?php } ?>
-        <button id='lottery-stop'>Stop</button>
-        <button id='init-lottery'>Init Lottery</button>
+
+        <input type='hidden' id='lottery-level' value="<?php echo 3 - $luckyDogsCount; ?>" />
     </div>
+    <div class='lucky-dog-list'>
+
+        <?php foreach($luckyDogs as $luckyDog){ ?>
+            <div class='lucky-dog'>
+                <img src="/assets/img/lottery/<?php echo $luckyDog['img_url']?>" width="160px"/>
+                <p><?php echo $luckyDog['name'];?></p>
+                <h3><?php echo $luckyDog['lottery_level'];?>Prize</h3>
+            </div>
+        <?php } ?>
+    </div>
+    <div>
+        <div class='lottery-btn'>
+            <?php if( $luckyDogsCount < 3){ ?>
+                <button id='lottery-start'
+                        class="prize-<?php echo 3 - $luckyDogsCount;?>"><?php echo $lotteryType[3 - $luckyDogsCount]?>
+                </button>
+            <?php }else{ ?>
+                <button id='lottery-start' class='completed'><?php echo $lotteryType[3 - $luckyDogsCount]?></button>
+            <?php } ?>
+            <button id='lottery-stop'>Stop</button>
+            <!--
+                        <button id='init-lottery' style='display:none'>init Lottery</button>
+            -->
+
+        </div>
+    </div>
+</div>
+<div id='lucky-dog-popup' style='display:none; position:absolute; width:600px; height:auto; margin-top:120px; margin-left:-300px;  left:50%; top:0px; z-index:2'>
+    <img src="/assets/img/lottery/Amber.jpg" width="">
 </div>
 <script language="javascript">
 
+    function id( idStr ){
+        return document.getElementById(idStr);
+    }
     function imgRound(id,w,h,x,y,r,dv,rh,ah){
         r = parseInt( document.getElementById( id ).style.width ) / 2;
 
@@ -130,6 +125,10 @@
 
         };
         this.stopRound = function(){
+            if( dv <= 0){
+                alert('Please turning Lottery Compass first.');
+                return;
+            }
             moveStop = true;
             friction = 0.0004;
 
@@ -149,7 +148,7 @@
             };
             for( var i = 0; i < l; i ++){
                 var left = parseFloat( photos[i].style.left );
-                var dis = x - left;
+                var dis = x - left - 60;
                 dis = Math.abs( dis );
                 if(luckyDog.distance == 100000){
                     luckyDog.distance = dis;
@@ -170,19 +169,32 @@
 //            var rt=new imgRound("imgContainer",120,90,300,80,230,0.01);
     };
     function showLuckyDog( data ){
+        id('lucky-dog-popup').style.display = 'block';
+        var photo = "<img src='" +
+            data.img_url + "' width='' />";
+        $('#lucky-dog-popup').html( photo );
+        setTimeout(function(){
+            id('lucky-dog-popup').style.display = 'none';
+            setLockDogPosition( data );
+        },'1000');
+
+    }
+
+    function setLockDogPosition( data ){
         var html = "<div class='lucky-dog'>" +
             "<img src='" +
             data.img_url + "' width='160px' />" +
             "<p>" +
             data.name +
             "</p>" +
-            "<h3>" + data.lottery_level + "等奖</h3>"+
+            "<h3>" + data.lottery_level + "Prize</h3>"+
             "</div>";
+
         $('.lucky-dog-list').append( html );
+
         var imgContainer = document.getElementById('imgContainer');
         var luckDogImg = document.getElementById('photo-' + data.lottery_customer_id);
         imgContainer.removeChild( luckDogImg );
-
     }
 
     function setLottery( luckyDog ){
@@ -190,7 +202,7 @@
         var lotteryLevelInp = document.getElementById('lottery-level');
         var lotteryLevel = parseInt( lotteryLevelInp.value );
         if(lotteryLevel < 1){
-            alert('操作有误');
+            alert('Invaild operation');
         }
         var data = {
                 lottery_customer_id : luckyDog.id,
@@ -202,22 +214,22 @@
             if( d ){
 
                 if(lotteryLevel < 1){
-                    alert('操作有误');
+                    alert('Invaild operation');
                     return;
                 }else{
                     lotteryLevel = lotteryLevel - 1;
                     lotteryLevelInp.value = lotteryLevel;
                     if(lotteryLevel < 1){
-                        document.getElementById('lottery-start').innerHTML = '抽奖完毕';
+                        document.getElementById('lottery-start').innerHTML = 'End';
                         document.getElementById('lottery-start').className = 'completed';
                     }else{
-                        document.getElementById('lottery-start').innerHTML = lotteryLevel + '等奖';
+                        document.getElementById('lottery-start').innerHTML = lotteryLevel + ' Prize';
                     }
                 }
                 data.img_url = document.getElementById('photo-' + data.lottery_customer_id).src;
                 showLuckyDog( data );
             }else{
-                alert( '奖已经抽完了， 等明年好不' );
+                alert( 'Lottery End' );
 
             }
         },'json');
@@ -231,7 +243,7 @@
 
         document.getElementById('lottery-start').onclick = function(){
             if(this.className.indexOf('completed') > -1 ){
-                alert('抽奖已完毕');
+                alert('Lottery End');
                 return;
             }
             rt.initSpeed();
