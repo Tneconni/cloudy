@@ -16,9 +16,10 @@ class LotteryController extends Controller{
         $luckyDogs = $lotteryCustomer->getLuckyDogs();
         $lotteryType = array(
             '抽奖完毕',
+            'Special Prize',
             'First Prize',
-            'Second Prize',
-            'Third Prize'
+            'First Prize',
+            'First Prize'
         );
         $luckyDogsCount = count( $luckyDogs );
         $this->render('index',array(
@@ -30,13 +31,14 @@ class LotteryController extends Controller{
     }
 
     public function actionGetLuckyDog(){
+
         $res = array(
-            `status`=>false,
+            'status'=>false,
             'no'=>'',
             'prize'=>'2'
         );
         $num = 0;
-        $res['prize'] = $_GET['prize'];
+        $res['prize'] = $_POST['prize'];
         $lotteryCustomer = new LotteryCustomer();
         $num = $lotteryCustomer->getNonwinnersCount();
 

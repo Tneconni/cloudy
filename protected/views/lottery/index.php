@@ -9,17 +9,17 @@
         <?php
         $i = 0;
         foreach($members as $member){
-//        $i ++;
-//        if( $i > 15){
-//            break;
-//        }
+        $i ++;
+        if( $i > 15){
+            break;
+        }
             ?>
             <img id="photo-<?php echo $member['lottery_customer_id'];?>"
                  name='<?php echo $member['name'];?>'
                  src="/assets/img/lottery/<?php echo $member['img_url']; ?>">
         <?php } ?>
 
-        <input type='hidden' id='lottery-level' value="<?php echo 3 - $luckyDogsCount; ?>" />
+        <input type='hidden' id='lottery-level' value="<?php echo 4 - $luckyDogsCount; ?>" />
     </div>
     <div class='lucky-dog-list'>
 
@@ -27,15 +27,22 @@
             <div class='lucky-dog'>
                 <img src="/assets/img/lottery/<?php echo $luckyDog['img_url']?>" width="160px"/>
                 <p><?php echo $luckyDog['name'];?></p>
-                <h3><?php echo $luckyDog['lottery_level'];?>Prize</h3>
+                <h3>
+                    <?php if( $luckyDog['lottery_level'] > 1){
+                        echo 'First ';
+                    }else{
+                        echo 'Special ';
+                    }
+                    ;?>Prize
+                </h3>
             </div>
         <?php } ?>
     </div>
     <div>
         <div class='lottery-btn'>
-            <?php if( $luckyDogsCount < 3){ ?>
+            <?php if( $luckyDogsCount < 4){ ?>
                 <button id='lottery-start'
-                        class="prize-<?php echo 3 - $luckyDogsCount;?>"><?php echo $lotteryType[3 - $luckyDogsCount]?>
+                        class="prize-<?php echo 4 - $luckyDogsCount;?>"><?php echo $lotteryType[4 - $luckyDogsCount]?>
                 </button>
             <?php }else{ ?>
                 <button id='lottery-start' class='completed'><?php echo $lotteryType[3 - $luckyDogsCount]?></button>
@@ -64,6 +71,8 @@
         var speed = dv * ah; //旋转速度
 
         var dv = 0; //即时旋转速度
+        var miniSpeed = 0.0026; //转动的最小速度， 降到这个速度的时候开始由从后台得到的数据来 停止
+        var luckyDogId = 0;  // 每次中奖时的id, 每次抽奖都要充值
         var pi=3.1415926575;
         var d=pi/2;
         var pd=Math.asin(w/2/r);
@@ -92,6 +101,7 @@
             imgArr.push(arrimg[n]);
         }
         this.roundMove=function(){
+            var stopTurning = false;
             for (n=0;n<=pn-1;n++){
                 var o=imgArr[n];
                 var ta=Math.sin(d+ed*n),strFilter;
@@ -112,15 +122,23 @@
 
             dv = dv - friction;
 
-            if( dv < 0){
+            if( dv < miniSpeed && friction > 0 ){
+                dv = miniSpeed;
+                if( luckyDogId > 0 ){
+                    this.stopLuckyDogPosition(  );
+                }
+            }
+
+
+            /*if( dv < 0){
                 dv = 0;
                 if( moveStop ){
                     moveStop = false;
                     var luckyDog = this.findLuckyDog();
                     setLottery( luckyDog );
                 }
-
             }
+             */
             d = d + dv;
 
         };
@@ -137,15 +155,18 @@
 
             dv = speed;
             friction = 0;
-
+            luckyDogId = 0;
         };
+
         this.findLuckyDog = function(){
+
             var photos = o.getElementsByTagName('IMG');
             var l = photos.length;
             var luckyDog = {
                 id : '',
                 distance : 10000
             };
+
             for( var i = 0; i < l; i ++){
                 var left = parseFloat( photos[i].style.left );
                 var dis = x - left - 60;
@@ -162,6 +183,49 @@
             //todo : ajax 发送到后台
             return luckyDog;
         };
+        this.getLuckyDogFromBack = function(){
+
+            var url = "index.php?r=lottery/getLuckyDog";
+            var lotteryLevelInp = document.getElementById('lottery-level');
+            var lotteryLevel = parseInt( lotteryLevelInp.value );
+
+            data = {
+              prize : lotteryLevel
+            };
+
+            $.post(url, data, function(d){
+                if( d.status ){
+                    luckyDogId = d.no;
+                    luckyDogId = 13;
+                }else{
+                    alert('web exception.');
+                }
+            },'json');
+
+        };
+        this.stopLuckyDogPosition = function( ){
+
+//            console.log( luckyDogId );
+
+            var luckyDogImg = $( '#photo-'  + luckyDogId )[0];
+
+            console.log( luckyDogImg );
+            var left = parseFloat( luckyDogImg.style.left );
+            var dis = x - left - 60;
+            var luckyDog = { };
+            luckyDog.id = luckyDogId;
+
+            luckyDog.name = $(luckyDogImg).attr('name');
+            dis = Math.abs( dis );
+            if( dis < 5 && luckyDogImg.style.zIndex > 0){
+                dv = 0;
+                luckyDogId = 0;
+                friction = 0;
+                setLottery( luckyDog );
+            }
+
+        };
+
     }
 </script>
 <script>
@@ -181,13 +245,14 @@
     }
 
     function setLockDogPosition( data ){
+        var lotteryLevel = data.lottery_level <= 1 ? 'Special' : 'First';
         var html = "<div class='lucky-dog'>" +
             "<img src='" +
             data.img_url + "' width='160px' />" +
             "<p>" +
             data.name +
             "</p>" +
-            "<h3>" + data.lottery_level + "Prize</h3>"+
+            "<h3>" + lotteryLevel + " Prize</h3>"+
             "</div>";
 
         $('.lucky-dog-list').append( html );
@@ -195,6 +260,8 @@
         var imgContainer = document.getElementById('imgContainer');
         var luckDogImg = document.getElementById('photo-' + data.lottery_customer_id);
         imgContainer.removeChild( luckDogImg );
+
+
     }
 
     function setLottery( luckyDog ){
@@ -209,8 +276,24 @@
                 name : luckyDog.name,
                 lottery_level : lotteryLevel
         };
+        data.img_url = document.getElementById('photo-' + data.lottery_customer_id).src;
+        showLuckyDog( data );
 
-        $.post(url, data, function( d ){
+        if(lotteryLevel < 1){
+            alert('Invaild operation');
+            return;
+        }else{
+            lotteryLevel = lotteryLevel - 1;
+            lotteryLevelInp.value = lotteryLevel;
+            if(lotteryLevel < 1){
+                document.getElementById('lottery-start').innerHTML = 'End';
+                document.getElementById('lottery-start').className = 'completed';
+            }else{
+                var lotteryLevel = lotteryLevel <= 1 ? 'Special' : 'First';
+                document.getElementById('lottery-start').innerHTML = lotteryLevel + ' Prize';
+            }
+        }
+/*        $.post(url, data, function( d ){
             if( d ){
 
                 if(lotteryLevel < 1){
@@ -232,7 +315,7 @@
                 alert( 'Lottery End' );
 
             }
-        },'json');
+        },'json');*/
     }
     (function(){
         var turning = 0;
@@ -250,6 +333,7 @@
         };
         document.getElementById('lottery-stop').onclick = function(){
             rt.stopRound();
+            rt.getLuckyDogFromBack();
         };
 
         document.getElementById('init-lottery').onclick = function(){

@@ -1909,3 +1909,36 @@ Stack trace:
 REQUEST_URI=/index.php?r=lottery/initLottery
 HTTP_REFERER=http://cloud.blog:8080/?r=lottery
 ---
+2013/12/27 04:21:38 [error] [php] Undefined index: prize (D:\Git\cloudy\protected\controllers\LotteryController.php:40)
+Stack trace:
+#0 D:\Git\cloudy\yii\framework\web\CController.php(286): LotteryController->runAction()
+#1 D:\Git\cloudy\yii\framework\web\CController.php(265): LotteryController->runActionWithFilters()
+#2 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): LotteryController->run()
+#3 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Git\cloudy\index.php(27): CWebApplication->run()
+REQUEST_URI=/index.php?r=lottery/getLuckyDog
+in D:\Git\cloudy\protected\controllers\LotteryController.php (40)
+in D:\Git\cloudy\index.php (27)
+2013/12/27 04:23:37 [error] [php] Undefined index: prize (D:\Git\cloudy\protected\controllers\LotteryController.php:40)
+Stack trace:
+#0 D:\Git\cloudy\yii\framework\web\CController.php(286): LotteryController->runAction()
+#1 D:\Git\cloudy\yii\framework\web\CController.php(265): LotteryController->runActionWithFilters()
+#2 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): LotteryController->run()
+#3 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Git\cloudy\index.php(27): CWebApplication->run()
+REQUEST_URI=/index.php?r=lottery/getLuckyDog
+in D:\Git\cloudy\protected\controllers\LotteryController.php (40)
+in D:\Git\cloudy\index.php (27)
+2013/12/27 04:25:37 [error] [php] Undefined index: prize (D:\Git\cloudy\protected\controllers\LotteryController.php:40)
+Stack trace:
+#0 D:\Git\cloudy\yii\framework\web\CController.php(286): LotteryController->runAction()
+#1 D:\Git\cloudy\yii\framework\web\CController.php(265): LotteryController->runActionWithFilters()
+#2 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): LotteryController->run()
+#3 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\Git\cloudy\index.php(27): CWebApplication->run()
+REQUEST_URI=/index.php?r=lottery/getLuckyDog
+in D:\Git\cloudy\protected\controllers\LotteryController.php (40)
+in D:\Git\cloudy\index.php (27)

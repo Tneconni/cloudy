@@ -150,7 +150,7 @@ VALUES";
     }
 
     public function getLuckyDogs(){
-        $sql = "SELECT * FROM " . DB_PRE . "lottery_customer  WHERE lottery_level != '0' ORDER BY `lottery_level` DESC";
+        $sql = "SELECT * FROM " . DB_PRE . "lottery_customer  WHERE lottery_level > '0' ORDER BY `lottery_level` DESC";
         $sqlCmd = Yii::app()->db->createCommand( $sql );
         $luckyDogs = $sqlCmd->queryAll();
         return $luckyDogs;
@@ -179,7 +179,7 @@ WHERE lottery_customer_id='" . $param['lottery_customer_id'] . "'";
 
     public function initLottery(){
 
-        $sql = "UPDATE " . DB_PRE . "lottery_customer SET lottery_level='0'";
+        $sql = "UPDATE " . DB_PRE . "lottery_customer SET lottery_level='0' WHERE lottery_level>0";
         $sqlCmd = Yii::app()->db->createCommand( $sql );
         $success = $sqlCmd->execute();
         return $success;
