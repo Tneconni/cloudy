@@ -20,7 +20,7 @@
                     </div>
                 </li>
                 <li>
-                    作品链接：<input type='text' name='link' value="<?php echo $project->link; ?> " />
+                    作品链接 : <input type='text' name='link' value="<?php echo $project->link; ?> " />
                 </li>
                 <li>
                     <span id='add-desc'>描述：</span>
