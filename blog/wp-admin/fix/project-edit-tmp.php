@@ -44,6 +44,7 @@
 ) ); ?>
 
 </div>
+<div id="post-image-frm" style='display:none'></div>
 <script>
     document.getElementById('add-post-image').onmouseup = function(){
 
