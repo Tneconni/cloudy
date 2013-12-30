@@ -1,0 +1,12 @@
+
+-- 2013-12-30 21:10 js 小玩具表 --
+CREATE TABLE `cld_apps` (
+  `app_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(64) NOT NULL DEFAULT 'none',
+  `description` TEXT NOT NULL,
+  `image_url` VARCHAR(255) NOT NULL,
+  `link` VARCHAR(255) NOT NULL COMMENT 'app 地址链接',
+  `work_date` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `update` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`app_id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='js玩具表';
