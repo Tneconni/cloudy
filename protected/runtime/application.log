@@ -1349,3 +1349,14 @@ Stack trace:
 REQUEST_URI=/index.php?r=project/project&id=13
 HTTP_REFERER=http://cloud.blog:8080/
 ---
+2013/12/30 12:33:28 [error] [php] Undefined variable: projects (D:\git\cloudy\protected\controllers\SiteController.php:40)
+Stack trace:
+#0 D:\git\cloudy\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\git\cloudy\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\git\cloudy\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\git\cloudy\index.php(27): CWebApplication->run()
+REQUEST_URI=/
+in D:\git\cloudy\protected\controllers\SiteController.php (40)
+in D:\git\cloudy\index.php (27)
