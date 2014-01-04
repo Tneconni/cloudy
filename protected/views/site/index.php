@@ -58,24 +58,18 @@
 
         <!-- 前端js作品展示 -->
         <ul class='img-queue inline-list' >
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I like this car~</p>
-            </li>
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I like this car ...</p>
-            </li>
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I really like this car..</p>
-            </li>
+            <?php if(!empty($apps)){ ?>
+            <?php foreach($apps as $app){ ?>
+                    <li>
+                        <a href="<?php echo $app['link']; ?>">
+                            <img src="/blog/wp-content/uploads/<?php echo $app['image_url'];?>"
+                                 width="160" height="120" >
+                        </a>
+                        <p><?php echo $app['description']; ?></p>
+                    </li>
+            <?php }?>
+            <?php }?>
+
         </ul>
         <div class='clear'></div>
     </div>
