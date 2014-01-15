@@ -10,7 +10,7 @@
         $i = 0;
         foreach($members as $member){
         $i ++;
-        if( $i > 15){
+        if( $i > 10){
             break;
         }
             ?>
