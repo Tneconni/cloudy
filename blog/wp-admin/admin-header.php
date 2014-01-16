@@ -93,6 +93,8 @@ $admin_body_class .= ' no-customize-support';
 ?>
 <!-- 添加jquery -->
 <script src='/js/jQuery/jQuery.1.10.2.js'></script>
+<script src='/js/clown.js'></script>
+
 </head>
 <body class="wp-admin wp-core-ui no-js <?php echo apply_filters( 'admin_body_class', '' ) . " $admin_body_class"; ?>">
 <script type="text/javascript">

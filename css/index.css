@@ -113,3 +113,45 @@ ul.img-queue li p {
   color: #333;
   font-size: 12px;
 }
+.lottery-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #CDCDCD;
+  line-height: 2;
+}
+#imgContainer {
+  margin: 10 auto;
+  width: 1200px;
+}
+.lucky-dog-list {
+  width: 600px;
+  height: auto;
+  overflow: hidden;
+  margin: 10px auto;
+}
+.lucky-dog-list .lucky-dog {
+  float: left;
+  margin: 10px;
+  text-align: center;
+}
+.lucky-dog-list .lucky-dog img {
+  width: 160px;
+  height: auto;
+}
+.lucky-dog-list .lucky-dog p {
+  font-size: 14px;
+}
+.lucky-dog-list .lucky-dog h3 {
+  font-size: 16px;
+}
+.lottery-btn {
+  width: 410px;
+  margin: 10px auto;
+}
+.lottery-btn .lottery-start {
+  padding: 10px;
+}
+.lottery-btn .lottery-stop {
+  padding: 10px;
+}
