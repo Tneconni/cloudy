@@ -1256,3 +1256,355 @@ Stack trace:
 REQUEST_URI=/index.php?r=lottery/getLuckyDog
 in D:\git\cloudy\protected\controllers\LotteryController.php (28)
 in D:\git\cloudy\index.php (27)
+2014/01/15 09:55:11 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:45 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:47 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:47 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:47 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:48 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:48 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:48 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:48 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:48 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:55:48 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:56:17 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:56:18 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:56:18 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:56:18 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2014/01/15 09:56:19 [error] [exception.Exception] exception 'Exception' with message 'parse error: unclosed block' in D:\Git\cloudy\protected\components\less\lessc.inc.php:2277
+Stack trace:
+#0 D:\Git\cloudy\protected\components\less\lessc.inc.php(121): lessc_parser->parse('??.header-logo{...')
+#1 D:\Git\cloudy\protected\components\less\lessc.inc.php(753): lessc->tryImport(Array, Object(stdClass), Object(stdClass))
+#2 D:\Git\cloudy\protected\components\less\lessc.inc.php(284): lessc->compileProp(Array, Object(stdClass), Object(stdClass))
+#3 D:\Git\cloudy\protected\components\less\lessc.inc.php(278): lessc->compileProps(Object(stdClass), Object(stdClass))
+#4 D:\Git\cloudy\protected\components\less\lessc.inc.php(193): lessc->compileRoot(Object(stdClass))
+#5 D:\Git\cloudy\protected\components\less\lessc.inc.php(1807): lessc->compileBlock(Object(stdClass))
+#6 D:\Git\cloudy\protected\components\less\lessc.inc.php(1830): lessc->compile('@import "common...', 'D:\Git\cloudy\p...')
+#7 D:\Git\cloudy\protected\components\less\lessc.inc.php(1844): lessc->compileFile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#8 D:\Git\cloudy\protected\components\Controller.php(47): lessc->checkedCompile('D:\Git\cloudy\p...', 'D:\Git\cloudy/c...')
+#9 D:\Git\cloudy\protected\components\Controller.php(34): Controller->compileLess()
+#10 D:\Git\cloudy\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#11 D:\Git\cloudy\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\Git\cloudy\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Git\cloudy\yii\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\Git\cloudy\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\Git\cloudy\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Git\cloudy\index.php(27): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---

@@ -51,6 +51,8 @@ ul.img-queue li {
 ul.img-queue li a img {
   width: 160px;
   height: 120px;
+  border: solid 1px #CDCDCD;
+  border-radius: 5px;
 }
 ul.img-queue li p {
   font-size: 12px;
@@ -113,11 +115,17 @@ ul.img-queue li p {
   color: #333;
   font-size: 12px;
 }
+.lottery-bg {
+  background: url("../assets/img/skin/lottery_bg.jpg") center top repeat-x #D97B01;
+  width: 100%;
+  height: 1200px;
+  margin: 0 auto;
+}
 .lottery-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
-  color: #CDCDCD;
+  color: #fff;
   line-height: 2;
 }
 #imgContainer {
