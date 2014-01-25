@@ -1608,3 +1608,5 @@ Stack trace:
 #17 {main}
 REQUEST_URI=/
 ---
+2014/01/25 13:59:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tneconni.apps' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `apps`.
+in D:\cloud\git\cloudy\index.php (27)

@@ -40,10 +40,14 @@ class SiteController extends Controller
         $Project = new Project();
         $projects = $Project->getProject();
 
+        $Apps = new Apps();
+        $apps = $Apps->getApp();
+
 		$this->render('index',array(
             'menu'  => $res,
             'posts' => $posts,
-            'projects' => $projects
+            'projects' => $projects,
+            'apps'=> $apps
         ));
 	}
 

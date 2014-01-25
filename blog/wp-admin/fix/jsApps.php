@@ -20,27 +20,24 @@ class JsApps{
         global $wpdb;
         $sql = "UPDATE cld_apps SET `name`='" . $data['app_name'] . "',
 description='" . $data['app_description'] . "',
-iamge_url='" . $data['app_image'] . "',
-link='" . $data['link'] . "',
+image_url='" . $data['app_image'] . "',
+link='" . $data['app_link'] . "',
 `update` = '" . Date('Y-m-d H:i:s') . "'
 WHERE app_id='" . $data['app_id'] . "' ";
         $ret = $wpdb->get_results( $sql );
 
         return $ret;
 
-        $this->template = 'edit.php';
-
-        $this->output();
     }
 
-    public function addapp( $data ){
+    public function addApp( $data ){
         global $wpdb;
 
-        $sql = "INSERT INTO cld_app SET
+        $sql = "INSERT INTO cld_apps SET
             `name` = '" . $data['app_name'] . "',
             description = '" . $data['app_description'] . "',
-            iamge_url='" . $data['app_image'] . "',
-            link='" . $data['link'] . "',
+            image_url='" . $data['app_image'] . "',
+            link='" . $data['app_link'] . "',
             work_date = '" . Date('Y-m-d H:i:s') . "',
             `update` = '" . Date('Y-m-d H:i:s') . "'";
 
@@ -68,6 +65,7 @@ WHERE app_id='" . $data['app_id'] . "' ";
             global $wpdb;
 
             $app_id = $_GET['app_id'];
+            $this->data['appId'] = $app_id;
             $sql = "SELECT * FROM cld_apps WHERE app_id='" . $app_id . "'";
             $app = $wpdb->get_results( $sql );
             if( !empty( $app ) ){
@@ -78,7 +76,14 @@ WHERE app_id='" . $data['app_id'] . "' ";
 
         }else{
             //add new app
-
+            $app = new stdClass();
+            $app->name = '';
+            $app->description = '';
+            $app->image_url = '';
+            $app->link = '';
+            $app->work_date = '';
+            $app->update = '';
+            $this->data['app'] = $app;
         }
 
         $this->template = 'edit.php';
@@ -127,7 +132,7 @@ WHERE app_id='" . $data['app_id'] . "' ";
         $appList = $wpdb->get_results( $sql );
 
         foreach( $appList as $k => $v ){
-            $appList[$k]->url = "apps.php?app_id=" . $v->app_id;
+            $appList[$k]->url = "apps-edit.php?app_id=" . $v->app_id;
         }
 
 
