@@ -1,9 +1,10 @@
-<?php
-require_once( './admin.php' );
-require_once('./admin-header.php');
-?>
+
 
 <?php
+require_once( './admin.php' );
+if( empty( $_POST ) ){
+    require_once('./admin-header.php');
+}
 
 require_once('./fix/jsApps.php');
 $jsApp = new JsApps();

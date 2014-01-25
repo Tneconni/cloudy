@@ -53,9 +53,11 @@ WHERE app_id='" . $data['app_id'] . "' ";
             $url = 'apps.php';
             if(isset($_POST['app_id']) && !empty($_POST['app_id'])){
                 $ret = $this->editApp( $_POST );
+                ob_clean();
                 header('location: ' . $url);
             }else{
                 $ret = $this->addApp( $_POST );
+                ob_clean();
                 header('location: ' . $url);
             }
 

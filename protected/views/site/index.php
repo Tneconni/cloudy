@@ -71,24 +71,6 @@
                     <p><?php echo $app['name'];?></p>
                 </li>
             <?php } ?>
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I like this car~</p>
-            </li>
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I like this car ...</p>
-            </li>
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I really like this car..</p>
-            </li>
         </ul>
         <div class='clear'></div>
     </div>
