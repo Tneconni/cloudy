@@ -1,41 +1,36 @@
 <div>
-    <form id="apps" method="post">
+    this is the app edit page
+    <?php if(!empty( $app )){ ?>
+    <ul>
 
-            <ul>
-                <?php if(isset($appId) && !empty($appId) ){ ?>
-                    <input type="hidden" name="app_id" value="<?php echo $appId;?>" />
-                <?php } ?>
-                <li>作品名称：
-                    <input type='text' name='app_name' value="<?php echo $app->name ?>" />
-                </li>
-                <li>
-                    <div id='' >
-                        <span>图片</span>
-                        <span id='add-post-image' class='insert-media' style="cursor:pointer">添加图片</span>
-                        <div id="post-image-frm" >
-                            <?php if(!empty($app->image_url)){ ?>
-                                <img src="/blog/wp-content/uploads/<?php echo $app->image_url; ?>" />
-                            <?php } ?>
-                        </div>
+        <li>作品名称：
+            <input type='text' name='project_name' value="<?php echo $app->name ?>" />
+        </li>
+        <li>
+            <div id='' >
+                <span>图片</span>
+                <span id='add-post-image' class='insert-media' style="cursor:pointer">添加图片</span>
+                <div id="post-image-frm" >
+                    <?php if(!empty($app->iamge_url)){ ?>
+                        <img src="/blog/wp-content/uploads/<?php echo $app->image_url; ?>" />
+                    <?php } ?>
+                </div>
 
-                        <input type='hidden' name='app_image' id='post-image-path' value="<?php echo $app->image_url; ?>" />
-                    </div>
-                </li>
-                <li>
-                    作品链接 : <input type='text' name='app_link' value="<?php echo $app->link; ?> " />
-                </li>
-                <li>
-                    <span id='add-desc'>描述：</span>
-                    <textarea name='app_description' ><?php echo $app->description; ?></textarea>
-                </li>
-                <li>
-                    <button class="btn">提交</button>
-                </li>
-
-            </ul>
-
-    </form>
-
+                <input type='hidden' name='project_image' id='post-image-path' value="<?php echo $app->iamge_url; ?>" />
+            </div>
+        </li>
+        <li>
+            作品链接 : <input type='text' name='link' value="<?php echo $app->link; ?> " />
+        </li>
+        <li>
+            <span id='add-desc'>描述：</span>
+            <textarea name='project_description' ><?php echo $app->description; ?></textarea>
+        </li>
+        <li>
+            <button>提交</button>
+        </li>
+    </ul>
+    <?php }?>
 </div>
 
 
@@ -55,12 +50,5 @@
         $(this).addClass("hanging");
 
     };
-
-
-    // 提交表单
-  /*  $('.btn').click(function(){
-
-
-    });*/
 
 </script>
