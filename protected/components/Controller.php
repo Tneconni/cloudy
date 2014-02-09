@@ -44,7 +44,7 @@ class Controller extends CController
             $lessIndexPath = dirname( dirname(__FILE__) ).'/assets/less/index.less';
             $cssIndexPath = BASE_URL . '/css/index.css';
 
-            $lessc->checkedCompile( $lessIndexPath, $cssIndexPath);
+            $lessc->checkedCompile( $lessIndexPath, $cssIndexPath );
 
     }
 

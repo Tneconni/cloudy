@@ -14,36 +14,25 @@ class JsApps{
 
     }
 
-    public function getList(){
-
-        global $wpdb;
-        $sql = 'SELECT * FROM cld_apps';
-        $apps = $wpdb->get_results( $sql );
-
-        $dir = dirname( __file__ );
-        include( $dir .'/apps-tmp.php');
-
-    }
-
     public function editApp( $data ){
         global $wpdb;
-        $sql = "UPDATE cld_apps SET `name`='" . $data['app_name'] . "',
-description='" . $data['app_description'] . "',
-image_url='" . $data['app_image'] . "',
+        $sql = "UPDATE cld_project SET `name`='" . $data['project_name'] . "',
+description='" . $data['project_description'] . "',
+iamge_url='" . $data['project_image'] . "',
 link='" . $data['link'] . "',
 `update` = '" . Date('Y-m-d H:i:s') . "'
-WHERE app_id='" . $data['app_id'] . "' ";
+WHERE project_id='" . $data['project_id'] . "' ";
         $ret = $wpdb->get_results( $sql );
         return $ret;
     }
 
-    public function addapp( $data ){
+    public function addProject( $data ){
         global $wpdb;
 
-        $sql = "INSERT INTO cld_apps SET
-            `name` = '" . $data['app_name'] . "',
-            description = '" . $data['app_description'] . "',
-            image_url='" . $data['app_image'] . "',
+        $sql = "INSERT INTO cld_project SET
+            `name` = '" . $data['project_name'] . "',
+            description = '" . $data['project_description'] . "',
+            iamge_url='" . $data['project_image'] . "',
             link='" . $data['link'] . "',
             work_date = '" . Date('Y-m-d H:i:s') . "',
             `update` = '" . Date('Y-m-d H:i:s') . "'";
@@ -54,43 +43,40 @@ WHERE app_id='" . $data['app_id'] . "' ";
 
     public function edit(){
 
-        $app = new stdClass();
+        $project = new stdClass();
 
         if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
-            $url = 'app.php';
-            if(isset($_POST['app_id']) && !empty($_POST['app_id'])){
-                $ret = $this->editapp( $_POST );
+            $url = 'project.php';
+            if(isset($_POST['project_id']) && !empty($_POST['project_id'])){
+                $ret = $this->editProject( $_POST );
                 header('location: ' . $url);
             }else{
-                $ret = $this->addapp( $_POST );
+                $ret = $this->addProject( $_POST );
                 header('location: ' . $url);
             }
 
         }
 
-        if( isset($_GET['id']) ){
+        if( isset($_GET['pjt_id']) ){
             global $wpdb;
 
-            $app_id = $_GET['id'];
-            $sql = "SELECT * FROM cld_apps WHERE app_id='" . $app_id . "'";
-            $apps = $wpdb->get_results( $sql );
+            $project_id = $_GET['pjt_id'];
+            $sql = "SELECT * FROM cld_project WHERE project_id='" . $project_id . "'";
+            $projects = $wpdb->get_results( $sql );
 
-            if( !empty($apps) ){
+            if( !empty($projects) ){
 
-                $app = array_shift($apps);
-                $data = array(
-                    'app' => $app
-                );
+                $project = array_shift($projects);
+                print_r($project);
 
-                $tpl = 'jsApps-edit-tmp.php';
-                $this->output( $tpl, $data );
+                $this->output( $project );
 
             }else{
                 echo '项目不存在';
             }
 
         }else{
-            //add new app
+            //add new project
             $tpl = 'jsApps-edit-tmp.php';
             $this->output( $tpl );
 
@@ -100,27 +86,22 @@ WHERE app_id='" . $data['app_id'] . "' ";
 
     public function delete(){
         global $wpdb;
-        $appIdArr = array();
-        $appIds = '';
-        if( isset($_POST['appIds']) ){
-            $appIdArr = explode('|', $_POST['appIds']);
-            $appIds = implode(',',$appIdArr);
+        $projectIdArr = array();
+        $projectIds = '';
+        if( isset($_POST['projectIds']) ){
+            $projectIdArr = explode('|', $_POST['projectIds']);
+            $projectIds = implode(',',$projectIdArr);
         }
 
         global $wpdb;
-        $sql = "DELETE FROM cld_apps WHERE app_id IN (" . $appIds . ")";
+        $sql = "DELETE FROM cld_project WHERE project_id IN (" . $projectIds . ")";
         $ret = $wpdb->query( $sql );
         echo json_encode($ret);
         die();
     }
 
-    private function output( $tpl ,$data = null){
-
-        if( !empty( $data ) ){
-            $key = key( $data );
-            ${$key} = $data[$key];
-        }
-
+    private function output( $tpl ){
+//        include('./project-edit-tmp.php');
         $dir = dirname( __file__ );
         $data = "the parameter is vaild";
         if( file_exists($dir . '/' . $tpl) ){

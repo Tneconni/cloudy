@@ -21,6 +21,7 @@
 
         <input type='hidden' id='lottery-level' value="<?php echo 4 - $luckyDogsCount; ?>" />
     </div>
+    <div id='init-lottery' style=''>init</div>
     <div class='lucky-dog-list'>
 
         <?php foreach($luckyDogs as $luckyDog){ ?>
