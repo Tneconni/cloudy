@@ -6,11 +6,9 @@
  * Time: 下午4:07
  * To change this template use File | Settings | File Templates.
  */
-class MobileTestController extends Controller{
+class swipeJsController extends Controller{
 
     public function actionIndex(){
-
-
 
         $this->render('index',array(
 

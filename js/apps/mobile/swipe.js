@@ -28,7 +28,7 @@
   this.container.style.overflow = 'hidden';
   this.element.style.listStyle = 'none';
   this.element.style.margin = 0;
-
+  this.startMousemove = false;
   // trigger slider initialization
   this.setup();
 
@@ -40,6 +40,10 @@
     this.element.addEventListener('touchstart', this, false);
     this.element.addEventListener('touchmove', this, false);
     this.element.addEventListener('touchend', this, false);
+    this.element.addEventListener('mousedown', this, false);
+    this.element.addEventListener('mousemove', this, false);
+    this.element.addEventListener('mouseup', this, false);
+    this.element.addEventListener('mouseout', this, false);
     this.element.addEventListener('touchcancel', this, false);
     this.element.addEventListener('webkitTransitionEnd', this, false);
     this.element.addEventListener('msTransitionEnd', this, false);
@@ -170,12 +174,17 @@ Swipe.prototype = {
     switch (e.type) {
       case 'touchstart': this.onTouchStart(e); break;
       case 'touchmove': this.onTouchMove(e); break;
+      case 'mousedown': this.onTouchStart(e); break;
+      case 'mousemove': this.onTouchMove(e); break;
       case 'touchcancel' :
       case 'touchend': this.onTouchEnd(e); break;
+      case 'mouseup': this.onTouchEnd(e); break;
+      case 'mouseout': this.onTouchEnd(e); break;
       case 'webkitTransitionEnd':
       case 'msTransitionEnd':
       case 'oTransitionEnd':
       case 'transitionend': this.transitionEnd(e); break;
+
       case 'resize': this.setup(); break;
     }
   },
@@ -189,12 +198,27 @@ Swipe.prototype = {
   },
 
   onTouchStart: function(e) {
-    
+//      console.log(e.type );
+//      var offsetX = canvas.offsetLeft,
+//          offsetY = canvas.offsetTop;
+      var offsetX = 0,
+          offsetY = 0;
+      var pageX = '';
+      var pageY = '';
+      if(e.type.indexOf('mouse') > -1 ) {
+        this.startMousemove = true;
+//          pageX = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0;
+//          pageY = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+          pageX = (e.clientX + document.documentElement.scrollLeft || e.pageX) - offsetX || 0;
+          pageY = (e.clientY + document.documentElement.scrollTop || e.pageY) - offsetY || 0;
+
+      }
+
     this.start = {
 
       // get touch coordinates for delta calculations in onTouchMove
-      pageX: e.touches[0].pageX,
-      pageY: e.touches[0].pageY,
+      pageX: pageX == '' ? e.touches[0].pageX : pageX,
+      pageY: pageY == '' ? e.touches[0].pageY : pageY,
 
       // set initial timestamp of touch sequence
       time: Number( new Date() )
@@ -216,13 +240,29 @@ Swipe.prototype = {
   onTouchMove: function(e) {
 
     // ensure swiping with one touch and not pinching
-    if(e.touches.length > 1 || e.scale && e.scale !== 1) return;
+    if(typeof e.touches != 'undefined' && e.touches.length > 1 || e.scale && e.scale !== 1) return;
 
-    this.deltaX = e.touches[0].pageX - this.start.pageX;
+      var offsetX = 0,
+          offsetY = 0;
+      var currentX = '';
+      var currentY = '';
+      if(e.type == 'mousemove' ) {
+              if( !this.startMousemove ){
+                return ;
+              }
+          currentX = (e.clientX + document.documentElement.scrollLeft || e.pageX) - offsetX || 0;
+          currentY = (e.clientY + document.documentElement.scrollTop || e.pageY) - offsetY || 0;
+
+      }else{
+          currentX = e.touches[0].pageX;
+          currentY = e.touches[0].pageY;
+      }
+
+    this.deltaX = currentX - this.start.pageX;
 
     // determine if scrolling test has run - one time test
     if ( typeof this.isScrolling == 'undefined') {
-      this.isScrolling = !!( this.isScrolling || Math.abs(this.deltaX) < Math.abs(e.touches[0].pageY - this.start.pageY) );
+      this.isScrolling = !!( this.isScrolling || Math.abs(this.deltaX) < Math.abs(currentY - this.start.pageY) );
     }
 
     // if user is not trying to scroll vertically
@@ -246,7 +286,7 @@ Swipe.prototype = {
       
       // translate immediately 1-to-1
       this.element.style.MozTransform = this.element.style.webkitTransform = 'translate3d(' + (this.deltaX - this.index * this.width) + 'px,0,0)';
-      
+
       e.stopPropagation();
     }
 
@@ -254,6 +294,9 @@ Swipe.prototype = {
 
   onTouchEnd: function(e) {
 
+      if(e.type.indexOf('mouse') > -1){
+        this.startMousemove = false;
+      }
     // determine if slide attempt triggers next/prev slide
     var isValidSlide = 
           Number(new Date()) - this.start.time < 250      // if slide duration is less than 250ms

@@ -173,3 +173,7 @@ ul.img-queue li p {
 .lottery-btn .lottery-stop {
   padding: 10px;
 }
+.swipe {
+  max-width: 600px;
+  height: 36px;
+}
