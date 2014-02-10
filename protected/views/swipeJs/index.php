@@ -45,7 +45,10 @@
             }
 
         });*/
-        var slider = new slideMenu(document.getElementById('menu'),{
+
+
+        var slider = new slideMenu(document.getElementById('slideMenu'),{
+            
 
         });
     });
