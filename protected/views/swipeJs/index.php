@@ -1,7 +1,10 @@
 <script src='<?php echo Yii::app()->request->baseUrl; ?>/js/apps/mobile/swipe.js'></script>
+<script src='<?php echo Yii::app()->request->baseUrl; ?>/js/apps/mobile/slideMenu.js'></script>
 <style>
-    .swipe ul{}
-    .swipe ul li{ border-bottom : solid 1px #006687}
+    .swipe{ width:270px; overflow: hidden; height:30px;}
+    .swipe ul{ width:550px;}
+    .swipe ul li{ border-bottom : solid 1px #006687; float:left; border-right:solid 1px #006687; width:90px; }
+
 </style>
 <div>
     this is the mobile test page
@@ -29,7 +32,7 @@
 <script>
 
     $(document).ready(function(){
-        var slider = new Swipe(document.getElementById('menu'),{
+/*        var slider = new Swipe(document.getElementById('menu'),{
             auto:4000,
             callback : function( event, index){
 
@@ -41,6 +44,10 @@
 
             }
 
+        });*/
+        var slider = new slideMenu(document.getElementById('menu'),{
+
         });
     });
+
 </script>
