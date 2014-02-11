@@ -6,6 +6,8 @@
  * */
 class JsApps{
 
+    public $template = '';
+    private $data = array();
     public function __construct(){
 
     }
@@ -16,24 +18,26 @@ class JsApps{
 
     public function editApp( $data ){
         global $wpdb;
-        $sql = "UPDATE cld_project SET `name`='" . $data['project_name'] . "',
-description='" . $data['project_description'] . "',
-iamge_url='" . $data['project_image'] . "',
-link='" . $data['link'] . "',
+        $sql = "UPDATE cld_apps SET `name`='" . $data['app_name'] . "',
+description='" . $data['app_description'] . "',
+image_url='" . $data['app_image'] . "',
+link='" . $data['app_link'] . "',
 `update` = '" . Date('Y-m-d H:i:s') . "'
-WHERE project_id='" . $data['project_id'] . "' ";
+WHERE app_id='" . $data['app_id'] . "' ";
         $ret = $wpdb->get_results( $sql );
+
         return $ret;
+
     }
 
-    public function addProject( $data ){
+    public function addApp( $data ){
         global $wpdb;
 
-        $sql = "INSERT INTO cld_project SET
-            `name` = '" . $data['project_name'] . "',
-            description = '" . $data['project_description'] . "',
-            iamge_url='" . $data['project_image'] . "',
-            link='" . $data['link'] . "',
+        $sql = "INSERT INTO cld_apps SET
+            `name` = '" . $data['app_name'] . "',
+            description = '" . $data['app_description'] . "',
+            image_url='" . $data['app_image'] . "',
+            link='" . $data['app_link'] . "',
             work_date = '" . Date('Y-m-d H:i:s') . "',
             `update` = '" . Date('Y-m-d H:i:s') . "'";
 
@@ -43,49 +47,53 @@ WHERE project_id='" . $data['project_id'] . "' ";
 
     public function edit(){
 
-        $project = new stdClass();
+        $app = new stdClass();
 
         if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
-            $url = 'project.php';
-            if(isset($_POST['project_id']) && !empty($_POST['project_id'])){
-                $ret = $this->editProject( $_POST );
+            $url = 'apps.php';
+            if(isset($_POST['app_id']) && !empty($_POST['app_id'])){
+                $ret = $this->editApp( $_POST );
+                ob_clean();
                 header('location: ' . $url);
             }else{
-                $ret = $this->addProject( $_POST );
+                $ret = $this->addApp( $_POST );
+                ob_clean();
                 header('location: ' . $url);
             }
 
         }
 
-        if( isset($_GET['pjt_id']) ){
+        if( isset($_GET['app_id']) ){
             global $wpdb;
 
-            $project_id = $_GET['pjt_id'];
-            $sql = "SELECT * FROM cld_project WHERE project_id='" . $project_id . "'";
-            $projects = $wpdb->get_results( $sql );
-
-            if( !empty($projects) ){
-
-                $project = array_shift($projects);
-                print_r($project);
-
-                $this->output( $project );
-
+            $app_id = $_GET['app_id'];
+            $this->data['appId'] = $app_id;
+            $sql = "SELECT * FROM cld_apps WHERE app_id='" . $app_id . "'";
+            $app = $wpdb->get_results( $sql );
+            if( !empty( $app ) ){
+                $this->data['app'] = $app[0];
             }else{
-                echo '项目不存在';
+                $this->data['app'] = array();
             }
 
         }else{
-            //add new project
-            $tpl = 'jsApps-edit-tmp.php';
-            $this->output( $tpl );
-
+            //add new app
+            $app = new stdClass();
+            $app->name = '';
+            $app->description = '';
+            $app->image_url = '';
+            $app->link = '';
+            $app->work_date = '';
+            $app->update = '';
+            $this->data['app'] = $app;
         }
+
+        $this->template = 'edit.php';
+        $this->output();
 
     }
 
     public function delete(){
-        global $wpdb;
         $projectIdArr = array();
         $projectIds = '';
         if( isset($_POST['projectIds']) ){
@@ -100,14 +108,43 @@ WHERE project_id='" . $data['project_id'] . "' ";
         die();
     }
 
-    private function output( $tpl ){
-//        include('./project-edit-tmp.php');
-        $dir = dirname( __file__ );
-        $data = "the parameter is vaild";
-        if( file_exists($dir . '/' . $tpl) ){
-            include($dir . '/' . $tpl);
+    private function output(){
+
+        $dir = dirname(dirname( __file__ ));
+        $tplDir = $dir . '/fix-template/apps';
+        $tpl = $this->template;
+
+        foreach($this->data as $key=>$value ){
+
+            ${$key} = $value;
+
+        }
+
+        if( file_exists($tplDir . '/' . $tpl) ){
+            include($tplDir . '/' . $tpl);
         }else{
             echo 'not existed';
         }
     }
+
+
+    public function getList(){
+        global $wpdb;
+        $sql = "SELECT * FROM cld_apps";
+        $appList = $wpdb->get_results( $sql );
+
+        foreach( $appList as $k => $v ){
+            $appList[$k]->url = "apps-edit.php?app_id=" . $v->app_id;
+        }
+
+
+
+        $this->data['appList'] = $appList;
+        $this->template = "list.php";
+        $this->output();
+
+
+    }
+
+
 }
