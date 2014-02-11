@@ -1,6 +1,6 @@
 <div>
 
-    this is the app list
+    this is the app list <a href='apps-edit.php'>add new app</a>
     <ul>
         <?php foreach( $appList as $app ){ ?>
         <li>
