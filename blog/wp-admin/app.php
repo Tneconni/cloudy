@@ -8,12 +8,16 @@
  */
 require_once( './admin.php' );
 require_once('./admin-header.php');
+require_once('./fix/jsApps.php');
 ?>
 
 <?php
-require_once('./fix/jsApps.php');
 $jsApp = new JsApps();
-$jsApp->edit();
+if( isset($_POST['appIds']) && !empty($_POST['appIds']) ){
+    $jsApp->delete();
+}
+
+$jsApp->getList();
 
 ?>
 <?php

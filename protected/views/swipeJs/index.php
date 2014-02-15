@@ -7,7 +7,7 @@
 
 </style>
 <div>
-    this is the mobile test page
+    一个在移动端下的触摸滑动菜单， 支持pc端的鼠标拖拽
 </div>
 <div id="menu" class='swipe'>
     <ul >
@@ -31,24 +31,19 @@
 
 <script>
 
+    function initMenu(){
+        $('#menu li').click(function(){
+            var index = $(this).index();
+            console.log( "index : ");
+            console.log( index );
+            $('.menuContent div').css({ display : 'none'});
+            $('.menuContent div').slice(index, index + 1 ).css({ display: ''});
+        });
+    }
+
     $(document).ready(function(){
-/*        var slider = new Swipe(document.getElementById('menu'),{
-            auto:4000,
-            callback : function( event, index){
-
-                prev = (index + 5 ) % 6;
-                var menuContent = $('.menuContent')[0];
-
-                $(menuContent.children[prev]).fadeOut();
-                $(menuContent.children[index]).fadeIn();
-
-            }
-
-        });*/
-
-
-        var slider = new slideMenu(document.getElementById('slideMenu'),{
-            
+        initMenu();
+        var slider = new slideMenu(document.getElementById('menu'),{
 
         });
     });

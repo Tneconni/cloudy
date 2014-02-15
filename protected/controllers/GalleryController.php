@@ -1,4 +1,11 @@
 <?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: Administrator
+ * Date: 13-9-30
+ * Time: 下午9:55
+ * To change this template use File | Settings | File Templates.
+ */
 
 class GalleryController extends Controller{
 

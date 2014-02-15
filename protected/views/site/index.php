@@ -1,7 +1,8 @@
 <div class='row'>
     <div class='large-8 columns'>
         <!-- 博客列表 -->
-        <ol class='blog-list btm-line'>
+        <h3 class="item-title btm-line">博客列表</h3>
+        <ol class='blog-list '>
             <?php if( !empty($posts) ){ ?>
             <?php foreach( $posts as $k=>$post ){ ?>
             <li <?php if($k == 0){ ?> class='first' <?php } ?> >
@@ -28,7 +29,9 @@
         </dl>
         <div class='clear'></div>
         <!-- 项目展示 -->
-        <ul class='img-queue inline-list btm-line' >
+
+        <h3 class="item-title btm-line">项目展示</h3>
+        <ul class='img-queue inline-list ' >
 
             <?php if(!empty($projects)){ ?>
             <?php foreach($projects as $p){ ?>
@@ -57,25 +60,17 @@
         <div class='clear'></div>
 
         <!-- 前端js作品展示 -->
-        <ul class='img-queue inline-list' >
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I like this car~</p>
-            </li>
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I like this car ...</p>
-            </li>
-            <li>
-                <a href='#'>
-                    <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/656/overrides/best-aurora-march-february-2013-uttakleiv_65671_160x120.jpg" width="160" height="120" >
-                </a>
-                <p>I really like this car..</p>
-            </li>
+
+        <h3 class="item-title btm-line">前段js玩具</h3>
+        <ul class='img-queue inline-list ' >
+            <?php foreach( $apps as $app){ ?>
+                <li>
+                    <a href='<?php echo $app['link']; ?>'>
+                        <img src="/blog/wp-content/uploads/<?php echo $app['image_url']; ?>" width="160" height="120" >
+                    </a>
+                    <p><?php echo $app['name'];?></p>
+                </li>
+            <?php } ?>
         </ul>
         <div class='clear'></div>
     </div>

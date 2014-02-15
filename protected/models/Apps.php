@@ -109,16 +109,10 @@ class Apps extends CActiveRecord
 		return parent::model($className);
 	}
 
-<<<<<<< HEAD
-    /***************************** 自定义 方法 ****************************************/
-
-    public function getApps(){
-=======
     /////////////////////Own defined project /////////////////////////////////
 
 
     public function getApp(){
->>>>>>> origin/blog
 
         $sql = "SELECT * FROM " . DB_PRE . "apps ORDER BY work_date DESC  LIMIT 0,10";
         $sqlCmd = Yii::app()->db->createCommand( $sql );
@@ -126,8 +120,5 @@ class Apps extends CActiveRecord
         return $query;
 
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/blog
 }
