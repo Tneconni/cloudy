@@ -1083,10 +1083,13 @@ font-size : 140%;
     background-color: #fff;
     box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
+.search-field input{
+    width:100%;
+}
 /*------@media setting-----------------------*/
 @media all and (max-width:765px) and (min-width:200px) {
     .page{
-        width:100%;
+        width:inherit;
     }
 .withsidebar .primary, .primary {
 width : 96%;
@@ -1111,7 +1114,7 @@ width : 40.55%;
 }
 @media all and (max-width:575px) and (min-width:200px) {
     .page{
-        width:100%;
+        width:inherit;
     }
 .site-title-container, .site-wizard-container, .login-panel {
 margin : auto;
@@ -1127,7 +1130,7 @@ width : 100%;
 }
 @media all and (max-width:458px) and (min-width:200px) {
     .page{
-        width:100%;
+        width:inherit;
     }
 .half-width {
 width : 90%;
@@ -1297,7 +1300,7 @@ color : #FFAC90;
 /*------@media setting-----------------------*/
 @media all and (max-width:435px) and (min-width:200px) {
     .page{
-        width:100%;
+        width:inherit;
     }
 
 .download-info {
