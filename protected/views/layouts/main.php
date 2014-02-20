@@ -50,7 +50,7 @@
         </div>
 
         <div class='clear'></div>
-        <dl class="sub-nav" style='display: none'>
+        <dl class="sub-nav" style=''>
             <?php foreach($this->menu as $key => $v){ ?>
                 <dd class="">
                     <a href="<?php echo $v->href; ?>">
