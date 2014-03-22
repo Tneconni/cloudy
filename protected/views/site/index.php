@@ -1,4 +1,4 @@
-<div class='row'>
+<div class='row' ng-app>
     <div class='large-8 columns'>
         <!-- 博客列表 -->
         <h3 class="item-title btm-line">博客列表</h3>
@@ -62,15 +62,13 @@
         <!-- 前端js作品展示 -->
 
         <h3 class="item-title btm-line">前段js玩具</h3>
-        <ul class='img-queue inline-list ' >
-            <?php foreach( $apps as $app){ ?>
-                <li>
-                    <a href='<?php echo $app['link']; ?>'>
-                        <img src="/blog/wp-content/uploads/<?php echo $app['image_url']; ?>" width="160" height="120" >
-                    </a>
-                    <p><?php echo $app['name'];?></p>
-                </li>
-            <?php } ?>
+        <ul class='img-queue inline-list ' ng-controller="jsTool" >
+            <li class="test" ng-repeat="tool in tools">
+                <a href='{{tool.link}}'>
+                    <img src="/blog/wp-content/uploads/{{ tool.image_url }}" width="160" height="120" >
+                </a>
+                <p>{{tool.name}}</p>
+            </li>
         </ul>
         <div class='clear'></div>
     </div>
@@ -112,3 +110,24 @@
         </div>
     </div>
 </div>
+<script>
+
+function jsTool( $scope ){
+
+    $scope.tools = <?php echo json_encode($apps);?>;
+    /*
+    $scope.tools = [
+
+{"name": "Nexus S",
+            "snippet": "Fast just got faster with Nexus S."},
+        {"name": "Motorola XOOM™ with Wi-Fi",
+            "snippet": "The Next, Next Generation tablet."},
+        {"name": "MOTOROLA XOOM™",
+            "snippet": "The Next, Next Generation tablet."}
+
+    ];
+    */
+
+}
+
+</script>
