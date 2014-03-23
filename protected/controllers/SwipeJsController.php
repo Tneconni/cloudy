@@ -10,10 +10,8 @@ class swipeJsController extends Controller{
 
     public function actionIndex(){
 
-        $models = new CActiveDataProvider( 'Apps' );
-
         $this->render('index',array(
-            'model'=> $models
+
         ));
     }
 }

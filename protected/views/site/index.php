@@ -2,23 +2,24 @@
     <div class='large-8 columns'>
         <!-- 博客列表 -->
         <h3 class="item-title btm-line">博客列表</h3>
-        <ol class='blog-list '>
-            <?php if( !empty($posts) ){ ?>
-            <?php foreach( $posts as $k=>$post ){ ?>
-            <li <?php if($k == 0){ ?> class='first' <?php } ?> >
-            <?php if($k == 0 && isset($post['image_url'])){ ?>
-                    <a href="/blog/index.php?p=<?php echo $post['ID']; ?>">
-                        <img src="<?php echo UPLOAD_FILE . $post['image_url']; ?>" />
+        <ol class='blog-list' ng-controller="blogList">
+            <li class='first'  ng-repeat="post in posts">
+                <div class="{{post.imgModule}}">
+
+                    <a href="/blog/index.php?p={{post.id}}">
+                        <img src="{{post.image_url}}" />
                     </a>
-                    <h4><?php echo $post['post_title']; ?></h4>
-                    <p><?php echo date('M d Y',strtotime($post['post_modified']));?></p>
+                    <h4>{{post.post_title}}</h4>
+                    <p>{{post.post_modified}}</p>
                     <div class='clear'></div>
-            <?php }else{ ?>
-                    <a href="/blog/index.php?p=<?php echo $post['ID']; ?>"><?php echo $post['post_title']; ?></a>
-            <?php }?>
+                </div>
+                <div class="{{post.textModule}}">
+
+                    <a href="/blog/index.php?p={{post.ID}} ">{{post.post_title}}</a>
+                </div>
+
             </li>
-            <?php } ?>
-            <?php } ?>
+
         </ol>
         <dl class="sub-nav" style='display:none'>
             <dt>Filter:</dt>
@@ -114,20 +115,34 @@
 
 function jsTool( $scope ){
 
-    $scope.tools = <?php echo json_encode($apps);?>;
-    /*
-    $scope.tools = [
-
-{"name": "Nexus S",
-            "snippet": "Fast just got faster with Nexus S."},
-        {"name": "Motorola XOOM™ with Wi-Fi",
-            "snippet": "The Next, Next Generation tablet."},
-        {"name": "MOTOROLA XOOM™",
-            "snippet": "The Next, Next Generation tablet."}
-
-    ];
-    */
+    $scope.tools = <?php echo json_encode( $apps );?>;
 
 }
 
+function blogList( $scope ){
+
+    $scope.posts = <?php echo json_encode($posts);?>;
+    console.log( $scope.posts );
+    var l = $scope.posts.length;
+
+//    for( i = 0; i < l; i ++ ){
+    var i = 0;
+    angular.forEach( $scope.posts, function(){
+
+        if( i == 0 ){
+
+            $scope.posts[i].imgModule = '';
+            $scope.posts[i].textModule = 'hide';
+
+        }else{
+
+            $scope.posts[i].imgModule = 'hide';
+            $scope.posts[i].textModule = '';
+
+        }
+        i ++;
+    } );
+
+//    }
+}
 </script>

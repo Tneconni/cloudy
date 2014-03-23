@@ -48,5 +48,16 @@ class Controller extends CController
 
     }
 
+    public function refactorBlogList( &$posts ){
+
+        foreach( $posts as &$post ){
+
+            $post['ID'] = "/blog/index.php?p=" . $post['ID'];
+            $post['image_url'] = UPLOAD_FILE . $post['image_url'];
+            $post['post_modified'] = date('M d Y',strtotime($post['post_modified']));
+
+        }
+
+    }
 
 }
