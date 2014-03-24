@@ -60,4 +60,24 @@ class Controller extends CController
 
     }
 
+    /**
+     *
+     *
+     */
+    public function refactorProjects( $projects ){
+
+        $sql = "";
+        foreach( $projects as $project ){
+
+            if( empty($project['link']) ){
+                $project['link'] = "index.php?r=project/project&id=" . $project['project_id'];
+            }
+
+            $project['iamge_url'] = "/blog/wp-content/uploads/" . $project['iamge_url'];
+
+
+        }
+
+    }
+
 }

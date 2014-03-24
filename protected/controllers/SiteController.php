@@ -35,10 +35,10 @@ class SiteController extends Controller
         $wpPost = new WpPosts();
         $posts = $wpPost->getPosts();
         $this->refactorBlogList( $posts );
-//        print_r( $posts );
 
         $Project = new Project();
         $projects = $Project->getProject();
+        $this->refactorProjects( $projects );
 
         $Apps = new Apps();
         $apps = $Apps->getApp();

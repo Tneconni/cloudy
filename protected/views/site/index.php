@@ -32,31 +32,18 @@
         <!-- 项目展示 -->
 
         <h3 class="item-title btm-line">项目展示</h3>
-        <ul class='img-queue inline-list ' >
-
-            <?php if(!empty($projects)){ ?>
-            <?php foreach($projects as $p){ ?>
-            <li>
+        <ul class='img-queue inline-list ' ng-controller="projectList">
+            <li ng-repeat="p in projects" >
 
                 <a
-                <?php if(!empty($p['link'])){ ?>
-                    href="<?php echo $p['link'];?>"
-                <?php }else{ ?>
-                    href="index.php?r=project/project&id=<?php echo $p['project_id']; ?>"
-                <?php }?>
->
-                    <img src="/blog/wp-content/uploads/<?php echo $p['iamge_url']; ?>" width="160" height="120" />
+                    href="{{p.link}}"
+                    >
+                    <img src="{{p.iamge_url}}" width="160" height="120" />
                 </a>
-                <p><a
-                        <?php if(!empty($p['link'])){ ?>
-                        href="<?php echo $p['link'];?>"
-                    <?php }else{ ?>
-                        href="index.php?r=project/project&id=<?php echo $p['project_id']; ?>"
-                    <?php }?>
-                        ><?php echo $p['name']; ?></a></p>
+                <p>
+                    <a href="{{p.link}}" >　{{p.name}} </a>
+                </p>
             </li>
-            <?php }?>
-            <?php }?>
         </ul>
         <div class='clear'></div>
 
@@ -125,7 +112,6 @@ function blogList( $scope ){
     console.log( $scope.posts );
     var l = $scope.posts.length;
 
-//    for( i = 0; i < l; i ++ ){
     var i = 0;
     angular.forEach( $scope.posts, function(){
 
@@ -143,6 +129,11 @@ function blogList( $scope ){
         i ++;
     } );
 
-//    }
+}
+
+function projectList( $scope ){
+
+    $scope.projects = <?php echo json_encode( $projects );?>;
+
 }
 </script>
