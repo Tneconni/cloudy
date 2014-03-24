@@ -38,7 +38,7 @@
                 <a
                     href="{{p.link}}"
                     >
-                    <img src="{{p.iamge_url}}" width="160" height="120" />
+                    <img src="{{p.image_url}}" width="160" height="120" />
                 </a>
                 <p>
                     <a href="{{p.link}}" >　{{p.name}} </a>
@@ -109,8 +109,7 @@ function jsTool( $scope ){
 function blogList( $scope ){
 
     $scope.posts = <?php echo json_encode($posts);?>;
-    console.log( $scope.posts );
-    var l = $scope.posts.length;
+
 
     var i = 0;
     angular.forEach( $scope.posts, function(){
