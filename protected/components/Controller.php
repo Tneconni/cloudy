@@ -66,6 +66,7 @@ class Controller extends CController
      */
     public function refactorProjects( &$projects ){
 
+
         foreach( $projects as &$project ){
 
             if( empty($project['link']) ){

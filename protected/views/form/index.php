@@ -4,15 +4,31 @@
     <div> guaiguai </div>
 
     <div ng-controller="catchFood">
+        <div>
+            <input type="text" ng-keyup="getFood()" name="food[]" ng-model="foodA" value="" />
+            <input type="text" name="food[]" ng-model="foodB" value="" />
+            <input type="text" name="food[]" ng-model="foodC" value="" />
+        </div>
 
-        <input type="text" ng-keyup="getFood" name="food[]" ng-model="foodA" value="" />
-        <input type="text" name="food[]" ng-model="foodB" value="" />
-        <input type="text" name="food[]" ng-model="foodC" value="" />
         <div>
             你现在得到的食物是 {{ allFood }}
         </div>
     </div>
 
+    <div class="blank20"></div>
+    <div ng-controller="growUp">
+
+        <div>
+            <button ng-click="levelUp()">
+                level up
+            </button>
+            <button ng-click="levelDown()">
+                level down
+            </button>
+            <span>生存等级： </span>
+            <span> {{level}} </span>
+        </div>
+    </div>
 </div>
 
 
@@ -24,22 +40,28 @@
         $scope.foodC = 'noodle';
         $scope.allFood = $scope.foodA + $scope.foodB + $scope.foodC;
 
-        $scope.getFood = function(){ console.log(123);
-            $scope.allFood = $scope.foodA + $scope.foodB + $scope.foodC;
-        };
-
-        /*this.getAllFood = function(){
+        $scope.getFood = function(){
 
             $scope.allFood = $scope.foodA + $scope.foodB + $scope.foodC;
 
         };
-        var t = this;
-        var timer = setInterval(function() {
 
-            $scope.$apply( t.getAllFood() );
+    }
 
-        }, 200);*/
+    function growUp( $scope ){
 
+        $scope.level = '0';
+        $scope.levelUp = function(){
+            $scope.level ++;
+        };
+        $scope.levelDown = function(){
+            if( $scope.level > 1 ){
+                $scope.level --;
+            }else{
+                $scope.level  = 0;
+            }
+
+        };
     }
 
 </script>
