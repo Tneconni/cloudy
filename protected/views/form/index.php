@@ -7,6 +7,7 @@
 
     <span> test stash ~ </span>
 
+    <span> test stash again </span>
     <div ng-controller="fishType">
         <h3>Fish Type</h3>
         <div  class="fish-type">
