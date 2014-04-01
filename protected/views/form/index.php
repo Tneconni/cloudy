@@ -2,7 +2,11 @@
 
     <h3>FISHER</h3>
     <span> test git checkout function </span>
+
     <span> commit after stash </span>
+
+    <span> test stash ~ </span>
+
     <div ng-controller="fishType">
         <h3>Fish Type</h3>
         <div  class="fish-type">
