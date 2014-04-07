@@ -1840,7 +1840,10 @@ class lessc {
 
 	// compile only if changed input has changed or output doesn't exist
 	public function checkedCompile($in, $out) {
-		if (!is_file($out) || filemtime($in) > filemtime($out)) {
+
+        $inMTime = filemtime(dirname( $in ));
+
+		if (!is_file($out) || $inMTime > filemtime($out)) {
 			$this->compileFile($in, $out);
 			return true;
 		}

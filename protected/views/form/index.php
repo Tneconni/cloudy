@@ -7,18 +7,19 @@
         <div  class="fish-type">
             <div class="fish-type-single" ng-repeat=" type in fishType ">
                 <span class="type-id" style="display:none">{{type.id}}</span>
-                <span class="type-name">{{type.name}}</span>
+                <input type="text" class="type-name" ng-model="type.name" >
+                <a ng-click="delFishType()">del</a>
             </div>
-        </div>
-        <div>
-            <input type="text" ng-keyup="" value="" />
-            <div>add</div>
+            <a ng-click="addFishType()">Add Fish Type</a>
         </div>
 
+        <h3>选择你自己的鱼</h3>
+        <select ng-model="myFish" ng-options="type.name for type in fishType"></select>
         <div>
-            你现在得到的食物是 {{ allFood }}
+            你最终的决定：{{myFish.name}}
         </div>
     </div>
+
 
     <div ng-controller="catchFood">
         <div>
@@ -61,12 +62,12 @@
         // not get the fish type , because the type has not load at this time
         angular.forEach( fishTypeDom, function( dom, index ){
 
-            console.log('index :' + index );
+//            console.log('index :' + index );
             var typeDom = angular.element( dom );
-            console.log( this );
-            console.log( typeDom );
-            console.log( typeDom.find('span') );
-            console.log( typeDom.find('span').eq(0) );
+//            console.log( this );
+//            console.log( typeDom );
+//            console.log( typeDom.find('span') );
+//            console.log( typeDom.find('span').eq(0) );
             var singleType = {
                 id : typeDom.find('span').eq(0).html(),
                 name : typeDom.find('span').eq(1).html()
@@ -105,7 +106,24 @@
                 name : 'caoyu'
             }
         ];
+        $scope.singleFishType = {
+            id : '',
+            name : ''
+        };
 
+        $scope.addFishType = function(){
+
+            $scope.fishType.push({
+                id: $scope.fishType.length,
+                name : ''
+            });
+
+        };
+        $scope.delFishType = function( index ){
+
+            $scope.fishType.splice( index, 1 );
+
+        };
 
     }
 
@@ -120,15 +138,6 @@
         });
 
     }]);
-
-//    function fish( $scope, $http){
-//
-//        $scope.$on("changeFoodA", function( event, msg ){
-//            console.log( 'changeFoodA', msg);
-//
-//            $scope.$broadcast("sendFoodA", msg);
-//        });
-//    }
 
     function catchFood( $scope ){
         $scope.foodA = 'carrert';

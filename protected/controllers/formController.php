@@ -20,6 +20,15 @@ class FormController extends Controller{
 
     }
 
+    public function actionSelect(){
+
+
+        $this->render('select',array(
+            'gallery' => '',
+            'apps'    => ''
+        ));
+    }
+
 }
 
 ?>
