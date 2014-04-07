@@ -1,7 +1,13 @@
 <div class="row" ng-app="fisher"  ng-controller="fish">
 
     <h3>FISHER</h3>
+    <span> test git checkout function </span>
 
+    <span> commit after stash </span>
+
+    <span> test stash ~ </span>
+
+    <span> test stash again </span>
     <div ng-controller="fishType">
         <h3>Fish Type</h3>
         <div  class="fish-type">
