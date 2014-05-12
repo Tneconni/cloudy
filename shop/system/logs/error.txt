@@ -1,0 +1,4 @@
+2014-05-12 16:01:27 - PHP Notice:  Undefined index: echostr in D:\git\cloudy\shop\system\library\wechat\api.php on line 6
+2014-05-12 16:01:27 - PHP Notice:  Undefined index: signature in D:\git\cloudy\shop\system\library\wechat\api.php on line 17
+2014-05-12 16:01:27 - PHP Notice:  Undefined index: timestamp in D:\git\cloudy\shop\system\library\wechat\api.php on line 18
+2014-05-12 16:01:27 - PHP Notice:  Undefined index: nonce in D:\git\cloudy\shop\system\library\wechat\api.php on line 19
