@@ -2,6 +2,12 @@
 
 class ControllerWechatResponse extends Controller {
 
+    public $fromUsername;
+    public $toUsername;
+    public $keyword;
+    public $time;
+    public $textTpl;
+
     public function join(){
 
         $this->load->library('wechat/api');
@@ -31,11 +37,13 @@ class ControllerWechatResponse extends Controller {
         if (!empty($postStr)){
 
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
-            $fromUsername = $postObj->FromUserName;
-            $toUsername = $postObj->ToUserName;
-            $keyword = trim($postObj->Content);
-            $time = time();
-            $textTpl = "<xml>
+
+            $this->fromUsername = $postObj->FromUserName;
+            $this->toUsername = $postObj->ToUserName;
+            $this->keyword = trim($postObj->Content);
+            $this->time = time();
+
+            $this->textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
 							<CreateTime>%s</CreateTime>
@@ -43,20 +51,35 @@ class ControllerWechatResponse extends Controller {
 							<Content><![CDATA[%s]]></Content>
 							<FuncFlag>0</FuncFlag>
 							</xml>";
-            if(!empty( $keyword ))
-            {
-                $msgType = "text";
-                $contentStr = "Welcome to wechat world!";
-                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                echo $resultStr;
-            }else{
-                echo "Input something...";
-            }
+
+            $this->welcome();
 
         }else {
             echo "";
             exit;
         }
+    }
+
+    public function welcome(){
+
+        if(!empty( $this->keyword ))
+        {
+
+            $msgType = "text";
+
+            $home = $this->url->link('common/home');
+
+            $contentStr = "<a href='" . $home . "'>Mankaa动漫城</a>";
+
+            $resultStr = sprintf($this->textTpl, $this->fromUsername, $this->toUsername, $this->time, $msgType, $contentStr);
+            echo $resultStr;
+
+        }else{
+
+            echo "Input something...";
+
+        }
+
     }
 
 }
