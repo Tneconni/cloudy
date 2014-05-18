@@ -67,7 +67,7 @@ class ControllerWechatResponse extends Controller {
 
             $msgType = "text";
 
-            $home = $this->url->link('common/home');
+            $home = $this->url->link('wechat/home');
 
             $contentStr = "<a href='" . $home . "'>Mankaa动漫城</a>";
 

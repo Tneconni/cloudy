@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+.lay_header {
+  width: 100%;
+}
+.lay_header .menu {
+  display: box;
+  display: -webkit-box;
+  background-color: #EAEAEA;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeaea));
+  background-image: -webkit-linear-gradient(top, #ffffff, #eaeaea);
+  background-image: linear-gradient(to bottom, #ffffff, #eaeaea);
+  height: 44px;
+  border-bottom: 1px solid #CCC;
+}
+.lay_header .menu .menu_item {
+  float: left;
+  width: 25%;
+  -webkit-box-flex: 1;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  border-left: 1px solid #EAEAEA;
+}
+.comic-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

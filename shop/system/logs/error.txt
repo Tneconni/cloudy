@@ -2,3 +2,538 @@
 2014-05-12 16:01:27 - PHP Notice:  Undefined index: signature in D:\git\cloudy\shop\system\library\wechat\api.php on line 17
 2014-05-12 16:01:27 - PHP Notice:  Undefined index: timestamp in D:\git\cloudy\shop\system\library\wechat\api.php on line 18
 2014-05-12 16:01:27 - PHP Notice:  Undefined index: nonce in D:\git\cloudy\shop\system\library\wechat\api.php on line 19
+2014-05-13 14:27:50 - PHP Notice:  Undefined index: echostr in D:\git\cloudy\shop\system\library\wechat\api.php on line 6
+2014-05-13 14:27:50 - PHP Notice:  Undefined index: signature in D:\git\cloudy\shop\system\library\wechat\api.php on line 17
+2014-05-13 14:27:50 - PHP Notice:  Undefined index: timestamp in D:\git\cloudy\shop\system\library\wechat\api.php on line 18
+2014-05-13 14:27:50 - PHP Notice:  Undefined index: nonce in D:\git\cloudy\shop\system\library\wechat\api.php on line 19
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:15:02 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:15:02 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:15:02 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:15:02 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:23:40 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:23:40 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:23:40 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:23:40 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:23:40 - PHP Notice:  Undefined index: link in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\home.tpl on line 9
+2014-05-18 7:23:40 - PHP Notice:  Undefined index: title in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\home.tpl on line 10
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:24:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:24:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:24:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:24:34 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:24:34 - PHP Notice:  Undefined index: link in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\home.tpl on line 9
+2014-05-18 7:24:34 - PHP Notice:  Undefined index: title in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\home.tpl on line 10
+2014-05-18 7:33:51 - PHP Warning:  Missing argument 2 for ModelToolImage::resize(), called in D:\git\cloudy\shop\catalog\controller\wechat\home.php on line 21 and defined in D:\git\cloudy\shop\catalog\model\tool\image.php on line 14
+2014-05-18 7:33:51 - PHP Warning:  Missing argument 3 for ModelToolImage::resize(), called in D:\git\cloudy\shop\catalog\controller\wechat\home.php on line 21 and defined in D:\git\cloudy\shop\catalog\model\tool\image.php on line 14
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: width in D:\git\cloudy\shop\catalog\model\tool\image.php on line 24
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: height in D:\git\cloudy\shop\catalog\model\tool\image.php on line 24
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: width in D:\git\cloudy\shop\catalog\model\tool\image.php on line 41
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: width in D:\git\cloudy\shop\catalog\model\tool\image.php on line 43
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: height in D:\git\cloudy\shop\catalog\model\tool\image.php on line 43
+2014-05-18 7:33:51 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\git\cloudy\shop\system\library\image.php on line 86
+2014-05-18 7:33:51 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, boolean given in D:\git\cloudy\shop\system\library\image.php on line 94
+2014-05-18 7:33:51 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\git\cloudy\shop\system\library\image.php on line 97
+2014-05-18 7:33:51 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\git\cloudy\shop\system\library\image.php on line 99
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:33:51 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:33:51 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:33:51 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:33:51 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:33:51 - PHP Notice:  Undefined index: description in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\home.tpl on line 14
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:34:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:34:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:34:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:34:34 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:34:34 - PHP Notice:  Undefined index: description in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\home.tpl on line 14
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:36:42 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:36:42 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:36:42 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:36:42 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:37:11 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:37:11 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:37:11 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:37:11 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:37:36 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:37:36 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:37:36 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:37:36 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:47:41 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:47:41 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:47:41 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:47:41 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:47:43 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:47:43 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:47:43 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:47:43 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:47:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:47:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:47:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:47:44 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:48:39 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:48:39 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:48:39 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: product_info in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\product.tpl on line 2
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: product_info in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\product.tpl on line 3
+2014-05-18 7:48:39 - PHP Notice:  Undefined variable: product_info in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\product.tpl on line 4
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:48:57 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:48:57 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:48:57 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: product_info in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\product.tpl on line 2
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: product_info in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\product.tpl on line 3
+2014-05-18 7:48:57 - PHP Notice:  Undefined variable: product_info in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\product.tpl on line 4
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:49:08 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:49:08 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:49:08 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:49:08 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:49:30 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:49:30 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:49:30 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:49:30 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:49:57 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:49:57 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:49:57 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:49:57 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:50:13 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:50:13 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:50:13 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:50:13 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:50:17 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:50:17 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:50:17 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 7:50:17 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 15:22:12 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 15:22:12 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 15:22:12 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 15:22:12 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 15:29:32 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 15:29:32 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 15:29:32 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 15:29:32 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 2
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: base in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 6
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: description in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 7
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: keywords in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 10
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: icon in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 13
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: links in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 15:30:00 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 16
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: styles in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 15:30:00 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 20
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: scripts in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 15:30:00 - PHP Warning:  Invalid argument supplied for foreach() in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 27
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: stores in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 40
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: google_analytics in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 49
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: logo in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 54
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: text_search in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 62
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: text_welcome in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 66
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: text_home in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: text_wishlist in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: text_account in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: text_shopping_cart in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: text_checkout in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 71
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: categories in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 73
+2014-05-18 15:30:00 - PHP Notice:  Undefined variable: error in D:\git\cloudy\shop\catalog\view\theme\default\template\common\header.tpl on line 97
+2014-05-18 15:30:52 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\header.tpl on line 2
+2014-05-18 15:30:52 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\header.tpl on line 2
+2014-05-18 15:31:43 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\header.tpl on line 2
+2014-05-18 15:31:43 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\header.tpl on line 2
