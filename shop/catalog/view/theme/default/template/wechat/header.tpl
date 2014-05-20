@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/wechat/index.css" />
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/wechat/icon.css" />
+    <script src="<?php echo BLOG_SERVER; ?>js/angular/angular.min.js"></script>
 
 </head>
 <body>

@@ -68,12 +68,7 @@
         // not get the fish type , because the type has not load at this time
         angular.forEach( fishTypeDom, function( dom, index ){
 
-//            console.log('index :' + index );
             var typeDom = angular.element( dom );
-//            console.log( this );
-//            console.log( typeDom );
-//            console.log( typeDom.find('span') );
-//            console.log( typeDom.find('span').eq(0) );
             var singleType = {
                 id : typeDom.find('span').eq(0).html(),
                 name : typeDom.find('span').eq(1).html()

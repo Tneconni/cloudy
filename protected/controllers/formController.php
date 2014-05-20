@@ -11,8 +11,6 @@ class FormController extends Controller{
 
     public function actionIndex(){
 
-        
-
         $this->render('index',array(
             'gallery' => '',
             'apps'    => ''
@@ -21,7 +19,6 @@ class FormController extends Controller{
     }
 
     public function actionSelect(){
-
 
         $this->render('select',array(
             'gallery' => '',
