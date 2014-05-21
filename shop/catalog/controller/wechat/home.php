@@ -28,7 +28,7 @@ class ControllerWechatHome extends Controller {
             $this->data['products'][$key]['link'] = $this->url->link('wechat/product',
                 'product_id=' . $product['product_id']);
 
-
+            $this->data['searchLink'] = $this->url->link( 'wechat/search' );
 
         }
 
