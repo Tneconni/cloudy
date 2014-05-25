@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>漫客商城</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" id="dialog_js" src="js/jquery.dialog.js" ></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="js/png.js" ></script>
+    <script type="text/javascript"> DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+</head>
+<body>
+<!--头部公共开始-->
+<!--页眉-->
+<div class="yemei_big">
+    <div class="yemei">
+        <ul class="fl Id">
+            <li class="fore cof"> <a href="/">漫客商城首页</a> </li>
+            <li class="fore"> <span class="dunlu_h"><a href="/index.php/user/user/index">cloud_liu</a>&nbsp;&nbsp;<a href="http://www.mkzhan.com/user/loginout.html">【退出】</a></span> </li>      <li class="fore Id"><s></s> <a href="javascript:void(0);"  onclick="AddFavorite(window.location.href,document.title);">收藏本店</a> </li>
+        </ul>
+        <ul class="fr">
+            <li class="fore cof menu_2" id="my_account"> <a href="/index.php/User/User/index">我的账户<b></b></a>
+                <div class="account_big">
+                    <ul>
+                        <li><a href="/index.php/User/Order/index/status/1">待付款订单</a></li>
+                        <li><a href="/index.php/User/Order/index/status/2">已付款订单</a></li>
+                        <li><a href="/index.php/User/Message/index">短消息<!--<span style="font-weight:bold; color:#990000">&nbsp;(<font color="#990000" >0</font>)</span>--></a></li>
+                    </ul>
+                </div>
+            </li>
+            <!--<li class="fore Id"> <a href="#">联系客服</a> <s></s> </li>-->
+            <li class="fore Id menu"><s></s><a href="/index.php/Cart/index"><span class="gouwu"></span>购物车<span class="naber" id="cart_number">0</span>件</a>
+            </li>
+            <li class="fore Id menu_1"><s></s><a href="/index.php/User/Collect/index">收藏夹</a>
+
+            </li>
+            <!--<li class="fore Id menu_2"><s></s><a href="#">网站导航<b></b></a></li>-->
+        </ul>
+    </div>
+</div>
+
+
+<link href="css/order.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/Area.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//满额立减
+    var lower=0;
+    //清除a标签的边框
+    $("a").focus(function(){
+        this.blur();
+    });
+
+    //火狐下会记住之前勾选的状态
+    var select_address_id = ($("input:radio[name='address_id']:checked").length == 0)?-1:$("input:radio[name='address_id']:checked").val();
+    if(select_address_id == 0){
+        $(".goods_info").show();
+        getCoupon_money();
+    }else if(select_address_id > 0){
+        get_shipping_fee();
+    }else{
+        getCoupon_money();
+    }
+
+    //根据选中的radio确认是否显示地址表单
+    $("input:radio[name='address_id']").live("click", function(){
+        if($(this).val() == 0){
+            $(".goods_info").show();
+            getCoupon_money();
+        }else{
+            if($(this).val() != select_address_id){
+                get_shipping_fee();
+            }
+            $(".goods_info").hide();
+        }
+        select_address_id = $(this).val();
+    });
+
+    //添加地址
+    $(".address_button").click(function(){
+        var address_s = $('input:radio[name="address_id"]:checked');
+        if(address_s.length == 0){
+            $('input:radio[name="address_id"]:[value="0"]').attr("checked", "checked");
+        }else if(address_s.val() == 0){
+            if(!verifyAddress()) return false;
+            var items = [];
+            var form = $('#myform')[0];
+            for(var i=0; i<form.length; i++){
+                var name = $(form[i]).attr('name');
+                var value = $(form[i]).val();
+                if(!name || name == "pays" || name == "address_id" || name == "msg" || name.indexOf("cart_id") == 0 || name.indexOf("number[") == 0) continue;
+                items.push({
+                    name:name,
+                    value:value
+                });
+            }
+            var q = $.param(items);
+            $.get("/index.php/Goodstest/addaddress?"+q, function(data){
+                if(data.ret == 1){
+                    $("#addform").before('<p class="words"> <input name="address_id" type="radio" value="'+ data.data.id +'" checked="checked"/><span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #313131; padding-left:18px; padding-top:20px;">' + data.data.str + '</span>&nbsp;&nbsp;&nbsp;<span data="' + data.data.id + '" class="delete_add_b" style="cursor:pointer; color:#999999">删除</span></p>');
+                    $("input:[type='radio']:[value='0']").removeAttr("checked");
+                    $("input:[type='radio']:[value='"+ data.data.id +"']").attr("checked", "checked");
+                    //重新选择时计算数据
+                    get_shipping_fee();
+                    $(".goods_info").hide();
+                }
+            }, "json");
+        }else{
+            $('input:radio[name="address_id"]:checked').removeAttr("checked");
+            $('input:radio[name="address_id"]:[value="0"]').attr("checked", "checked");
+        }
+        return false;
+    });
+
+    //删除地址
+    $(".delete_add_b").live("click",function(){
+        var item = $(this);
+        var id = item.attr("data");
+        shop.msg("确定删除地址吗", function(){
+            if(item.data("delete") === undefined){
+                item.data("delete", true);
+                $.get("/index.php/Goodstest/deladdress", {id: id}, function(data){
+                    item.removeData("delete");
+                    if(data.ret == -1){
+                        shop.msg("请先登录");
+                    }else if(data.ret == 1){
+                        //shop.msg("删除成功");
+                        item.parent().remove();
+
+                        //重新计算费用
+                        var select_address_id = ($("input:radio[name='address_id']:checked").length == 0)?-1:$("input:radio[name='address_id']:checked").val();
+                        if(select_address_id == 0){
+                            $(".goods_info").show();
+                            getCoupon_money();
+                        }else if(select_address_id > 0){
+                            get_shipping_fee();
+                        }else{
+                            getCoupon_money();
+                        }
+                    }else{
+                        shop.msg("删除失败");
+                    }
+                }, "json");
+            }
+        }, "取消");
+        return false;
+    });
+
+    //提交订单
+    $(".order_submit_button").click(function(){
+
+        //是否选择地址
+        var address_s = $('input:radio[name="address_id"]:checked');
+        if(address_s.length == 0){
+            shop.msg("请选择收货地址");
+            return false;
+        }
+
+        //选择的收货地址是新地址,因为需要先计算运费，所以必须先保存新地址
+        if(address_s.val() == 0){
+            shop.msg("请先保存收货人信息");
+            return false;
+        }
+
+        //是否选择支付方式
+        var pay_s = $('input:radio[name="pays"]:checked');
+        if(pay_s.length == 0){
+            shop.msg("请选择支付方式");
+            return false;
+        }
+
+        //提交订单
+        $("#myform").submit();
+        return false;
+    });
+
+    function verifyAddress(){
+        //收件人姓名
+        var consignee = $("input:text[name='address[consignee]']").val();
+        if($.trim(consignee).length == 0){
+            shop.msg("请填写收件人姓名");
+            return false;
+        }
+        //省
+        var province = $("#province").val();
+        if(province == 0){
+            shop.msg("请选择收件人所在的省");
+            return false;
+        }
+        //市
+        var city = $("#city").val();
+        if(city == 0){
+            shop.msg("请选择收件人所在的城市");
+            return false;
+        }
+        var address_detail = $("input:text[name='address[address]']").val();
+        if($.trim(address_detail).length == 0){
+            shop.msg("请填写收件人的详细地址");
+            return false;
+        }
+        var mobile_phone = $.trim($("input:text[name='address[mobile_phone]']").val());
+        if(mobile_phone.length == 0){
+            shop.msg("请填写收件人的手机");
+            return false;
+        }
+        var reg_mobile_phone = /^\d{11}$/;
+        if(!reg_mobile_phone.test(mobile_phone)){
+            shop.msg("手机号码格式错误");
+            return false;
+        }
+        var zipcode = $.trim($("input:text[name='address[zipcode]']").val());
+        if(zipcode.length == 0){
+            shop.msg("请填写收件人的邮编");
+            return false;
+        }
+        var reg_zipcode = /^\d{6}$/;
+        if(!reg_zipcode.test(zipcode)){
+            shop.msg("邮编格式不对！");
+            return false;
+        }
+        return true;
+    }
+
+    function get_shipping_fee(){
+        var items = [];
+        var form = $('#myform')[0];
+        var have_add = false;
+        for(var i=0; i<form.length; i++){
+            var name = $(form[i]).attr('name');
+            var value = $(form[i]).val();
+            if(!name || name == "pays" || name == "msg" || (name.indexOf("address[") != -1)) continue;
+            if(name == "address_id"){
+                if(have_add == false){
+                    have_add = true;
+                }else{
+                    continue;
+                }
+                value = $("input:radio[name='address_id']:checked").val();
+            }
+            items.push({
+                name:name,
+                value:value
+            });
+        }
+        var q = $.param(items);
+
+        $.get("/index.php/Goodstest/getshipfee?"+q, function(data){
+            if(data.ret == 1){
+                $("#shipping_fee").html(data.data.s);
+
+                if(data.data.free_ship){
+                    $(".ship_tip").html(data.data.free_ship);
+                    $("#youhui").html("-" + ((parseFloat(data.data.s) + parseFloat(data.data.coupon_money) + lower)).toFixed(2));
+                }else{
+                    $(".ship_tip").html("");
+                    $("#youhui").html("-" + (parseFloat(data.data.coupon_money) + lower).toFixed(2));
+                }
+
+                orderAmount();
+            }else{
+
+            }
+        }, "json");
+    }
+
+    function orderAmount(){
+
+        var goods_amount = parseFloat($("#goods_amount").html());
+        var shipping_fee = parseFloat($("#shipping_fee").html());
+        var youhui = parseFloat($("#youhui").html());
+
+        $("#goods_amount").html(goods_amount.toFixed(2));
+        $("#order_amount").html((goods_amount + shipping_fee + youhui).toFixed(2));
+    }
+
+    var tip = $.trim($("#msg").val());
+
+    $("#msg").focus(function(){
+        var content = $.trim($(this).val());
+        if(content == tip){
+            $(this).val("");
+            $(this).css("color", "#333333");
+        }
+    }).blur(function(){
+                var content = $.trim($(this).val());
+                if(content == ""){
+                    $(this).val(tip);
+                    $(this).css("color", "#666666");
+                }
+            });
+
+    $("#coupon_id").change(function(){
+        var temp_id = ($("input:radio[name='address_id']:checked").length == 0)?-1:$("input:radio[name='address_id']:checked").val();
+        if(temp_id > 0){
+            get_shipping_fee();
+        }else{
+            getCoupon_money();
+        }
+    });
+
+    function getCoupon_money(){
+        $(".ship_tip").html("");
+        $("#shipping_fee").html("0.00");
+        var items = [];
+        var form = $('#myform')[0];
+        var have_add = false;
+        for(var i=0; i<form.length; i++){
+            var name = $(form[i]).attr('name');
+            var value = $(form[i]).val();
+            if(!name || name == "pays" || name == "msg" || (name.indexOf("address[") != -1)) continue;
+            if(name == "address_id"){
+                if(have_add == false){
+                    have_add = true;
+                }else{
+                    continue;
+                }
+                value = $("input:radio[name='address_id']:checked").val();
+            }
+            items.push({
+                name:name,
+                value:value
+            });
+        }
+        var q = $.param(items);
+
+        $.get("/index.php/Goodstest/getcouponmoney?"+q, function(data){
+            if(data.ret == 1){
+                if(data.data > 0){
+                    $("#youhui").html("-" + (parseFloat(data.data) + lower).toFixed(2));
+                }else{
+                    $("#youhui").html("-" + lower.toFixed(2));
+                }
+                orderAmount();
+            }else{
+
+            }
+        }, "json");
+    }
+
+});
+</script>
+<style>
+    body{ background:#fff; text-align:left;}
+    .baobei {
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        border: 1px solid #E5E5E5;
+        display: inline;
+        float: left;
+        height: 60px;
+        margin-left: 20px;
+        width: 60px;
+    }
+    .goods_info {
+        margin-left:70px;
+        display:none;
+    }
+    .goods_info li{
+        text-align:left;
+    }
+    .goods_info li input{color:#333333;}
+    .return_cart{float:right; padding-right:20px; font-weight:normal; color:#f33400; font-family: Arial, Helvetica, sans-serif, 宋体, 黑体;}
+    .address {font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #313131; padding-left:18px; padding-top:0px;}
+    .wenzi { padding-bottom:10px;}
+    .wenzi span { text-align:left;}
+    #payment {height:495px;}
+    .framework{height:410px; padding-bottom:10px;};
+    .td_table{font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: #626262;}
+
+    .td_table_1{font-family: Arial, Helvetica, sans-serif; font-size: 12px;  border-bottom:1px solid  #dcdcdc; background:#FFFFFF}
+    .td_table_2{color: #535353;}
+    .td_table_3{color: #666;}
+    .td_table_4{color: #333;}
+    .td_text{width:400px; height:100px; font-size:12px; color:#666666; border:1px #CCCCCC solid; padding:3px 5px; resize: none;}
+    .td_span_1{font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #313131;}
+    .td_span_2{font-family: Arial, Helvetica, sans-serif; font-size: 20px; color: #ED7447;}
+    .td_span_3{font-family: Arial, Helvetica, sans-serif; font-size: 14px;}
+</style>
+<!--logo+导航-->
+<div id="logo">
+    <div class="header"> </div>
+    <div class="navigation"> </div>
+</div>
+<!--标题介绍-->
+<form action="/index.php/goodstest/submitorder" method="post" id="myform"  name="myform">
+<div id="information">
+    <div class="shelf shelf_1" style="padding-bottom:10px">
+        <h2><span style="color: #707070;" >收货信息</span>&nbsp;&nbsp;<span style="color: #f33600; font-weight: normal;"><a href="/index.php/User/Consignee/index" target="_blank">[管理收货地址]</a></span></h2>
+        <!-- 填写个人信息-->
+        <div class="form" style="padding-bottom:10px">
+            <!--收货人文字-->
+            <p class="words">
+                <input name="address_id" type="radio" value="21700"/>
+                <span class="address">&nbsp;﻿北京 北京市 崇文区 qeeqeqe cloud(收) 15244237038  邮编:123456</span>&nbsp;&nbsp;&nbsp;<span data="21700" class="delete_add_b" style="cursor:pointer; color:#999999">删除</span></p><p class="words">
+            <input name="address_id" type="radio" value="21701"/>
+            <span class="address">&nbsp;山东 青岛市 四方区 dadadad cloud(收) 15244237038  邮编:123456</span>&nbsp;&nbsp;&nbsp;<span data="21701" class="delete_add_b" style="cursor:pointer; color:#999999">删除</span></p>        <p class="words" id="addform">
+            <input name="address_id" type="radio" value="0"/>
+            &nbsp;<span class="address">使用新地址</span></p>
+            <!--填写信息-姓名-->
+            <ul class="goods_info">
+                <li> 收&nbsp&nbsp货&nbsp&nbsp人：
+                    <input  type="text" name="address[consignee]"/>
+                    &nbsp;&nbsp;<span >请输入收货人姓名</span></li>
+                <!--地区文字及选项 -->
+                <li  class="area" style="padding-left:0; height:45px">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp区：
+                    <script type="text/javascript" src="js/getarea.js"></script>
+                    <select name="address[province]" id="province" >
+                    </select>
+                    <select name="address[city]" id="city">
+                    </select>
+                    <select name="address[district]" id="district" >
+                    </select>
+                    <span>&nbsp;&nbsp;&nbsp;选择正确的县镇／街道可提升送货速度</span></li>
+
+                <li>
+                    <p style="padding-left:72px">
+                        <input  type="text" name="address[address]" class="address" style="width:400px"/>
+                        &nbsp;&nbsp;填写详细地址</p>
+                </li>
+                <li style="padding-left:0px;">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：
+                    <input name="address[mobile_phone]" type="text" />
+                </li>
+                <li style="padding-left:0px;">座&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：
+                    <input name="address[fixed_phone]" type="text" />
+                </li>
+                <li style="padding-left:0px;">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编：
+                    <input name="address[zipcode]" type="text" />
+                </li>
+                <li style="padding-left:0px;"> <a href="javascript:void(0);" class="address_button" style="padding-bottom:0"><img src="images/index_57.jpg" width="130" height="30" style="padding-bottom:0"/></a> </li>
+            </ul>
+        </div>
+        <!--确认按钮-->
+    </div>
+</div>
+<!--支付及配送方式-->
+<div id="payment">
+    <div class="pay">
+        <h2><span style="color: #707070;" >支付方式</span>&nbsp;&nbsp;
+            <!--<span style="color: #f33600; font-weight: normal;"><a href="#">[修改]</a></span>-->
+        </h2>
+        <!--  支付选项 -->
+        <div class="framework">
+            <!--在线支付选项-->
+            <p class="words" style="font-weight: bold">在线支付
+            <p>
+                <!--  支付宝-->
+            <div style=" height:60px;">
+                <p class="tubiao">
+                    <input name="pays" type="radio" value="1" />
+                </p>
+                <p  class="tupian"><img src="images/index_55.jpg" width="125" height="41" /></p>
+                <p class="wenzi"><span>支付宝，是支付宝公司针对网上交易而特别推出的安全付款服务，其运作的实质 是以支付宝为信用中介，在买家确认收到商品前，由支付宝替买卖双方暂时保管货款的一种增值服务。 （网址：http://www.alipay.com）</span></p>
+            </div>
+            <div class="clear"></div>
+            <!--网上银行-->
+            <div class="banknet">
+                <p class="tubiao">
+                    <input name="pays" type="radio" value="1" />
+                </p>
+                <p  class="tupian"><img src="images/prepaid_3.jpg" width="125" height="41" /></p>
+                <p class="wenzi"><span>网银支付（支付宝）与中国工商银行、招商银行、中国建设银行、农业银行、民生银行等50多家金融机构达成协议。全面支持全国50多家银行的信用卡及借记卡实现网上支付。网址：http://www.alipay.com</span></p>
+            </div>
+
+            <!--只限在线支付时隐藏-->
+            <!--  站内支付-->
+            <p class="words"><b>站内支付</b><p>
+            <!--  余额付款-->
+            <div style=" height:60px;">
+                <p class="tubiao">
+                    <input name="pays" type="radio" value="2" />
+                </p>
+                <p  class="tupian"><img src="images/index_60.jpg" width="125" height="41" /></p>
+                <p class="wenzi"><span>余额付款</span></p>
+            </div>
+            <div class="clear"></div>
+            <!-- 线下支付-->
+            <p class="words" style="font-weight: bold">线下支付<p>
+            <!--  线下支付-->
+            <div style=" height:60px;">
+                <p class="tubiao">
+                    <input name="pays" type="radio" value="3" />
+                </p>
+                <p  class="tupian"><img src="images/index_61.jpg" width="125" height="31" /></p>
+                <p class="wenzi">
+                    <span>收款人信息</span><br>
+                    <span>姓名：知音漫客（商城）</span><br>
+                    <span>地址：湖北省武汉市武昌东湖路169号</span><br>
+                    <span>邮编：430077</span><br>
+                    <span>汇款注意事项：在汇款单的附言处一定要注明您在漫客商城下的订单号！并且留下您的联系电话。</span><br />
+                    <span style="color:#FF0000">邮局汇款周期较长（2-3周左右），介意者慎选！推荐使用在线支付。</span>
+                </p>
+            </div>        <div class="clear"></div>
+        </div>
+        <!--支付及配送方式按钮-->
+        <!--    <div class="button2">
+      <p class="anniu"> <img src="images/index_31.jpg" width="145" height="30" /></p>-->
+    </div>
+</div>
+</div>
+<!--商品清单-->
+<div class="List" style="height:auto; padding-bottom:10px">
+    <div class="shangpin">
+        <h2>
+            <p><span class="return_cart"><a href="/index.php/Cart/index/">返回购物车修改商品>></a></span><span style=" float:left;">商品清单</span></p>
+        </h2>
+    </div>
+    <!-- 商品展示-->
+    <table width="90%" border="0" cellspacing="0" height="189" style="margin-top:10px">
+        <tr bgcolor="#fdf8e2">
+            <td width="106" height="30" align="center" class="td_table">商品图片</td>
+            <td width="310" height="30" class="td_table">商品名称</td>
+            <td width="142" height="30" class="td_table">价格</td>
+            <td width="92" height="30" class="td_table">赠送积分</td>
+            <td width="92" height="30" class="td_table" >数量</td>
+            <td width="51" height="30" class="td_table">小计</td>
+        </tr>
+        <!--图片展示-->
+        <input type="hidden" name="cart_id[]" value="219119" w="0.850"/>
+        <input type="hidden" name="number[219119]" value="2" />
+        <tr bgcolor="#EFEFEF">
+            <td width="106" height="70" bgcolor="#ffffff" style="border-bottom:1px solid  #dcdcdc;" ><a  href="/index.php/goods/index/id/3225" target="_blank">
+                <div class="baobei" style="background:url(/Uploads/Goods/2014-02-21/5306a21e71d1e.jpg.50x50.jpg);"></div>
+            </a></td>
+
+            <td height="70" class="td_table_1 td_table_2 "><a  href="/index.php/goods/index/id/3225" target="_blank">《龙族3黑月之潮 ·下》 </a> <span class="reachName"></span><br><font color="#999999">重量: 0.850kg</font>		  </td>
+
+            <td height="70" class="td_table_1">
+                <p style="font-size: 14px; border-bottom:none" class="td_table_1 td_table_3"><span style="font-size: 12px">￥</span>33.20</p>
+                <p id="link" style="text-decoration: line-through;color: #999;">￥36.80</p>			</td>
+
+            <td height="70" class="td_table_1 td_table_4" >0</td>
+            <td height="70" class="td_table_1 td_table_4" >2</td>
+            <td height="70" class="td_table_1 td_table_4" >￥66.40</td>
+        </tr><input type="hidden" name="cart_id[]" value="219118" w="0.055"/>
+        <input type="hidden" name="number[219118]" value="2" />
+        <tr bgcolor="#EFEFEF">
+            <td width="106" height="70" bgcolor="#ffffff" style="border-bottom:1px solid  #dcdcdc;" ><a  href="/index.php/goods/index/id/3281" target="_blank">
+                <div class="baobei" style="background:url(/Uploads/Goods/2014-04-25/5359c0d7697c6.jpg.50x50.jpg);"></div>
+            </a></td>
+
+            <td height="70" class="td_table_1 td_table_2 "><a  href="/index.php/goods/index/id/3281" target="_blank">爱萌1.0绕线器 【斗破-萧炎】</a> <span class="reachName"></span><br><font color="#999999">重量: 0.055kg</font>		  </td>
+
+            <td height="70" class="td_table_1">
+                <p style="font-size: 14px; border-bottom:none" class="td_table_1 td_table_3"><span style="font-size: 12px">￥</span>15.00</p>
+                <p id="link" style="text-decoration: line-through;color: #999;">￥15.00</p>			</td>
+
+            <td height="70" class="td_table_1 td_table_4" >0</td>
+            <td height="70" class="td_table_1 td_table_4" >2</td>
+            <td height="70" class="td_table_1 td_table_4" >￥30.00</td>
+        </tr><input type="hidden" name="cart_id[]" value="219117" w="0.735"/>
+        <input type="hidden" name="number[219117]" value="1" />
+        <tr bgcolor="#EFEFEF">
+            <td width="106" height="70" bgcolor="#ffffff" style="border-bottom:1px solid  #dcdcdc;" ><a  href="/index.php/goods/index/id/3298" target="_blank">
+                <div class="baobei" style="background:url(/Uploads/Goods/2014-05-13/53716b9718998.jpg.50x50.jpg);"></div>
+            </a></td>
+
+            <td height="70" class="td_table_1 td_table_2 "><a  href="/index.php/goods/index/id/3298" target="_blank">《等风来》精装绘本 </a> <span class="reachName"></span><br><font color="#999999">重量: 0.735kg</font>		  </td>
+
+            <td height="70" class="td_table_1">
+                <p style="font-size: 14px; border-bottom:none" class="td_table_1 td_table_3"><span style="font-size: 12px">￥</span>36.00</p>
+                <p id="link" style="text-decoration: line-through;color: #999;">￥39.80</p>			</td>
+
+            <td height="70" class="td_table_1 td_table_4" >0</td>
+            <td height="70" class="td_table_1 td_table_4" >1</td>
+            <td height="70" class="td_table_1 td_table_4" >￥36.00</td>
+        </tr><!--	  	<tr>
+			<td height="30" colspan="2"></td>
+			<td ><font color="#333333">总重量2.545kg</font></td>
+			<td colspan="4"></td>
+		</tr>-->
+    </table>
+
+    <!--商品金额总计-->
+    <table width="100%" border="0" cellspacing="0" height="160">
+        <tr>
+            <td width="550" rowspan="3"><table>
+                <tbody>
+                <tr>
+                    <td align="left" height="28px">买家留言：</td>
+                </tr>
+                <tr>
+                    <td><textarea id="msg" class="td_text" name="msg">您可以在这里给商家留言</textarea></td>
+                </tr>
+                </tbody>
+            </table></td>
+            <td height="120" width="550" rowspan="2" align="right"><table width="90%">
+                <tbody>
+                <tr>
+                    <td width="330" height="28" align="right">
+                        <span class="td_span_1">商品总额：</span>
+                    </td>
+                    <td height="28" align="right">
+                        <span class="td_span_3"></span><span id="goods_amount" class="td_span_2">132.4</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="330" height="28" align="right">
+                        <span class="ship_tip" style="color:#990033"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="td_span_1">运费：</span>
+                    </td>
+                    <td align="right">
+                        <span class="td_span_3"></span><span id="shipping_fee" class="td_span_2">0.00</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="330" height="28" align="right">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="td_span_1">优惠：</span></td>
+                    <td align="right">
+                        <span class="td_span_3"></span><span id="youhui" class="td_span_2">0.00</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="330" height="28" align="right">
+                        <span class="td_span_1">应付总额：</span>
+                    </td>
+                    <td align="right">
+                        <span class="td_span_3">￥</span><span id="order_amount" class="td_span_2">132.4</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table></td>
+        </tr>
+        <tr> </tr>
+        <!--商品提交按钮-->
+        <tr>
+            <td height="30" width="578" align="right">
+                <p style=" float:right; padding-right:20px;"><img src="images/index_47.jpg" width="150" height="40"  style="cursor:pointer" class="order_submit_button"/></p>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+</form>
+</body></html>

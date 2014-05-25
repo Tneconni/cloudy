@@ -1,0 +1,313 @@
+@charset "utf-8";
+/**
+* @author        penny QQ:609357321 &lt;q609357321@163.com&gt;
+* @copyright     Copyright (c) 2013-2013  (http://mkshop.zymk.cn)
+* @Modify date	 2013-5-25
+*/
+/* CSS Document */
+.body {
+    background:#FFFFFF
+}
+/*===================================================个人中心left=========================================*/
+.Personal_center_left {
+    width:167px;
+    height:auto;
+    float:left;
+    margin-top:10px;
+    display:inline;
+    border:1px solid #fdceb4;
+    background:#fdf6f2
+}
+/*头像*/
+.Personal_center_left .head { /*width:120px; height:120px;*/
+    margin:10px auto 0;
+    padding:5px;
+    border:1px solid #f2f2f2;
+    background: url(../images/head_1.jpg) #FFFFFF center no-repeat;
+}
+.Personal_center_left .The_name {
+    width:130px;
+    height:24px;
+    line-height:24px;
+    text-align:left;
+    color:#434343;
+    font-size:14px;
+    font-weight:bold;
+    margin:2px auto
+}
+.Personal_center_left .The_name a {
+    float:right;
+    color:#434343;
+    font-size:12px;
+    font-weight:normal
+}
+/*个人中心*/
+.Personal_center_ul {
+    width:100%;
+    height:auto;
+    position:relative;
+    margin:4px auto
+}
+.Personal_center_ul h1 {
+    width:176px;
+    height:58px;
+    position:absolute;
+    background:url(../images/user.gif) 0 0 no-repeat;
+    display:block;
+    left:-4px;
+    top:-5px
+}
+.Personal_center_ul h2 {
+    width:167px;
+    height:24px;
+    line-height:20px;
+    font-size:14px;
+    text-align:left;
+    text-indent:40px;
+    background: #fbe1d0;
+    padding-top:60px;
+    overflow:hidden;
+}
+.Personal_center_ul h2 span {
+    width:18px;
+    height:18px;
+    display:block;
+    background:url(../images/user.gif) 0 -64px no-repeat;
+    left:10px;
+    top:59px;
+    overflow:hidden;
+    position:absolute
+}
+.Personal_center_big {
+    width:150px;
+    height:auto; /*background:url(../images/user.gif) 2px -84px no-repeat;*/
+    margin:0 auto;
+    overflow:hidden;
+
+}
+.Personal_center {
+    width:150px;
+    height:auto;
+    /*border-bottom:1px solid #fde6d8;*/
+    padding-bottom:11px;
+    padding-top:64px
+}
+.Personal_center li {
+    width:100%;
+    height:26px;
+    line-height:26px;
+    text-align:left;
+    text-indent:34px;
+
+}
+.Personal_center li a {
+    color:#313131
+}
+.Personal_center li.li_1 {
+    background:url(../images/user.gif) 0 -63px no-repeat ;
+}
+.Personal_center li.li_2 {
+    background:url(../images/user.gif) 0 -97px no-repeat;
+}
+.Personal_center li.li_3 {
+    background:url(../images/user.gif) 0 -122px no-repeat;
+}
+.Personal_center li.li_4 {
+    background:url(../images/user.gif) 0 -149px no-repeat;
+}
+.Personal_center li.li_5 {
+    background:url(../images/user.gif) 0 -205px no-repeat;
+}
+.Personal_center li.li_6 {
+    background:url(../images/user.gif) 0 -230px no-repeat;
+}
+.Personal_center li.li_7 {
+    background:url(../images/user.gif) 0 -256px no-repeat;
+}
+.Personal_center li.li_8 {
+    background:url(../images/user.gif) 0 -284px no-repeat;
+}
+.Personal_center li.li_9 {
+    background:url(../images/user.gif) 0 -310px no-repeat;
+}
+.Personal_center li.li_10 {
+    background:url(../images/user.gif) 0 -360px no-repeat;
+}
+.Personal_center li.li_11 {
+    background:url(../images/user.gif) 0 -388px no-repeat;
+}
+.Personal_center li.li_12 {
+    background:url(../images/user.gif) 0 -412px no-repeat;
+}
+.Personal_center li a:hover {
+    text-decoration:underline
+}
+.ts {
+    padding-top:14px;
+    border:none;
+    *padding-top:11px;
+}
+/*===================================================个人中right=========================================*/
+.Personal_center_right_big {
+    width:794px;
+    height:auto;
+    float:left;
+    margin-left:14px;
+    _margin-left:7px;
+    margin-top:10px
+}
+/*你的位置*/
+.position_common {
+    width:783px;
+    height:30px;
+    line-height:30px;
+    text-align:left;
+    color:#313131;
+    text-indent:0
+}
+.position_common span {
+    color:#a0a0a0
+}
+.position_common a {
+    color:#313131
+}
+.position_common a:hover {
+    color:#414141;
+    text-decoration:underline
+}
+/*页码*/
+.page_big_common {
+    width:761px;
+    height:auto;
+    margin:35px auto 8px
+}
+.page_big_common span {
+    color:#333333;
+    float:right;
+    text-align:left;
+    line-height:22px
+}
+.page_big_common span .anliu {
+    width:40px;
+    height:22px;
+    background:url(../images/list.png) 0 -121px no-repeat;
+    border:none;
+    text-align:center;
+    font-size:12px;
+    color:#333;
+    margin-left:3px
+}
+.page_big_common span .input {
+    width:30px;
+    height:20px;
+    border:1px solid #ccc;
+    text-align:center;
+    margin-left:2px;
+    margin-right:2px;
+    line-height:20px
+}
+.page_big_common li {
+    float:right;
+    margin-right:5px;
+    line-height:22px;
+    background:#FFFFFF;
+    vertical-align:middle;
+    text-align:center;
+}
+.page_big_common li a {
+    width:auto!important;
+    padding:0 10px 0 10px;
+    color:#333333;
+    min-width:10px;
+    display:block;
+    text-align:center;
+    border:1px solid #cccccc;
+    line-height:22px
+}
+.page_big_common li a:hover {
+    border:1px solid #cd4b00;
+    background:#ffede3;
+    color:#cd4b00
+}
+#nav {
+    width:795px;
+}
+#nav ul li {
+    float:left;
+    width:100px;
+    height:30px;
+    border:1px solid #d4d4d4;
+    line-height:30px;
+    border-bottom:none;
+    cursor:pointer;
+    text-align:center;
+}
+#nav ul li:hover {
+    background:#eb5701;
+    border:1px solid #EB5701;
+    border-bottom:none;
+}
+#nav ul li:hover a {
+    color:#fff;
+    display:block;
+}
+#nav ul li.hover_left {
+    border-left:1px solid #d4d4d4;
+}
+#nav ul li.hover {
+    background:#eb5701;
+    border:1px solid #EB5701;
+    border-bottom:none;
+}
+#nav ul li.hover a {
+    color:#fff;
+}
+/*=====================================================会员中心个人资料公共点击===============================================*/
+
+#main {
+    width:795px;
+    text-align:left;
+    border:1px solid #fee0ce;
+    border-top:3px solid #eb5701;
+}
+.input-text {
+    width:250px;
+    height:23px;
+    line-height:23px;
+    border:1px solid #fad6cd;
+}
+#table_form {
+    margin:0px;
+    text-align:left;
+    padding:0px;
+    width:510px;
+}
+#table_form tr td {
+    line-height:35px;
+    font-size:13px;
+
+}
+.w-50 {
+    width:50px;
+}
+.w-70 {
+    width:70px;
+}
+.w-90 {
+    width:90px;
+}
+.w-100 {
+    width:100px;
+}
+.w-150 {
+    width:150px;
+}
+.w-170 {
+    width:170px;
+}
+.w-200 {
+    width:200px;
+}
+.w-250 {
+    width:270px;
+}

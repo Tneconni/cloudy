@@ -1,0 +1,323 @@
+@charset "utf-8";
+/**
+* @author        penny QQ:609357321 &lt;q609357321@163.com&gt;
+* @copyright     Copyright (c) 2013-2013  (http://mkshop.zymk.cn)
+* @Modify date	 2013-5-26
+*/
+
+/* CSS Document */
+
+/*商品列表页===============================right===============*/
+/*分类查找*/
+.cateAttrs {
+    width:761px;
+    height:auto;
+    margin:5px auto 10px;
+    border:1px solid #d1ccc8
+}
+.cateAttrs dl {
+    width:761px;
+    height:auto;
+    line-height:24px;
+    /*border-bottom:1px dashed #d1ccc8;*/
+    /*background:#f7f5f6;*/
+    color:#b0a59f;
+}
+.cateAttrs dl dt {
+    width:110px;
+    height:auto;
+    text-align:left;
+    padding-left:10px;
+    float:left;
+    padding-top:8px
+}
+.cateAttrs dl dd {
+    /*width:640px;*/
+    height:auto;
+    float:left;
+    background:#FFFFFF;
+    padding-top:8px;
+    padding-bottom:10px;
+    padding-left:10px;
+    _padding-bottom:2px;
+    *padding-bottom:2px;
+}
+.cateAttrs dl dd a {
+    width:100px;
+    height:24px;
+    line-height:24px;
+    text-align:left;
+    padding-left:6px;
+    display:block;
+    float:left;
+    color:#806f66; overflow:hidden
+}
+.cateAttrs dl dd a:hover {
+    color:#a40000
+}
+.cateAttrs .mei_x {
+    border:none
+}
+/*相关商品数*/
+.Number_goods {
+    width:763px;
+    height:24px;
+    line-height:24px;
+}
+.Number_goods span {
+    float:right;
+    margin-right:10px;
+    color:#1b1b1b;
+    text-align:right
+}
+.Number_goods span font {
+    font-size:12px;
+    color:#f37020
+}
+/*图片排列方式*/
+.arrangement_big {
+    width:761px;
+    height:auto;
+    border:1px solid #eeeeee;
+    background:#f5f5f5
+}
+.arrangement_big li {
+    float:left;
+    line-height:28px;
+    border-right:1px solid #e5e5e5;
+    position:relative;
+    text-align:center
+}
+.arrangement_big li a {
+    width:auto!important;
+    padding:0 6px;
+    height:28px;
+    min-width:78px;
+    -width:78px;
+    display:block;
+    color:#1b1b1b;
+    line-height:28px
+}
+.arrangement_big li a:hover {
+    background:#FFFFFF;
+    font-weight:bold;
+    color:#ed4216;
+}
+.arrangement_big li .hongdi {
+    background:#FFFFFF;
+    color:#ed4216;
+    display:block;
+    width:auto!important;
+    min-width:78px;
+    -width:78px;
+    font-weight:bold
+}
+.arrangement_big li s {
+    width:7px;
+    height:8px;
+    overflow:hidden;
+    position:absolute;
+    right:19px;
+    top:10px;
+    display:block;
+    z-index:3
+}
+.arrangement_big li .shang {
+    background:url(../images//list.png) -31px -35px no-repeat;
+}
+.arrangement_big li .xia {
+    background:url(../images//list.png) 0 -35px no-repeat;
+}
+.arrangement_big li b {
+    width:9px;
+    height:9px;
+    overflow:hidden;
+    position:absolute;
+    left:19px;
+    top:9px;
+    display:block
+}
+.arrangement_big li .da {
+    background:url(../images//list.png) -9px -35px no-repeat;
+}
+.arrangement_big li .xiao {
+    background:url(../images//list.png) -20px -35px no-repeat;
+}
+.arrangement_big .pages_fan {
+    width:150px;
+    height:18px;
+    line-height:18px;
+    float:right;
+    margin-right:6px;
+    color:#313131;
+    text-align:right;
+    margin-top:5px;
+    position:relative;
+    padding-right:45px
+}
+.arrangement_big .pages_fan span {
+    color:#ec4113
+}
+.arrangement_big .pages_fan .previous_page a, .arrangement_big .pages_fan .next_page a {
+    width:18px;
+    height:18px;
+    display:block;
+    overflow:hidden;
+    margin-left:2px;
+    position:absolute;
+}
+.arrangement_big .pages_fan .previous_page a {
+    background:url(../images//list.png) 0 -514px no-repeat;
+    right:24px;
+    top:0px
+}
+.arrangement_big .pages_fan .previous_page a:hover {
+    background:url(../images//list.png) -19px -514px no-repeat;
+}
+.arrangement_big .pages_fan .next_page a {
+    background:url(../images//list.png) 0 -535px no-repeat;
+    right:3px;
+    top:0px;
+    -top:1px
+}
+.arrangement_big .pages_fan .next_page a:hover {
+    background:url(../images//list.png) -19px -535px no-repeat;
+}
+
+
+
+/*图片排列*/
+.Picture_Arrangement {
+    width:763px;
+    /*	height:auto;*/
+    z-index:1;
+    margin:10px auto;
+}
+.Picture_li {
+    width:175px;
+    height:264px;
+    float:left;
+    margin-right:15px;
+    display:inline;
+    position:relative;
+    z-index:10;
+    margin-top:9px
+}
+.Picture_li strong, .Picture_li b {
+    width:42px;
+    height:41px;
+    position:absolute;
+    display:block;
+    overflow:hidden;
+    top:-10px;
+    right:2%;
+    z-index:1
+}
+.Picture_li strong {
+    background:url(../images//list.png) 0 -50px no-repeat;
+}
+.Picture_li b {
+    background:url(../images//list.png) -48px -50px no-repeat;
+}
+.product-iWrap_1 {
+    border:2px solid #FFFFFF;
+    width:171px;
+    height:245px;
+    position:absolute;
+    z-index:0;
+    left:0;
+    top:0;
+    margin:0;
+    font-size:0;
+    margin:-2px;
+}
+.product-iWrap {
+    border:2px solid #fce1d1;
+}
+
+.productImg-wrap {
+    width:170px;
+    height:170px;
+    position:relative;
+    z-index:-1;
+    background-position:center center!important;
+    background-repeat:no-repeat!important;
+    margin:0 auto;
+    display:block
+}
+.Picture_li .wenzhi {
+    width:160px;
+    height:auto;
+    line-height:20px;
+    text-align:left;
+    font-size:12px;
+    font-weight:normal;
+    padding-left:6px
+}
+.product-iWrap .wenzhi {
+    color:#f37020
+}
+.product-iWrap .wenzhi a {
+    color:#f37020
+}
+.product-iWrap .wenzhi a:hover {
+    color:#f37020;
+    text-decoration:underline
+}
+.wenzhi a {
+    color:#313131
+}
+.wenzhi a:hover {
+    color:#f37020;
+    text-decoration:underline
+}
+.Picture_li p {
+    text-align:left;
+    line-height:20px;
+    width:160px;
+    padding-left:6px;
+    margin-top:4px
+}
+.Picture_li p span {
+    color:#eb6100;
+    margin-right:16px;
+    font-size:14px;
+    font-weight:bold
+}
+.Picture_li p font {
+    color:#959595;
+    font-size:12px;
+    text-decoration:line-through
+}
+.Picture_li .anliu_big .anliu {
+    width:84px;
+    height:24px;
+    background:url(../images//list.png) 0 -92px no-repeat;
+    border:none;
+    text-align:center;
+    font-size:12px;
+    font-weight:bold;
+    line-height:24px;
+    color:#FFFFFF;
+    float:left;
+    margin-right:12px
+}
+.Picture_li .anliu_big s {
+    width:14px;
+    height:15px;
+    display:block;
+    background:url(../images//Goods_details_1.gif) 0 -98px no-repeat;
+    overflow:hidden;
+    margin-top:4px;
+    float:left
+}
+.Picture_li .anliu_big a {
+    float:left;
+    font-size:12px;
+    color:#333333;
+    margin:0;
+    font-weight:normal;
+    line-height:15px;
+    margin-top:5px;
+    margin-left:3px
+}

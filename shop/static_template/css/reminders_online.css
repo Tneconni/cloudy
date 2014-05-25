@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*========================================共公部分开始==================================================================*/
+
+body{ font-family:Arial, Helvetica, sans-serif, "宋体", "黑体"; }
+* {margin:0px auto;}
+ul{ list-style-type:none;}
+div h2 p a li ul {margin:0px;padding:0px;}
+#top {width:980px;height:30px;border:1px solid #333;line-height:30px;}
+img{ border:none;}
+a{ text-decoration:none;}
+/*--=====================================logo+导航========================================*/
+.top{ width:980px; height:113px; }
+#logo {width:980px;height:152px;border:0px solid #333;background:#ffffff;}
+#logo .header{width:151px;height:60px;float:left; margin-top:42px;background: url(../images/logo.jpg) no-repeat ;}
+#logo .navigation{width:601px;height:133px;float:left;margin-left:228px;background: url(../images/submit_1.jpg) no-repeat  center;}
+
+/* =======================================提交成功========================================*/
+.tick{ width:980px; height:145px;}
+.tick_1{ width:50px; height:45px; margin-top:100px; float:left; margin-left:340px;}
+.goodgass{ height:45px; padding-top: 140px;}
+.goodgass_1{ height:45px; padding-top:15px; margin-right:100px;}
+.goodgass_1 p{ text-align:center; width:500px; padding-left:180px; font-size:12px; color:#313131;}
+
+
+/*=======================================订单展示========================================*/
+.dingdan{ width:980px; margin-top:102px; }
+.dingdan td{ font-size: 12px; color:#7d7d7d;}
+.dingdan td a{ color:#f37020;}
+
+/*=======================================在线支付========================================*/
+.youju{ width:102px; height:30px;; margin-top:15px; overflow:hidden;}
