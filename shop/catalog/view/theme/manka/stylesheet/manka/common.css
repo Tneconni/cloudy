@@ -118,7 +118,8 @@ a:active{ color:inherit;}
 }
 .menu a{ padding-left:20px;}
 .menu .gouwu {
-    background: url(../images/top_4.jpg) no-repeat;
+    background-repeat : no-repeat;
+    background-image : url(../images/top_4.jpg);
     width: 16px;
     height: 18px;
     left: 12px;

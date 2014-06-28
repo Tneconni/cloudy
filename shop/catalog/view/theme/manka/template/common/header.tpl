@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <title>漫客商城 - 你身边的动漫商店</title>
     <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="catalog/view/theme/manka/stylesheet/manka/common.css" rel="stylesheet" type="text/css" />
+    <link href="catalog/view/theme/manka/stylesheet/manka/index2.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" id="dialog_js" src="js/jquery.dialog.js" ></script>
     <script type="text/javascript" src="js/common.js"></script>
@@ -51,7 +52,7 @@
 <div id="header_1">
     <div class="header_top Id">
         <div class="mantou"></div>
-        <a class="logo" href="/"><img src="images/logl.gif" /></a>
+        <a class="logo" href="/"><img src="image/logl.gif" /></a>
         <!--搜索-->
         <div class="search_big">
             <form action="/index.php/home/search/index" method="get" >
