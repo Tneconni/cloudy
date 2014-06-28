@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*========================================共公部分开始==================================================================*/
+
+body{ font-family:Arial, Helvetica, sans-serif, "宋体", "黑体"; }
+* {margin:0px auto;}
+ul{ list-style-type:none;}
+div h2 p a li ul {margin:0px;padding:0px;}
+#top {width:980px;height:30px;border:1px solid #333;line-height:30px;}
+img{ border:none;}
+a{ text-decoration:none;}
+/*--=====================================logo+导航========================================*/
+#logo {width:980px;height:133px; background:#ffffff; margin:0 auto}
+#logo .header{width:151px;height:60px;float:left; margin-top:42px;background: url(../images/logo.jpg) no-repeat; display:inline}
+#logo .navigation{width:602px;height:49px;float:left;margin-left:224px;background: url(../images/index_08.jpg) no-repeat  center; display:inline; margin-top:48px;}
+
+/*--=====================================标题介绍========================================*/
+#information {width:980px;}
+#information .shelf {/*height:431px;*/border:1px solid #ffcaaa;border-bottom:3px solid #fbbe9a;margin-top:20px;}
+#information .shelf_1{ /*height:431px;*/}
+#information .shelf_1 h2 {height:608px;margin-bottom:0px auto;padding:0px;font-size:12px;line-height:40px;height:40px;background:#ededed;padding-left:20px; }
+
+/*--=====================================填写个人信息========================================*/
+#information .form{width:917px;height:292; border:1px solid #e9e9e9; margin-top:20px;}
+
+/*--=====================================收货人文字========================================*/
+.form p .words{font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #313131; margin-top:10px;}
+
+/*======================================填写信息-姓名=====================================*/
+.goods_info{ margin-left:30px; margin-top:10px; font-size:13px; color:#545454;}
+.goods_info li{ line-height:45px; height:45px; margin:0px; padding:0px;}
+
+/*======================================地区文字及选项=====================================*/
+.goods_info li em{ color:red; font-style:normal; font-size:12px;}
+.goods_info li .focus{ border:1px solid #ffd0a4;}
+.goods_info li.select{ font-size:12px;margin-left:81px;width:800px;color: #313131;}
+.goods_info li select{ width:120px; line-height:23px; height:23px; padding-left:2px; border:1px solid #ccc;}
+.goods_info li.area{ padding-left:32px; height:60px;}
+.goods_info li.area p{ margin:0px; padding:0px; height:23px; line-height:23px;}
+
+
+
+
+/*======================================信息填写3个=====================================*/
+.goods_info li input{ border:1px solid #c9c9c9; width:130px; height:20px; line-height:23px; font-size:12px; color:#CCC; padding-left:2px;}
+.goods_info li input.address{ width:200px; /*background:#F9C;*/ border:1px solid #ccc;}
+.goods_info li input.focus{ border:1px solid #ffd0a4;}
+
+/*======================================确认按钮=====================================*/
+.button{height:75px; width:917px;padding-top:25px;}
+
+
+/*======================================支付及配送方式=====================================*/
+
+#payment{ height:608px; border:1px solid #ffcaaa;border-bottom:3px solid #fbbe9a; margin-top:13px; width:980px;}
+#payment .pay {height:40px;border:0spx solid #ffcaaa;}
+#payment .pay h2 {height:608px;margin-bottom:0px auto;padding:0px;font-size:12px;line-height:40px;height:40px;background:#ededed;padding-left:20px; }
+
+
+/*======================================在线支付选项=====================================*/
+.framework{ height:454px; width:917px; border:1px solid #e9e9e9; margin-top:20px;}
+.words{ padding-top:21px; padding-left:32px; font-size:12px; font-weight:normal; color:#333333;}
+.tubiao{margin-top:40px; padding-left:40px; float:left;}
+.wenzi{font-size:12px; font-weight:normal;color:#333333;float:left; padding-left:20px; margin-top:20px; width:670px;}
+.tupian{ float:left;margin-top:20px; padding-left:20px; }
+
+/*======================================网上银行=====================================*/
+.banknet{height:70px; padding-left:0px;}
+
+/*======================================按钮=====================================*/
+.button2{ width:917px; height:70px; padding-top:28px;}
+
+/*======================================线下支付=====================================*/
+.post{ height:100px; width:517px; line-height:20px; }
+
+.post p span{ font-size:13px;}
+/*======================================商品清单=====================================*/
+.List{ width:980px; height:404px;border:1px solid #ffcaaa;border-bottom:1px solid #fbbe9a;margin-top:20px; }
+.List .shangpin{height:40px;border:0spx solid #ffcaaa;}
+.List .shangpin h2{height:404px;margin-bottom:0px auto;padding:0px;font-size:12px;color:#626262;line-height:40px;height:40px;background:#ededed;padding-left:20px;  }
+
+
+
+
+
+#m .a .j{ margin-left:28px;
+
+    line-height:250px;
+    width:145px;
+    height:30px;}
+
+#m .a .zaix { width:815px; height:30px;  margin-left:50px; padding-left:60px; margin-top:20px; background:#F8F4DA; }
+#m .a .zaixa{ font-size:12px; color:#323232; line-height:30px; padding-left:1px;}
+
+#m .a .zf{width:815px; height:80px;  margin-left:50px; padding-left:60px; background:#FFF;}
+#m .a .zf .k input{ margin-top:40px; padding-left:60px; float:left; }
+#m .a .zf .aa{ padding-left:20px; float:left; margin-top:25px;}
+#m .a .zf .wz{ float:left; font-size:12px; color:#333; ;height:30px; padding-top:30px; width:600px; padding-left:10px;}
+
+
+#m .a .zain { width:815px; height:30px;  margin-left:50px; padding-left:60px; background:#F8F4DA; }
+
+#m .a .xianx { width:815px; height:30px;  margin-left:50px; padding-left:60px; background:#F8F4DA; }
+#m .a .zfk{width:815px; height:100px;  margin-left:50px; padding-left:60px; background:#FFF;}
+#m .a .zfk .k input{ margin-top:40px; padding-left:60px; float:left; }
+#m .a .zfk .aa{ padding-left:20px; float:left; margin-top:25px;}
+#m .a .zfk .ws{ float:left; font-size:12px; color:#333; height:15px;  width:600px; padding-left:10px; margin-top:1px;}
+
+
+
+#m .a .zf .ws{ float:left; font-size:12px; color:#333; ;height:18px; line-height:8px; width:600px; padding-left:10px;}
+
+#m .a .ll{ width:815px; height:70px;  margin-left:50px; padding-left:60px; background:#FFF;}
+#m .a .ll .anniu{ line-height:35px; padding-left:1px;width:815px; height:70px; padding-top:20px;}
+
+
+#m .a .qd{width:815px; height:30px;  margin-left:50px; padding-left:60px; margin-top:20px; background:#FC9;}
+#m .a .qd .qda{ font-size:12px; color:#333; line-height:30px; width:815px; height:30px;}
+#m .a h2 .qdb{ float:left; font-size:12px; color:#333;}
+#m .a h2 .qdc{ float:left; font-size:12px; color:#333;}
+
+#m .a .qdd{width:815px; height:75px;  margin-left:50px; padding-left:60px;  background: #C60;}
+#m .a .qdd p .qde{ float:left; width:815px; height:75px; line-height:75px; padding-top:2px;}
+#m .a .qdd p .qdf{ float:left; width:815px; height:75px; line-height:75px;}#aaa {
+                                                                               line-height: 16px;
+                                                                           }
+
+
+
+/* float :left  right  none*/
+#jiaq {
+    text-decoration: line-through;
+}
+#jiaq2 {
+    text-decoration: line-through;
+}
+#m .a.ao table tr td p {
+    color: #FDF8E2;
+}
+
