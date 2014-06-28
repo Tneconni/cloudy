@@ -18,7 +18,7 @@ define('DIR_DOWNLOAD', 'D:\git\cloudy\shop/download/');
 define('DIR_LOGS', 'D:\git\cloudy\shop/system/logs/');
 
 // DB
-define('DB_DRIVER', 'mysql');
+define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
