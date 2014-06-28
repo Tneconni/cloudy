@@ -70,6 +70,8 @@
 <div class="navigation_big">
     <!--分类导航-->
     <h2>所有商品分类</h2>
+
+    <!-- todo : fixing the style -->
     <ul class="Classification_navigation_big">
         <li class="surrounding surrounding_0" data="1">
             <div class="i-mc">
