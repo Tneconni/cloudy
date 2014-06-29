@@ -537,3 +537,8 @@
 2014-05-18 15:30:52 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\header.tpl on line 2
 2014-05-18 15:31:43 - PHP Notice:  Undefined variable: direction in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\header.tpl on line 2
 2014-05-18 15:31:43 - PHP Notice:  Undefined variable: lang in D:\git\cloudy\shop\catalog\view\theme\default\template\wechat\header.tpl on line 2
+2014-06-28 16:12:37 - PHP Notice:  Use of undefined constant home_banner - assumed 'home_banner' in D:\git\cloudy\shop\catalog\view\theme\manka\template\common\home.tpl on line 8
+2014-06-28 16:16:13 - PHP Notice:  Use of undefined constant home_banner - assumed 'home_banner' in D:\git\cloudy\shop\catalog\view\theme\manka\template\common\home.tpl on line 8
+2014-06-28 16:17:51 - PHP Notice:  Use of undefined constant home_banner - assumed 'home_banner' in D:\git\cloudy\shop\catalog\view\theme\manka\template\common\home.tpl on line 8
+2014-06-28 16:19:55 - PHP Notice:  Use of undefined constant home_banner - assumed 'home_banner' in D:\git\cloudy\shop\catalog\view\theme\manka\template\common\home.tpl on line 8
+2014-06-28 16:20:22 - PHP Notice:  Undefined variable: home_banner in D:\git\cloudy\shop\catalog\view\theme\manka\template\common\home.tpl on line 8
