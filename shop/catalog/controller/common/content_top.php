@@ -1,6 +1,7 @@
 <?php  
 class ControllerCommonContentTop extends Controller {
 	protected function index() {
+        
 		$this->load->model('design/layout');
 		$this->load->model('catalog/category');
 		$this->load->model('catalog/product');

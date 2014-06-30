@@ -1,6 +1,14 @@
 <?php
 class ControllerModuleFeatured extends Controller {
-	protected function index($setting) {
+	protected function index( $setting = array() ) {
+
+        $setting = array(
+
+            'limit' => '8',
+            'image_width' => '162',
+            'image_height' => '162'
+
+        );
 		$this->language->load('module/featured'); 
 
 		$this->data['heading_title'] = $this->language->get('heading_title');
