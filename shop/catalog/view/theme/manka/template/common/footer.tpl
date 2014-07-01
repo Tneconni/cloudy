@@ -49,7 +49,10 @@
     </div><div class="clear"></div>
 </div>
 <!-- 在线客服 -->
-<a style="position:fixed;width:36px;height:113px;right:10%; top:270px; z-index:10000;_position:absolute;_top:expression(documentElement.scrollTop + 270 + 'px');" href="http://wpa.qq.com/msgrd?v=3&uin=800079027&site=qq&menu=yes" target="_blank" title="在线咨询"><img src="images/kefu.gif" /></a>
+<!--
+<a style="position:fixed;width:36px;height:113px;right:10%; top:270px; z-index:10000;_position:absolute;_top:expression(documentElement.scrollTop + 270 + 'px');"
+   href="http://wpa.qq.com/msgrd?v=3&uin=800079027&site=qq&menu=yes" target="_blank" title="在线咨询"><img src="images/kefu.gif" /></a>
+-->
 <!-- 在线客服 End -->
 <script type="text/javascript">
     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
