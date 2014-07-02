@@ -385,10 +385,7 @@ class ControllerProductCategory extends Controller {
 			}
 
 			$this->children = array(
-				'common/column_left',
-				'common/column_right',
-				'common/content_top',
-				'common/content_bottom',
+
 				'common/footer',
 				'common/header'
 			);
