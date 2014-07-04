@@ -54,11 +54,24 @@
             </dl>
         </div>
         <!--购物车标-->
-        <div class="tb-action_big" style="margin-left:82px; width:450px"><a href="#" class="mai"></a> <a href="#" class="gouwuche"></a> <s></s><span class="favgoods" style="cursor:pointer">收藏商品</span> </div>
+        <div class="tb-action_big" style="margin-left:82px; width:450px">
+            <a href="#" class="mai"></a>
+            <a id="product-<?php echo $product_id; ?>" class="add-to-cart gouwuche" style="cursor:pointer"></a>
+            <s></s><span class="favgoods" style="cursor:pointer">收藏商品</span>
+        </div>
         <div class="clear"></div>
     </div>
     <div class="clear"></div>
 </div>
+<script>
+
+    $('.add-to-cart').click(function(){
+
+        addToCart( this.id.split('-')[1], 1);
+
+    });
+
+</script>
 <!--新品上架=================left-->
 <div class="New_product">     <div class="new_left mt_left">
         <div class="biao biao_1"></div>
