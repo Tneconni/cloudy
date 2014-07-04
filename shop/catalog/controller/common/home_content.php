@@ -35,7 +35,6 @@ class ControllerCommonHomeContent extends Controller {
             $products = $this->model_catalog_product->getProducts( array(
                 'filter_category_id'=> $cat['category_id']
             ) );
-//            var_dump( $products );die();
 
             foreach( $products as &$product ){
 

@@ -46,8 +46,9 @@
 
             </a>
             <div class="wen_sm">
-                <a href="<?php $product['href']; ?>" target="_blank"><?php $product['name']; ?></a>
+                <a href="<?php echo $product['href']; ?>" target="_blank"><?php echo $product['name']; ?></a>
                 <p> ￥5.00</p>
+                <div id="product-<?php echo $product['product_id']; ?>" class='add-to-card' style="cursor:pointer" >Add to Card</div>
             </div>
         </li>
 
@@ -55,6 +56,15 @@
 
         <div class="clear"></div>
     </ul>
+    <script>
+
+        $('.add-to-card').click(function(){
+
+            addToCart( this.id.split('-')[1], 1);
+
+        });
+
+    </script>
     <div class="clear"></div>
     <!--热销商品-->
     <div class="product_shelves_biao"><span class="shelves shelves_1"></span></div>

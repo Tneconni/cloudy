@@ -19,7 +19,7 @@ foreach( $categories as $cat ){ ?>
                 </a>
 
                 <div class="wen_sm">
-                    <a href="/index.php/goods/index/id/3307" target="_blank">73辑《漫客·绘意》</a>
+                    <a href="/index.php/goods/index/id/3307" target="_blank"><?php echo $products['name'];?></a>
                     <p> ￥9.00</p>
                 </div>
             </li>

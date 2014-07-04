@@ -7,9 +7,13 @@
     <link href="css/common.css" rel="stylesheet" type="text/css" />
     <link href="catalog/view/theme/manka/stylesheet/manka/common.css" rel="stylesheet" type="text/css" />
     <link href="catalog/view/theme/manka/stylesheet/manka/index2.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
+
+    <!--
     <script type="text/javascript" id="dialog_js" src="js/jquery.dialog.js" ></script>
-    <script type="text/javascript" src="js/common.js"></script>
+-->
+
     <!--[if IE 6]>
     <script type="text/javascript" src="js/png.js" ></script>
     <script type="text/javascript"> DD_belatedPNG.fix('*');</script>
