@@ -97,7 +97,8 @@ class ControllerCheckoutCart extends Controller {
 			'separator' => $this->language->get('text_separator')
 		);
 
-		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
+		if ( 1 ) {
+//		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
 			$points = $this->customer->getRewardPoints();
 
 			$points_total = 0;
@@ -431,10 +432,7 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			$this->children = array(
-				'common/column_left',
-				'common/column_right',
-				'common/content_bottom',
-				'common/content_top',
+
 				'common/footer',
 				'common/header'	
 			);
@@ -458,15 +456,13 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			$this->children = array(
-				'common/column_left',
-				'common/column_right',
-				'common/content_top',
-				'common/content_bottom',
+
 				'common/footer',
-				'common/header'	
+				'common/header'
+
 			);
 
-			$this->response->setOutput($this->render());			
+			$this->response->setOutput($this->render());
 		}
 	}
 
@@ -807,5 +803,7 @@ class ControllerCheckoutCart extends Controller {
 
 		$this->response->setOutput(json_encode($json));
 	}
+
+    
 }
 ?>

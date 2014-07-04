@@ -1,3 +1,4 @@
+<!--
 <div id="cart">
   <div class="heading">
     <h4><?php echo $heading_title; ?></h4>
@@ -52,3 +53,13 @@
     <?php } ?>
   </div>
 </div>
+-->
+
+
+<li class="fore Id menu">
+    <s></s>
+    <a href="<?php echo $cart;?>">
+        <span class="gouwu"></span>购物车
+        <span class="naber" id="cart_number"><?php echo $countProducts; ?></span>件
+    </a>
+</li>

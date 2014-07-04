@@ -36,10 +36,15 @@
                     </ul>
                 </div>
             </li>
+
             <!--<li class="fore Id"> <a href="#">联系客服</a> <s></s> </li>-->
-            <li class="fore Id menu"><s></s><a href="/index.php/Cart/index"><span class="gouwu"></span>购物车<span class="naber" id="cart_number">0</span>件</a>
-            </li>
-            <li class="fore Id menu_1"><s></s><a href="/index.php/User/Collect/index">收藏夹</a>
+
+            <?php echo $cart; ?>
+
+            <li class="fore Id menu_1">
+
+                <s></s>
+                <a href="/index.php/User/Collect/index">收藏夹</a>
 
             </li>
             <!--<li class="fore Id menu_2"><s></s><a href="#">网站导航<b></b></a></li>-->
