@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <title>漫客商城 - 你身边的动漫商店</title>
-    <link href="css/common.css" rel="stylesheet" type="text/css" />
+
     <link href="catalog/view/theme/manka/stylesheet/manka/common.css" rel="stylesheet" type="text/css" />
     <link href="catalog/view/theme/manka/stylesheet/manka/index2.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>

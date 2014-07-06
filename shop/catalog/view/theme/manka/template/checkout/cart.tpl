@@ -250,72 +250,23 @@
                         <td width="144"><p style="font-size: 14px; color: #313131; font-family: Arial, Helvetica, sans-serif, '宋体', '黑体'; text-align:center">
 
                                 ￥<span id="shop_price_<?php echo $product['key']; ?>"><?php echo $product['price'];?></span></p>
-                            <p id="ziti" style="text-align:center">￥<?php echo $product['price'];?></p></td>
+                            <p id="ziti" style="text-align:center"><?php echo $product['price'];?></p></td>
                         <td width="90" style="font-size: 14px; color: #7f7e7e; font-weight: bold;">0</td>
                         <td width="111">
                             <div class="tb">
                                 <a href="javascript:void(0);" id="diminished" data="<?php echo $product['key']; ?>">
-                                    <img src="<?php echo $product['thumb'];?>" width="24" height="24" /></a>
-                                <input type="text" name="number[<?php echo $product['key']; ?>]" id="goods_<?php echo $product['key']; ?>" value="2" data="<?php echo $product['key']; ?>" class="goods_num" style="width:20px;" />
-                                <a href="javascript:void(0);" id="augmented" data="<?php echo $product['key']; ?>"><img src=  "image/buy_22.jpg" width="24" height="24" /></a></div></td>
-                        <td width="112" style="color: #f37020; font-weight: bold; font-size: 12px;">￥<span id="subtotal_<?php echo $product['key']; ?>" class="subtotal" data="<?php echo $product['key']; ?>"><?php echo $product['total'];?></span></td>
-                        <td width="57" id="shanchu"><a href="javascript:void(0)" id="delete" data='<?php echo $product['key']; ?>'>删除</a></td>
+                                    <img src="image/buy_20.jpg" width="24" height="24" /></a>
+                                <input type="text" name="number[<?php echo $product['key']; ?>]" id="goods_<?php echo $product['key']; ?>" value="<?php echo $product['quantity']; ?>" data="<?php echo $product['key']; ?>" class="goods_num" style="width:20px;" />
+                                <a href="javascript:void(0);" id="augmented" data="<?php echo $product['key']; ?>">
+                                    <img src="image/buy_22.jpg" width="24" height="24" /></a></div></td>
+                        <td width="112" style="color: #f37020; font-weight: bold; font-size: 12px;"><span id="subtotal_<?php echo $product['key']; ?>" class="subtotal" data="<?php echo $product['key']; ?>"><?php echo $product['total'];?></span></td>
+                        <td width="57" id="shanchu">
+                            <a href="javascript:void(0)" id="delete" data='<?php echo $product['key']; ?>'>删除</a>
+                        </td>
                     </tr>
                     </table>
                     <?php } ?>
-                    <table width="957" border="0" cellspacing="0" class="cart_219118"  class="check_219118"/>
-                    <!--书本展示一-->
-                    <tr>
-                        <!--  宝贝一-->
-                        <td width="10"><input type="checkbox" name="cart_id[]" value="219118" reachName=''  checked="checked" class="check_219118" /></td>
-                        <td width="80"><a  href="/index.php/goods/index/id/3281" target="_blank">
-                                <div class="baobei" style="background:url(/Uploads/Goods/2014-04-25/5359c0d7697c6.jpg.50x50.jpg); cursor:pointer"></div>
-                            </a></td>
-                        <td width="353" style="font-size: 12px; color: #535353; text-align:left"><em >
-                                <a  href="/index.php/goods/index/id/3281" target="_blank">爱萌1.0绕线器 <span class="reachName"></span> 				  <br><span style="color:#cccccc">款式 【斗破-萧炎】</span></a>
-                            </em>
-                        </td>
-                        <td width="144"><p style="font-size: 14px; color: #313131; font-family: Arial, Helvetica, sans-serif, '宋体', '黑体'; text-align:center">
 
-                                ￥<span id="shop_price_219118">15.00</span></p>
-                        </td>
-                        <td width="90" style="font-size: 14px; color: #7f7e7e; font-weight: bold;">0</td>
-                        <td width="111">
-                            <div class="tb">
-                                <a href="javascript:void(0);" id="diminished" data="219118">
-                                    <img src="image/buy_20.jpg" width="24" height="24" /></a>
-                                <input type="text" name="number[219118]" id="goods_219118" value="2" data="219118" class="goods_num" style="width:20px;" />
-                                <a href="javascript:void(0);" id="augmented" data="219118"><img src=  "image/buy_22.jpg" width="24" height="24" /></a></div></td>
-                        <td width="112" style="color: #f37020; font-weight: bold; font-size: 12px;">￥<span id="subtotal_219118" class="subtotal" data="219118">30.00</span></td>
-                        <td width="57" id="shanchu"><a href="javascript:void(0)" id="delete" data='219118'>删除</a></td>
-                    </tr>
-                    </table><table width="957" border="0" cellspacing="0" class="cart_219117"  class="check_219117"/>
-                    <!--书本展示一-->
-                    <tr>
-                        <!--  宝贝一-->
-                        <td width="10"><input type="checkbox" name="cart_id[]" value="219117" reachName=''  checked="checked" class="check_219117" /></td>
-                        <td width="80"><a  href="/index.php/goods/index/id/3298" target="_blank">
-                                <div class="baobei" style="background:url(/Uploads/Goods/2014-05-13/53716b9718998.jpg.50x50.jpg); cursor:pointer"></div>
-                            </a></td>
-                        <td width="353" style="font-size: 12px; color: #535353; text-align:left"><em >
-                                <a  href="/index.php/goods/index/id/3298" target="_blank">《等风来》精装绘本 <span class="reachName"></span> 				  </a>
-                            </em>
-                        </td>
-                        <td width="144"><p style="font-size: 14px; color: #313131; font-family: Arial, Helvetica, sans-serif, '宋体', '黑体'; text-align:center">
-
-                                ￥<span id="shop_price_219117">36.00</span></p>
-                            <p id="ziti" style="text-align:center">￥39.80</p></td>
-                        <td width="90" style="font-size: 14px; color: #7f7e7e; font-weight: bold;">0</td>
-                        <td width="111">
-                            <div class="tb">
-                                <a href="javascript:void(0);" id="diminished" data="219117">
-                                    <img src="image/buy_20.jpg" width="24" height="24" /></a>
-                                <input type="text" name="number[219117]" id="goods_219117" value="1" data="219117" class="goods_num" style="width:20px;" />
-                                <a href="javascript:void(0);" id="augmented" data="219117"><img src=  "image/buy_22.jpg" width="24" height="24" /></a></div></td>
-                        <td width="112" style="color: #f37020; font-weight: bold; font-size: 12px;">￥<span id="subtotal_219117" class="subtotal" data="219117">36.00</span></td>
-                        <td width="57" id="shanchu"><a href="javascript:void(0)" id="delete" data='219117'>删除</a></td>
-                    </tr>
-                    </table>
 
                     <div style="clear:both;"></div>
                 </div>
@@ -330,23 +281,50 @@
                 <td width="425">&nbsp;</td>
                 <td width="84">&nbsp;</td>
                 <td width="164" height="63" style="text-align:left; line-height:24px;">
+                    <!--
                     <span class="span_1">商品金额</span>：<span class="span_2">￥<b id="totalPrice">0.00</b></span>
                     <br />
                     <span class="span_1">　　优惠</span>：<span class="span_2">- <b id="youhui">0.00</b></span>
+                    <br />
+                    -->
+
+                    <?php foreach ($totals as $total) { ?>
+
+                    <?php if( $total['code'] == 'total'){ ?>
+                        <?php continue; ?>
+                    <?php } ?>
+                    <span class="span_1" >
+                        <?php echo $total['title']; ?></span>：
+                    <span class="span_2"><b id="totalPrice"><?php echo $total['text']; ?></b></span>
+                    <br />
+                    <?php } ?>
                 </td>
             </tr>
 
+            <?php foreach ($totals as $total) { ?>
+                <?php if( $total['code'] != 'total'){ ?>
+                    <?php continue; ?>
+                <?php } ?>
             <tr>
                 <td>&nbsp;</td>
                 <td height="46">&nbsp;</td>
-                <td colspan="2" style=" border-top:1px solid  #fbccb0;"><span class="span_1">总金额（不含运费）：</span><span class="span_2" style="font-size:24px;">￥<b  id="totalPrices">0.00</b></span></td>
+                <td colspan="2" style=" border-top:1px solid  #fbccb0;">
+                    <span class="span_1"><?php echo $total['title']; ?></span>：
+                    <span class="span_2" style="font-size:24px;"><b  id="totalPrices"><?php echo $total['text']; ?></b></span>
+                </td>
             </tr>
+            <?php } ?>
 
             <tr>
                 <td bgcolor="#fdeade" style="padding-left:6px;" align="left"><a href="/"><img src="image/button2.jpg" width="92" height="24" /></a></td>
                 <td height="40" colspan="2" bgcolor="#fdeade">&nbsp;</td>
-                <td bgcolor="#fdeade"  style="padding-left:35px;"><a href="javascript:void(0);" id="submit_button"><img src="image/button1.jpg" width="109" height="31" /></a></td>
+                <td bgcolor="#fdeade"  style="padding-left:35px;">
+                    <a href="<?php echo $checkout ?>" id="submit_button">
+                        <img src="image/button1.jpg" width="109" height="31" />
+                    </a>
+                </td>
             </tr>
+
         </table>
     </div>
     </form>
