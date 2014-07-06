@@ -161,7 +161,7 @@
       <p class="anniu"> <img src="image/index_31.jpg" width="145" height="30" /></p>-->
     </div>
 </div>
-</div>
+
 <!--商品清单-->
 <div class="List" style="height:auto; padding-bottom:10px">
     <div class="shangpin">
@@ -288,13 +288,24 @@
         <!--商品提交按钮-->
         <tr>
             <td height="30" width="578" align="right">
-                <p style=" float:right; padding-right:20px;"><img src="image/index_47.jpg" width="150" height="40"  style="cursor:pointer" class="order_submit_button"/></p>
+                <p style=" float:right; padding-right:20px;">
+                    <img src="image/index_47.jpg" width="150" height="40"
+                         style="cursor:pointer"
+                         class="order_submit_button"/>
+                </p>
             </td>
         </tr>
     </table>
 </div>
-</div>
+
+
 </form>
 
+<script>
+    $('.order_submit_button').click(function(){
 
+        $('')
+
+    });
+</script>
 <?php echo $footer; ?>

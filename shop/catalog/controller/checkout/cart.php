@@ -414,7 +414,7 @@ class ControllerCheckoutCart extends Controller {
 					array_multisort($sort_order, SORT_ASC, $total_data);			
 				}
 			}
-
+//            var_dump($total_data);die();
 			$this->data['totals'] = $total_data;
 
 			$this->data['continue'] = $this->url->link('common/home');
