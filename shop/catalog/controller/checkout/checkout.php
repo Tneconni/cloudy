@@ -117,6 +117,9 @@ class ControllerCheckoutCheckout extends Controller {
 		$this->data['logged'] = $this->customer->isLogged();
 		$this->data['shipping_required'] = $this->cart->hasShipping();
 
+        $this->data['confirmOrderUrl'] = $this->url->link('checkout/confirm');
+        $this->data['orderSuccessUrl'] = $this->url->link('checkout/success');
+
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/checkout/checkout.tpl';
 		} else {
@@ -164,7 +167,11 @@ class ControllerCheckoutCheckout extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 
-    public function addOrder(){
+    public function addAndConfirmOrder(){
+
+        //todo : add the order
+
+
 
         $this->load->model('checkout/order');
         $this->model_checkout_order->confirm($this->session->data['order_id'], $this->config->get('cod_order_status_id'));

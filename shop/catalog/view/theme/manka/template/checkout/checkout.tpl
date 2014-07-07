@@ -304,7 +304,21 @@
 <script>
     $('.order_submit_button').click(function(){
 
-        $('')
+        var url = '<?php echo $confirmOrderUrl; ?>';
+        var data = {
+            shipping_address : $('input[name=\'address_id\']').val(),
+            payment_method_code : $('input[name=\'pays\']').val()
+        };
+
+        $.post(url, data, function( res ){
+
+            if( res['status'] == 'success' ){
+                location = '<?php echo $orderSuccessUrl;?>';
+            }else{
+                alert('false');
+            }
+
+        },'json');
 
     });
 </script>
