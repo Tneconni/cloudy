@@ -149,7 +149,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
 		} elseif (isset($this->session->data['guest'])) {
 			$payment_address = $this->session->data['guest']['payment'];
 		}	
-
+/*
 		if (empty($payment_address)) {
 			$json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');
 		}		
@@ -158,7 +158,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
 			$json['redirect'] = $this->url->link('checkout/cart');				
 		}	
-
+*/
 		// Validate minimum quantity requirments.			
 		$products = $this->cart->getProducts();
 

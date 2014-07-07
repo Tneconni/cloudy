@@ -12,7 +12,7 @@ class ControllerCheckoutConfirm extends Controller {
 			} elseif (isset($this->session->data['guest'])) {
 				$shipping_address = $this->session->data['guest']['shipping'];
 			}
-
+/*
 			if (empty($shipping_address)) {								
 				$redirect = $this->url->link('checkout/checkout', '', 'SSL');
 			}
@@ -21,6 +21,7 @@ class ControllerCheckoutConfirm extends Controller {
 			if (!isset($this->session->data['shipping_method'])) {
 				$redirect = $this->url->link('checkout/checkout', '', 'SSL');
 			}
+*/
 		} else {
 			unset($this->session->data['shipping_method']);
 			unset($this->session->data['shipping_methods']);
@@ -412,6 +413,7 @@ class ControllerCheckoutConfirm extends Controller {
 			}  
 
 			$this->data['totals'] = $total_data;
+            $this->url->link('checkout/confirm');
 
 			$this->data['payment'] = $this->getChild('payment/' . $this->session->data['payment_method']['code']);
 		} else {
