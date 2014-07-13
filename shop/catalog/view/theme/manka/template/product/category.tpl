@@ -63,11 +63,17 @@
         <div class="position_common">您的当前位置：<a href="/">首页</a>> <a href="/index.php/Category/index/">全部商品</a> > <a href="/index.php/Category/index/id/100">杂志</a>  > <a href="/index.php/Category/index/id/225">火星少女</a>  </div>
         <!--分类查找-->
         <!--相关商品数-->
-        <div class="Number_goods"><span>相关商品<font>4</font>款 </span></div>
+        <div class="Number_goods">
+            <span>相关商品<font><?php echo $product_total;?></font>款 </span></div>
         <!--图片排列方式-->
         <ul class="arrangement_big">
             <div class="pages_fan">
-                <span></span>1/1<span class="next_page"><a href="/index.php/Category/index/id/225?&page=2"></a></span><span class="previous_page"><a href="/index.php/Category/index/id/225?&page=0"></a></span>
+                <span></span>1/1<span class="next_page">
+                    <a href="/index.php/Category/index/id/225?&page=2"></a>
+                </span>
+                <span class="previous_page">
+                    <a href="/index.php/Category/index/id/225?&page=0"></a>
+                </span>
             </div>
             <li><a href="/index.php/Category/index/id/225?&order=listorder"   >默认排序</a></li>
             <li><a href="/index.php/Category/index/id/225?&order=sold_number" >销量</a><s class="shang"></s></li>
@@ -83,39 +89,29 @@
         <!--图片排列-->
         <div class="Picture_Arrangement">
 
+            <?php foreach( $products as $pdt ){ ?>
+
             <div class="Picture_li">
                 <div class="product-iWrap_1">
-                    <a href="/index.php/goods/index/id/1557" class="productImg-wrap" style="background:url(/Uploads/Goods/2013-05-29/201212251411584104.jpg.150x150.jpg)" title="补邮费专用 运费差多少补多少 请勿乱拍 谢谢"></a>
-                    <h3 class="wenzhi"><a href="/index.php/goods/index/id/1557" title="补邮费专用 运费差多少补多少 请勿乱拍 谢谢">补邮费专用 运费差多少补...</a></h3>
-                    <p><span>￥1.00</span></p>
-                    <p class="anliu_big"><!--<input type="button" class="anliu" value="加入购物车" />-->
-                        <s></s><a href="javascript:void(0);" data='1557' id="favgoods">收藏夹</a></p>
-                </div>
-            </div><div class="Picture_li">
-                <div class="product-iWrap_1">
-                    <a href="/index.php/goods/index/id/1372" class="productImg-wrap" style="background:url(/Uploads/Goods/2013-05-29/201207161140029569.jpg.150x150.jpg)" title="第3辑《漫客·火星少女》"></a>
-                    <h3 class="wenzhi"><a href="/index.php/goods/index/id/1372" title="第3辑《漫客·火星少女》">第3辑《漫客·火星少女》</a></h3>
-                    <p><span>￥6.00</span></p>
-                    <p class="anliu_big"><!--<input type="button" class="anliu" value="加入购物车" />-->
-                        <s></s><a href="javascript:void(0);" data='1372' id="favgoods">收藏夹</a></p>
-                </div>
-            </div><div class="Picture_li">
-                <div class="product-iWrap_1">
-                    <a href="/index.php/goods/index/id/1243" class="productImg-wrap" style="background:url(/Uploads/Goods/2013-05-29/)" title="测试不要拍23"></a>
-                    <h3 class="wenzhi"><a href="/index.php/goods/index/id/1243" title="测试不要拍23">测试不要拍23</a></h3>
-                    <p><span>￥99.00</span></p>
-                    <p class="anliu_big"><!--<input type="button" class="anliu" value="加入购物车" />-->
-                        <s></s><a href="javascript:void(0);" data='1243' id="favgoods">收藏夹</a></p>
-                </div>
-            </div><div class="Picture_li">
-                <div class="product-iWrap_1">
-                    <a href="/index.php/goods/index/id/1187" class="productImg-wrap" style="background:url(/Uploads/Goods/2013-05-29/201112231039364841.jpg.150x150.jpg)" title="第1辑《漫客·火星少女》"></a>
-                    <h3 class="wenzhi"><a href="/index.php/goods/index/id/1187" title="第1辑《漫客·火星少女》">第1辑《漫客·火星少女》</a></h3>
-                    <p><span>￥6.00</span></p>
-                    <p class="anliu_big"><!--<input type="button" class="anliu" value="加入购物车" />-->
-                        <s></s><a href="javascript:void(0);" data='1187' id="favgoods">收藏夹</a></p>
+                    <a href="<?php echo $pdt['href'];?>" class="productImg-wrap"
+                       style="background:url(<?php echo $pdt['thumb'];?>)"
+                       title="<?php echo $pdt['name'];?>"></a>
+                    <h3 class="wenzhi">
+                        <a href="<?php echo $pdt['href'];?>"
+                            title="<?php echo $pdt['name'];?>"><?php echo $pdt['name'];?></a>
+                    </h3>
+                    <p><span><?php echo $pdt['price'];?></span></p>
+                    <p class="anliu_big">
+                        <s></s>
+                        <a href="javascript:void(0);"
+                           class="add-to-card"
+                           id="product-<?php echo $pdt['product_id']; ?>">添加到购物车</a>
+                    </p>
                 </div>
             </div>
+
+            <?php } ?>
+
         </div>
         <div class="clear"></div>
         <!--页码-->
@@ -128,5 +124,13 @@
     </div>
     <div class="clear"></div>
 </div>
+<script>
 
+    $('.add-to-card').click(function(){
+
+        addToCart( this.id.split('-')[1], 1);
+
+    });
+
+</script>
 <?php echo $footer; ?>

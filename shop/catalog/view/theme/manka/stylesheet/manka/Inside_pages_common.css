@@ -176,7 +176,9 @@
     height:40px;
     line-height:40px;
     text-align:left;
-    color:#313131
+    color:#313131;
+    font-family:"宋体"
+
 }
 .position_common span {
     color:#a0a0a0
