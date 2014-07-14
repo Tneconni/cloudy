@@ -375,6 +375,8 @@ class ControllerProductCategory extends Controller {
 
 			$this->data['pagination'] = $pagination->render();
 
+            $this->data['paginationObj'] = $pagination;
+
 			$this->data['sort'] = $sort;
 			$this->data['order'] = $order;
 			$this->data['limit'] = $limit;

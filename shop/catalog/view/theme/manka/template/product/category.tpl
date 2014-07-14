@@ -60,7 +60,13 @@
     <!--====================================right-->
     <div class="combination_right combination_right_ml">
         <!--你的位置-->
-        <div class="position_common">您的当前位置：<a href="/">首页</a>> <a href="/index.php/Category/index/">全部商品</a> > <a href="/index.php/Category/index/id/100">杂志</a>  > <a href="/index.php/Category/index/id/225">火星少女</a>  </div>
+        <div class="position_common">您的当前位置：
+            <?php $count = count($breadcrumbs) - 1; ?>
+            <?php foreach($breadcrumbs as $key=>$nav ){ ?>
+                <a href="<?php echo $nav['href'];?>"><?php echo $nav['text'];?></a>
+                <?php if( $key <  $count ){ ?>><?php }?>
+            <?php } ?>
+        </div>
         <!--分类查找-->
         <!--相关商品数-->
         <div class="Number_goods">
@@ -68,8 +74,10 @@
         <!--图片排列方式-->
         <ul class="arrangement_big">
             <div class="pages_fan">
-                <span></span>1/1<span class="next_page">
-                    <a href="/index.php/Category/index/id/225?&page=2"></a>
+                <span></span>
+                <?php echo $paginationObj->page; ?>/<?php echo $paginationObj->total; ?>
+                <span class="next_page">
+                    <a href="<?php echo $paginationObj->total; ?>"></a>
                 </span>
                 <span class="previous_page">
                     <a href="/index.php/Category/index/id/225?&page=0"></a>
