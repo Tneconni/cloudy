@@ -34,14 +34,13 @@
                 </span>
             </li>
             <?php }else{ ?>
-            <li>
-            <li class="fore"> 欢迎
+            <li class="fore"> 你好
                 <span class="dunlu">
 
-                    <a href="<?php echo $account; ?>"><?php $text_logged;?></a>
+                    <a href="<?php echo $account; ?>"><?php echo $firstName; ?></a>
+                    <a href="<?php echo $logout; ?>">退出</a>
 
                 </span>
-            </li>
             </li>
             <?php } ?>
             <!--登录之后-->
@@ -51,7 +50,16 @@
             </li>
         </ul>
         <ul class="fr">
-            <li class="fore cof menu_2" id="my_account"> <a href="/index.php/User/User/index">我的账户<b></b></a>
+            <li class="fore cof menu_2" id="my_account">
+
+                <a
+                <?php if($logged){ ?>
+                        href="<?php echo $account;?>"
+                <?php }else{ ?>
+                    href="<?php echo $login;?>"
+                <?php } ?>
+                >我的账户<b></b></a>
+
                 <div class="account_big">
                     <ul>
                         <li><a href="/index.php/User/Order/index/status/1">待付款订单</a></li>

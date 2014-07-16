@@ -5,23 +5,49 @@
         <div class="help">
             <div class="biao_help"><span class="biao_help_1"></span>新手指南</div>
             <ul>
-                <li><a href="/index.php/Home/Article/show/id/17">个人中心功能介绍</a></li><li><a href="/index.php/Home/Article/show/id/13">新用户注册</a></li><li><a href="/index.php/Home/Article/show/id/16">找回密码</a></li><li><a href="/index.php/Home/Article/show/id/18">怎样下订单</a></li>      </ul>
+                <!--
+                <li><a href="/index.php/Home/Article/show/id/17">个人中心功能介绍</a></li>
+                <li><a href="/index.php/Home/Article/show/id/13">新用户注册</a></li>
+                <li><a href="/index.php/Home/Article/show/id/16">找回密码</a></li>
+                <li><a href="/index.php/Home/Article/show/id/18">怎样下订单</a></li>
+                -->
+            </ul>
         </div><div class="help">
             <div class="biao_help"><span class="biao_help_2"></span>付款|退款方式</div>
             <ul>
-                <li><a href="/index.php/Home/Article/show/id/19">支付方式</a></li><li><a href="/index.php/Home/Article/show/id/20">如何退款</a></li><li><a href="/index.php/Home/Article/show/id/21">支付常见问题</a></li>      </ul>
+                <!--
+                <li><a href="/index.php/Home/Article/show/id/19">支付方式</a></li>
+                <li><a href="/index.php/Home/Article/show/id/20">如何退款</a></li>
+                <li><a href="/index.php/Home/Article/show/id/21">支付常见问题</a></li>
+                -->
+            </ul>
         </div><div class="help">
             <div class="biao_help"><span class="biao_help_3"></span>配送方式</div>
             <ul>
-                <li><a href="/index.php/Home/Article/show/id/23">发货时间及方式</a></li><li><a href="/index.php/Home/Article/show/id/25">配送范围及费用 </a></li><li><a href="/index.php/Home/Article/show/id/29">配送常见问题</a></li><li><a href="/index.php/Home/Article/show/id/30">商品验货与签收</a></li>      </ul>
+                <!--
+                <li><a href="/index.php/Home/Article/show/id/23">发货时间及方式</a></li>
+                <li><a href="/index.php/Home/Article/show/id/25">配送范围及费用 </a></li>
+                <li><a href="/index.php/Home/Article/show/id/29">配送常见问题</a></li>
+                <li><a href="/index.php/Home/Article/show/id/30">商品验货与签收</a></li>
+                -->
+            </ul>
         </div><div class="help">
             <div class="biao_help"><span class="biao_help_4"></span>售后服务</div>
             <ul>
-                <li><a href="/index.php/Home/Article/show/id/26">退换货原则</a></li><li><a href="/index.php/Home/Article/show/id/27">退换货流程</a></li><li><a href="/index.php/Home/Article/show/id/28">补发货流程</a></li>      </ul>
+                <!--
+                <li><a href="/index.php/Home/Article/show/id/26">退换货原则</a></li>
+                <li><a href="/index.php/Home/Article/show/id/27">退换货流程</a></li>
+                <li><a href="/index.php/Home/Article/show/id/28">补发货流程</a></li>
+                -->
+            </ul>
         </div><div class="help">
             <div class="biao_help"><span class="biao_help_5"></span>帮助中心</div>
             <ul>
-                <li><a href="/index.php/Home/Article/show/id/22">新手上路</a></li><li><a href="/index.php/Home/Article/show/id/24">联系我们</a></li>      </ul>
+                <!--
+                <li><a href="/index.php/Home/Article/show/id/22">新手上路</a></li>
+                <li><a href="/index.php/Home/Article/show/id/24">联系我们</a></li>
+                -->
+            </ul>
         </div>    <div class="clear"></div>
     </div><div id="footer">
         <div class="friendship">
