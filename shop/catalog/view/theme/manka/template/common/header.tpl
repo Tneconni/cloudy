@@ -91,16 +91,39 @@
         <div class="mantou"></div>
         <a class="logo" href="/"><img src="image/logl.gif" /></a>
         <!--搜索-->
-        <div class="search_big">
-            <form action="/index.php/home/search/index" method="get" >
-                <input name="keyword" type="text" value="" class="text"/>
-                <input type="submit" class="button" value="搜索" />
-            </form>
+        <div class="search_big" style="padding-bottom:7px">
+
+            <input name="search-word" type="text" value="" class="text"/>
+
+            <input id="search-sbt" type="submit" class="button" value="搜索" />
             <div class="clear"></div>
-            <div class="hotwords">热门搜索：<a href="/index.php/home/search/index/keyword/绕线器">绕线器</a><a href="/index.php/home/search/index/keyword/暴走">暴走</a><a href="/index.php/home/search/index/keyword/斗罗">斗罗</a><a href="/index.php/home/search/index/keyword/卡贴">卡贴</a><a href="/index.php/home/search/index/keyword/2014">2014</a><a href="/index.php/home/search/index/keyword/斗破">斗破</a><a href="/index.php/home/search/index/keyword/抱枕">抱枕</a><a href="/index.php/home/search/index/keyword/偷星">偷星</a></div>
+<!--
+            <div class="hotwords">热门搜索：
+                <a href="/index.php/home/search/index/keyword/绕线器">绕线器</a>
+                <a href="/index.php/home/search/index/keyword/暴走">暴走</a>
+                <a href="/index.php/home/search/index/keyword/斗罗">斗罗</a>
+                <a href="/index.php/home/search/index/keyword/卡贴">卡贴</a>
+                <a href="/index.php/home/search/index/keyword/2014">2014</a>
+                <a href="/index.php/home/search/index/keyword/斗破">斗破</a>
+                <a href="/index.php/home/search/index/keyword/抱枕">抱枕</a>
+                <a href="/index.php/home/search/index/keyword/偷星">偷星</a>
+            </div>
+-->
             <div class="clear"></div>
         </div>
     </div>
+    <script>
+
+        $('#search-sbt').click(function(){
+
+            var word = $('#search-word').val();
+
+            var request  = '&search=' + word;
+
+            location = "<?php echo $searchUrl; ?>" + request;
+        });
+
+    </script>
 </div>
 <!--导航-->
 <div id="navigation">

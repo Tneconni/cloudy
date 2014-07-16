@@ -59,6 +59,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['account'] = $this->url->link('account/account', '', 'SSL');
 		$this->data['shopping_cart'] = $this->url->link('checkout/cart');
 		$this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+		$this->data['searchUrl'] = $this->url->link('product/search');
 
         if( $this->data['logged'] ){
 
@@ -103,6 +104,7 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$this->data['search'] = '';
 		}
+
 
 		// Menu
 		$this->load->model('catalog/category');
