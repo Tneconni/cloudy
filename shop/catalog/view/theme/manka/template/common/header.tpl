@@ -25,10 +25,30 @@
 <div class="yemei_big">
     <div class="yemei">
         <ul class="fl Id">
-            <li class="fore cof"> <a href="/">漫客商城首页</a> </li>
-            <li class="fore"> 请<span class="dunlu"><a href="/index.php/user/login/index">登录</a><a href="/index.php/user/login/register">免费注册</a></span> </li>
+            <li class="fore cof"> <a href="<?php echo $home;?>">漫客商城首页</a> </li>
+            <?php if( !$logged ){ ?>
+            <li class="fore"> 请
+                <span class="dunlu">
+                    <a href="<?php echo $login; ?>">登录</a>
+                    <a href="<?php echo $register; ?>">免费注册</a>
+                </span>
+            </li>
+            <?php }else{ ?>
+            <li>
+            <li class="fore"> 欢迎
+                <span class="dunlu">
+
+                    <a href="<?php echo $account; ?>"><?php $text_logged;?></a>
+
+                </span>
+            </li>
+            </li>
+            <?php } ?>
             <!--登录之后-->
-            <li class="fore Id"><s></s> <a href="javascript:void(0);"  onclick="AddFavorite(window.location.href,document.title);">收藏本店</a> </li>
+            <li class="fore Id"><s></s>
+                <a href="javascript:void(0);"
+                   onclick="AddFavorite(window.location.href,document.title);">收藏本店</a>
+            </li>
         </ul>
         <ul class="fr">
             <li class="fore cof menu_2" id="my_account"> <a href="/index.php/User/User/index">我的账户<b></b></a>
