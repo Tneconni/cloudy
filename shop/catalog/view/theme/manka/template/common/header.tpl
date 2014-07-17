@@ -76,7 +76,7 @@
             <li class="fore Id menu_1">
 
                 <s></s>
-                <a href="/index.php/User/Collect/index">收藏夹</a>
+                <a >收藏夹</a>
 
             </li>
             <!--<li class="fore Id menu_2"><s></s><a href="#">网站导航<b></b></a></li>-->
@@ -89,7 +89,7 @@
 <div id="header_1">
     <div class="header_top Id">
         <div class="mantou"></div>
-        <a class="logo" href="/"><img src="image/logl.gif" /></a>
+        <a class="logo" href="<?php echo $home;?>"><img src="image/logl.gif" /></a>
         <!--搜索-->
         <div class="search_big" style="padding-bottom:7px">
 

@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<input type="hidden"  id="nav-show" />
 <link href="catalog/view/theme/manka/stylesheet/manka/Goods_list.css" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/manka/stylesheet/manka/Inside_pages_common.css" rel="stylesheet" type="text/css" />
 <div class="nav_big">

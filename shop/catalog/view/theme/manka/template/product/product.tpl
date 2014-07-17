@@ -1,7 +1,7 @@
 <?php echo $header; ?>
 <link href="catalog/view/theme/manka/stylesheet/manka/Goods_details_test.css" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/manka/stylesheet/manka/Inside_pages_common.css" rel="stylesheet" type="text/css" />
-<input type="hidden"  id="nav-show" />
+
 <div class="nav_big">
 <!--导航指示牌-->
 <div class="position Id"> <s></s> 您的当前位置：

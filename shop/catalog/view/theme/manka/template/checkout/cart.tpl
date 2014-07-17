@@ -229,7 +229,7 @@
             </tr>
         </table>
         <!--书本展示-->
-        <form action="/index.php/Goodstest/order" method='post' id='myform' onkeypress="if(event.keyCode==13||event.which==13){return false;}">
+        <form action="<?php echo $checkout; ?>" method='post' id='myform' onkeypress="if(event.keyCode==13||event.which==13){return false;}">
             <div class="show" style="width:970px">
 
                 <div class="bookone" id="cart" style="width:970px;">

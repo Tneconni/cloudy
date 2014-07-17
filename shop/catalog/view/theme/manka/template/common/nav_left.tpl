@@ -220,7 +220,7 @@
 
 <script>
     $(document).ready(function(){
-        if( $('#nav-show').length > 0 ){
+        if( $('#nav-show').length == 0 ){
             $('.Classification_navigation_big').css({ display:'none'});
 
             $('#navigation').mouseover(function(){
