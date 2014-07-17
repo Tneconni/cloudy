@@ -46,6 +46,57 @@ class ControllerCheckoutCheckout extends Controller {
         $total = 0;
         $taxes = $this->cart->getTaxes();
 
+        $this->data['addresses'] = array();
+        if( $this->customer->isLogged() ){
+
+            $this->load->model('account/address');
+       		$results = $this->model_account_address->getAddresses();
+            foreach( $results as $result){
+                if ($result['address_format']) {
+                    $format = $result['address_format'];
+                } else {
+                    $format = '{firstname} {lastname}' . "\n" . '{company}' . "\n" . '{address_1}' . "\n" . '{address_2}' . "\n" . '{city} {postcode}' . "\n" . '{zone}' . "\n" . '{country}';
+                }
+
+                $find = array(
+                    '{firstname}',
+                    '{lastname}',
+                    '{company}',
+                    '{address_1}',
+                    '{address_2}',
+                    '{city}',
+                    '{postcode}',
+                    '{zone}',
+                    '{zone_code}',
+                    '{country}'
+                );
+
+                $replace = array(
+                    'firstname' => $result['firstname'],
+                    'lastname'  => $result['lastname'],
+                    'company'   => $result['company'],
+                    'address_1' => $result['address_1'],
+                    'address_2' => $result['address_2'],
+                    'city'      => $result['city'],
+                    'postcode'  => $result['postcode'],
+                    'zone'      => $result['zone'],
+                    'zone_code' => $result['zone_code'],
+                    'country'   => $result['country']
+                );
+                $this->data['addresses'][] = array(
+                    'address_id' => $result['address_id'],
+                    'address'    => str_replace(array("\r\n", "\r", "\n"),
+                        '<br />',
+                        preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"),
+                            '<br />',
+                            trim(str_replace($find, $replace, $format)))),
+                    'update'     => $this->url->link('account/address/update', 'address_id=' . $result['address_id'], 'SSL'),
+                    'delete'     => $this->url->link('account/address/delete', 'address_id=' . $result['address_id'], 'SSL')
+                );
+            }
+
+        }
+
         // Display prices
         if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
             $sort_order = array();

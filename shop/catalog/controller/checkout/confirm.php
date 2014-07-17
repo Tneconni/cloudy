@@ -176,7 +176,8 @@ class ControllerCheckoutConfirm extends Controller {
 				if ($this->customer->isLogged()) {
 					$this->load->model('account/address');
 
-					$shipping_address = $this->model_account_address->getAddress($this->session->data['shipping_address_id']);	
+//					$shipping_address = $this->model_account_address->getAddress($this->session->data['shipping_address_id']);
+					$shipping_address = $this->model_account_address->getAddress($this->request->post['shipping_address_id']);
 				} elseif (isset($this->session->data['guest'])) {
 					$shipping_address = $this->session->data['guest']['shipping'];
 				} else{

@@ -33,7 +33,7 @@
                 <td height="55"  align="center"style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px; ">2014052469316</td>
                 <td   align="center"style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px;">支付宝、网银</td>
                 <td   align="center"style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px;">￥144.40</td>
-                <td  align="center" style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; font-size: 14px; color: #f37020;"><a href="/index.php/User/Order/info/id/156765">查看订单</a></td>
+                <td  align="center" style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; font-size: 14px; color: #f37020;"><a href="#">查看订单</a></td>
             </tr>
         </table>
     </div>

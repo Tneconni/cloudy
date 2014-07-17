@@ -54,13 +54,15 @@
         <!-- 填写个人信息-->
         <div class="form" style="padding-bottom:10px">
             <!--收货人文字-->
+            <?php foreach( $addresses as $addr ){ ?>
             <p class="words">
-                <input name="address_id" type="radio" value="21700"/>
-                <span class="address">&nbsp;﻿北京 北京市 崇文区 qeeqeqe cloud(收) 15244237038  邮编:123456</span>&nbsp;&nbsp;&nbsp;<span data="21700" class="delete_add_b" style="cursor:pointer; color:#999999">删除</span></p><p class="words">
-                <input name="address_id" type="radio" value="21701"/>
-                <span class="address">&nbsp;山东 青岛市 四方区 dadadad cloud(收) 15244237038  邮编:123456</span>&nbsp;&nbsp;&nbsp;<span data="21701" class="delete_add_b" style="cursor:pointer; color:#999999">删除</span></p>        <p class="words" id="addform">
-                <input name="address_id" type="radio" value="0"/>
-                &nbsp;<span class="address">使用新地址</span></p>
+                <input name="address_id" type="radio" value="<?php echo $addr['address_id']?>"/>
+                <span class="address"><?php echo $addr['address']?></span>
+                &nbsp;&nbsp;&nbsp;
+                <span data="<?php echo $addr['address_id']?>" class="delete_add_b" style="cursor:pointer; color:#999999">删除</span>
+            </p>
+            <?php } ?>
+
             <!--填写信息-姓名-->
             <ul class="goods_info">
                 <li> 收&nbsp&nbsp货&nbsp&nbsp人：
@@ -306,7 +308,7 @@
 
         var url = '<?php echo $confirmOrderUrl; ?>';
         var data = {
-            shipping_address : $('input[name=\'address_id\']').val(),
+            shipping_address_id : $('input[name=\'address_id\']').val(),
             payment_method_code : $('input[name=\'pays\']').val()
         };
 
