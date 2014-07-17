@@ -1,259 +1,160 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <b><?php echo $text_critea; ?></b>
-  <div class="content">
-    <p><?php echo $entry_search; ?>
-      <?php if ($search) { ?>
-      <input type="text" name="search" value="<?php echo $search; ?>" />
-      <?php } else { ?>
-      <input type="text" name="search" value="<?php echo $search; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
-      <?php } ?>
-      <select name="category_id">
-        <option value="0"><?php echo $text_category; ?></option>
-        <?php foreach ($categories as $category_1) { ?>
-        <?php if ($category_1['category_id'] == $category_id) { ?>
-        <option value="<?php echo $category_1['category_id']; ?>" selected="selected"><?php echo $category_1['name']; ?></option>
-        <?php } else { ?>
-        <option value="<?php echo $category_1['category_id']; ?>"><?php echo $category_1['name']; ?></option>
-        <?php } ?>
-        <?php foreach ($category_1['children'] as $category_2) { ?>
-        <?php if ($category_2['category_id'] == $category_id) { ?>
-        <option value="<?php echo $category_2['category_id']; ?>" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_2['name']; ?></option>
-        <?php } else { ?>
-        <option value="<?php echo $category_2['category_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_2['name']; ?></option>
-        <?php } ?>
-        <?php foreach ($category_2['children'] as $category_3) { ?>
-        <?php if ($category_3['category_id'] == $category_id) { ?>
-        <option value="<?php echo $category_3['category_id']; ?>" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_3['name']; ?></option>
-        <?php } else { ?>
-        <option value="<?php echo $category_3['category_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_3['name']; ?></option>
-        <?php } ?>
-        <?php } ?>
-        <?php } ?>
-        <?php } ?>
-      </select>
-      <?php if ($sub_category) { ?>
-      <input type="checkbox" name="sub_category" value="1" id="sub_category" checked="checked" />
-      <?php } else { ?>
-      <input type="checkbox" name="sub_category" value="1" id="sub_category" />
-      <?php } ?>
-      <label for="sub_category"><?php echo $text_sub_category; ?></label>
-    </p>
-    <?php if ($description) { ?>
-    <input type="checkbox" name="description" value="1" id="description" checked="checked" />
-    <?php } else { ?>
-    <input type="checkbox" name="description" value="1" id="description" />
-    <?php } ?>
-    <label for="description"><?php echo $entry_description; ?></label>
-  </div>
-  <div class="buttons">
-    <div class="right"><input type="button" value="<?php echo $button_search; ?>" id="button-search" class="button" /></div>
-  </div>
-  <h2><?php echo $text_search; ?></h2>
-  <?php if ($products) { ?>
-  <div class="product-filter">
-    <div class="display"><b><?php echo $text_display; ?></b> <?php echo $text_list; ?> <b>/</b> <a onclick="display('grid');"><?php echo $text_grid; ?></a></div>
-    <div class="limit"><?php echo $text_limit; ?>
-      <select onchange="location = this.value;">
-        <?php foreach ($limits as $limits) { ?>
-        <?php if ($limits['value'] == $limit) { ?>
-        <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
-        <?php } else { ?>
-        <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
-        <?php } ?>
-        <?php } ?>
-      </select>
+<?php echo $header; ?>
+<link href="catalog/view/theme/manka/stylesheet/manka/Goods_list.css" rel="stylesheet" type="text/css" />
+<link href="catalog/view/theme/manka/stylesheet/manka/Inside_pages_common.css" rel="stylesheet" type="text/css" />
+<div class="nav_big">
+    <!--============================================================left-->
+    <!--分类导航-->
+
+    <div class="left_big" style="margin-top:292px; padding-top:0px">
+        <!--
+        <div class="new_left mt_left">
+            <div class="biao biao_1"></div>
+            <ul>
+                <li >
+                    <div class="img"><a href="/index.php/goods/index/id/3305" style="background:url(/Uploads/Goods/2014-05-16/5375ddf2e9848.jpg.110x110.jpg)"  class="hong_x"></a></div>
+                    <div class="tb_sm"><a href="/index.php/goods/index/id/3305" class="hong_w">MK姓名贴...</a></div>
+                    <div class="tb_sm">商城价 <font>￥5.00</font></div>
+
+                </li><li >
+                    <div class="img"><a href="/index.php/goods/index/id/3304" style="background:url(/Uploads/Goods/2014-05-16/5375af57e98dc.jpg.110x110.jpg)"  class="hong_x"></a></div>
+                    <div class="tb_sm"><a href="/index.php/goods/index/id/3304" class="hong_w">MK小小漫画家...</a></div>
+                    <div class="tb_sm">商城价 <font>￥16.00</font></div>
+
+                </li><li >
+                    <div class="img"><a href="/index.php/goods/index/id/3302" style="background:url(/Uploads/Goods/2014-05-15/53747fc23d37c.jpg.110x110.jpg)"  class="hong_x"></a></div>
+                    <div class="tb_sm"><a href="/index.php/goods/index/id/3302" class="hong_w">现货！舞·星...</a></div>
+                    <div class="tb_sm">商城价 <font>￥58.00</font></div>
+
+                </li><li >
+                    <div class="img"><a href="/index.php/goods/index/id/3300" style="background:url(/Uploads/Goods/2014-05-13/5371c5babc680.jpg.110x110.jpg)"  class="hong_x"></a></div>
+                    <div class="tb_sm"><a href="/index.php/goods/index/id/3300" class="hong_w">MK大徽章...</a></div>
+                    <div class="tb_sm">商城价 <font>￥12.00</font></div>
+
+                </li><li >
+                    <div class="img"><a href="/index.php/goods/index/id/3299" style="background:url(/Uploads/Goods/2014-05-13/537176ecd759d.jpg.110x110.jpg)"  class="hong_x"></a></div>
+                    <div class="tb_sm"><a href="/index.php/goods/index/id/3299" class="hong_w">7-8册《浪漫传...</a></div>
+                    <div class="tb_sm">商城价 <font>￥15.00</font></div>
+
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="record_big">
+
+            <div class="record_big_biao"></div>
+            <div style="height:89px; padding-bottom:8px;">
+                <a class="record_left" style="background: url(/Uploads/Goods/2014-05-16/5375af57e98dc.jpg.50x50.jpg)" href="/index.php/home/goods/index/id/3304" title="MK小小漫画家"></a>
+                <div class="record_right">
+                    <p><a href="/index.php/home/goods/index/id/3304"  title="MK小小漫画家">MK小小漫画家</a></p>
+                    <p>商城价<font>￥16.00</font></p>
+
+                </div>
+            </div>
+            <div style="height:89px; padding-bottom:8px;border-top: 1px dashed #FA802A;">
+                <a class="record_left" style="background: url(/Uploads/Goods/2013-06-28/51cd335d19adc.jpg.50x50.jpg)" href="/index.php/home/goods/index/id/1327" title="《昨日青空》（下）随书附赠精美卡贴"></a>
+                <div class="record_right">
+                    <p><a href="/index.php/home/goods/index/id/1327"  title="《昨日青空》（下）随书附赠精美卡贴">《昨日青空》（下）随书附赠精美卡贴</a></p>
+                    <p>商城价<font>￥28.00</font></p>
+
+                </div>
+            </div>
+        </div>
+        -->
     </div>
-    <div class="sort"><?php echo $text_sort; ?>
-      <select onchange="location = this.value;">
-        <?php foreach ($sorts as $sorts) { ?>
-        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-        <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-        <?php } else { ?>
-        <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-        <?php } ?>
-        <?php } ?>
-      </select>
+    <!--====================================right-->
+    <div class="combination_right combination_right_ml">
+        <!--你的位置-->
+        <div class="position_common">您的当前位置：
+            <?php $count = count($breadcrumbs) - 1; ?>
+            <?php foreach($breadcrumbs as $key=>$nav ){ ?>
+            <a href="<?php echo $nav['href'];?>"><?php echo $nav['text'];?></a>
+            <?php if( $key <  $count ){ ?>><?php }?>
+            <?php } ?>
+        </div>
+        <!--分类查找-->
+        <!--相关商品数-->
+        <div class="Number_goods">
+            <span>相关商品<font><?php echo $product_total;?></font>款 </span></div>
+        <!--图片排列方式-->
+        <ul class="arrangement_big">
+            <div class="pages_fan">
+                <span></span>
+                <?php echo $paginationObj->total; ?>/<?php echo $paginationObj->page; ?>
+                <span class="next_page">
+                    <a href="<?php echo $paginationObj->total; ?>"></a>
+                </span>
+                <span class="previous_page">
+                    <a href="/index.php/Category/index/id/225?&page=0"></a>
+                </span>
+            </div>
+
+            <?php foreach( $sorts as $sort ){ ?>
+            <li>
+                <a href="<?php echo $sort['href'];?>" ><?php echo $sort['text'];?></a>
+                <?php if(strpos( $sort['value'], 'DESC' ) !== false){ ?>
+                <s class="xia"></s>
+                <?php }?>
+                <?php if(strpos( $sort['value'], 'ASC' ) !== false){ ?>
+                <s class="shang"></s>
+                <?php }?>
+            </li>
+            <?php } ?>
+            <!--
+            <li><a href="" >价格</a><s class="xia"></s></li>
+            <li><a href="" >人气</a><s class="xia"></s></li>
+            -->
+            <!--<li><a href="#">大图</a><b class="da"></b></li>
+            <li><a href="#">小图</a><b class="xiao"></b></li>-->
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+
+
+        <!--图片排列-->
+        <div class="Picture_Arrangement">
+
+            <?php foreach( $products as $pdt ){ ?>
+
+            <div class="Picture_li">
+                <div class="product-iWrap_1">
+                    <a href="<?php echo $pdt['href'];?>" class="productImg-wrap"
+                       style="background:url(<?php echo $pdt['thumb'];?>)"
+                       title="<?php echo $pdt['name'];?>"></a>
+                    <h3 class="wenzhi">
+                        <a href="<?php echo $pdt['href'];?>"
+                           title="<?php echo $pdt['name'];?>"><?php echo $pdt['name'];?></a>
+                    </h3>
+                    <p><span><?php echo $pdt['price'];?></span></p>
+                    <p class="anliu_big">
+                        <s></s>
+                        <a href="javascript:void(0);"
+                           class="add-to-card"
+                           id="product-<?php echo $pdt['product_id']; ?>">添加到购物车</a>
+                    </p>
+                </div>
+            </div>
+
+            <?php } ?>
+
+        </div>
+        <div class="clear"></div>
+        <!--页码-->
+        <div id="pages" style="float:right;">
+        </div>
+
+
+
+        <div class="clear"></div>
     </div>
-  </div>
-  <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
-  <div class="product-list">
-    <?php foreach ($products as $product) { ?>
-    <div>
-      <?php if ($product['thumb']) { ?>
-      <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
-      <?php } ?>
-      <div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
-      <div class="description"><?php echo $product['description']; ?></div>
-      <?php if ($product['price']) { ?>
-      <div class="price">
-        <?php if (!$product['special']) { ?>
-        <?php echo $product['price']; ?>
-        <?php } else { ?>
-        <span class="price-old"><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
-        <?php } ?>
-        <?php if ($product['tax']) { ?>
-        <br />
-        <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-        <?php } ?>
-      </div>
-      <?php } ?>
-      <?php if ($product['rating']) { ?>
-      <div class="rating"><img src="catalog/view/theme/default/image/stars-<?php echo $product['rating']; ?>.png" alt="<?php echo $product['reviews']; ?>" /></div>
-      <?php } ?>
-      <div class="cart"><input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" /></div>
-      <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');"><?php echo $button_wishlist; ?></a></div>
-      <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');"><?php echo $button_compare; ?></a></div>
-    </div>
-    <?php } ?>
-  </div>
-  <div class="pagination"><?php echo $pagination; ?></div>
-  <?php } else { ?>
-  <div class="content"><?php echo $text_empty; ?></div>
-  <?php }?>
-  <?php echo $content_bottom; ?></div>
-<script type="text/javascript"><!--
-$('#content input[name=\'search\']').keydown(function(e) {
-	if (e.keyCode == 13) {
-		$('#button-search').trigger('click');
-	}
-});
+    <div class="clear"></div>
+</div>
+<script>
 
-$('select[name=\'category_id\']').bind('change', function() {
-	if (this.value == '0') {
-		$('input[name=\'sub_category\']').attr('disabled', 'disabled');
-		$('input[name=\'sub_category\']').removeAttr('checked');
-	} else {
-		$('input[name=\'sub_category\']').removeAttr('disabled');
-	}
-});
+    $('.add-to-card').click(function(){
 
-$('select[name=\'category_id\']').trigger('change');
+        addToCart( this.id.split('-')[1], 1);
 
-$('#button-search').bind('click', function() {
-	url = 'index.php?route=product/search';
-	
-	var search = $('#content input[name=\'search\']').attr('value');
-	
-	if (search) {
-		url += '&search=' + encodeURIComponent(search);
-	}
+    });
 
-	var category_id = $('#content select[name=\'category_id\']').attr('value');
-	
-	if (category_id > 0) {
-		url += '&category_id=' + encodeURIComponent(category_id);
-	}
-	
-	var sub_category = $('#content input[name=\'sub_category\']:checked').attr('value');
-	
-	if (sub_category) {
-		url += '&sub_category=true';
-	}
-		
-	var filter_description = $('#content input[name=\'description\']:checked').attr('value');
-	
-	if (filter_description) {
-		url += '&description=true';
-	}
-
-	location = url;
-});
-
-function display(view) {
-	if (view == 'list') {
-		$('.product-grid').attr('class', 'product-list');
-		
-		$('.product-list > div').each(function(index, element) {
-			html  = '<div class="right">';
-			html += '  <div class="cart">' + $(element).find('.cart').html() + '</div>';
-			html += '  <div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
-			html += '  <div class="compare">' + $(element).find('.compare').html() + '</div>';
-			html += '</div>';			
-			
-			html += '<div class="left">';
-			
-			var image = $(element).find('.image').html();
-			
-			if (image != null) { 
-				html += '<div class="image">' + image + '</div>';
-			}
-			
-			var price = $(element).find('.price').html();
-			
-			if (price != null) {
-				html += '<div class="price">' + price  + '</div>';
-			}
-						
-			html += '  <div class="name">' + $(element).find('.name').html() + '</div>';
-			html += '  <div class="description">' + $(element).find('.description').html() + '</div>';
-			
-			var rating = $(element).find('.rating').html();
-			
-			if (rating != null) {
-				html += '<div class="rating">' + rating + '</div>';
-			}
-				
-			html += '</div>';
-						
-			$(element).html(html);
-		});		
-		
-		$('.display').html('<b><?php echo $text_display; ?></b> <?php echo $text_list; ?> <b>/</b> <a onclick="display(\'grid\');"><?php echo $text_grid; ?></a>');
-		
-		$.totalStorage('display', 'list'); 
-	} else {
-		$('.product-list').attr('class', 'product-grid');
-		
-		$('.product-grid > div').each(function(index, element) {
-			html = '';
-			
-			var image = $(element).find('.image').html();
-			
-			if (image != null) {
-				html += '<div class="image">' + image + '</div>';
-			}
-			
-			html += '<div class="name">' + $(element).find('.name').html() + '</div>';
-			html += '<div class="description">' + $(element).find('.description').html() + '</div>';
-			
-			var price = $(element).find('.price').html();
-			
-			if (price != null) {
-				html += '<div class="price">' + price  + '</div>';
-			}	
-					
-			var rating = $(element).find('.rating').html();
-			
-			if (rating != null) {
-				html += '<div class="rating">' + rating + '</div>';
-			}
-						
-			html += '<div class="cart">' + $(element).find('.cart').html() + '</div>';
-			html += '<div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
-			html += '<div class="compare">' + $(element).find('.compare').html() + '</div>';
-			
-			$(element).html(html);
-		});	
-					
-		$('.display').html('<b><?php echo $text_display; ?></b> <a onclick="display(\'list\');"><?php echo $text_list; ?></a> <b>/</b> <?php echo $text_grid; ?>');
-		
-		$.totalStorage('display', 'grid');
-	}
-}
-
-view = $.totalStorage('display');
-
-if (view) {
-	display(view);
-} else {
-	display('list');
-}
-//--></script> 
+</script>
 <?php echo $footer; ?>

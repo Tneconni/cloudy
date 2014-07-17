@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']     = 'Search';
+$_['heading_title']     = '查找';
 
 // Text
 $_['text_search']       = 'Products meeting the search criteria';
@@ -21,7 +21,7 @@ $_['text_display']      = 'Display:';
 $_['text_list']         = 'List';
 $_['text_grid']         = 'Grid';
 $_['text_sort']         = 'Sort By:';
-$_['text_default']      = 'Default';
+$_['text_default']      = '默认';
 $_['text_name_asc']     = 'Name (A - Z)';
 $_['text_name_desc']    = 'Name (Z - A)';
 $_['text_price_asc']    = 'Price (Low &gt; High)';

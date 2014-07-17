@@ -9,7 +9,7 @@ $_['decimal_point']         = '.';
 $_['thousand_point']        = ',';
 
 // Text
-$_['text_home']             = 'Home';
+$_['text_home']             = '首页';
 $_['text_yes']              = 'Yes';
 $_['text_no']               = 'No';
 $_['text_none']             = ' --- None --- ';
@@ -42,7 +42,7 @@ $_['button_remove']         = 'Remove';
 $_['button_reorder']        = 'Reorder';
 $_['button_return']         = 'Return';
 $_['button_shopping']       = 'Continue Shopping';
-$_['button_search']         = 'Search';
+$_['button_search']         = '查找';
 $_['button_shipping']       = 'Apply Shipping';
 $_['button_guest']          = 'Guest Checkout';
 $_['button_view']           = 'View';

@@ -105,7 +105,9 @@ class ControllerProductSearch extends Controller {
 
 		if (isset($this->request->get['sort'])) {
 			$url .= '&sort=' . $this->request->get['sort'];
-		}	
+		}else{
+            $this->request->get['sort'] = '';
+        }
 
 		if (isset($this->request->get['order'])) {
 			$url .= '&order=' . $this->request->get['order'];
@@ -214,7 +216,7 @@ class ControllerProductSearch extends Controller {
 			);
 
 			$product_total = $this->model_catalog_product->getTotalProducts($data);
-
+            $this->data['product_total'] = $product_total;
 			$results = $this->model_catalog_product->getProducts($data);
 
 			foreach ($results as $result) {
@@ -296,43 +298,55 @@ class ControllerProductSearch extends Controller {
 				'href'  => $this->url->link('product/search', 'sort=p.sort_order&order=ASC' . $url)
 			);
 
-			$this->data['sorts'][] = array(
-				'text'  => $this->language->get('text_name_asc'),
-				'value' => 'pd.name-ASC',
-				'href'  => $this->url->link('product/search', 'sort=pd.name&order=ASC' . $url)
-			); 
+            if( $this->request->get['sort'] == 'pd.name' ){
+                $name_order = $order == 'DESC' ? 'ASC' : 'DESC';
+                $this->data['sorts'][] = array(
+                    'text'  => '名称',
+                    'value' => $name_order,
+                    'href'  => $this->url->link('product/search', 'search=' . $this->request->get['search'] . '&sort=pd.name&order='.$name_order . $url)
+                );
+            }else{
+                $this->data['sorts'][] = array(
+                    'text'  => '名称',
+                    'value' => 'ASC',
+                    'href'  => $this->url->link('product/search',
+                            'search=' . $this->request->get['search'] . '&sort=pd.name&order=ASC' . $url)
+                );
+            }
 
-			$this->data['sorts'][] = array(
-				'text'  => $this->language->get('text_name_desc'),
-				'value' => 'pd.name-DESC',
-				'href'  => $this->url->link('product/search', 'sort=pd.name&order=DESC' . $url)
-			);
-
-			$this->data['sorts'][] = array(
-				'text'  => $this->language->get('text_price_asc'),
-				'value' => 'p.price-ASC',
-				'href'  => $this->url->link('product/search', 'sort=p.price&order=ASC' . $url)
-			); 
-
-			$this->data['sorts'][] = array(
-				'text'  => $this->language->get('text_price_desc'),
-				'value' => 'p.price-DESC',
-				'href'  => $this->url->link('product/search', 'sort=p.price&order=DESC' . $url)
-			); 
+            if($this->request->get['sort'] == 'p.price'){
+                $price_order = $order == 'DESC' ? 'ASC' : 'DESC';
+                $this->data['sorts'][] = array(
+                    'text'  => '价格',
+                    'value' => $price_order,
+                    'href'  => $this->url->link('product/search', 'search=' . $this->request->get['search'] . '&sort=p.price&order='.$price_order . $url)
+                );
+            }else{
+                $this->data['sorts'][] = array(
+                    'text'  => '价格',
+                    'value' => 'ASC',
+                    'href'  => $this->url->link('product/search', 'search=' . $this->request->get['search'] . '&sort=p.price&order=ASC' . $url)
+                );
+            }
 
 			if ($this->config->get('config_review_status')) {
-				$this->data['sorts'][] = array(
-					'text'  => $this->language->get('text_rating_desc'),
-					'value' => 'rating-DESC',
-					'href'  => $this->url->link('product/search', 'sort=rating&order=DESC' . $url)
-				); 
-
-				$this->data['sorts'][] = array(
-					'text'  => $this->language->get('text_rating_asc'),
-					'value' => 'rating-ASC',
-					'href'  => $this->url->link('product/search', 'sort=rating&order=ASC' . $url)
-				);
+                if($this->request->get['sort'] == 'rating'){
+                    $rating_order = $order == 'DESC' ? 'ASC' : 'DESC';
+                    $this->data['sorts'][] = array(
+                        'text'  => '等级',
+                        'value' => $rating_order,
+                        'href'  => $this->url->link('product/search', 'search=' . $this->request->get['search'] . '&sort=rating&order='.$rating_order . $url)
+                    );
+                }else{
+                    $this->data['sorts'][] = array(
+                        'text'  => '等级',
+                        'value' => 'ASC',
+                        'href'  => $this->url->link('product/search', 'search=' . $this->request->get['search'] . '&sort=rating&order=ASC' . $url)
+                    );
+                }
 			}
+
+			/*
 
 			$this->data['sorts'][] = array(
 				'text'  => $this->language->get('text_model_asc'),
@@ -345,6 +359,8 @@ class ControllerProductSearch extends Controller {
 				'value' => 'p.model-DESC',
 				'href'  => $this->url->link('product/search', 'sort=p.model&order=DESC' . $url)
 			);
+
+            */
 
 			$url = '';
 
@@ -432,6 +448,7 @@ class ControllerProductSearch extends Controller {
 			$pagination->url = $this->url->link('product/search', $url . '&page={page}');
 
 			$this->data['pagination'] = $pagination->render();
+            $this->data['paginationObj'] = $pagination;
 		}	
 
 		$this->data['search'] = $search;
@@ -450,10 +467,10 @@ class ControllerProductSearch extends Controller {
 		}
 
 		$this->children = array(
-			'common/column_left',
-			'common/column_right',
-			'common/content_top',
-			'common/content_bottom',
+//			'common/column_left',
+//			'common/column_right',
+//			'common/content_top',
+//			'common/content_bottom',
 			'common/footer',
 			'common/header'
 		);

@@ -93,7 +93,7 @@
         <!--搜索-->
         <div class="search_big" style="padding-bottom:7px">
 
-            <input name="search-word" type="text" value="" class="text"/>
+            <input name="search-word" type="text" value="<?php echo $search;?>" class="text"/>
 
             <input id="search-sbt" type="submit" class="button" value="搜索" />
             <div class="clear"></div>
@@ -116,13 +116,29 @@
 
         $('#search-sbt').click(function(){
 
-            var word = $('#search-word').val();
+            var word = $('input[name="search-word"]').val();
 
             var request  = '&search=' + word;
 
             location = "<?php echo $searchUrl; ?>" + request;
         });
+        $('input[name="search-word"]').keydown(function( event ){
 
+
+            if( navigator.userAgent.indexOf('MSIE') > -1){
+                var key = event.keyCode;
+            }else{
+                var key = event.which;
+            }
+
+            if( key == 13 ){
+                var word = $('input[name="search-word"]').val();
+
+                var request  = '&search=' + word;
+
+                location = "<?php echo $searchUrl; ?>" + request;
+            }
+        });
     </script>
 </div>
 <!--导航-->

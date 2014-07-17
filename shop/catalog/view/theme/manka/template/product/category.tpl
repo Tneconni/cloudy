@@ -79,7 +79,7 @@
         <ul class="arrangement_big">
             <div class="pages_fan">
                 <span></span>
-                <?php echo $paginationObj->page; ?>/<?php echo $paginationObj->total; ?>
+                <?php echo $paginationObj->total; ?>/<?php echo $paginationObj->page; ?>
                 <span class="next_page">
                     <a href="<?php echo $paginationObj->total; ?>"></a>
                 </span>
