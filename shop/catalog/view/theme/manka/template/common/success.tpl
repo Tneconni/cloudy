@@ -30,10 +30,30 @@
                 <td width="201"  align="center"style="border:1px solid #CCC; border-bottom:0px; " 	>状态</td>
             </tr>
             <tr>
-                <td height="55"  align="center"style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px; ">2014052469316</td>
-                <td   align="center"style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px;">支付宝、网银</td>
-                <td   align="center"style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px;">￥144.40</td>
-                <td  align="center" style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; font-size: 14px; color: #f37020;"><a href="#">查看订单</a></td>
+            <?php if( isset( $order )){ ?>
+
+                <td height="55"
+                    align="center"
+                    style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px; ">
+                    <?php echo $order['order_id'];?>
+                </td>
+                <td   align="center"style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px;"><?php echo $order['payment_method'];?></td>
+                <td   align="center"style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; border-right:0px;"><?php echo $order['total'];?></td>
+                <td  align="center" style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; font-size: 14px; color: #f37020;">
+                    <a href="<?php echo $order['order_check_link'];?>">
+                        <?php echo $order['order_status'];?>
+                    </a>
+                </td>
+
+            <?php }else{ ?>
+
+                <td height="55"  align="center" colspan="4"
+                    style="border:1px solid #CCC; border-bottom:2px solid #fbcfad; ">
+                        抱歉, 未查询到您的订单
+                    </td>
+
+            <?php }?>
+
             </tr>
         </table>
     </div>

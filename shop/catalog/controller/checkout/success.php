@@ -60,6 +60,12 @@ class ControllerCheckoutSuccess extends Controller {
 
 		$this->data['continue'] = $this->url->link('common/home');
 
+        if( isset( $this->request->get['order_id'] ) && !empty( $this->request->get['order_id'] ) ){
+
+            $this->data['order'] = $this->getOrder( $this->request->get['order_id']  );
+
+        }
+
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/success.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/success.tpl';
 		} else {
@@ -77,5 +83,19 @@ class ControllerCheckoutSuccess extends Controller {
 
 		$this->response->setOutput($this->render());
 	}
+    public function getOrder( $order_id ){
+
+        $res = array();
+        $this->load->model('checkout/order');
+        $order = $this->model_checkout_order->getOrder( $order_id );
+
+        $res['order_id'] = $order_id;
+        $res['payment_method'] = $order['payment_method'];
+        $res['total'] = $order['total'];
+        $res['order_status'] = $order['order_status'];
+        $res['order_check_link'] = $this->url->link('account/order');
+
+        return $res;
+    }
 }
 ?>

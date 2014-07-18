@@ -348,6 +348,16 @@ class ControllerCheckoutConfirm extends Controller {
             $orderSuccess =  $this->url->link('checkout/success');
             $json = array();
             $json['status'] = 'success';
+
+            $json['order'] = array(
+
+                'order_id' => $this->session->data['order_id'],
+                'payment_method' => $data['payment_method'],
+                'total' => $data['total'],
+                'order_status' => $this->config->get('cod_order_status_id'),
+                'check_order_Link' => $this->url->link('account/order')
+
+            );
             echo json_encode($json);
             die();
             // fix order end

@@ -315,7 +315,10 @@
         $.post(url, data, function( res ){
 
             if( res['status'] == 'success' ){
-                location = '<?php echo $orderSuccessUrl;?>';
+
+                var order_id = res['order']['order_id'];
+                location = '<?php echo $orderSuccessUrl;?>' + '&order_id=' + order_id;
+
             }else{
                 alert('false');
             }
