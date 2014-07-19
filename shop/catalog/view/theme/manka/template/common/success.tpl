@@ -1,5 +1,11 @@
 <?php echo $header; ?>
+<style>
 
+    body{
+        background-color:#fff;
+    }
+
+</style>
 <link
       href="catalog/view/theme/manka/stylesheet/manka/reminders_online.css"
       rel="stylesheet"
