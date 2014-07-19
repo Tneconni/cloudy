@@ -150,10 +150,13 @@ class ControllerCommonHeader extends Controller {
 			'module/language',
 			'module/currency',
 			'module/cart',
-            'common/nav_left'
+
+            'common/navigation',
+            'common/search_bar'
 		);
 
         $this->data['cartLink'] = $this->url->link("checkout/cart");
+
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/header.tpl';
