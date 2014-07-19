@@ -17,6 +17,12 @@ class ControllerCommonHeader extends Controller {
 			$this->data['error'] = '';
 		}
 
+        if( !isset( $this->request->get['route'])){
+
+            $this->request->get['route'] = '';
+
+        }
+
 		$this->data['base'] = $server;
 		$this->data['description'] = $this->document->getDescription();
 		$this->data['keywords'] = $this->document->getKeywords();
