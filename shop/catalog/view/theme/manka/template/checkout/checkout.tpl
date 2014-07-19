@@ -43,8 +43,7 @@
 </style>
 <!--logo+导航-->
 <div id="logo">
-    <div class="header"> </div>
-    <div class="navigation"> </div>
+    <?php echo $navigation;?>
 </div>
 
 <form action="/index.php/goodstest/submitorder" method="post" id="myform"  name="myform">

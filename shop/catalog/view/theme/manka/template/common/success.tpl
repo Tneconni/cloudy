@@ -12,10 +12,9 @@
       type="text/css" />
 
 <div id="logo">
-    <div class="top">
-        <div class="header"> </div>
-        <div class="navigation"> </div>
-    </div>
+
+    <?php echo $navigation;?>
+
     <!-- 提交成功-->
     <div class="tick" style="height:90px">
         <img src="image/submit_2.jpg" width="42" height="45" /> <span style="font-weight: bold; color: #313131;">订单提交成功，请您尽快付款！</span>
@@ -64,6 +63,15 @@
         </table>
     </div>
     <!-- 确认按钮-->
+
     <div class="youju">
-        <img src="image/submit_3.jpg" width="102" height="30" class="submit_button" style="cursor:pointer"/></div>
+
+        <a href="<?php echo $order['order_check_link'];?>">
+            <img src="image/submit_3.jpg"
+                 width="102" height="30"
+                 class="submit_button"
+                 style="cursor:pointer"/>
+        </a>
+
+    </div>
 </div>

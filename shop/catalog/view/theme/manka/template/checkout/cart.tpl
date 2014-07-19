@@ -199,10 +199,8 @@
 </style>
 <!--logo+导航-->
 <div id="logo">
-    <div class="top">
-        <div class="header" style="background:none"><a href="/" style="display:block"><img src="image/logo.jpg"/></a></div>
-        <div class="navigation"> </div>
-    </div>
+
+    <?php echo $navigation; ?>
     <!--/*指示牌*/-->
     <div class="instructions">
         <p>

@@ -434,7 +434,8 @@ class ControllerCheckoutCart extends Controller {
 			$this->children = array(
 
 				'common/footer',
-				'common/header'	
+				'common/header',
+				'checkout/navigation'
 			);
 
 			$this->response->setOutput($this->render());					
