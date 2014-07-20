@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="language" content="en" />
 
+    <meta property="qc:admins" content="7567036575376616774710556375" />
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
     <!-- foundation -->
@@ -31,6 +32,15 @@
     <style type="text/css">@import url("css/popquiz-cb1312282967.css");</style>
 
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/print-cb1274471335.css" media="print" rel="stylesheet" type="text/css" /><!-- Controls Global Site Elements -->
+
+    <!-- qq login-->
+    <script type="text/javascript"
+            src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
+            data-appid="101140571"
+            data-redirecturi="http://tneconni.gotoip55.com"
+            charset="utf-8"
+            data-callback="true"
+        ></script>
 
     <script src='<?php echo Yii::app()->request->baseUrl; ?>/js/'></script>
     <script src='<?php echo Yii::app()->request->baseUrl; ?>/js/jQuery/jQuery.1.10.2.js'></script>
@@ -60,6 +70,13 @@
                 </dd>
             <?php } ?>
         </dl>
+
+        <span id="qqLoginBtn"></span>
+        <script type="text/javascript">
+            QC.Login({
+                btnId:"qqLoginBtn"    //插入按钮的节点id
+            });
+        </script>
     </div>
 
 </div>
