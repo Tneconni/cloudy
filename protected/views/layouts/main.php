@@ -69,14 +69,18 @@
                     </a>
                 </dd>
             <?php } ?>
+            <dd style="float:right; margin-right:16px;">
+                <span id="qqLoginBtn"></span>
+                <script type="text/javascript">
+                    QC.Login({
+                        btnId:"qqLoginBtn"    //插入按钮的节点id
+                    });
+                </script>
+            </dd>
         </dl>
 
-        <span id="qqLoginBtn"></span>
-        <script type="text/javascript">
-            QC.Login({
-                btnId:"qqLoginBtn"    //插入按钮的节点id
-            });
-        </script>
+
+
     </div>
 
 </div>

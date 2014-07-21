@@ -63,10 +63,12 @@
     <div class='right-win large-4 columns left-line '>
 
         <!-- 广告位 -->
+        <!--
         <div>
             <input type="text" ng-model="yourName" placeholder="Enter a name here">
             <h1>Hello, {{ yourName }}!</h1>
         </div>
+        -->
         <!-- 可信任站点登陆 -->
         <div class='connect-links btm-line'>
             <h3>可用以下站点账号登陆</h3>
