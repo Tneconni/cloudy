@@ -21,7 +21,7 @@ class Project{
         global $wpdb;
         $sql = "UPDATE cld_project SET `name`='" . $data['project_name'] . "',
 description='" . $data['project_description'] . "',
-iamge_url='" . $data['project_image'] . "',
+image_url='" . $data['project_image'] . "',
 link='" . $data['link'] . "',
 `update` = '" . Date('Y-m-d H:i:s') . "'
 WHERE project_id='" . $data['project_id'] . "' ";
