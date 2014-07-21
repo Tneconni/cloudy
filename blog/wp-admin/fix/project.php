@@ -35,7 +35,7 @@ WHERE project_id='" . $data['project_id'] . "' ";
         $sql = "INSERT INTO cld_project SET
             `name` = '" . $data['project_name'] . "',
             description = '" . $data['project_description'] . "',
-            iamge_url='" . $data['project_image'] . "',
+            image_url='" . $data['project_image'] . "',
             link='" . $data['link'] . "',
             work_date = '" . Date('Y-m-d H:i:s') . "',
             `update` = '" . Date('Y-m-d H:i:s') . "'";
@@ -55,7 +55,7 @@ WHERE project_id='" . $data['project_id'] . "' ";
                 header('location: ' . $url);
             }else{
                 $ret = $this->addProject( $_POST );
-                header('location: ' . $url);
+//                header('location: ' . $url);
             }
 
         }
