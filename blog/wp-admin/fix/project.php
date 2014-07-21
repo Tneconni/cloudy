@@ -55,7 +55,7 @@ WHERE project_id='" . $data['project_id'] . "' ";
                 header('location: ' . $url);
             }else{
                 $ret = $this->addProject( $_POST );
-//                header('location: ' . $url);
+                header('location: ' . $url);
             }
 
         }
