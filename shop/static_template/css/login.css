@@ -1,0 +1,403 @@
+@charset "utf-8";
+/* CSS Document */
+#common_big .yemei{
+    width:980px;
+    height:18px;
+    line-height:18px;
+    margin:3px auto 0;
+    text-align:right;
+    color:#000000;
+}
+#common_big .yemei a{
+    color:#5e5e5e;
+    margin-left:8px;
+}
+#common_big .yemei a:hover{
+    color:#636363;
+    text-decoration:underline;
+}
+#common_big .yemei strong a{
+    color:#FF3C00;
+}
+#common_big .yemei strong.color_bule a{
+    color:#2270A5;margin-right:10px;
+}
+#common_big .logo_big .login_top_link{
+    height:32px;
+    float:right;
+    margin-top:26px;
+    color:#888;
+    line-height:32px;
+    font-size:13px;
+}
+
+#common_big .logo_big .login_top_link a{
+    color:#7F7F7F;
+    margin:0 8px;
+}#common_big .logo_big .login_top_link a:hover{
+     color:#D33D1D;
+ }
+#common_big .top15{
+    padding:10px 0 0 0;
+    background:url(../images/logo_title1.gif) no-repeat 180px 15px;
+}
+#common_big .top15 .logo a img{
+    float:left;
+}
+
+#login{
+    margin: 0 auto;
+    padding: 0 0px;
+    width: 980px;
+    height: auto;
+    text-align: left;
+}
+
+#login #login_container {
+
+    padding: 0 0 0px 212px;
+    width: 766px;
+    height:502px;
+    float: left;
+    background:url(../images/login_container_bg.jpg) no-repeat left top;
+}
+#login .login_tab{
+    margin:32px 0 0 0;
+    padding:0;
+    width:208px;
+    height:170px;
+    float:left;
+    position:relative;
+    left:1px;
+    z-index:999;
+}
+#login .login_tab a{blr:expression(this.onFocus=this.blur())}
+#login .login_tab .login_tab_login a.login_normal{
+    display:block;
+    width:208px;
+    height:81px;
+    background:url(../images/login_tab_bg_01.png) no-repeat left top;
+    background-position:0 -98px;
+}
+#login .login_tab .login_tab_login a.login_current{
+    display:block;
+    width:208px;
+    height:81px;
+    background:url(../images/login_tab_bg_01.png) no-repeat left top;
+    background-position:0 0px;
+}
+#login .login_tab .login_tab_reg a.login_current{
+    display:block;
+    width:208px;
+    height:81px;
+    background:url(../images/login_tab_bg_01.png) no-repeat left top;
+    background-position:0 -304px;
+}
+#login .login_tab .login_tab_reg a.login_normal{
+    display:block;
+    width:208px;
+    height:81px;
+    background:url(../images/login_tab_bg_01.png) no-repeat left top;
+    background-position:0 -203px;
+}
+
+#login  .login_right_content {
+    margin:8px 5px 0 0px;
+    padding: 15px 0 0 10px;
+    width: 529px;
+    height:478px;
+    float:left;
+    text-align:left;
+    background:url(../images/login_right_bg.png) no-repeat left top;
+}
+#login  .login_right_content h4#login_title_1 {
+    margin:0 0 16px 0px;
+    padding:0 0 10px 0;
+    width: 500px;
+    height: 28px;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position: 0 -218px;
+    border-bottom:1px #CFCFCF solid;
+}
+#login  .login_right_content h4#login_title_2 {
+    margin:0 0 16px 0px;
+    padding:0 0 6px 0;
+    width: 500px;
+    height: 28px;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position: 8px -267px;
+    border-bottom:1px #CFCFCF solid;
+    float:left;
+}
+#login  .login_right_content h4.botborder p{
+    padding-left:130px;
+    color:#F60;
+    font-weight:normal;
+    padding-top:3px;
+}
+#login  .login_right_content h4.botborder span {
+    display: none;
+}
+#login  .login_right_content .user_class_edit {
+    margin: 40px 0 0 0px;
+    padding: 0 0 0 140px;
+}
+#login  .login_right_content dl {
+    margin: 0 0 0px 0;
+    padding: 0;
+    color: #333;
+    clear: both;
+    height:50px;
+}
+#login  .login_right_content1 dl {
+    margin: 0px 0 0px 0;
+    height:60px;
+}
+
+#login  .login_right_content dl dt {
+    margin: 0;
+    padding: 5px 0 0 0;
+    width: 72px;
+    text-align: right;
+    float: left;
+}
+#login  .login_right_content1 dl dt {
+    width:85px;
+}
+#login .login_right_content dl dd.user_reply_frame {
+    margin: 0px 0px 0 0px;
+    padding: 0px 0 0px 0;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position: 0 0px;
+    width: 180px;
+    height: 22px;
+    float: left;
+}
+#login .login_right_content dl dd.user_reply_frame1{
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position: 0 -39px;
+    width: 281px;
+    height: 22px;
+    float: left;
+}
+#login .login_right_content dl dd.user_reply_frame1 span{
+    padding:10px 0 0 0;
+}
+#login .login_right_content dl dd.user_reply_frame3 {
+    width:65px;
+    border-right:1px #F9C5A0 solid;
+}
+
+#login .login_right_content dl dd  #verifyImg{
+    margin-left:5px;
+    margin-right:5px;
+}
+#login .login_right_content dl dd img{
+    vertical-align:middle;
+    float:left;
+}
+
+#login .login_right_content dl dd span{
+    display:block;
+    float:left;
+    color:#7F7F7F;
+    line-height:18px;
+}
+
+#login .login_right_content dl dd span a{
+    color:#DD9968;
+}
+#login .login_right_content dl dd span a:hover{
+    color:#D33D1D;
+}
+#login .login_right_content dl dd.user_reply_frame input{
+    padding:1px 0 0 0;
+    margin:1px 0 0 1px;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position: 0 -94px;
+    border:0;
+    color:#333;
+    font:12px "宋体";
+    width: 174px;
+    height:19px;
+}
+#login .login_right_content dl dd.user_reply_frame1 input{
+    margin:1px 0 0 1px;
+    padding:1px 0 0 0;
+    width:278px;
+    height:19px;
+    border:0;
+}
+#login .login_right_content dl dd.user_reply_frame3 input{
+    width:64px;
+}
+#login .login_right_content dl.user_reply_frame3 dd a{
+    float:left;
+    margin:5px 0 0 10px;
+}
+#login .login_right_content dl.user_reply_frame3 dd a:hover{
+    color:#D33D1D;
+}
+#login .login_right_content dl dd input.reg_button{
+    margin: 0px 0px 0 0px;
+    padding: 0px 0 0px 0;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position: 0 -163px;
+    width: 116px;
+    height: 27px;
+    float: left;
+    border:0;
+    cursor:pointer;
+}
+#login .login_right_content dl dd input.login_button{
+    margin: 0px 0px 0 0px;
+    padding: 0px 0 0px 0;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position: 0 -123px;
+    width: 117px;
+    height: 27px;
+    float: left;
+    border:none;
+    cursor:pointer;
+}
+#login  .login_right_content dl.login_statu {
+    height:45px;
+}
+#login  .login_right_content dl.login_statu input{
+    float:left;
+    margin:3px 5px 0 0;
+    _margin:0 5px 0 0;
+    *margin:0 5px 0 0;
+}
+#login  .login_right_content dl.login_statu  span{
+    float:left;
+    _margin:2px 0px 0 0;
+    *margin:2px 0 0 0;
+}
+
+#login .login_right_content .login_link{
+    margin:0;
+    padding:30px 0 0 0px;
+    width:200px;
+    float:left;
+    border-top:1px #CFCFCF solid;
+}
+#login .login_right_content .login_link h4#login_title_3{
+    width:82px;
+    height:24px;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position:10px -317px;
+}
+
+#login .login_right_content .login_link a{
+    display:block;
+    width:75px;
+    float:left;
+    margin:15px 0 0 12px;
+}
+#login .login_right_content .login_link a:hover{
+
+    color:#D33D1D;
+}
+
+#login .login_right_content .login_out{
+    margin:0;
+    padding:15px 0 0 30px;
+    width:475px;
+    float:left;
+    border-top:1px #CFCFCF solid; text-align:center
+}
+
+#login .login_right_content .login_out img{ margin:0 auto; vertical-align:middle; text-align:center}
+#login .login_right_content .login_out h4#login_title_3{
+    width:240px;
+    height:40px;
+
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position:10px -424px;
+    margin-left:37px;
+}
+#login .login_right_content .login_out a{
+    display:block;
+    float:left;
+    width:130px;
+    height:60px;
+    margin-left:100px;
+    margin:1px 0 0 55px;
+    _margin:15px 0 0 15px;
+    blr:expression(this.onFocus=this.blur())
+}
+
+/*找回密码*/
+
+#login #forgot_container{
+    background:none;
+}
+#login  .login_right_content2 {
+    margin:8px 5px 0 0px;
+    padding: 55px 0 0 237px;
+    width:723px;
+    height:291px;
+    float:left;
+    text-align:center;
+    background:none;
+    background:url(../images/forgot_bg.jpg) no-repeat left top;
+}
+#login  .login_right_content2 dl{
+    margin:0 0 0 0;
+    padding:0 0 0 142px;
+}
+#login  .login_right_content2 dl dt{
+    margin-right:36px;
+}
+#login  .login_right_content2 dl.forgot_title{
+    margin:0 0 0 0;
+    padding:0 0 0 98px;
+}
+#login  .login_right_content2 dl.forgot_title dt{
+    margin-right:0;
+    width:150px;
+    height:30px;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position:-182px -163px;
+}
+
+#login  .login_right_content2 dl.forgot_title  dd{
+    margin:0px 0 0 0;
+    _margin:0px 0 0 0;
+    padding:0;
+    float:left;
+}
+#login  .login_right_content2 dl.forgot_title  dd input{
+    margin:0px 8px 0 0;
+}
+#login .login_right_content2 dl dd input.login_button1{
+    margin: 0px 0px 0 0px;
+    padding: 0px 0 0px 0;
+    background: url(../images/login_icon.gif) no-repeat left top;
+    background-position:-184px -121px;
+    width: 117px;
+    height: 27px;
+    float: left;
+    border:none;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:bold;
+    color:#FFFFFF;
+}
+#login  .login_right_content2  p{
+    width:670px;
+    padding:10px 10px 0 10px;
+    border-top:#CFCFCF 1px solid;
+    color:#898989;
+    background:url(../images/user/icon_smallbg.gif) no-repeat left top;
+    background-position: 0 -369px;
+}
+
+
+
+
+
+
+
+
