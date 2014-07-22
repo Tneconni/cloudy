@@ -11,15 +11,47 @@ class ModelAccountCustomer extends Model {
 
 		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
 
-		$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET store_id = '" . (int)$this->config->get('config_store_id') . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', newsletter = '" . (isset($data['newsletter']) ? (int)$data['newsletter'] : 0) . "', customer_group_id = '" . (int)$customer_group_id . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', status = '1', approved = '" . (int)!$customer_group_info['approval'] . "', date_added = NOW()");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET
+		store_id = '" . (int)$this->config->get('config_store_id') . "',
+		firstname = '" . $this->db->escape($data['firstname']) . "',
+		lastname = '" . $this->db->escape($data['lastname']) . "',
+		email = '" . $this->db->escape($data['email']) . "',
+		telephone = '" . $this->db->escape($data['telephone']) . "',
+		 fax = '" . $this->db->escape($data['fax']) . "',
+		  salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "',
+		   password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "',
+		    newsletter = '" . (isset($data['newsletter']) ? (int)$data['newsletter'] : 0) . "',
+		     customer_group_id = '" . (int)$customer_group_id . "',
+		      ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "',
+		       status = '1',
+		        approved = '" . (int)!$customer_group_info['approval'] . "',
+		        qq_info_id = '" . (isset( $data['lastQQInfoId'] ) ? $data['qq_info_id'] : 0 ). "',
+		        date_added = NOW()");
 
 		$customer_id = $this->db->getLastId();
 
-		$this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', company = '" . $this->db->escape($data['company']) . "', company_id = '" . $this->db->escape($data['company_id']) . "', tax_id = '" . $this->db->escape($data['tax_id']) . "', address_1 = '" . $this->db->escape($data['address_1']) . "', address_2 = '" . $this->db->escape($data['address_2']) . "', city = '" . $this->db->escape($data['city']) . "', postcode = '" . $this->db->escape($data['postcode']) . "', country_id = '" . (int)$data['country_id'] . "', zone_id = '" . (int)$data['zone_id'] . "'");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "address SET
+		 customer_id = '" . (int)$customer_id . "',
+		  firstname = '" . $this->db->escape($data['firstname']) . "',
+		   lastname = '" . $this->db->escape($data['lastname']) . "',
+		    company = '" . $this->db->escape($data['company']) . "',
+		    company_id = '" . $this->db->escape($data['company_id']) . "',
+		    tax_id = '" . $this->db->escape($data['tax_id']) . "',
+		     address_1 = '" . $this->db->escape($data['address_1']) . "',
+		      address_2 = '" . $this->db->escape($data['address_2']) . "',
+		      city = '" . $this->db->escape($data['city']) . "',
+		       postcode = '" . $this->db->escape($data['postcode']) . "',
+		        country_id = '" . (int)$data['country_id'] . "',
+		         zone_id = '" . (int)$data['zone_id'] . "'");
 
 		$address_id = $this->db->getLastId();
 
-		$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET
+		address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+        if( !isset($data['email']) || empty( $data['email'] )){
+            exit();
+        }
 
 		$this->language->load('mail/customer');
 
@@ -208,6 +240,74 @@ class ModelAccountCustomer extends Model {
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_ban_ip` WHERE ip = '" . $this->db->escape($ip) . "'");
 
 		return $query->num_rows;
-	}	
+	}
+
+    //********************** QQ Info ********************************//
+
+    public function getQQInfo( $qqInfo ){
+
+        $sql = "INSERT INTO " . DB_PREFIX . "qq_info SET".
+            "`open_id` = '" . $qqInfo->open_id . "',".
+            "`msg` = '" . $qqInfo->msg . "',".
+            "`is_lost` = '" . $qqInfo->is_lost . "',".
+            "`nickname` = '" . $qqInfo->nickname . "',".
+            "`gender` = '" . $qqInfo->gender . "',".
+            "`province` = '" . $qqInfo->province . "',".
+            "`city` = '" . $qqInfo->city . "',".
+            "`figureurl` = '" . $qqInfo->figureurl . "',".
+            "`is_yellow_vip` = '" . $qqInfo->is_yellow_vip . "',".
+            "`vip` = '" . $qqInfo->vip . "',".
+            "`yellow_vip_level` = '" . $qqInfo->yellow_vip_level . "',".
+            "`level` = '" . $qqInfo->level . "',".
+            "`is_yellow_year_vip` = '" . $qqInfo->is_yellow_year_vip . "'";
+
+        $this->db->query( $sql );
+        $lastQQInfoId = $this->db->getLastId();
+        $data = array(
+
+            'qq_info_id' => $lastQQInfoId,
+            'firstname' => $qqInfo->nickname ,
+            'lastname' => '',
+            'email'=> '',
+            'telephone'=> '',
+            'fax'=> '',
+            'password'=> '',
+            'newsletter'=> '',
+            'status'=> 1,
+            'company'=> '',
+            'company_id'=> '0',
+            'tax_id'=> '0',
+            'address_1'=> '',
+            'address_2'=> '',
+            'city'=> '',
+            'postcode'=> '0',
+            'country_id'=> '0',
+            'zone_id'=> '0',
+            'status'=> 1,
+
+        );
+
+        $this->addCustomer( $data );
+
+    }
+
+    public function findQQInfoByOpenId( $openId ){
+
+        $sql = "SELECT * FROM oc_qq_info WHERE open_id='" . $openId . "'";
+        $res = $this->db->query( $sql );
+
+        if( $res->num_rows > 0){
+
+            return $res->row['qq_info_id'];
+
+        }else{
+
+            return false;
+
+        }
+
+    }
+
+
 }
 ?>

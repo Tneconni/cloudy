@@ -37,7 +37,7 @@
     <script type="text/javascript"
             src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
             data-appid="101140571"
-            data-redirecturi="http://tneconni.gotoip55.com"
+            data-redirecturi="http://tneconni.gotoip55.com/shop?route=common/qq_login"
             charset="utf-8"
             data-callback="true"
         ></script>
