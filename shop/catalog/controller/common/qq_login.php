@@ -11,6 +11,20 @@ class ControllerCommonQqLogin extends Controller {
             $this->get_qq_user_info($access_token, $openId);
         }
 
+        if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/qq_login.tpl')) {
+            $this->template = $this->config->get('config_template') . '/template/common/qq_login.tpl';
+        } else {
+            $this->template = 'default/template/common/qq_login.tpl';
+        }
+
+        $this->children = array(
+
+            'common/footer',
+            'common/header',
+
+        );
+
+        $this->response->setOutput($this->render());
     }
 
     public function getOpenId( $access_token ){
