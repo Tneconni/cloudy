@@ -30,7 +30,7 @@ class Controller extends CController
 
         $menes = new Menu();
         $this->menu = $menes->getAllMenu();
-        if( LESS_COMPILE ){
+        if( defined( 'LESS_COMPILE' ) && LESS_COMPILE ){
             $this->compileLess();
         }
         return true;

@@ -12,7 +12,8 @@
                 <li><a href="/index.php/Home/Article/show/id/18">怎样下订单</a></li>
                 -->
             </ul>
-        </div><div class="help">
+        </div>
+        <div class="help">
             <div class="biao_help"><span class="biao_help_2"></span>付款|退款方式</div>
             <ul>
                 <!--
@@ -21,7 +22,8 @@
                 <li><a href="/index.php/Home/Article/show/id/21">支付常见问题</a></li>
                 -->
             </ul>
-        </div><div class="help">
+        </div>
+        <div class="help">
             <div class="biao_help"><span class="biao_help_3"></span>配送方式</div>
             <ul>
                 <!--
@@ -31,7 +33,8 @@
                 <li><a href="/index.php/Home/Article/show/id/30">商品验货与签收</a></li>
                 -->
             </ul>
-        </div><div class="help">
+        </div>
+        <div class="help">
             <div class="biao_help"><span class="biao_help_4"></span>售后服务</div>
             <ul>
                 <!--
@@ -40,15 +43,16 @@
                 <li><a href="/index.php/Home/Article/show/id/28">补发货流程</a></li>
                 -->
             </ul>
-        </div><div class="help">
-            <div class="biao_help"><span class="biao_help_5"></span>帮助中心</div>
-            <ul>
-                <!--
-                <li><a href="/index.php/Home/Article/show/id/22">新手上路</a></li>
-                <li><a href="/index.php/Home/Article/show/id/24">联系我们</a></li>
-                -->
-            </ul>
-        </div>    <div class="clear"></div>
+        </div>
+        <div class="help qq-group">
+            <img src="<?php echo HTTP_SERVER ?>/image/qq_group.png" />
+            <p>
+                <span>漫客小屋</span>
+                <span>(QQ群:316387163)</span>
+            </p>
+
+        </div>
+        <div class="clear"></div>
     </div><div id="footer">
         <div class="friendship">
             <p >友情链接:

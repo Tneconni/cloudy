@@ -698,7 +698,9 @@ em.success {
 #footer a { color:#666; text-decoration: none;margin-left:7px; margin-right:4px; display:inline; white-space: nowrap;}
 #footer a:hover { text-decoration: underline; }
 
-
+.qq-group p{
+    text-align:center
+}
 
 
 
