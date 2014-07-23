@@ -17,7 +17,14 @@
     <!--[if IE 6]>
     <script type="text/javascript" src="js/png.js" ></script>
     <script type="text/javascript"> DD_belatedPNG.fix('*');</script>
+
     <![endif]-->
+    <script type="text/javascript"
+            src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
+            data-appid="101140571"
+            data-redirecturi="http://tneconni.gotoip55.com/shop?route=common/qq_login"
+            charset="utf-8"
+            ></script>
 </head>
 <body>
 <!--头部公共开始-->
@@ -34,7 +41,7 @@
                 </span>
             </li>
             <?php }else{ ?>
-            <li class="fore"> 你好
+            <li class="fore" > 你好
                 <span class="dunlu">
 
                     <a href="<?php echo $account; ?>"><?php echo $firstName; ?></a>
@@ -47,6 +54,24 @@
             <li class="fore Id"><s></s>
                 <a href="javascript:void(0);"
                    onclick="AddFavorite(window.location.href,document.title);">收藏本店</a>
+            </li>
+            <li class="fore">
+                <span id="qqLoginBtn"></span>
+                <style>
+                    #qqLoginBtn .qc_item.figure img{
+                        width: 15px;
+                        position: relative;
+                        top: 4px;
+                    }
+                </style>
+                <script type="text/javascript">
+                    QC.Login({
+                        btnId:"qqLoginBtn"    //插入按钮的节点id
+                    });
+
+                    console.log( 'QC:' );
+                    console.log( QC );
+                </script>
             </li>
         </ul>
         <ul class="fr">
