@@ -58,6 +58,9 @@
             <li class="fore">
                 <span id="qqLoginBtn"></span>
                 <style>
+                    #qqLoginBtn{
+                        display:block
+                    }
                     #qqLoginBtn .qc_item.figure img{
                         width: 15px;
                         position: relative;
