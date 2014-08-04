@@ -219,6 +219,13 @@ class ControllerCommonHeader extends Controller {
 			$this->data['paypal_express_search'] = $this->url->link('payment/pp_express/search', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['recurring_profile'] = $this->url->link('sale/recurring', 'token=' . $this->session->data['token'], 'SSL');
 
+            $this->data['wechatSendMsg'] = $this->url->link('wechat/information/getForm',
+                'token=' . $this->session->data['token'], 'SSL');
+            $this->data['wechatCms'] = $this->url->link('wechat/information/cms',
+                'token=' . $this->session->data['token'], 'SSL');
+            $this->data['wechatConfig'] = $this->url->link('wechat/config',
+                'token=' . $this->session->data['token'], 'SSL');
+
 			$this->data['stores'] = array();
 
 			$this->load->model('setting/store');

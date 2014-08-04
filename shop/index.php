@@ -52,7 +52,7 @@ if ($store_query->num_rows) {
 } else {
 	$config->set('config_store_id', 0);
 }
-		
+
 // Settings
 $query = $db->query("SELECT * FROM " . DB_PREFIX . "setting WHERE store_id = '0' OR store_id = '" . (int)$config->get('config_store_id') . "' ORDER BY store_id ASC");
 
@@ -224,8 +224,8 @@ $controller = new Front($registry);
 $controller->addPreAction(new Action('common/maintenance'));
 
 // SEO URL's
-$controller->addPreAction(new Action('common/seo_url'));	
-	
+$controller->addPreAction(new Action('common/seo_url'));
+
 // Router
 if (isset($request->get['route'])) {
 	$action = new Action($request->get['route']);

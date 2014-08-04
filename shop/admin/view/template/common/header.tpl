@@ -244,6 +244,13 @@ $(document).ready(function(){
           <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
         </ul>
       </li>
+      <li id="wechat"><a class="top">微信</a>
+          <ul>
+              <li><a href="<?php echo $wechatSendMsg; ?>" target="_blank">推送</a></li>
+              <li><a href="<?php echo $wechatCms; ?>" target="_blank">cms</a></li>
+              <li><a href="<?php echo $wechatConfig; ?>" target="_blank">设置</a></li>
+          </ul>
+      </li>
     </ul>
     <ul class="right" style="display: none;">
       <li id="store"><a href="<?php echo $store; ?>" target="_blank" class="top"><?php echo $text_front; ?></a>
