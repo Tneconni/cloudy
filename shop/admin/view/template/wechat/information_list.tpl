@@ -46,9 +46,14 @@
                 <?php } ?></td>
               <td class="left"><?php echo $information['title']; ?></td>
               <td class="right"><?php echo $information['sort_order']; ?></td>
-              <td class="right"><?php foreach ($information['action'] as $action) { ?>
+              <td class="right">
+                  <?php foreach ($information['action'] as $action) { ?>
                 [ <a href="<?php echo $action['href']; ?>"><?php echo $action['text']; ?></a> ]
-                <?php } ?></td>
+                 <?php } ?>
+                  [<a id="sendMsg-<?php echo $information['information_id']; ?>"
+                      class="send-wechat-btn" >微信推送</a>]
+                  [<span>2</span>次]
+              </td>
             </tr>
             <?php } ?>
             <?php } else { ?>
@@ -58,6 +63,21 @@
             <?php } ?>
           </tbody>
         </table>
+          <script>
+            $('.send-wechat-btn').click(function(){
+
+                var url = '';
+                var data = {
+                    informationId : $(this).id.split('-')[1];
+                };
+
+                $.get(url, data, function( json ){
+
+
+                },'json');
+
+            });
+          </script>
       </form>
       <div class="pagination"><?php echo $pagination; ?></div>
     </div>

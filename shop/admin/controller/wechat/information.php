@@ -481,5 +481,33 @@ class ControllerWechatInformation extends Controller {
 			return false;
 		}
 	}
+
+    public function sendMsgToWechat(){
+
+        $url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN";
+
+        $post_data = array ("username" => "bob","key" => "12345");
+
+        $post_data = '{
+            "touser":"OPENID",
+            "msgtype":"text",
+            "text":
+            {
+                "content":"Hello World"
+            }
+        }';
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // post数据
+        curl_setopt($ch, CURLOPT_POST, 1);
+        // post的变量
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        //打印获得的数据
+        print_r($output);
+
+    }
 }
 ?>
