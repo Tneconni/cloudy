@@ -482,9 +482,21 @@ class ControllerWechatInformation extends Controller {
 		}
 	}
 
+    public function getWechatToken(){
+
+        $appId = '';
+        $appSecret = '';
+        $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" . $appId . "&secret=" . $appSecret;
+        $res = file_get_content( $url );
+
+        echo json_encode( $res );
+
+    }
+
     public function sendMsgToWechat(){
 
-        $url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN";
+        $access_token = '';
+        $url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=" . $access_token;
 
         $post_data = array ("username" => "bob","key" => "12345");
 

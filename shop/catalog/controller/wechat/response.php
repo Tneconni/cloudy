@@ -8,6 +8,22 @@ class ControllerWechatResponse extends Controller {
     public $time;
     public $textTpl;
 
+    public function join2(){
+
+        $this->load->library('wechat/api');
+        $wxApi = new Api();
+
+        if( isset($_GET["echostr"]) ){
+
+            $wxApi->valid();
+        }else{
+
+            $this->responseMsg();
+
+        }
+
+    }
+
     public function join(){
 
         $this->load->library('wechat/api');
@@ -24,7 +40,16 @@ class ControllerWechatResponse extends Controller {
 
     }
 
-    public function index(){
+    public function recordLog( $data ){
+
+        global $db;
+        $sql = "INSERT INTO `" . DB_PREFIX . "wechat_log` SET
+            `type`='0',
+            `content` = '" . $data['content'] . "',
+            `wechat_id` = '" . $data['wechat_id'] . "',
+            `open_id` = '" . $data['open_id'] . "',
+            `date_added`=NOW()";
+        $db->query( $sql );
 
     }
 
@@ -37,9 +62,16 @@ class ControllerWechatResponse extends Controller {
         if (!empty($postStr)){
 
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+            $this->recordLog(array(
 
+                'content'=> $postObj->Content,
+                'open_id'=> $postObj->FromUserName,
+                'wechat_id'=> $postObj->ToUserName
+
+            ));
             $this->fromUsername = $postObj->FromUserName;
             $this->toUsername = $postObj->ToUserName;
+
             $this->keyword = trim($postObj->Content);
             $this->time = time();
 
@@ -69,7 +101,7 @@ class ControllerWechatResponse extends Controller {
 
             $home = $this->url->link('wechat/home');
 
-            $contentStr = "<a href='" . $home . "'>Mankaa动漫城</a>";
+            $contentStr = "<a href='" . $home . "'>Mankaa动漫城</a>" ;
 
             $resultStr = sprintf($this->textTpl, $this->fromUsername, $this->toUsername, $this->time, $msgType, $contentStr);
             echo $resultStr;
