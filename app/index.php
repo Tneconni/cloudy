@@ -4,14 +4,23 @@ require_once('../Slim/Slim/Slim.php');
 
 \Slim\Slim::registerAutoloader();
 
+
 $app = new \Slim\Slim();
 
-$routeArr = explode('/', $_SERVER['REQUEST_URI']);
+
+$changeUri = $_SERVER['REQUEST_URI'];
+
+if( strpos( $changeUri, '?' ) !== false ){
+
+	$changeUri = explode('?', $_SERVER['REQUEST_URI'])[0];
+
+}
+
+$routeArr = explode('/', $changeUri);
 
 
 if( count($routeArr) > 2 && !empty($routeArr[2]) ){
-
-    $_SERVER['REQUEST_URI'] = '/app/';
+    $_SERVER['REQUEST_URI'] = str_replace( '/' . $routeArr[2], '', $changeUri );
     require_once( '/controller/' . $routeArr[2] . '.php');
 
 }else{
