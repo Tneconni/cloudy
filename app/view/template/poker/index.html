@@ -1,0 +1,62 @@
+<!DOCTYPE >
+<html ng-app="poker-app">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>漫客商城 - 你身边的动漫商店1</title>
+    <link href="/app/view/css/common.css" rel="stylesheet" type="text/css" />
+
+    <script src="/js/angular/angular.min.js"></script>
+    <script src="/app/view/js/app/controller/poker.js"></script>
+</head>
+<body ng-controller="pokerController">
+<!--头部公共开始-->
+<!--页眉-->
+
+
+
+<!--logo+搜索-->
+<div id="header_1">
+    <div class="header_top Id">
+        <div class="mantou"></div>
+        <a class="logo" href="/" style="margin-top:20px">
+            <img src="/app/view/images/logo.png" width="80" />
+        </a>
+        <!--搜索-->
+        <div class="search_big">
+            <form >
+                <input name="keyword" type="text" value="" class="text"/>
+                <input type="button" class="button" value="搜索" />
+            </form>
+            <div class="clear"></div>
+            <div class="hotwords">热门搜索：
+
+                <a >海贼王</a>
+                <a >火影</a>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<div >
+    <h3>动漫名称：</h3>
+
+    <ul>
+        <li ng-repeat="item in comics">
+            <span class="item-{{item.comic_id}}" ng-click="getComicRole(this)">{{item.name}}</span>
+        </li>
+    </ul>
+    <ul>
+        <li ng-repeat="item in comicRoles">
+            <span class="item-{{item.comic_id}}-{{item.role_id}}" >{{item.name}}</span>
+        </li>
+    </ul>
+
+</div>
+
+<!--头部公共结束-->
+<link href="/app/view/css/index2.css" rel="stylesheet" type="text/css" />
+
+</body></html>
