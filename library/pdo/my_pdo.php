@@ -50,6 +50,6 @@ class MyPdo{
 
         $dsn = "mysql:host=localhost;dbname=tneconni";
         self::$pdo = new PDO($dsn, 'root', '');
-
+        self::$pdo->exec('set names utf8');
     }
 }

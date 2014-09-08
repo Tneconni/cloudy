@@ -1,14 +1,9 @@
 <!DOCTYPE >
 <html ng-app="poker-app">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <title>漫客商城 - 你身边的动漫商店1</title>
-    <link href="/app/view/css/common.css" rel="stylesheet" type="text/css" />
+<?php echo $header;?>
 
-    <script src="/js/angular/angular.min.js"></script>
-    <script src="/app/view/js/app/controller/poker.js"></script>
-</head>
+<link href="/app/view/css/poker.css" rel="stylesheet" type="text/css" />
+
 <body ng-controller="pokerController">
 <!--头部公共开始-->
 <!--页眉-->
@@ -40,23 +35,76 @@
     </div>
 </div>
 
-<div >
-    <h3>动漫名称：</h3>
+<div class="row">
+    <div class="large-3 medium-4 columns">
 
-    <ul>
-        <li ng-repeat="item in comics">
-            <span class="item-{{item.comic_id}}" ng-click="getComicRole(this)">{{item.name}}</span>
-        </li>
-    </ul>
-    <ul>
-        <li ng-repeat="item in comicRoles">
-            <span class="item-{{item.comic_id}}-{{item.role_id}}" >{{item.name}}</span>
-        </li>
-    </ul>
+        <h3>动漫名称：</h3>
+
+        <ul>
+            <li ng-repeat="item in comics">
+                <span class="item-{{item.comic_id}}" ng-click="getComicRole(this.item)">{{item.name}}</span>
+            </li>
+        </ul>
+        <ul>
+            <li ng-repeat="item in comicRoles">
+                <span class="item-{{item.comic_id}}-{{item.role_id}}" >{{item.name}}</span>
+            </li>
+        </ul>
+
+    </div>
+    <div class="large-9 medium-8 columns">
+
+        <div class="poker-suit-ctl"  ng-controller="pokerSuitCtl">
+            <dl class="sub-nav poker-suit">
+                <dt>扑克花色:</dt>
+                <dd class="{{item.activeClass}}"
+                    ng-repeat="item in pokerSuit"
+                    ng-click="getPokerBySuit(this.item)"><a>{{item.name}}-{{item.ename}}</a></dd>
+
+            </dl>
+            <p class="poker-suit-descrption">
+                扑克花色描述
+            </p>
+
+            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4" >
+                <li ng-repeat="item in suitPoker">
+                    <img ng-src="/app/view/images/comic/{{item.image}}" >
+                    <span class="comic-name">{{item.comic_name}}</span>
+                    <span class="comic-role-name">{{item.name}}</span>
+                    <span class="comic-role-description">{{item.description}}</span>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="voteCtl">
+
+            <dl class="sub-nav poker-comic">
+                <dt>动漫:</dt>
+                <dd class="{{item.activeClass}}"
+                    ng-repeat="item in comics"
+                    ng-click="getComicRole(this.item)"
+                        ><a>{{item.name}}</a></dd>
+
+            </dl>
+
+            <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-10" >
+                <li ng-repeat="item in comicRoles"
+                        ng-click="vote(this.item)">
+                    <img ng-src="/app/view/images/comic/{{item.image}}" >
+                    <span class="item-{{item.comic_id}}-{{item.role_id}}">{{item.name}}</span>
+
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
 
 </div>
 
 <!--头部公共结束-->
-<link href="/app/view/css/index2.css" rel="stylesheet" type="text/css" />
+
 
 </body></html>
