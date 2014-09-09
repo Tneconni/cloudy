@@ -69,4 +69,39 @@ $app->get('/getPokerSuit', function(){
 
 });
 
+$app->get('/vote/:pokerId/:suitId', function( $roleId, $suitId ){
+    $res = array(
+        'status' => 'false',
+        'description' => '你已经投过票了'
+    );
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $sql = "SELECT * FROM cmc_poker_vote WHERE ip='" . $ip . "'";
+
+
+    $vote = MyPdo::query($sql);
+    if( empty($vote) ){
+        $insertSql = "INSERT INTO cmc_poker_vote SET
+role_id = '" . $roleId . "',
+suit_id = '" . $suitId . "',
+ip = '" . $ip . "',
+create_time = NOW()";
+        MyPdo::exec($insertSql);
+        $res['status'] = 'success';
+        $res['description'] = '投票成功';
+
+        //return the poker vote
+        $voteCountSql = "SELECT
+  COUNT(pv.`poker_vote_id`) AS count
+FROM
+  cmc_poker_vote pv
+WHERE pv.`role_id` = '" . $roleId . "'
+        AND pv.`suit_id` = '" . $suitId . "'";
+        $voteCount = MyPdo::query( $voteCountSql );
+        $res['voteCount'] = $voteCount[0]['count'];
+    }
+
+    echo json_encode( $res );
+
+});
+
 

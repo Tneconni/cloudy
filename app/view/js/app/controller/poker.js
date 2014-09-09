@@ -6,14 +6,20 @@ eApp.controller('voteCtl',['$scope', '$http', voteCtl]);
 
 function voteCtl( $scope, $http ){
 
-    $scope.vote = function(){
+    $scope.voted = 0;
+    $scope.vote = function( item ){
 
-        var voteUrl = "/app/poker/vote";
+        var suitId = '1';
+        var voteUrl = "/app/poker/vote/" + item.role_id + '/' + suitId;
+
+        if( $scope.voted == 1 ){
+            alert('你已经投过票了');
+            return;
+        }
         $http.get( voteUrl ).success( function( json ){
 
-            if( json ){
-
-            }
+            $scope.voted = 1;
+            alert(json.description);
 
         });
 
