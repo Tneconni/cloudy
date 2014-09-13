@@ -3,6 +3,9 @@ var eApp = angular.module('poker-app',[]);
 eApp.controller('pokerController',['$scope', '$http', pokerController]);
 eApp.controller('pokerSuitCtl',['$scope', '$http', pokerSuitCtl]);
 eApp.controller('voteCtl',['$scope', '$http', voteCtl]);
+//eApp.controller('voteCtl',['$scope', '$http', voteCtl]);
+
+
 
 function voteCtl( $scope, $http ){
 
@@ -128,6 +131,27 @@ function pokerController( $scope, $http ){
         for( var i = 0;i < l; i ++ ){
             $scope.comics[i].activeClass = '';
         }
+
+    };
+
+    var comicTypeUrl = "/app/poker/getComicType";
+    $scope.comicTypes = [];
+    $http.get( comicTypeUrl ).success( function( json ){
+
+        $scope.comicTypes = json;
+
+    });
+
+    // 暂时用不到~
+    $scope.getComicsByType = function( item ){
+
+        var comicUrl = "/app/poker/getComicsByType";
+        $scope.comicTypes = [];
+        $http.get( comicUrl ).success( function( json ){
+
+            $scope.comics = json;
+
+        });
 
     };
 }

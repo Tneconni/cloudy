@@ -12,6 +12,14 @@ $app->get('/', function() use($app){
 
 });
 
+$app->get('/getComicType', function() use($app){
+
+    $sql = "SELECT * FROM cmc_comic_type";
+    $res = MyPdo::query( $sql );
+
+    echo json_encode( $res );
+
+});
 $app->get('/getComic', function() use($app){
 
     $sql = "SELECT * FROM cmc_comic";
@@ -38,19 +46,21 @@ $app->get('/pokerVote', function(){
 $app->get('/getPokerBySuit/:suitId', function( $suitId ){
 
     $sql = "SELECT
-  cp.*,
-  cr.`name`,
-  cr.`image`,
-  cc.`comic_id`,
-  cc.`name` AS comic_name
+  cr.`role_id`,
+  cr.`comic_id`,
+    cr.`name`,
+    cr.`image`,
+    c.`name` AS comic_name,
+  COUNT(pv.`role_id`) AS vote_count
 FROM
-  cmc_poker cp
-    LEFT JOIN cmc_comic_role cr
-        ON cp.`role_id` = cr.`role_id`
-  LEFT JOIN cmc_comic cc
-    ON cr.`role_id` = cc.`comic_id`
-WHERE poker_suit_id = '" . $suitId . "' ;
-";
+  cmc_comic_role cr
+  LEFT JOIN cmc_poker_vote pv
+    ON cr.`role_id` = pv.`role_id`
+    LEFT JOIN cmc_comic c
+    ON cr.`comic_id`=c.`comic_id`
+    WHERE pv.`suit_id`='" . $suitId . "'
+    GROUP BY cr.`role_id`
+    ORDER BY vote_count DESC";
 
     $res = MyPdo::query($sql);
 
@@ -59,7 +69,6 @@ WHERE poker_suit_id = '" . $suitId . "' ;
 });
 
 $app->get('/getPokerSuit', function(){
-
 
     $sql = "SELECT * FROM cmc_poker_suit";
 

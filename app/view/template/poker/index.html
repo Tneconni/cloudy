@@ -35,62 +35,39 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="large-3 medium-4 columns">
+<div class="row p-t20">
 
-        <h3>动漫名称：</h3>
+    <div class="large-3 medium-2 columns bd-r min-h-500">
+<!--
+        <h4>动漫类型：</h4>
+-->
+        <ul class="inline-list ft-12">
+            <li ng-repeat="item in comicTypes" class="item-{{item.comic_type_id}}"><a >{{item.name}}</a></li>
 
-        <ul>
-            <li ng-repeat="item in comics">
-                <span class="item-{{item.comic_id}}" ng-click="getComicRole(this.item)">{{item.name}}</span>
-            </li>
-        </ul>
-        <ul>
-            <li ng-repeat="item in comicRoles">
-                <span class="item-{{item.comic_id}}-{{item.role_id}}" >{{item.name}}</span>
-            </li>
         </ul>
 
     </div>
-    <div class="large-9 medium-8 columns">
 
-        <div class="poker-suit-ctl"  ng-controller="pokerSuitCtl">
-            <dl class="sub-nav poker-suit">
-                <dt>扑克花色:</dt>
-                <dd class="{{item.activeClass}}"
-                    ng-repeat="item in pokerSuit"
-                    ng-click="getPokerBySuit(this.item)"><a>{{item.name}}-{{item.ename}}</a></dd>
 
-            </dl>
-            <p class="poker-suit-descrption">
-                扑克花色描述
-            </p>
-
-            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4" >
-                <li ng-repeat="item in suitPoker">
-                    <img ng-src="/app/view/images/comic/{{item.image}}" >
-                    <span class="comic-name">{{item.comic_name}}</span>
-                    <span class="comic-role-name">{{item.name}}</span>
-                    <span class="comic-role-description">{{item.description}}</span>
-                </li>
-
-            </ul>
-        </div>
+    <div class="large-5 medium-5 columns">
 
         <div class="voteCtl" ng-controller="voteCtl">
 
-            <dl class="sub-nav poker-comic">
+            <dl class="sub-nav poker-comic  bd-b">
+                <!--
                 <dt>动漫:</dt>
+                -->
                 <dd class="{{item.activeClass}}"
+                    id="comic-{{item.comic_id}}"
                     ng-repeat="item in comics"
                     ng-click="getComicRole(this.item)"
                         ><a>{{item.name}}</a></dd>
 
             </dl>
 
-            <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-10" >
-                <li ng-repeat="item in comicRoles"
-                        ng-click="vote(this.item)">
+            <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2" >
+                <li class="comic-role" ng-repeat="item in comicRoles"
+                    ng-click="vote(this.item)">
                     <img ng-src="/app/view/images/comic/{{item.image}}" >
                     <span class="item-{{item.comic_id}}-{{item.role_id}}">{{item.name}}</span>
 
@@ -98,6 +75,34 @@
 
             </ul>
         </div>
+
+    </div>
+    <div class="large-4 medium-5 columns">
+
+        <div class="poker-suit-ctl"  ng-controller="pokerSuitCtl">
+
+            <ul class="small-block-grid-5">
+                <li ng-repeat="item in pokerSuit" ng-click="getPokerBySuit(this.item)">
+                    <img class="th" ng-src="/app/view/images/{{item.image}}" />
+                </li>
+            </ul>
+            <p class="poker-suit-descrption  bd-b">
+                选票当前结果：
+            </p>
+
+            <ul class="comic-role small-block-grid-1 medium-block-grid-2 large-block-grid-3" >
+                <li ng-repeat="item in suitPoker" title="{{item.comic_name}}">
+                    <img ng-src="/app/view/images/comic/{{item.image}}" >
+                    <span class="name">{{item.name}}({{item.vote_count}}票)</span>
+                    <!--
+                    <span class="comic-role-name">{{item.name}}</span>
+                    <span class="comic-role-description">{{item.description}}</span>
+                    -->
+                </li>
+
+            </ul>
+        </div>
+
 
 
     </div>
