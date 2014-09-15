@@ -13,7 +13,7 @@ function voteCtl( $scope, $http ){
     $scope.vote = function( item ){
 
         var suitId = '1';
-        var voteUrl = "/app/poker/vote/" + item.role_id + '/' + suitId;
+        var voteUrl = baseUrl + "/app/poker/vote/" + item.role_id + '/' + suitId;
 
         if( $scope.voted == 1 ){
             alert('你已经投过票了');
@@ -34,7 +34,7 @@ function pokerSuitCtl( $scope, $http ){
 
     $scope.pokerSuit = [];
     $scope.suitPoker = [];
-    var url = "/app/poker/getPokerSuit";
+    var url = baseUrl + "/app/poker/getPokerSuit";
     $http.get( url).success( function( json ){
 
         var l = json.length;
@@ -74,7 +74,7 @@ function pokerSuitCtl( $scope, $http ){
         $scope.deletePokerSuitActive();
         suit.activeClass = 'active';
         var suitId = suit.poker_suit_id;
-        pokerUrl = '/app/poker/getPokerBySuit/' + suitId;
+        pokerUrl = baseUrl + '/app/poker/getPokerBySuit/' + suitId;
         $http.get( pokerUrl ).success( function( json ){
 
             $scope.suitPoker = json;
@@ -87,7 +87,7 @@ function pokerSuitCtl( $scope, $http ){
 
 function pokerController( $scope, $http ){
 
-    var url = "/app/poker/getComic";
+    var url = baseUrl + "/app/poker/getComic";
     $scope.comics = [];
     $http.get( url ).success(function( json ){
 
@@ -117,7 +117,7 @@ function pokerController( $scope, $http ){
         $scope.deleteComicActive();
         arguments[0].activeClass = 'active';
         var comic_id = arguments[0].comic_id;
-        var url = "/app/poker/getComicRole?comic_id=" + comic_id;
+        var url = baseUrl + "/app/poker/getComicRole?comic_id=" + comic_id;
         $http.get( url ).success(function( json ){
 
             $scope.comicRoles = json;
@@ -134,7 +134,7 @@ function pokerController( $scope, $http ){
 
     };
 
-    var comicTypeUrl = "/app/poker/getComicType";
+    var comicTypeUrl = baseUrl + "/app/poker/getComicType";
     $scope.comicTypes = [];
     $http.get( comicTypeUrl ).success( function( json ){
 
@@ -145,7 +145,7 @@ function pokerController( $scope, $http ){
     // 暂时用不到~
     $scope.getComicsByType = function( item ){
 
-        var comicUrl = "/app/poker/getComicsByType";
+        var comicUrl = baseUrl + "/app/poker/getComicsByType";
         $scope.comicTypes = [];
         $http.get( comicUrl ).success( function( json ){
 
