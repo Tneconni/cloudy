@@ -4,8 +4,9 @@ require_once('../Slim/Slim/Slim.php');
 
 \Slim\Slim::registerAutoloader();
 
-
+//$baseUrl = $_SERVER['HTTP_HOST'];
 define('BASEDIR', __DIR__ );
+define('baseUrl', 'http://' . $_SERVER['HTTP_HOST'] );
 $app = new \Slim\Slim();
 $app->view->setTemplatesDirectory( BASEDIR );
 $changeUri = $_SERVER['REQUEST_URI'];
