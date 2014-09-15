@@ -5,9 +5,9 @@ require_once('../library/pdo/my_pdo.php');
 $app->get('/', function() use($app){
 
 
-    $template_header = $app->view->fetch('../view/template/common/header.html');
+    $template_header = $app->view->fetch('view/template/common/header.html');
     $app->view->setData('header', $template_header);
-    $app->view->display('../view/template/poker/index.html');
+    $app->view->display('view/template/poker/index.html');
 
 
 });

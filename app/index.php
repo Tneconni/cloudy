@@ -5,9 +5,9 @@ require_once('../Slim/Slim/Slim.php');
 \Slim\Slim::registerAutoloader();
 
 
+define('BASEDIR', __DIR__ );
 $app = new \Slim\Slim();
-
-
+$app->view->setTemplatesDirectory( BASEDIR );
 $changeUri = $_SERVER['REQUEST_URI'];
 
 if( strpos( $changeUri, '?' ) !== false ){
@@ -27,7 +27,6 @@ if( count($routeArr) > 2 && !empty($routeArr[2]) ){
 
     echo 'the page is null';
 }
-
 
 $app->run();
 
