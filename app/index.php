@@ -15,7 +15,8 @@ if( strpos( $changeUri, '?' ) !== false ){
 	$changeUri = explode('?', $_SERVER['REQUEST_URI'])[0];
 
 }
-
+$changeUri = explode('/app', $changeUri)[1];
+$changeUri = '/app' . $changeUri;
 $routeArr = explode('/', $changeUri);
 
 
