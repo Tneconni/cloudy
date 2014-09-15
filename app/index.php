@@ -25,7 +25,7 @@ $routeArr = explode('/', $changeUri);
 
 if( count($routeChangeArr) > 2 && !empty($routeChangeArr[2]) ){
     $_SERVER['REQUEST_URI'] = str_replace( '/' . $routeChangeArr[2], '', $changeUri );
-    require_once( '/controller/' . $routeChangeArr[2] . '.php');
+    require_once( BASEDIR . '/controller/' . $routeChangeArr[2] . '.php');
 
 }else{
 
