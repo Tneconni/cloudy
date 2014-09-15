@@ -8,21 +8,24 @@ require_once('../Slim/Slim/Slim.php');
 define('BASEDIR', __DIR__ );
 $app = new \Slim\Slim();
 $app->view->setTemplatesDirectory( BASEDIR );
-$changeUri = $_SERVER['REQUEST_URI']; print_r( $changeUri );
+$changeUri = $_SERVER['REQUEST_URI'];
 
 if( strpos( $changeUri, '?' ) !== false ){
 
 	$changeUri = explode('?', $_SERVER['REQUEST_URI'])[0];
 
 }
-$changeUri = explode('/app', $changeUri)[1];
-$changeUri = '/app' . $changeUri;
+
+$changeUriChange = explode('/app', $changeUri)[1];
+$changeUriChange = '/app' . $changeUriChange;
+$routeChangeArr = explode('/', $changeUriChange);
+$controller = $routeChangeArr[2];
+
 $routeArr = explode('/', $changeUri);
 
-
-if( count($routeArr) > 2 && !empty($routeArr[2]) ){
-    $_SERVER['REQUEST_URI'] = str_replace( '/' . $routeArr[2], '', $changeUri );
-    require_once( '/controller/' . $routeArr[2] . '.php');
+if( count($routeChangeArr) > 2 && !empty($routeChangeArr[2]) ){
+    $_SERVER['REQUEST_URI'] = str_replace( '/' . $routeChangeArr[2], '', $changeUri );
+    require_once( '/controller/' . $routeChangeArr[2] . '.php');
 
 }else{
 
