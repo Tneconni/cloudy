@@ -8,7 +8,7 @@ require_once('../Slim/Slim/Slim.php');
 define('BASEDIR', __DIR__ );
 $app = new \Slim\Slim();
 $app->view->setTemplatesDirectory( BASEDIR );
-$changeUri = $_SERVER['REQUEST_URI'];
+$changeUri = $_SERVER['REQUEST_URI']; print_r( $changeUri );
 
 if( strpos( $changeUri, '?' ) !== false ){
 
