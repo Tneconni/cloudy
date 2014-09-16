@@ -48,8 +48,12 @@ class MyPdo{
 
     private function init(){
 
-        $dsn = "mysql:host=localhost;dbname=tneconni";
-        self::$pdo = new PDO($dsn, 'root', '');
+//        $dsn = "mysql:host=localhost;dbname=tneconni";
+//        self::$pdo = new PDO($dsn, 'root', '');
+
+        $dsn = "mysql:host=cloud123.mysql.rds.aliyuncs.com;dbname=tneconni";
+        self::$pdo = new PDO($dsn, 'cloud', '111111');
+
         self::$pdo->exec('set names utf8');
     }
 }
