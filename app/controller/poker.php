@@ -1,6 +1,6 @@
 <?php
 
-require_once('../library/pdo/my_pdo.php');
+require_once( BASEDIR . '/../library/pdo/my_pdo.php' );
 
 $app->get('/', function() use($app){
 
