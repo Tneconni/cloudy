@@ -15,7 +15,7 @@
     <div class="header_top Id">
         <div class="mantou"></div>
         <a class="logo" href="/" style="margin-top:20px">
-            <img src="/app/view/images/logo.png" width="80" />
+            <img src="<?php echo baseUrl; ?>/app/view/images/logo.png" width="80" />
         </a>
         <!--搜索-->
         <div class="search_big">
@@ -68,7 +68,7 @@
             <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2" >
                 <li class="comic-role" ng-repeat="item in comicRoles"
                     ng-click="vote(this.item)">
-                    <img ng-src="/app/view/images/comic/{{item.image}}" >
+                    <img ng-src="<?php echo baseUrl; ?>/app/view/images/comic/{{item.image}}" >
                     <span class="item-{{item.comic_id}}-{{item.role_id}}">{{item.name}}</span>
 
                 </li>
@@ -83,7 +83,7 @@
 
             <ul class="small-block-grid-5">
                 <li ng-repeat="item in pokerSuit" ng-click="getPokerBySuit(this.item)">
-                    <img class="th" ng-src="/app/view/images/{{item.image}}" />
+                    <img class="th" ng-src="<?php echo baseUrl; ?>/app/view/images/suit/{{item.image}}" />
                 </li>
             </ul>
             <p class="poker-suit-descrption  bd-b">
@@ -92,7 +92,7 @@
 
             <ul class="comic-role small-block-grid-1 medium-block-grid-2 large-block-grid-3" >
                 <li ng-repeat="item in suitPoker" title="{{item.comic_name}}">
-                    <img ng-src="/app/view/images/comic/{{item.image}}" >
+                    <img ng-src="<?php echo baseUrl; ?>/app/view/images/comic/{{item.image}}" >
                     <span class="name">{{item.name}}({{item.vote_count}}票)</span>
                     <!--
                     <span class="comic-role-name">{{item.name}}</span>
