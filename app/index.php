@@ -1,9 +1,9 @@
 <?php
 echo 'test database';
 //test the data base
-$hostname = 'cloud123.mysql.rds.aliyuncs.com';
-$username = 'cloud';
-$password = '111111';
+$hostname = 'localhost';
+$username = 'root';
+$password = 'root';
 $database = 'tneconni';
 $link = mysql_connect($hostname, $username, $password);
 mysql_select_db($database, $link);
