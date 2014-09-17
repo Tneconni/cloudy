@@ -1,5 +1,20 @@
 <?php
-echo phpinfo();
+
+//test the data base
+$hostname = 'cloud123.mysql.rds.aliyuncs.com';
+$username = 'cloud';
+$password = '111111';
+$database = 'tneconni';
+$link = mysql_connect($hostname, $username, $password);
+mysql_select_db($database, $link);
+mysql_query("SET NAMES 'utf8'", $link);
+mysql_query("SET CHARACTER SET utf8", $link);
+mysql_query("SET CHARACTER_SET_CONNECTION=utf8", $link);
+mysql_query("SET SQL_MODE = ''", $link);
+$sql = "SELECT * FROM cld_apps;";
+$resource = mysql_query($sql, $link);
+var_dump( $resource );die();
+
 require_once('../Slim/Slim/Slim.php');
 
 \Slim\Slim::registerAutoloader();
