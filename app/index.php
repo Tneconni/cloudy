@@ -1,5 +1,5 @@
 <?php
-
+echo 'test database';
 //test the data base
 $hostname = 'cloud123.mysql.rds.aliyuncs.com';
 $username = 'cloud';
