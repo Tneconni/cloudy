@@ -31,7 +31,7 @@ function voteCtl( $scope, $http ){
 }
 
 function pokerSuitCtl( $scope, $http ){
-
+    $scope.selectedPokerSuitDesc = '';
     $scope.pokerSuit = [];
     $scope.suitPoker = [];
     var url = baseUrl + "/app/poker/getPokerSuit";
@@ -45,7 +45,7 @@ function pokerSuitCtl( $scope, $http ){
 
                 item.activeClass = 'active';
                 $scope.getPokerBySuit( item );
-
+                $scope.selectedPokerSuitDesc = item.description;
             }else{
 
                 item.activeClass = '';
@@ -71,6 +71,7 @@ function pokerSuitCtl( $scope, $http ){
 
     $scope.getPokerBySuit = function( suit ){
 
+        $scope.selectedPokerSuitDesc = suit.description;
         $scope.deletePokerSuitActive();
         suit.activeClass = 'active';
         var suitId = suit.poker_suit_id;
