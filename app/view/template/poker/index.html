@@ -39,13 +39,15 @@
 
     <div class="large-3 medium-2 columns bd-r min-h-500">
         <img class="th" src="<?php echo baseUrl; ?>/app/view/images/suit/spades.png" />
-        <h3 class="bd-b">
+        <h6 class="bd-b l-h2">
             黑桃代表长矛，象征武力<br/>
             请选出你认为最锋利的矛
-        </h3>
-<!--
-        <h4>动漫类型：</h4>
--->
+            <div class="ft-12 color-red">只有一次机会哦~</div>
+        </h6>
+
+        <!--
+                <h4>动漫类型：</h4>
+        -->
         <ul class="inline-list ft-12">
             <li ng-repeat="item in comicTypes" class="item-{{item.comic_type_id}}"><a >{{item.name}}</a></li>
 
@@ -73,7 +75,7 @@
             <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2" >
                 <li class="comic-role" ng-repeat="item in comicRoles"
                     ng-click="vote(this.item)">
-                    <img ng-src="<?php echo baseUrl; ?>/app/view/images/comic/{{item.image}}" >
+                    <img title="请点击投票，只有一次机会哦~" ng-src="<?php echo baseUrl; ?>/app/view/images/comic/{{item.image}}" >
                     <span class="item-{{item.comic_id}}-{{item.role_id}}">{{item.name}}</span>
 
                 </li>
