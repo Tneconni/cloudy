@@ -2,7 +2,7 @@
 <html ng-app="poker-app">
 <?php echo $header;?>
 
-<link href="<?php echo baseUrl; ?>/app/view/css/poker.css" rel="stylesheet" type="text/css" />
+
 
 <body ng-controller="pokerController">
 <!--头部公共开始-->
@@ -11,28 +11,42 @@
 
 
 <!--logo+搜索-->
-<div id="header_1">
-    <div class="header_top Id">
-        <div class="mantou"></div>
-        <a class="logo" href="/" style="margin-top:20px">
-            <img src="<?php echo baseUrl; ?>/app/view/images/logo.png" width="80" />
-        </a>
-        <!--搜索-->
-        <div class="search_big">
-            <form >
-                <input name="keyword" type="text" value="" class="text"/>
-                <input type="button" class="button" value="搜索" />
-            </form>
-            <div class="clear"></div>
-            <div class="hotwords">热门搜索：
+<div id="header_1" >
+    <div class=" row">
+        <div class="large-3 medium-2 columns">
+            <a class="logo "  style="margin-top:20px">
+                <img class="p-t10" src="<?php echo baseUrl; ?>/app/view/images/logo.png" width="80" />
 
-                <a >海贼王</a>
-                <a >火影</a>
+            </a>
+            <p class="ft-12 t-c white"> qq群：316387163</p>
+        </div>
+        <div class="large-6 medium-6 columns">
+            <div class="blank20"></div>
+            <div class="search_big">
+                <div class="fl wth-80">
 
+                    <input name="keyword" type="text" value="" class="wth-80 fl"/>
+                </div>
+                <button  class="fl wth-20 search-btn">搜索</button>
+                <div class="clear"></div>
+                <div class="hotwords">热门搜索：
+
+                    <a >海贼王</a>
+                    <a >火影</a>
+
+                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
+        </div>
+        <div class="large-2 medium-2 columns">
+            <img class="wth-80 p-t5" src="<?php echo baseUrl; ?>/app/view/images/qq_group.png"/>
         </div>
     </div>
+
+
+
+    <!--搜索-->
+
 </div>
 
 <div class="row p-t20">
