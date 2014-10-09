@@ -12,10 +12,10 @@ if (!defined('DIR_APPLICATION')) {
 	header('Location: install/index.php');
 	exit;
 }
-echo DIR_APPLICATION;die();
+
 // Startup
 require_once(DIR_SYSTEM . 'startup.php');
-
+echo DIR_SYSTEM;
 // Application Classes
 require_once(DIR_SYSTEM . 'library/customer.php');
 require_once(DIR_SYSTEM . 'library/affiliate.php');
