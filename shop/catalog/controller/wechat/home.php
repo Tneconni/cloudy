@@ -3,7 +3,7 @@ class ControllerWechatHome extends Controller {
 
 
     public function index(){
-
+        echo 'asdad';
         $this->load->model('catalog/product');
 
         $data = array(
