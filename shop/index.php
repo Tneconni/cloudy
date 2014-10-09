@@ -227,9 +227,9 @@ $controller->addPreAction(new Action('common/maintenance'));
 $controller->addPreAction(new Action('common/seo_url'));
 
 // Router
-if (isset($request->get['route'])) {
+if (isset($request->get['route'])) { echo 'route';
 	$action = new Action($request->get['route']);
-} else {
+} else { echo 'common';
 	$action = new Action('common/home');
 }
 
