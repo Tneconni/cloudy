@@ -1,6 +1,7 @@
 <?php  
 class ControllerCommonHome extends Controller {
 	public function index() {
+        echo 'asdad';die();
 		$this->document->setTitle($this->config->get('config_title'));
 		$this->document->setDescription($this->config->get('config_meta_description'));
 
