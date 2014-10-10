@@ -95,12 +95,12 @@ class Api {
 <Title><![CDATA[漫客小屋]]></Title>
 <Description><![CDATA[漫迷落脚的小屋]]></Description>
 <PicUrl><![CDATA[https://mp.weixin.qq.com/cgi-bin/getimgdata?token=496425256&msgid=&mode=large&source=file&fileId=200464405&ow=-1]]></PicUrl>
-<Url><![CDATA[http://121/42/42/110/cloudy/app/poker]]></Url>
+<Url><![CDATA[http://121.42.42.110/cloudy/app/poker]]></Url>
 </item><item>
 <Title><![CDATA[漫客小屋]]></Title>
 <Description><![CDATA[选出你心目中的英雄]]></Description>
 <PicUrl><![CDATA[https://mp.weixin.qq.com/cgi-bin/getimgdata?token=496425256&msgid=&mode=large&source=file&fileId=200457948&ow=-1]]></PicUrl>
-<Url><![CDATA[http://121/42/42/110/cloudy/app/poker]]></Url>
+<Url><![CDATA[http://121.42.42.110/cloudy/app/poker]]></Url>
 </item>";
 
         return $xmlStart . $itemTmp . $xmlEnd;
