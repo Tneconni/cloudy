@@ -1,5 +1,5 @@
 <?php
-$logResource = fopen(BASEDIR . '\log\logs.txt', "a");
+$logResource = fopen(BASEDIR . '/log/logs.txt', "a");
 $app->environment['slim.errors'] = $logResource;
 require_once( BASEDIR . '/../library/wechat/Api.php' );
 
