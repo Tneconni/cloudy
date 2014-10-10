@@ -56,7 +56,7 @@ class Api {
             if(!empty( $keyword ))
             {
                 $msgType = "text";
-                $contentStr = "��ӭ��������С��!";
+                $contentStr = "欢迎光临漫客小屋!";
                 $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 echo $resultStr;
             }else{
