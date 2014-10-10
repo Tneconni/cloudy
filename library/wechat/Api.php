@@ -33,8 +33,6 @@ class Api {
 
     public function responseMsg()
     {
-        echo 'responseMsg';
-
         //get post data, May be due to the different environments
 //        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
         $postStr = file_get_contents("php://input");
