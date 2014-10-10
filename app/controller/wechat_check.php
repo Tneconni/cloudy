@@ -5,7 +5,9 @@ require_once( BASEDIR . '/../library/wechat/Api.php' );
 
 
 $app->get('/', function() use( $app ){
-
+    $app->getLog()
+        ->getWriter()
+        ->write( date('Y-m-d H:i:s') . ' :: the wechat reqeust ' );
     $wxApi = new Api();
 
     if( isset($_GET["echostr"]) ){
@@ -13,7 +15,7 @@ $app->get('/', function() use( $app ){
         $wxApi->valid();
     }else{
         try{
-            $wxApi->responseMsg();
+            $wxApi->responseMsg( $app );
         }catch( \Exception $e ){
             $app->getLog()
                 ->getWriter()

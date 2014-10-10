@@ -31,7 +31,7 @@ class Api {
         }
     }
 
-    public function responseMsg()
+    public function responseMsg( $app )
     {
         //get post data, May be due to the different environments
 //        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
@@ -41,6 +41,7 @@ class Api {
 
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
             $fromUsername = $postObj->FromUserName;
+            $app->getLog()->getWriter()->write( '$fromUsername  :: ' . $fromUsername );
             $toUsername = $postObj->ToUserName;
             $keyword = trim($postObj->Content);
             $time = time();
@@ -55,7 +56,7 @@ class Api {
             if(!empty( $keyword ))
             {
                 $msgType = "text";
-                $contentStr = "»¶Ó­À´µ½Âþ¿ÍÐ¡ÎÝ!";
+                $contentStr = "ï¿½ï¿½Ó­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½!";
                 $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 echo $resultStr;
             }else{
