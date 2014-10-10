@@ -9,6 +9,8 @@ $app->get('/', function(){
     if( isset($_GET["echostr"]) ){
 
         $wxApi->valid();
+    }else{
+        $wxApi->responseMsg();
     }
 
 
