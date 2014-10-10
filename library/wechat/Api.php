@@ -97,9 +97,9 @@ class Api {
 <PicUrl><![CDATA[http://img1.gtimg.com/comic/pics/hv1/39/168/1725/112211004.jpg]]></PicUrl>
 <Url><![CDATA[http://121.42.42.110/cloudy/app/poker]]></Url>
 </item><item>
-<Title><![CDATA[漫客小屋]]></Title>
+<Title><![CDATA[人气投票]]></Title>
 <Description><![CDATA[选出你心目中的英雄]]></Description>
-<PicUrl><![CDATA[https://mp.weixin.qq.com/cgi-bin/getimgdata?token=496425256&msgid=&mode=large&source=file&fileId=200457948&ow=-1]]></PicUrl>
+<PicUrl><![CDATA[http://ac.tc.qq.com/store_file_download?buid=15017&uin=1220734359&dir_path=/homecover/8359/&name=133_06_17_44_0a20b003f084b4208849bb59f5762314.jpg]]></PicUrl>
 <Url><![CDATA[http://121.42.42.110/cloudy/app/poker]]></Url>
 </item>";
 
