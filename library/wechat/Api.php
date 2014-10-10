@@ -34,9 +34,9 @@ class Api {
     public function responseMsg()
     {
         echo 'responseMsg';
+        var_dump($GLOBALS["HTTP_RAW_POST_DATA"]);
         //get post data, May be due to the different environments
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-        echo 'faafafaf';
         //extract post data
         if (!empty($postStr)){
 
