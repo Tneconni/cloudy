@@ -1,7 +1,12 @@
 #header_1 {
   width: 100%;
-  height: 122px;
+  height: auto;
+  padding: 10px 0;
   background: #F37020;
+}
+#header_1 p,
+#header_1 button {
+  margin-bottom: 0;
 }
 .search-btn {
   height: 37px;
