@@ -48,7 +48,18 @@
   dl{
     dd{
       width:20%;
-      margin-left:0
+      margin-left:0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      a{
+        white-space:nowrap;
+      }
+      &.active{
+        a{
+          padding: 0.1875rem 2px;
+        }
+      }
+
     }
   }
 }

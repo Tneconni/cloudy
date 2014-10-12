@@ -35,6 +35,14 @@
 .voteCtl dl dd {
   width: 20%;
   margin-left: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.voteCtl dl dd a {
+  white-space: nowrap;
+}
+.voteCtl dl dd.active a {
+  padding: 0.1875rem 2px;
 }
 @media only screen and (min-width: 40.063em) {
   .inline-list li {
