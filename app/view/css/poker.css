@@ -26,3 +26,36 @@
 .comic-role .name {
   font-size: 12px;
 }
+.inline-list li {
+  width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 0;
+}
+.voteCtl dl dd {
+  width: 20%;
+  margin-left: 0;
+}
+@media only screen and (min-width: 40.063em) {
+  .inline-list li {
+    width: 33%;
+  }
+  .voteCtl dl dd {
+    width: 33%;
+  }
+}
+@media only screen and (min-width: 64.063em) {
+  .inline-list li {
+    width: 25%;
+  }
+  .voteCtl dl dd {
+    width: 25%;
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 90.063em) {
+  .voteCtl dl dd {
+    width: 20%;
+    margin-left: 0;
+  }
+}
