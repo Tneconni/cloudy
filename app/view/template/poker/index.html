@@ -1,53 +1,12 @@
 <!DOCTYPE >
 <html ng-app="poker-app">
-<?php echo $header;?>
-
-
-
+<?php echo $head;?>
+<link href="<?php echo baseUrl; ?>/app/view/css/poker.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo baseUrl; ?>/app/view/js/app/controller/poker.js"></script>
 <body ng-controller="pokerController">
 <!--头部公共开始-->
 <!--页眉-->
-
-
-
-<!--logo+搜索-->
-<div id="header_1" >
-    <div class=" row">
-        <div class="large-3 medium-2 columns">
-            <a class="logo "  style="margin-top:20px">
-                <img class="p-t10" src="<?php echo baseUrl; ?>/app/view/images/logo.png" width="80" />
-
-            </a>
-            <p class="ft-12 t-c white"> qq群：316387163</p>
-        </div>
-        <div class="large-6 medium-6 columns">
-            <div class="blank20 p-t10 show-for-medium-up"></div>
-            <div class="search_big">
-                <div class="fl wth-80">
-
-                    <input name="keyword" type="text" value="" class="wth-80 fl"/>
-                </div>
-                <button  class="fl wth-20 search-btn">搜索</button>
-                <div class="clear"></div>
-                <div class="hotwords">热门搜索：
-
-                    <a >海贼王</a>
-                    <a >火影</a>
-
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <div class="large-2 medium-2 columns show-for-medium-up t-r">
-            <img width="120" src="<?php echo baseUrl; ?>/app/view/images/qq_group.png"/>
-        </div>
-    </div>
-
-
-
-    <!--搜索-->
-
-</div>
+<?php echo $header;?>
 
 <div class="row p-t20">
 

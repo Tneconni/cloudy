@@ -1,25 +1,3 @@
-#header_1 {
-  width: 100%;
-  height: auto;
-  padding: 10px 0;
-  background: #F37020;
-}
-#header_1 p,
-#header_1 button {
-  margin-bottom: 0;
-}
-.search-btn {
-  height: 37px;
-  line-height: 37px;
-  padding: 0;
-}
-.hotwords {
-  text-align: left;
-  margin-left: 20px;
-}
-.hotwords a {
-  color: #ffffff;
-}
 .comic-role {
   cursor: pointer;
 }
