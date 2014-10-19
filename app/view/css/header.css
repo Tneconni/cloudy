@@ -1,0 +1,18 @@
+#header_1 {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+}
+#header_1 p,
+#header_1 button {
+  margin-bottom: 0;
+}
+#header_1 .search-btn {
+  height: 37px;
+  line-height: 37px;
+  padding: 0;
+}
+#header_1 .hotwords {
+  text-align: left;
+  margin-left: 20px;
+}

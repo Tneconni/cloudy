@@ -1,0 +1,24 @@
+.essay ul li {
+  text-align: left;
+  font-size: 12px;
+  position: relative;
+  margin: 0 0 15px 0;
+  height: auto;
+}
+.essay ul li .photo {
+  float: left;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  padding: 2px;
+}
+.essay ul li .photo img {
+  min-height: 80px;
+  border-radius: 5px;
+}
+.essay ul li .content {
+  margin-left: 90px;
+}
+.essay ul li .content spantime {
+  text-align: right;
+}
