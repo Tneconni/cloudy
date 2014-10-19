@@ -93,9 +93,9 @@ class Api {
 
             $itemTmp = "<item>
 <Title><![CDATA[漫客小屋]]></Title>
-<Description><![CDATA[漫迷落脚的小屋]]></Description>
+<Description><![CDATA[动漫迷落脚的咖啡屋]]></Description>
 <PicUrl><![CDATA[http://img1.gtimg.com/comic/pics/hv1/39/168/1725/112211004.jpg]]></PicUrl>
-<Url><![CDATA[http://121.42.42.110/cloudy/app/poker]]></Url>
+<Url><![CDATA[http://121.42.42.110/cloudy/app/essay]]></Url>
 </item><item>
 <Title><![CDATA[人气投票]]></Title>
 <Description><![CDATA[选出你心目中的英雄]]></Description>
