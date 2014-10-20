@@ -92,9 +92,9 @@ class Api {
         $xmlEnd = "</Articles></xml> ";
 
             $itemTmp = "<item>
-<Title><![CDATA[漫客小屋]]></Title>
+<Title><![CDATA[动漫迷落脚的咖啡小屋]]></Title>
 <Description><![CDATA[动漫迷落脚的咖啡屋]]></Description>
-<PicUrl><![CDATA[http://img1.gtimg.com/comic/pics/hv1/39/168/1725/112211004.jpg]]></PicUrl>
+<PicUrl><![CDATA[http://img4.imgtn.bdimg.com/it/u=1512321262,382766232&fm=23&gp=0.jpg]]></PicUrl>
 <Url><![CDATA[http://121.42.42.110/cloudy/app/essay]]></Url>
 </item><item>
 <Title><![CDATA[人气投票]]></Title>
