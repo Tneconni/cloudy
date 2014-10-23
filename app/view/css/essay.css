@@ -24,6 +24,7 @@
 }
 .news dl {
   text-align: left;
+  line-height: 2;
 }
 .news dl dt {
   display: block;
@@ -32,9 +33,11 @@
   white-space: nowrap;
   overflow: hidden;
   float: left;
+  font-size: 14px;
 }
 .news dl dd {
   display: block;
   width: 15%;
-  float: left;
+  float: right;
+  font-size: 12px;
 }
