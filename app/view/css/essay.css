@@ -22,6 +22,9 @@
 .essay ul li .content spantime {
   text-align: right;
 }
+.news dl {
+  text-align: left;
+}
 .news dl dt {
   display: block;
   width: 80%;
