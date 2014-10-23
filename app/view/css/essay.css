@@ -22,3 +22,16 @@
 .essay ul li .content spantime {
   text-align: right;
 }
+.news dl dt {
+  display: block;
+  width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  float: left;
+}
+.news dl dd {
+  display: block;
+  width: 15%;
+  float: left;
+}

@@ -23,13 +23,9 @@
         </ul>
 
     </div>
-    <div class="small-12 medium-6 large-5 columns bd-r" ng-controller="newsController">
+    <div class="small-12 medium-6 large-5 columns bd-r news" ng-controller="newsController">
 
         <dl ng-repeat="item in news">
-            <!--
-            <dt>
-                <img style="display:none" src="" alt=""/>
-            </dt>-->
             <dt><a href="{{item.url}}">{{item.title}}</a></dt>
             <dd>{{item.public_date}}</dd>
         </dl>
