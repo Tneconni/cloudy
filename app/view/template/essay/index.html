@@ -23,15 +23,17 @@
         </ul>
 
     </div>
-    <div class="small-12 medium-6 large-5 columns bd-r">
-        <!--
-        <dl>
+    <div class="small-12 medium-6 large-5 columns bd-r" ng-controller="newsController">
+
+        <dl ng-repeat="item in news">
+            <!--
             <dt>
                 <img style="display:none" src="" alt=""/>
-            </dt>
-            <dd><a href="">动漫评论版块：正在制作中请耐心等待...</a></dd>
+            </dt>-->
+            <dt><a href="{{item.href}}">{{item.title}}</a></dt>
+            <dd>{{}}</dd>
         </dl>
-        -->
+
     </div>
     <div class="small-12 medium-6  large-3 columns">
         <!--

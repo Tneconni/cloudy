@@ -14,6 +14,18 @@ $app->get('/', function() use($app){
 
 });
 
+$app->get('/getNews', function() use($app){
+
+    $sql = "SELECT * FROM cmc_news order by `public_date` desc limit 0,10";
+    $res = MyPdo::query( $sql );
+    foreach( $res as &$v){
+        $v['public_time']=date('Y-m-d H:i',$v['public_date']);
+        $v['title']=str_replace('#动漫美图#','',$v['title']);
+    }
+    echo json_encode( $res );
+
+});
+
 $app->get('/getArticle', function() use($app){
 
     $sql = "SELECT * FROM cmc_article order by `public_time` desc limit 0,10";
