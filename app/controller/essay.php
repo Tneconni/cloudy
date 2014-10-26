@@ -37,3 +37,15 @@ $app->get('/getArticle', function() use($app){
     echo json_encode( $res );
 
 });
+
+$app->get('/comments', function(){
+
+    $sql = "SELECT * FROM cmc_comment order by `public_time` desc limit 0,10";
+    $res = MyPdo::query( $sql );
+    foreach( $res as &$v){
+        $v['public_time']=date('m/d',strtotime($v['public_time']));
+    }
+    echo json_encode( $res );
+
+});
+

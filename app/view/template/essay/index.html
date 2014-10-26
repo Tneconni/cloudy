@@ -32,12 +32,17 @@
         </dl>
 
     </div>
-    <div class="small-12 medium-6  large-3 columns">
-        <!--
-        <ul>
-            <li><a href="">游戏排名版块：正在制作中请耐心等待...</a></li>
+    <div class="small-12 medium-6  large-3 columns comments" ng-controller="commentController">
+        <ul class="list">
+            <li ng-repeat="item in comments">
+                <a href="{{item.href}}"><img src="{{item.img}}" alt=""/></a>
+                <div>
+                    <h3><a href="{{item.href}}">{{item.title}}</a></h3>
+
+                    <p><a href="{{item.href}}">{{item.desc}}</a></p>
+                </div>
+            </li>
         </ul>
-        -->
     </div>
 </div>
 

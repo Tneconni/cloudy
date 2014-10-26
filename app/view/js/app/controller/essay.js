@@ -3,6 +3,7 @@ var eApp = angular.module('essay-app',[]);
 eApp.controller('essayController',['$scope', '$http', essayController]);
 eApp.controller('articleController',['$scope', '$http', articleController]);
 eApp.controller('newsController',['$scope', '$http', newsController]);
+eApp.controller('commentController',['$scope', '$http', commentController]);
 
 function articleController( $scope, $http ){
     $scope.articles = [];
@@ -24,5 +25,14 @@ function newsController( $scope, $http ){
 
 function essayController( $scope, $http ){
 
+
+}
+
+function commentController( $scope, $http){
+
+    var commentsUrl = baseUrl + "/app/essay/comments";
+    $http.get( commentsUrl ).success(function( json ){
+        $scope.comments = json;
+    });
 
 }
