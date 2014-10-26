@@ -44,6 +44,9 @@ $app->get('/comments', function(){
     $res = MyPdo::query( $sql );
     foreach( $res as &$v){
         $v['public_time']=date('m/d',strtotime($v['public_time']));
+        if( strpos($v['href'],'http://') === false ){
+            $v['href'] = 'http://comic.qq.com' . $v['href'];
+        }
     }
     echo json_encode( $res );
 

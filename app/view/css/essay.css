@@ -41,3 +41,45 @@
   float: right;
   font-size: 12px;
 }
+.comments {
+  text-align: left;
+}
+.comments ul {
+  margin: 0;
+  padding: 0;
+}
+.comments ul.list li {
+  margin: 20px 0;
+}
+.comments ul.list li .cover {
+  display: block;
+  width: 20%;
+  float: left;
+}
+.comments ul.list li .cover img {
+  width: 100%;
+  border-radius: 5px;
+}
+.comments ul.list li .word {
+  margin-left: 10px;
+  position: relative;
+  top: 0;
+  display: block;
+  float: left;
+  width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.comments ul.list li .word h3 a {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.comments ul.list li .word p a {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-size: 12px;
+}

@@ -15,7 +15,6 @@
         padding:2px;
         img{
           min-height: 80px;
-          min-height:80px;
           border-radius: 5px;
 
         }
@@ -51,6 +50,57 @@
       width: 15%;
       float: right;
       font-size: 12px;
+    }
+  }
+
+}
+.comments{
+  text-align:left;
+  ul{
+    margin:0;
+    padding:0;
+    &.list{
+      li{
+        margin:20px 0;
+        .cover{
+          display:block;
+          width:20%;
+          float:left;
+          img{
+            width:100%;
+            border-radius: 5px;
+          }
+        }
+        .word{
+          margin-left:10px;
+          position:relative;
+          top:0;
+          display:block;
+          float:left;
+          width: 75%;
+          white-space:nowrap;
+          overflow: hidden;
+
+//          margin-left:170px;
+          h3{
+            a{
+              display:inline-block;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              font-size:12px;
+            }
+          }
+          p{
+            a{
+              display:inline-block;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              width:100%;
+              font-size:12px;
+            }
+          }
+        }
+      }
     }
   }
 

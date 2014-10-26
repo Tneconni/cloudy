@@ -23,7 +23,20 @@
         </ul>
 
     </div>
-    <div class="small-12 medium-6 large-5 columns bd-r news" ng-controller="newsController">
+    <div class="small-12 medium-6  large-5 columns comments" ng-controller="commentController">
+        <ul class="list">
+            <li ng-repeat="item in comments" title="{{item.title}}">
+                <a class="cover" href="{{item.href}}"><img src="{{item.img}}" alt=""/></a>
+                <div class="word">
+                    <h3><a href="{{item.href}}" >{{item.title}}</a></h3>
+
+                    <p><a href="{{item.href}}">{{item.desc}}</a></p>
+                </div>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="small-12 medium-6 large-3 columns bd-l news" ng-controller="newsController">
 
         <dl ng-repeat="item in news">
             <dt><a href="{{item.url}}">{{item.title}}</a></dt>
@@ -32,18 +45,7 @@
         </dl>
 
     </div>
-    <div class="small-12 medium-6  large-3 columns comments" ng-controller="commentController">
-        <ul class="list">
-            <li ng-repeat="item in comments">
-                <a href="{{item.href}}"><img src="{{item.img}}" alt=""/></a>
-                <div>
-                    <h3><a href="{{item.href}}">{{item.title}}</a></h3>
 
-                    <p><a href="{{item.href}}">{{item.desc}}</a></p>
-                </div>
-            </li>
-        </ul>
-    </div>
 </div>
 
 </body>
