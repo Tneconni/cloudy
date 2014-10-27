@@ -14,11 +14,11 @@
   width: 80px;
   height: 80px;
   overflow: hidden;
-  padding: 2px;
+  border-radius: 5px;
 }
 .essay ul li .photo img {
   min-height: 80px;
-  border-radius: 5px;
+  max-width: 160px;
 }
 .essay ul li .content {
   margin-left: 90px;
