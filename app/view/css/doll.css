@@ -1,0 +1,24 @@
+.doll-list {
+  margin-top: 10px;
+}
+.doll-list li {
+  float: left;
+}
+.doll-list li img {
+  border-radius: 5px;
+}
+.doll-list li h3 {
+  text-align: center;
+}
+.doll-list li h3 a.title {
+  width: 80%;
+  white-space: nowrap;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  margin: 0 auto;
+}
+.doll-list li h3 span {
+  font-size: 12px;
+}
