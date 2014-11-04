@@ -17,6 +17,7 @@ $app->get('/article', function() use($app){
     $res = MyPdo::query( $sql );
     foreach( $res as &$v){
 
+        $v['description'] = trim($v['description']);
 
     }
     echo json_encode( $res );

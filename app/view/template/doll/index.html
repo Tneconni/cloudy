@@ -6,7 +6,19 @@
 <body ng-controller="dollController">
 <?php echo $header;?>
 
-<div ng-controller="articleController"></div>
+<div ng-controller="articleController" class="columns">
+
+    <ul class="doll-list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+        <li ng-repeat="item in articles">
+            <a href="{{item.href}}"><img src="{{item.cover_photo}}" alt=""/></a>
+            <h3>
+                <a class="title" href="{{item.href}}">{{item.title}}</a>
+                <span class="date">{{item.public_time}}</span>
+            </h3>
+        </li>
+    </ul>
+
+</div>
 
 </body>
 </html>
