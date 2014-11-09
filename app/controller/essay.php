@@ -41,7 +41,7 @@ $app->get('/getArticle', function() use($app){
 $app->get('/comments', function(){
 
     $comic_id = isset($_GET['comic_id']) ? $_GET['comic_id'] : '0';
-    $sql = "SELECT * FROM cmc_comment WHERE comic_id='" . $_GET['comic_id'] .
+    $sql = "SELECT * FROM cmc_comment WHERE comic_id='" . $comic_id .
         "' order by `public_time` desc limit 0,10";
     $res = MyPdo::query( $sql );
     foreach( $res as &$v){
