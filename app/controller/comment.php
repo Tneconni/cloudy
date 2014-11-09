@@ -38,7 +38,7 @@ FROM
             $v['href'] = 'http://comic.qq.com' . $v['href'];
         }
         if( empty($v['img']) || $v['img'] == 'null' ){
-            $v['img'] = '/app/view/images/' . $v['cmc_img'];
+            $v['img'] = $v['cmc_img'];
         }
     }
     echo json_encode( $res );
