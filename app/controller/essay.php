@@ -40,9 +40,12 @@ $app->get('/getArticle', function() use($app){
 
 $app->get('/comments', function(){
 
+    $number = isset($_GET['number']) ? $_GET['number'] : '10';
+    $page = isset($_GET['page']) ? $_GET['page'] : '0';
+    $start = $number * $page;
     $comic_id = isset($_GET['comic_id']) ? $_GET['comic_id'] : '0';
     $sql = "SELECT * FROM cmc_comment WHERE comic_id='" . $comic_id .
-        "' order by `public_time` desc limit 0,10";
+        "' order by `public_time` desc limit ".$start.",".$number;
     $res = MyPdo::query( $sql );
     foreach( $res as &$v){
         $v['public_time']=date('m/d',strtotime($v['public_time']));

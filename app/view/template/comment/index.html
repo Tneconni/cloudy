@@ -1,0 +1,27 @@
+<!DOCTYPE >
+<html ng-app="comment-app">
+<?php echo $head;?>
+<link href="<?php echo baseUrl; ?>/app/view/css/comment.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo baseUrl; ?>/app/view/js/app/controller/comment.js"></script>
+<body ng-controller="commentController">
+<?php echo $header;?>
+
+<div class="row p-t20 cmc-comment" >
+    <ul class="comment-list small-block-grid-1 medium-block-grid-2 large-block-grid-3"
+        ng-controller="listController">
+        <li ng-repeat="item in comments">
+            <div class="img">
+                <a href="{{item.href}}"><img src="{{item.img}}" alt=""/></a>
+            </div>
+            <div class="text">
+                <a href="{{item.href}}" class="title" href="{{item.href}}" title="{{item.title}}">{{item.title}}</a>
+                <span class="time">[{{item.public_time}}]</span>
+            </div>
+
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+.cmc-comment ul.comment-list .img {
+  float: left;
+  display: block;
+  width: 20%;
+}
+.cmc-comment ul.comment-list .img img {
+  width: 100%;
+  border-radius: 5px;
+}
+.cmc-comment ul.comment-list .text {
+  width: 75%;
+  float: left;
+  text-align: left;
+  padding-left: 10px;
+}
+.cmc-comment ul.comment-list .text .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.cmc-comment ul.comment-list .text .time {
+  color: #666;
+  display: block;
+  font-size: 0.8rem;
+}
