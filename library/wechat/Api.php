@@ -104,7 +104,7 @@ class Api {
         $tmp = "<item>
 <Title><![CDATA[漫客小屋]]></Title>
 <Description><![CDATA[动漫迷落脚的咖啡屋]]></Description>
-<PicUrl><![CDATA[http://img1.gtimg.com/comic/pics/hv1/39/168/1725/112211004.jpg]]></PicUrl>
+<PicUrl><![CDATA[https://mmbiz.qlogo.cn/mmbiz/8NfSYMTIyWvzz4b6H5stOoYXIw2fNt8xeler0TLfNm0UQ5TBTeP2vAjfbVv0PoKt6vWJjvsjdQM9kIQtzkySdg/0]]></PicUrl>
 <Url><![CDATA[http://121.42.42.110/cloudy/app/essay]]></Url>
 </item>";
         foreach( $res as &$v){
