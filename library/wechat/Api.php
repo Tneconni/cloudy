@@ -86,22 +86,27 @@ class Api {
 <FromUserName><![CDATA[" . $data['toUsername'] . "]]></FromUserName>
 <CreateTime>" . $data['time'] . "</CreateTime>
 <MsgType><![CDATA[" . $data['msgType'] . "]]></MsgType>
-<ArticleCount>2</ArticleCount>
+<ArticleCount>3</ArticleCount>
 <Articles>";
 
         $xmlEnd = "</Articles></xml> ";
 
-            $itemTmp = "<item>
-<Title><![CDATA[动漫迷落脚的咖啡小屋]]></Title>
-<Description><![CDATA[动漫迷落脚的咖啡屋]]></Description>
-<PicUrl><![CDATA[http://img4.imgtn.bdimg.com/it/u=1512321262,382766232&fm=23&gp=0.jpg]]></PicUrl>
+        $itemTmp = "<item>
+<Title><![CDATA[%s]]></Title>
+<Description><![CDATA[%s]]></Description>
+<PicUrl><![CDATA[%s]]></PicUrl>
 <Url><![CDATA[http://121.42.42.110/cloudy/app/essay]]></Url>
-</item><item>
-<Title><![CDATA[人气投票]]></Title>
-<Description><![CDATA[选出你心目中的英雄]]></Description>
-<PicUrl><![CDATA[http://ac.tc.qq.com/store_file_download?buid=15017&uin=1220734359&dir_path=/homecover/8359/&name=133_06_17_44_0a20b003f084b4208849bb59f5762314.jpg]]></PicUrl>
-<Url><![CDATA[http://121.42.42.110/cloudy/app/poker]]></Url>
 </item>";
+
+        require_once( BASEDIR . '/../library/pdo/my_pdo.php' );
+        $sql = "SELECT * FROM cmc_article order by `public_time` desc limit 0,3";
+        $res = MyPdo::query( $sql );
+        $tmp = '';
+        foreach( $res as &$v){
+            $v['public_time']=date('m/d',$v['public_time']);
+            $v['title']=str_replace('#动漫美图#','',$v['title']);
+            $tmp .= printf( $itemTmp, $v['title'], $v['description'], $v['cover_photo'] );
+        }
 
         return $xmlStart . $itemTmp . $xmlEnd;
 
