@@ -110,6 +110,7 @@ class Api {
         foreach( $res as &$v){
             $v['public_time']=date('m/d',$v['public_time']);
             $v['title']=str_replace('#动漫美图#','',$v['title']);
+            $v['title'] = mb_substr( $v['title'], 0, 25, 'utf-8');
             $tmp .= sprintf( $itemTmp, $v['title'], $v['description'], $v['cover_photo'] );
         }
 
