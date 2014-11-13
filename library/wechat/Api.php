@@ -106,7 +106,7 @@ class Api {
 <Description><![CDATA[动漫迷落脚的咖啡屋]]></Description>
 <PicUrl><![CDATA[http://img1.gtimg.com/comic/pics/hv1/39/168/1725/112211004.jpg]]></PicUrl>
 <Url><![CDATA[http://121.42.42.110/cloudy/app/essay]]></Url>
-</item><item>";
+</item>";
         foreach( $res as &$v){
             $v['public_time']=date('m/d',$v['public_time']);
             $v['title']=str_replace('#动漫美图#','',$v['title']);
