@@ -105,10 +105,10 @@ class Api {
         foreach( $res as &$v){
             $v['public_time']=date('m/d',$v['public_time']);
             $v['title']=str_replace('#动漫美图#','',$v['title']);
-            $tmp .= printf( $itemTmp, $v['title'], $v['description'], $v['cover_photo'] );
+            $tmp .= sprintf( $itemTmp, $v['title'], $v['description'], $v['cover_photo'] );
         }
 
-        return $xmlStart . $itemTmp . $xmlEnd;
+        return $xmlStart . $tmp . $xmlEnd;
 
     }
 
