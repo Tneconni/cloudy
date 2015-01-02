@@ -45,6 +45,9 @@
   float: right;
   font-size: 12px;
 }
+.news .taobao {
+  border-top: solid 1px #cdcdcd;
+}
 .news .taobao .QR_Code {
   display: block;
 }
