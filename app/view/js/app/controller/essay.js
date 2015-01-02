@@ -21,6 +21,10 @@ function newsController( $scope, $http ){
         $scope.news = json;
     });
 
+    $scope.taobao = {
+        link : 'http://shop112085443.taobao.com',
+        QR_Code : baseUrl + '/app/view/images/taobao/taobao.png'
+    };
 }
 
 function essayController( $scope, $http ){

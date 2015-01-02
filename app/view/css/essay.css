@@ -45,6 +45,18 @@
   float: right;
   font-size: 12px;
 }
+.news .taobao .QR_Code {
+  display: block;
+}
+.news .taobao .QR_Code img {
+  width: 100%;
+}
+.news .taobao span {
+  text-align: center;
+}
+.news .taobao .link {
+  color: #fb421c;
+}
 .comments {
   text-align: left;
 }
