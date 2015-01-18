@@ -51,7 +51,7 @@ class MyPdo{
 //        $dsn = "mysql:host=localhost;dbname=tneconni";
 //        self::$pdo = new PDO($dsn, 'root', '');
 
-        $dsn = "mysql:host=cloud123.mysql.rds.aliyuncs.com;dbname=tneconni";
+        $dsn = "mysql:host=121.42.42.110;dbname=tneconni";
         self::$pdo = new PDO($dsn, 'cloud', '111111');
 
         self::$pdo->exec('set names utf8');
