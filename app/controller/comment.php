@@ -16,12 +16,12 @@ $app->get('/', function() use($app){
 
 $app->get('/list',function(){
 
-    $number = isset($_GET['number']) ? $_GET['number'] : '10';
+    $number = isset($_GET['number']) ? $_GET['number'] : '30';
     $page = isset($_GET['page']) ? $_GET['page'] : '0';
     $start = $number * $page;
     $comic_id = isset($_GET['comic_id']) ? $_GET['comic_id'] : '0';
     $sql = "SELECT
-  cc.id,
+  cc.comment_id,
   cc.comic_id,
   cc.title,
   cc.href,

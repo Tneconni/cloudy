@@ -15,7 +15,8 @@ $app->get('/', function() use($app){
 
 $app->get('/article', function() use($app){
 
-    $sql = "SELECT * FROM cmc_article WHERE `category_id`= '5' order by `public_time` desc limit 0,10";
+    $number = 20;
+    $sql = "SELECT * FROM cmc_article WHERE `category_id`= '5' order by `public_time` desc limit 0,".$number;
     $res = MyPdo::query( $sql );
     foreach( $res as &$v){
 
