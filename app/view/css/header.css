@@ -16,6 +16,14 @@
   text-align: left;
   margin-left: 20px;
 }
+#header_1 .nav ul li {
+  float: left;
+  padding-right: 10px;
+  font-weight: bold;
+}
+#header_1 .nav ul li a {
+  color: #791115;
+}
 .footer {
   width: 100%;
   border-top: solid 1px #cdcdcd;

@@ -1,0 +1,35 @@
+<!DOCTYPE >
+<html ng-app="essay-app">
+<?php echo $head;?>
+<link href="<?php echo baseUrl; ?>/app/view/css/essay.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo baseUrl; ?>/app/view/js/app/controller/news.js"></script>
+<body ng-controller="newsController">
+<?php echo $header;?>
+
+<div class="row p-t20">
+
+    <div class="small-12 medium-6 large-3 columns bd-l news"  >
+
+        <dl ng-repeat="item in news">
+            <dt><a href="{{item.url}}">{{item.title}}</a></dt>
+            <dd>{{item.public_date}}</dd>
+            <div class="clear"></div>
+        </dl>
+
+        <div class="taobao">
+            <a class="QR_Code" href="{{taobao.link}}" target="_blank" >
+                <img src="{{taobao.QR_Code}}" alt="" />
+            </a>
+        <span >
+            <a class='link' href="{{taobao.link}}" target="_blank">
+                漫客小屋店铺
+            </a>欢迎您的光临
+        </span>
+        </div>
+
+    </div>
+
+</div>
+<?php echo $footer;?>
+</body>
+</html>
