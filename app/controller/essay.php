@@ -20,7 +20,10 @@ $app->get('/', function() use($app){
 
 $app->get('/getNews', function() use($app){
 
-    $sql = "SELECT * FROM cmc_news order by `public_date` desc limit 0,10";
+    $number = isset($_GET['number']) ? $_GET['number'] : '10';
+    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+    $page = $number * ($page - 1);
+    $sql = "SELECT * FROM cmc_news order by `public_date` desc limit " . $page . "," . $number;
     $res = MyPdo::query( $sql );
     foreach( $res as &$v){
         $v['public_date']=date('m/d',strtotime($v['public_date']));

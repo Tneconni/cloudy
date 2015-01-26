@@ -6,7 +6,7 @@ eApp.controller('newsController',['$scope', '$http', newsController]);
 
 function newsController( $scope, $http ){
 
-    var newsUrl = baseUrl + "/app/essay/getNews";
+    var newsUrl = baseUrl + "/app/essay/getNews?number=30&page=1";
     $http.get( newsUrl ).success(function( json ){
         $scope.news = json;
     });
