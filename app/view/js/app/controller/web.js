@@ -8,8 +8,13 @@ function webController($scope, $http){
         $scope.websites = json;
     });
 
-    $scope.changeWebsite = function(){
+    $scope.changeWebsite = function( website ){
         console.log('change website');
+        var l = $scope.websites.length;
+        for( var i = 0; i < l; i ++){
+            $scope.websites[i].active = '';
+        }
+        website.active = 'active';
     };
 
 }
