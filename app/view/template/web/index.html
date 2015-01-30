@@ -7,20 +7,18 @@
 <body ng-controller="webController">
 <?php echo $header;?>
 
-<div class="row">
-    <div class=" bd-b column"  >
+<div class="row website bd-b">
+    <div class="  column"  >
         <ul class="web-list">
             <li class="" ng-repeat="item in websites" >
-                <a class='img {{item.active}}' ng-mouseover="changeWebsite(item)" >
+                <a class='img {{item.active}}' href="http://{{item.url}}" >
                     <img ng-src="{{item.img}}" alt="" title="{{item.name}}" />
                 </a>
             </li>
         </ul>
     </div>
 </div>
-<div class="row">
-    Under Construction ...
-</div>
+
 
 <?php echo $footer;?>
 </body>
