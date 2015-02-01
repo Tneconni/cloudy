@@ -12,9 +12,17 @@ Version: 0.1
 Author URI: http://www.mankaa.com/
 */
 
-function getComic(){
+class Comic {
 
-    echo 'this is the comic module';
+    public function __construct(){
+
+    }
+
+    public static function instance(){
+
+        return new Comic();
+    }
+
 }
 
-add_action('admin_head', 'getComic');
+Comic::instance();

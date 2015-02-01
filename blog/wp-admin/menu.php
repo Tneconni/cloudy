@@ -217,9 +217,9 @@ $_wp_last_utility_menu = 80; // The index of the last top-level menu in the util
 
 $menu[99] = array( '', 'read', 'separator-last', '', 'wp-menu-separator' );
 
-// 添加新的菜单项：
-$menu[101] = array('project', '1', 'project.php', '3', '4', '5');
-$menu[102] = array('apps', '1', 'app.php', '3', '4', '5');
+// 添加新的菜单项： 先注释掉，将会整合到plugin中去
+//$menu[101] = array('project', '1', 'project.php', '3', '4', '5');
+//$menu[102] = array('apps', '1', 'app.php', '3', '4', '5');
 
 // Back-compat for old top-levels
 $_wp_real_parent_file['post.php'] = 'edit.php';
