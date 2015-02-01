@@ -15,6 +15,7 @@ Author URI: http://www.mankaa.com/
 class Comic {
 
     public function __construct(){
+        add_action( 'comic_admin_menu',array( $this, 'admin_menus'));
 
     }
 
