@@ -58,8 +58,8 @@ class Comic {
 
         require_once(sprintf("%s/c-news/c-news-admin.php", dirname(__FILE__)));
         $cNewsList = new C_News_List_Table();
+        $cNewsList->prepare_items();
         $cNewsList->display();
-
     }
 
     public function admin_menus() {

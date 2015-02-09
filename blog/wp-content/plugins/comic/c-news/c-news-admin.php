@@ -12,16 +12,41 @@ class C_News_List_Table extends WP_List_Table{
             'screen'   => get_current_screen(),
         ) );
 
+    }
+
+    public function prepare_items(){
+
         $this->_column_headers = array(
             $this->get_columns(),
             array(),
             $this->get_sortable_columns()
         );
+        $page = $this->get_pagenum();
+        $per_page = 20;
+        $dataList = C_Core_Class::get( array(
+//            'display_comments' => 'stream',
+//            'filter'           => $filter,
+//            'in'               => $include_id,
+            'page'             => $page,
+            'per_page'         => $per_page,
+//            'search_terms'     => $search_terms,
+//            'show_hidden'      => true,
+            //'sort'             => $sort,
+//            'spam'             => $spam,
+//            'count_total'      => 'count_query',
+            'table_name'        => 'cmc_news'
+        ) );
 
-        $this->items = C_Core_Class::get( $this );
-//        print_r( $this->items);
+        $this->items = $dataList['items'];
+        $total = $dataList['total'];
+
+        $this->set_pagination_args( array(
+            'per_page'    => $per_page,
+            'total_items' => $total,
+            'total_pages' => ceil( $total / $per_page )
+        ) );
+
     }
-
 
     function get_columns() {
         return array(

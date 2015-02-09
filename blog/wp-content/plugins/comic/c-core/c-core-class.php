@@ -3,30 +3,31 @@
 class C_Core_Class{
 
 
-    public static function get( $comicObj ){
+    public static function get( $args ){
 
         global $wpdb;
+        $table_name = $args['table_name'];
+        $defaults = array(
+            'page'              => 1,          // The current page
+            'per_page'          => 25,         // Activity items per page
+            'max'               => false,      // Max number of items to return
+            'sort'              => 'DESC',     // ASC or DESC
+            'exclude'           => false,      // Array of ids to exclude
+            'in'                => false,      // Array of ids to limit query by (IN)
+            'meta_query'        => false,      // Filter by activitymeta
+            'date_query'        => false,      // Filter by date
+            'filter'            => false,      // See self::get_filter_sql()
+            'search_terms'      => false,      // Terms to search by
+            'display_comments'  => false,      // Whether to include activity comments
+            'show_hidden'       => false,      // Show items marked hide_sitewide
+            'spam'              => 'ham_only', // Spam status
+            'update_meta_cache' => true,
+            'count_total'       => false,
+        );
+        $r = wp_parse_args( $args, $defaults );
 
-//        $defaults = array(
-//            'page'              => 1,          // The current page
-//            'per_page'          => 25,         // Activity items per page
-//            'max'               => false,      // Max number of items to return
-//            'sort'              => 'DESC',     // ASC or DESC
-//            'exclude'           => false,      // Array of ids to exclude
-//            'in'                => false,      // Array of ids to limit query by (IN)
-//            'meta_query'        => false,      // Filter by activitymeta
-//            'date_query'        => false,      // Filter by date
-//            'filter'            => false,      // See self::get_filter_sql()
-//            'search_terms'      => false,      // Terms to search by
-//            'display_comments'  => false,      // Whether to include activity comments
-//            'show_hidden'       => false,      // Show items marked hide_sitewide
-//            'spam'              => 'ham_only', // Spam status
-//            'update_meta_cache' => true,
-//            'count_total'       => false,
-//        );
-//        $r = wp_parse_args( $args, $defaults );
-//
-//        extract( $r );
+        extract( $r );
+
 
 
 
@@ -53,10 +54,15 @@ class C_Core_Class{
 //                    $select_sql, $from_sql, $where_sql, $sort ) );
 //        }
 
-        $sql = "SELECT * FROM cmc_news ORDER BY news_id DESC LIMIT 0,20";
-        $list = $wpdb->get_results( $sql );
-//        print_r( $list );
-        return $list;
+        $limit = " LIMIT ".( $page - 1 ) * $per_page . "," . $per_page ;
+        $sql = "SELECT * FROM " . $table_name . " ORDER BY news_id DESC " . $limit;
+
+        $totalSql = "SELECT count(news_id) as `total` FROM " . $table_name;
+
+        $ret['items']  = $wpdb->get_results( $sql );
+        $ret['total'] = $wpdb->get_var( $totalSql );
+
+        return $ret;
     }
 
 }
