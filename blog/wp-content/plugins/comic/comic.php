@@ -56,10 +56,23 @@ class Comic {
 
     public function comic_news(){
 
-        require_once(sprintf("%s/c-news/c-news-admin.php", dirname(__FILE__)));
-        $cNewsList = new C_News_List_Table();
-        $cNewsList->prepare_items();
-        $cNewsList->display();
+        $doaction = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
+
+        if ( 'edit' == $doaction && ! empty( $_GET['aid'] ) ){
+
+            require_once(sprintf("%s/c-news/c-news-edit.php", dirname(__FILE__)));
+            $cNewsEdit = new C_News_Edit();
+            $cNewsEdit->display();
+
+        }else{
+
+            require_once(sprintf("%s/c-news/c-news-admin.php", dirname(__FILE__)));
+            $cNewsList = new C_News_List_Table();
+            $cNewsList->prepare_items();
+            $cNewsList->display();
+
+        }
+
     }
 
     public function admin_menus() {
