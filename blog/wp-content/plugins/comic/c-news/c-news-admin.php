@@ -84,10 +84,11 @@ class C_News_List_Table extends WP_List_Table{
         );
 
         // Build actions URLs
-        $base_url   = get_admin_url( 'admin.php?page=comic_news&amp;aid=' . $item->news_id );
-        $spam_nonce = esc_html( '_wpnonce=' . wp_create_nonce( 'spam-comic_' . $item->news_id ) );
+        $base_url   = get_admin_url(null, 'admin.php?page=comic_news&amp;aid=' . $item->news_id );
+//        $spam_nonce = esc_html( '_wpnonce=' . wp_create_nonce( 'spam-comic_' . $item->news_id ) );
 
-        $delete_url = $base_url . "&amp;action=delete&amp;$spam_nonce";
+//        $delete_url = $base_url . "&amp;action=delete&amp;$spam_nonce";
+        $delete_url = $base_url . "&amp;action=delete";
         $edit_url   = $base_url . '&amp;action=edit';
 //        $ham_url    = $base_url . "&amp;action=ham&amp;$spam_nonce";
 //        $spam_url   = $base_url . "&amp;action=spam&amp;$spam_nonce";
@@ -95,24 +96,24 @@ class C_News_List_Table extends WP_List_Table{
         // Rollover actions
 
         // Reply - javascript only; implemented by AJAX.
-/*
-        if ( 'spam' != $item_status ) {
-            if ( $this->can_comment( $item ) ) {
-                $actions['reply'] = sprintf( '<a href="#" class="reply hide-if-no-js">%s</a>', __( 'Reply', 'buddypress' ) );
-            } else {
-                $actions['reply'] = sprintf( '<span class="form-input-tip" title="%s">%s</span>', __( 'Replies are disabled for this activity item', 'buddypress' ), __( 'Replies disabled', 'buddypress' ) );
-            }
 
-            // Edit
-            $actions['edit'] = sprintf( '<a href="%s">%s</a>', $edit_url, __( 'Edit', 'buddypress' ) );
-        }
-
+//        if ( 'spam' != $item_status ) {
+//            if ( $this->can_comment( $item ) ) {
+//                $actions['reply'] = sprintf( '<a href="#" class="reply hide-if-no-js">%s</a>', __( 'Reply', 'buddypress' ) );
+//            } else {
+//                $actions['reply'] = sprintf( '<span class="form-input-tip" title="%s">%s</span>', __( 'Replies are disabled for this activity item', 'buddypress' ), __( 'Replies disabled', 'buddypress' ) );
+//            }
+//
+//            // Edit
+//            $actions['edit'] = sprintf( '<a href="%s">%s</a>', $edit_url, __( 'Edit', 'comic' ) );
+//        }
+        $actions['edit'] = sprintf( '<a href="%s">%s</a>', $edit_url, __( 'Edit', 'comic' ) );
         // Spam/unspam
-        if ( 'spam' == $item_status )
-            $actions['unspam'] = sprintf( '<a href="%s">%s</a>', $ham_url, __( 'Not Spam', 'buddypress' ) );
-        else
-            $actions['spam'] = sprintf( '<a href="%s">%s</a>', $spam_url, __( 'Spam', 'buddypress' ) );
-*/
+//        if ( 'spam' == $item_status )
+//            $actions['unspam'] = sprintf( '<a href="%s">%s</a>', $ham_url, __( 'Not Spam', 'buddypress' ) );
+//        else
+//            $actions['spam'] = sprintf( '<a href="%s">%s</a>', $spam_url, __( 'Spam', 'buddypress' ) );
+
 
         // Delete
         $actions['delete'] = sprintf( '<a href="%s" onclick="%s">%s</a>', $delete_url, "javascript:return confirm('" . esc_js( __( 'Are you sure?', 'buddypress' ) ) . "'); ", __( 'Delete Permanently', 'buddypress' ) );
