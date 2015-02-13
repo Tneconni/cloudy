@@ -95,7 +95,7 @@ class Api {
 <Title><![CDATA[%s]]></Title>
 <Description><![CDATA[%s]]></Description>
 <PicUrl><![CDATA[%s]]></PicUrl>
-<Url><![CDATA[http://121.42.42.110/cloudy/app/essay]]></Url>
+<Url><![CDATA[http://m.mankaa.com/cloudy/app/essay]]></Url>
 </item>";
 
         require_once( BASEDIR . '/../library/pdo/my_pdo.php' );
