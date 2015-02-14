@@ -148,3 +148,29 @@ class C_News_List_Table extends WP_List_Table{
 }
 
 
+class C_News_Edit {
+
+
+    public function display(){
+
+
+        $activity = C_Core_Class::get( array(
+//            'display_comments' => 'stream',
+//            'filter'           => $filter,
+            'in'               => ! empty( $_REQUEST['aid'] ) ? (int) $_REQUEST['aid'] : 0,
+//            'max'              => 1,
+//            'page'             => $page,
+//            'per_page'         => $per_page,
+//            'search_terms'     => $search_terms,
+//            'show_hidden'      => true,
+            //'sort'             => $sort,
+//            'spam'             => $spam,
+//            'count_total'      => 'count_query',
+            'table_name'        => 'cmc_news'
+        ) );
+
+        var_dump( $activity['items'] );
+        echo "the comic news edit page";
+    }
+
+}

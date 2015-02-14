@@ -53,9 +53,17 @@ class C_Core_Class{
 //                    "{$select_sql} {$from_sql} {$join_sql} {$where_sql} ORDER BY a.date_recorded {$sort}",
 //                    $select_sql, $from_sql, $where_sql, $sort ) );
 //        }
+        $where_conditions = array();
+        if ( !empty( $in ) ) {
+            $in = implode( ',', wp_parse_id_list( $in ) );
+            $where_conditions['in'] = "a.news_id IN ({$in})";
+        }
+
+        $where_sql = !empty( $where_conditions ) ? 'WHERE ' . join( ' AND ', $where_conditions ) : '';
+
 
         $limit = " LIMIT ".( $page - 1 ) * $per_page . "," . $per_page ;
-        $sql = "SELECT * FROM " . $table_name . " ORDER BY news_id DESC " . $limit;
+        $sql = "SELECT * FROM " . $table_name . " a $where_sql ORDER BY a.news_id DESC " . $limit;
 
         $totalSql = "SELECT count(news_id) as `total` FROM " . $table_name;
 
