@@ -58,7 +58,7 @@ class Comic {
 
         $doaction = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
         require_once(sprintf("%s/c-news/c-news-admin.php", dirname(__FILE__)));
-
+        set_current_screen( 'toplevel_page_comic-news' );
         if ( 'edit' == $doaction && ! empty( $_GET['aid'] ) ){
 
             $cNewsEdit = new C_News_Edit();

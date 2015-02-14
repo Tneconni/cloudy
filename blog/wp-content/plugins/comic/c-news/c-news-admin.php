@@ -99,9 +99,9 @@ class C_News_List_Table extends WP_List_Table{
 
 //        if ( 'spam' != $item_status ) {
 //            if ( $this->can_comment( $item ) ) {
-//                $actions['reply'] = sprintf( '<a href="#" class="reply hide-if-no-js">%s</a>', __( 'Reply', 'buddypress' ) );
+//                $actions['reply'] = sprintf( '<a href="#" class="reply hide-if-no-js">%s</a>', __( 'Reply', 'comic' ) );
 //            } else {
-//                $actions['reply'] = sprintf( '<span class="form-input-tip" title="%s">%s</span>', __( 'Replies are disabled for this activity item', 'buddypress' ), __( 'Replies disabled', 'buddypress' ) );
+//                $actions['reply'] = sprintf( '<span class="form-input-tip" title="%s">%s</span>', __( 'Replies are disabled for this activity item', 'comic' ), __( 'Replies disabled', 'comic' ) );
 //            }
 //
 //            // Edit
@@ -110,13 +110,13 @@ class C_News_List_Table extends WP_List_Table{
         $actions['edit'] = sprintf( '<a href="%s">%s</a>', $edit_url, __( 'Edit', 'comic' ) );
         // Spam/unspam
 //        if ( 'spam' == $item_status )
-//            $actions['unspam'] = sprintf( '<a href="%s">%s</a>', $ham_url, __( 'Not Spam', 'buddypress' ) );
+//            $actions['unspam'] = sprintf( '<a href="%s">%s</a>', $ham_url, __( 'Not Spam', 'comic' ) );
 //        else
-//            $actions['spam'] = sprintf( '<a href="%s">%s</a>', $spam_url, __( 'Spam', 'buddypress' ) );
+//            $actions['spam'] = sprintf( '<a href="%s">%s</a>', $spam_url, __( 'Spam', 'comic' ) );
 
 
         // Delete
-        $actions['delete'] = sprintf( '<a href="%s" onclick="%s">%s</a>', $delete_url, "javascript:return confirm('" . esc_js( __( 'Are you sure?', 'buddypress' ) ) . "'); ", __( 'Delete Permanently', 'buddypress' ) );
+        $actions['delete'] = sprintf( '<a href="%s" onclick="%s">%s</a>', $delete_url, "javascript:return confirm('" . esc_js( __( 'Are you sure?', 'comic' ) ) . "'); ", __( 'Delete Permanently', 'comic' ) );
 
         // Start timestamp
         echo '<div class="submitted-on">';
@@ -125,7 +125,7 @@ class C_News_List_Table extends WP_List_Table{
         $actions = apply_filters( 'bp_activity_admin_comment_row_actions', array_filter( $actions ), $item );
 
         /* translators: 2: activity admin ui date/time */
-        printf( __( 'Submitted on <a href="%1$s">%2$s at %3$s</a>', 'buddypress' ), get_permalink( $item->news_id ),
+        printf( __( 'Submitted on <a href="%1$s">%2$s at %3$s</a>', 'comic' ), get_permalink( $item->news_id ),
             get_date_from_gmt( $item->date_add,
                 get_option( 'date_format' ) ),
             get_date_from_gmt( $item->date_add,
@@ -154,7 +154,7 @@ class C_News_Edit {
     public function display(){
 
 
-        $activity = C_Core_Class::get( array(
+        $news = C_Core_Class::get( array(
 //            'display_comments' => 'stream',
 //            'filter'           => $filter,
             'in'               => ! empty( $_REQUEST['aid'] ) ? (int) $_REQUEST['aid'] : 0,
@@ -168,9 +168,61 @@ class C_News_Edit {
 //            'count_total'      => 'count_query',
             'table_name'        => 'cmc_news'
         ) );
+        $activity = $news['items'][0];
+        // Construct URL for form
+        $form_url = remove_query_arg( array( 'action', 'deleted', 'error', 'spammed', 'unspammed', ), $_SERVER['REQUEST_URI'] );
+        $form_url = add_query_arg( 'action', 'save', $form_url );
+        ?>
+        <div class="wrap">
+            <?php screen_icon( 'comic-news' ); ?>
+            <h2><?php printf( __( 'Editing Activity (ID #%s)', 'comic' ), number_format_i18n( (int) $_REQUEST['aid'] ) ); ?></h2>
 
-        var_dump( $activity['items'] );
-        echo "the comic news edit page";
+            <?php if ( ! empty( $activity ) ) : ?>
+
+                <form action="<?php echo esc_attr( $form_url ); ?>" id="comic-news-edit-form" method="post">
+                    <div id="poststuff">
+
+                        <div id="post-body" class="metabox-holder columns-<?php echo 1 == get_current_screen()->get_columns() ? '1' : '2'; ?>">
+                            <div id="post-body-content">
+                                <div id="postdiv">
+                                    <div id="bp_activity_action" class="postbox">
+                                        <h3><?php _e( 'Title', 'comic' ); ?></h3>
+                                        <div class="inside">
+                                            <?php wp_editor( stripslashes( $activity->title ), 'comic-news-title', array( 'media_buttons' => false, 'textarea_rows' => 7, 'teeny' => true, 'quicktags' => array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
+                                        </div>
+                                    </div>
+
+                                    <div id="comic_news_content" class="postbox">
+                                        <h3><?php _e( 'Url', 'comic' ); ?></h3>
+                                        <div class="inside">
+                                            <?php wp_editor( stripslashes( $activity->url ), 'comic-news-url', array( 'media_buttons' => false, 'teeny' => true, 'quicktags' => array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- #post-body-content -->
+
+                            <div id="postbox-container-1" class="postbox-container">
+                                <?php do_meta_boxes( get_current_screen()->id, 'side', $activity ); ?>
+                            </div>
+
+                            <div id="postbox-container-2" class="postbox-container">
+                                <?php do_meta_boxes( get_current_screen()->id, 'normal', $activity ); ?>
+                                <?php do_meta_boxes( get_current_screen()->id, 'advanced', $activity ); ?>
+                            </div>
+                        </div><!-- #post-body -->
+
+                    </div><!-- #poststuff -->
+                    <?php wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false ); ?>
+                    <?php wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false ); ?>
+                    <?php wp_nonce_field( 'edit-comic-news_' . $activity->news_id ); ?>
+                </form>
+
+            <?php else : ?>
+                <p><?php printf( __( 'No activity found with this ID. <a href="%s">Go back and try again</a>.', 'comic' ), esc_url( get_admin_url( null,'admin.php?page=comic-news' ) ) ); ?></p>
+            <?php endif; ?>
+
+        </div><!-- .wrap -->
+<?php
     }
 
 }
