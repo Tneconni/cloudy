@@ -879,7 +879,7 @@ function add_meta_box( $id, $title, $callback, $screen = null, $context = 'advan
  * @param mixed $object gets passed to the box callback function as first parameter
  * @return int number of meta_boxes
  */
-function do_meta_boxes( $screen, $context, $object ) {
+function do_meta_boxes( $screen, $context, $object ) { print_r($screen);$screen='toplevel_page_comic-news';
     
 	global $wp_meta_boxes;
 	static $already_sorted = false;
@@ -906,7 +906,7 @@ function do_meta_boxes( $screen, $context, $object ) {
 				}
 			}
 		}
-		$already_sorted = true;
+		$already_sorted = true;print_r($wp_meta_boxes);print_r($page);print_r($context);
 
 		if ( !isset($wp_meta_boxes) || !isset($wp_meta_boxes[$page]) || !isset($wp_meta_boxes[$page][$context]) )
 			break;
