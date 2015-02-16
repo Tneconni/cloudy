@@ -906,7 +906,7 @@ function do_meta_boxes( $screen, $context, $object ) { print_r($screen);$screen=
 				}
 			}
 		}
-		$already_sorted = true;print_r($wp_meta_boxes);print_r($page);print_r($context);
+		$already_sorted = true;//print_r($wp_meta_boxes);print_r($page);print_r($context);
 
 		if ( !isset($wp_meta_boxes) || !isset($wp_meta_boxes[$page]) || !isset($wp_meta_boxes[$page][$context]) )
 			break;

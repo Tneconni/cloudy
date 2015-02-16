@@ -59,12 +59,16 @@ class Comic {
         $doaction = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
         require_once(sprintf("%s/c-news/c-news-admin.php", dirname(__FILE__)));
 
-        if ( 'edit' == $doaction && ! empty( $_GET['aid'] ) ){
+        if ( ( 'edit' == $doaction || 'save' == $doaction ) && ! empty( $_GET['aid'] ) ){
 
             $cNewsEdit = new C_News_Edit();
+            if( 'save' == $doaction ){
+                $cNewsEdit->save();
+            }
             $cNewsEdit->display();
 
         }else{
+
 
             $cNewsList = new C_News_List_Table();
             $cNewsList->prepare_items();
@@ -82,15 +86,15 @@ class Comic {
 
         $hook = add_submenu_page(
             'comic/comic.php',
-            'comic_news',
             '动漫新闻',
+            'comic_news',
             'manage_options', 'comic_news',
             array($this,'comic_news')
         );
         add_meta_box( 'submitdiv',
             _x( 'Status', 'activity admin edit screen', 'comic' ),
             array($this,'comic_news_admin_edit_metabox_status'),
-            get_current_screen()->id, 'side', 'core' );
+            get_current_screen(), 'side', 'core' );
     }
 
     public function comic_news_admin_edit_metabox_status( $item ) {

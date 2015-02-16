@@ -225,4 +225,71 @@ class C_News_Edit {
 <?php
     }
 
+    public function save() {
+        global $wpdb;
+
+        if( isset($_POST['title']) ){
+            $this->title = $_POST['title'];
+        }
+        if( isset($_POST['url']) ){
+            $this->url = $_POST['url'];
+        }
+
+        $this->title        = apply_filters_ref_array(
+            'comic_news_title_before_save',
+            array(
+                $this->title,
+                &$this
+            )
+        );
+        $this->url           = apply_filters_ref_array(
+            'comic_news_url_before_save',
+            array(
+                $this->url,
+                &$this
+            ) );
+
+        do_action_ref_array( 'comic_news_before_save', array( &$this ) );
+
+        if ( empty( $this->title ) || empty( $this->url ) ) {
+            return false;
+        }
+
+        // If we have an existing ID, update the activity item, otherwise insert it.
+        if ( ! empty( $this->news_id ) ) {
+            $sql = "UPDATE cmc_news SET
+title='%s',
+url = '%s' WHERE news_id = '%s'";
+            $q = $wpdb->prepare( $sql, $this->title, $this->url, $this->news_id );
+        } else {
+            $sql = "INSERT INTO cmc_news SET title = '%s',
+url = '%s'";
+            $q = $wpdb->prepare( $sql , $this->title,$this->url );
+        }
+
+        if ( false === $wpdb->query( $q ) ) {
+            return false;
+        }
+
+        // If this is a new activity item, set the $id property
+        if ( empty( $this->news_id ) ) {
+            $this->news_id = $wpdb->insert_id;
+
+            // If an existing activity item, prevent any changes to the content generating new @mention notifications.
+        } else {
+            add_filter( 'comic_news_at_name_do_notifications', '__return_false' );
+        }
+
+        /**
+         * Fires after an activity item has been saved to the database.
+         *
+         * @since BuddyPress (1.0.0)
+         *
+         * @param BP_Activity_Activity Reference to current instance of activity being saved.
+         */
+        do_action_ref_array( 'comic_news_after_save', array( &$this ) );
+
+        return true;
+    }
+
 }
