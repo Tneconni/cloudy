@@ -95,7 +95,7 @@ class Api {
 <Title><![CDATA[%s]]></Title>
 <Description><![CDATA[%s]]></Description>
 <PicUrl><![CDATA[%s]]></PicUrl>
-<Url><![CDATA[http://weixin://contacts/profile/gh_65a3b480f565]]></Url>
+<Url><![CDATA[http://weixin://qr/gh_65a3b480f565]]></Url>
 </item>";
 
         require_once( BASEDIR . '/../library/pdo/my_pdo.php' );
