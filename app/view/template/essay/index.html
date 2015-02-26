@@ -62,11 +62,11 @@
             function weixinAddContact(name){
                 alert(name);
                 WeixinJSBridge.invoke("addContact", {webtype: "1",username: name}, function(e) {
-                    alert("addContact");
                     WeixinJSBridge.log(e.err_msg);
                     //e.err_msg:add_contact:added 已经添加
                     //e.err_msg:add_contact:cancel 取消添加
                     //e.err_msg:add_contact:ok 添加成功
+                    alert(e.err_msg);
                     if(e.err_msg == 'add_contact:added' || e.err_msg == 'add_contact:ok'){
                         //关注成功，或者已经关注过
                         alert(e.err_msg);
