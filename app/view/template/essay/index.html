@@ -54,10 +54,23 @@
             </a>欢迎您的光临
         </span>
             <span>
-                <a href="weixin://contacts/profile/gh_65a3b480f565">青岛市北家庭服务</a>
+                <!--<a href="weixin://contacts/profile/gh_65a3b480f565">青岛市北家庭服务</a>-->
+                <a ng-click="weixinAddContact(gh_65a3b480f565)">青岛市北家庭服务</a>
             </span>
         </div>
-
+        <script>
+            function weixinAddContact(name){
+                WeixinJSBridge.invoke("addContact", {webtype: "1",username: name}, function(e) {
+                    WeixinJSBridge.log(e.err_msg);
+                    //e.err_msg:add_contact:added 已经添加
+                    //e.err_msg:add_contact:cancel 取消添加
+                    //e.err_msg:add_contact:ok 添加成功
+                    if(e.err_msg == 'add_contact:added' || e.err_msg == 'add_contact:ok'){
+                        //关注成功，或者已经关注过
+                    }
+                })
+            }
+        </script>
     </div>
 
 </div>
