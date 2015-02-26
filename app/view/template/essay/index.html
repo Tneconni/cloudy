@@ -55,13 +55,17 @@
         </span>
             <span>
                 <!--<a href="weixin://contacts/profile/gh_65a3b480f565">青岛市北家庭服务</a>-->
-                <a onclick="weixinAddContact('wxaac2357db32e6f64')">青岛市北家庭服务</a>
+                <a onclick="weixinAddContact('gh_65a3b480f565')">青岛市北家庭服务</a>
             </span>
         </div>
         <script>
             function weixinAddContact(name){
                 alert(name);
-                WeixinJSBridge.invoke("addContact", {webtype: "1",username: name}, function(e) {
+                WeixinJSBridge.invoke("addContact", {
+                    appId : "wxaac2357db32e6f64",
+                    webtype: "1",
+                    username: name
+                }, function(e) {
                     WeixinJSBridge.log(e.err_msg);
                     //e.err_msg:add_contact:added 已经添加
                     //e.err_msg:add_contact:cancel 取消添加
