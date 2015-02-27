@@ -11,7 +11,7 @@ $app->get('/', function() use( $app ){
     $wxApi = new Api();
 
     if( isset($_GET["echostr"]) ){
-
+        $app->getLog()->getWriter()->write( '$GET  :: ' . var_export($_GET, true));
         $wxApi->valid();
     }else{
         try{
@@ -33,7 +33,7 @@ $app->post('/', function() use( $app ){
     $wxApi = new Api();
 
     if( isset($_GET["echostr"]) ){
-        $app->getLog()->getWriter()->write( '$GET  :: ' . var_export($_GET, true));
+
         $wxApi->valid();
     }else{
         try{
