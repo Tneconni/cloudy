@@ -1,3 +1,4 @@
 config.php
 admin/config.php
 app/index.php
+blog/wp-config.php
