@@ -10,7 +10,7 @@ sys::session_start();
 $app->get('/', function() use($app){
     global $mem;
     if(is_a( $mem, 'Memcache' )){
-        $template_head = $mem->get('template_head');
+        $template_head = $mem->get('template_head');echo $template_head;die();
         $template_header = $mem->get('template_header');
         $template_footer = $mem->get('template_footer');
     }else{
