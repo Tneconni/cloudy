@@ -26,12 +26,36 @@ $routeArr = explode('/', $changeUri);
 
 if( class_exists('Memcache')){
 
-    $template_head = $app->view->fetch('view/template/common/head.html');
-    $template_header = $app->view->fetch('view/template/common/header.html');
-    $template_footer = $app->view->fetch('view/template/common/footer.html');
-    $mem->set('template_head', $template_head, 0, 60);
-    $mem->set('template_header', $template_header, 0, 60);
-    $mem->set('template_footer', $template_footer, 0, 60);
+    if( !empty($mem->get('template_head')) ){
+//        $template_head = $mem->get('template_head');
+        echo 'template_head';
+    }else{
+        $template_head = $app->view->fetch('view/template/common/head.html');
+        $mem->set('template_head',$template_head, 0, 0);
+    }
+
+    if( !empty($mem->get('template_header')) ){
+//        $template_header = $mem->get('template_header');
+        echo 'template_header';
+    }else{
+        $template_header = $app->view->fetch('view/template/common/header.html');
+        $mem->set('template_header',$template_header, 0, 0);
+    }
+
+    if( !empty($mem->get('template_footer')) ){
+//        $template_footer = $mem->get('template_footer');
+        echo 'template_footer';
+    }else{
+        $template_footer = $app->view->fetch('view/template/common/footer.html');
+        $mem->set('template_footer',$template_footer, 0, 0);
+    }
+
+//    $template_head = $app->view->fetch('view/template/common/head.html');
+//    $template_header = $app->view->fetch('view/template/common/header.html');
+//    $template_footer = $app->view->fetch('view/template/common/footer.html');
+//    $mem->set('template_head', $template_head, 0, 60);
+//    $mem->set('template_header', $template_header, 0, 60);
+//    $mem->set('template_footer', $template_footer, 0, 60);
 
 }
 

@@ -9,9 +9,9 @@ require_once( BASEDIR . '/../library/sys.php' );
 sys::session_start();
 $app->get('/', function() use($app){
     global $mem, $redis;
-    if( is_a($redis, 'Redis')){
-        echo $redis->get('redis');
-    }
+//    if( is_a($redis, 'Redis')){
+//        echo $redis->get('redis');
+//    }
     if(is_a( $mem, 'Memcache' )){
         $template_head = $mem->get('template_head');
         $template_header = $mem->get('template_header');
