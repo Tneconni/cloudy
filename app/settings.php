@@ -9,7 +9,12 @@ if( class_exists('Memcache') ){
 
 echo phpinfo();
 ///redis setting
-$redis = new Redis();
-$redis->connect('127.0.0.1', 6379);
-$redis->set('key', 'hello world');
-echo $redis->get('key');
+if( class_exists('Redis') ){
+    $redis = new Redis();
+    $redis->connect('127.0.0.1', 6379);
+    $redis->set('key', 'hello world');
+    echo $redis->get('key');
+}else{
+    echo 'no Redis class';
+}
+die();
