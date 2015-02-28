@@ -7,5 +7,9 @@ if( class_exists('Memcache') ){
     $mem->connect("127.0.0.1", 11211);
 }
 
-///redis setting
 echo phpinfo();
+///redis setting
+$redis = new Redis();
+$redis->connect('127.0.0.1', 6379);
+$redis->set('key', 'hello world');
+echo $redis->get('key');
