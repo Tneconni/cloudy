@@ -24,6 +24,16 @@ $controller = $routeChangeArr[2];
 
 $routeArr = explode('/', $changeUri);
 
+if( class_exists('Memcache')){
+
+    $template_head = $app->view->fetch('view/template/common/head.html');
+    $template_header = $app->view->fetch('view/template/common/header.html');
+    $template_footer = $app->view->fetch('view/template/common/footer.html');
+    $mem->set('template_head', $template_head, 0, 60);
+    $mem->set('template_header', $template_header, 0, 60);
+    $mem->set('template_footer', $template_footer, 0, 60);
+
+}
 
 if( count($routeChangeArr) > 2 && !empty($routeChangeArr[2]) ){
     $_SERVER['REQUEST_URI'] = str_replace( '/' . $routeChangeArr[2], '', $changeUri );
