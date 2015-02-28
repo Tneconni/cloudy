@@ -7,7 +7,7 @@ if( class_exists('Memcache') ){
     $mem->connect("127.0.0.1", 11211);
 }
 
-echo phpinfo();
+//echo phpinfo();
 ///redis setting
 if( class_exists('Redis') ){
     $redis = new Redis();
@@ -17,4 +17,4 @@ if( class_exists('Redis') ){
 }else{
     echo 'no Redis class';
 }
-die();
+
