@@ -105,7 +105,7 @@ class Api {
 <Title><![CDATA[漫客小屋]]></Title>
 <Description><![CDATA[动漫迷落脚的咖啡屋]]></Description>
 <PicUrl><![CDATA[https://mmbiz.qlogo.cn/mmbiz/8NfSYMTIyWvzz4b6H5stOoYXIw2fNt8xeler0TLfNm0UQ5TBTeP2vAjfbVv0PoKt6vWJjvsjdQM9kIQtzkySdg/0]]></PicUrl>
-<Url><![CDATA[http://www.mankaa.com/index.php?s=/addon/Jiazheng/Jiazheng/index.html]]></Url>
+<Url><![CDATA[http://m.mankaa.com/cloudy/app/essay]]></Url>
 </item>";
         foreach( $res as &$v){
             $v['public_time']=date('m/d',$v['public_time']);

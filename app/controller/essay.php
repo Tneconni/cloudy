@@ -8,11 +8,22 @@ require_once( BASEDIR . '/../library/pdo/my_pdo.php' );
 require_once( BASEDIR . '/../library/sys.php' );
 sys::session_start();
 $app->get('/', function() use($app){
-    $template_head = $app->view->fetch('view/template/common/head.html');
-    $template_header = $app->view->fetch('view/template/common/header.html');
+    global $mem, $redis;
+//    if( is_a($redis, 'Redis')){
+//        echo $redis->get('redis');
+//    }
+    if(is_a( $mem, 'Memcache' )){
+        $template_head = $mem->get('template_head');
+        $template_header = $mem->get('template_header');
+        $template_footer = $mem->get('template_footer');
+    }else{
+        $template_head = $app->view->fetch('view/template/common/head.html');
+        $template_header = $app->view->fetch('view/template/common/header.html');
+        $template_footer = $app->view->fetch('view/template/common/footer.html');
+    }
+
     $app->view->setData('head', $template_head);
     $app->view->setData('header', $template_header);
-    $template_footer = $app->view->fetch('view/template/common/footer.html');
     $app->view->setData('footer', $template_footer);
     $app->view->display('view/template/essay/index.html');
 

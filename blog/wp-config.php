@@ -19,13 +19,13 @@
 define('DB_NAME', 'tneconni');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'cloud');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '111111');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '121.42.42.110');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

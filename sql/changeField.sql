@@ -1,23 +1,23 @@
 ------------  修改域名 所需要 改动的几个表 --------------------------------
---  把 http://tneconni.gotoip55.com 修改为 http://cloud.blog --
+--  把 http://cloud.blog 修改为 http://m.mankaa.com --
 ---- 2013-12-16 18:17 -------
 UPDATE
 wp_posts
 SET
 post_content = REPLACE(
 post_content,
-'http://tneconni.gotoip55.com',
-'http://cloud.blog'
+'http://cloud.blog',
+'http://m.mankaa.com'
 ),
 pinged = REPLACE(
 pinged,
-'http://tneconni.gotoip55.com',
-'http://cloud.blog'
+'http://cloud.blog',
+'http://m.mankaa.com'
 ),
 guid = REPLACE(
 guid,
-'http://tneconni.gotoip55.com',
-'http://cloud.blog'
+'http://cloud.blog',
+'http://m.mankaa.com'
 );
 
 UPDATE
@@ -25,8 +25,8 @@ wp_postmeta
 SET
 meta_value = REPLACE(
 meta_value,
-'http://tneconni.gotoip55.com',
-'http://cloud.blog'
+'http://cloud.blog',
+'http://m.mankaa.com'
 );
 
 
@@ -35,6 +35,6 @@ wp_options
 SET
 option_value = REPLACE(
 option_value,
-'http://tneconni.gotoip55.com',
-'http://cloud.blog'
+'http://cloud.blog',
+'http://m.mankaa.com'
 );

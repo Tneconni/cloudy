@@ -188,14 +188,20 @@ class C_News_Edit {
                                     <div id="bp_activity_action" class="postbox">
                                         <h3><?php _e( 'Title', 'comic' ); ?></h3>
                                         <div class="inside">
-                                            <?php wp_editor( stripslashes( $activity->title ), 'comic-news-title', array( 'media_buttons' => false, 'textarea_rows' => 7, 'teeny' => true, 'quicktags' => array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
+                                            <?php wp_editor( stripslashes( $activity->title ), 'title',
+                                                array( 'media_buttons' => false, 'textarea_rows' => 7,
+                                                    'teeny' => true, 'quicktags' =>
+                                                    array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
                                         </div>
                                     </div>
 
                                     <div id="comic_news_content" class="postbox">
                                         <h3><?php _e( 'Url', 'comic' ); ?></h3>
                                         <div class="inside">
-                                            <?php wp_editor( stripslashes( $activity->url ), 'comic-news-url', array( 'media_buttons' => false, 'teeny' => true, 'quicktags' => array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
+                                            <?php wp_editor( stripslashes( $activity->url ), 'url',
+                                                array( 'media_buttons' => false, 'teeny' => true,
+                                                    'quicktags' =>
+                                                        array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -254,7 +260,7 @@ class C_News_Edit {
         if ( empty( $this->title ) || empty( $this->url ) ) {
             return false;
         }
-
+        $this->news_id = ( isset($_GET['aid']) && !empty( $_GET['aid']) ) ? $_GET['aid'] : 0;
         // If we have an existing ID, update the activity item, otherwise insert it.
         if ( ! empty( $this->news_id ) ) {
             $sql = "UPDATE cmc_news SET
