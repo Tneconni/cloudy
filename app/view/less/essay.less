@@ -6,8 +6,10 @@
       text-align:left;
       font-size:12px;
       position:relative;
-      margin:0 0 15px 0;
-      height:auto;
+      margin:0 0 5px 0;
+//      height:auto;
+      height:80px;
+      overflow: hidden;
       .photo{
         float:left;
         width:80px;
@@ -19,13 +21,17 @@
         img{
           min-height: 80px;
           max-width:160px;
+          min-width:80px;
 
         }
       }
       .content{
-//        position: absolute;
+        height:80px;
         margin-left:90px;
+        overflow: hidden;
         span{
+          overflow: hidden;
+          text-overflow: ellipsis;
           &time{
             text-align:right
           }
@@ -81,7 +87,7 @@
     padding:0;
     &.list{
       li{
-        margin:20px 0;
+        margin:0 0 19px 0;
         .cover{
           display:block;
           width:20%;

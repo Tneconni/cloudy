@@ -6,8 +6,9 @@
   text-align: left;
   font-size: 12px;
   position: relative;
-  margin: 0 0 15px 0;
-  height: auto;
+  margin: 0 0 5px 0;
+  height: 80px;
+  overflow: hidden;
 }
 .essay ul li .photo {
   float: left;
@@ -19,9 +20,16 @@
 .essay ul li .photo img {
   min-height: 80px;
   max-width: 160px;
+  min-width: 80px;
 }
 .essay ul li .content {
+  height: 80px;
   margin-left: 90px;
+  overflow: hidden;
+}
+.essay ul li .content span {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .essay ul li .content spantime {
   text-align: right;
@@ -68,7 +76,7 @@
   padding: 0;
 }
 .comments ul.list li {
-  margin: 20px 0;
+  margin: 0 0 19px 0;
 }
 .comments ul.list li .cover {
   display: block;
