@@ -78,6 +78,30 @@ class Comic {
 
     }
 
+    public function comic_tao(){
+
+        $doaction = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
+        require_once(sprintf("%s/c-tao/c-tao-admin.php", dirname(__FILE__)));
+
+        if ( ( 'edit' == $doaction || 'save' == $doaction ) && ! empty( $_GET['aid'] ) ){
+
+            $cNewsEdit = new C_News_Edit();
+            if( 'save' == $doaction ){
+                $cNewsEdit->save();
+            }
+            $cNewsEdit->display();
+
+        }else{
+
+
+            $cNewsList = new C_Tao_List_Table();
+            $cNewsList->prepare_items();
+            $cNewsList->display();
+
+        }
+
+    }
+
     public function admin_menus() {
         set_current_screen( 'toplevel_page_comic-news' );
         add_options_page('comic setting', 'comic',
@@ -90,6 +114,13 @@ class Comic {
             'comic_news',
             'manage_options', 'comic_news',
             array($this,'comic_news')
+        );
+        add_submenu_page(
+            'comic/comic.php',
+            '动漫淘',
+            'comic_tao',
+            'manage_options', 'comic_tao',
+            array($this,'comic_tao')
         );
         add_meta_box( 'submitdiv',
             _x( 'Status', 'activity admin edit screen', 'comic' ),
