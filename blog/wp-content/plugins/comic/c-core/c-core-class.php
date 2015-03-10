@@ -7,6 +7,7 @@ class C_Core_Class{
 
         global $wpdb;
         $table_name = $args['table_name'];
+        $pk = $args['pk'];
         $defaults = array(
             'page'              => 1,          // The current page
             'per_page'          => 25,         // Activity items per page
@@ -56,16 +57,16 @@ class C_Core_Class{
         $where_conditions = array();
         if ( !empty( $in ) ) {
             $in = implode( ',', wp_parse_id_list( $in ) );
-            $where_conditions['in'] = "a.news_id IN ({$in})";
+            $where_conditions['in'] = "a.".$pk." IN ({$in})";
         }
 
         $where_sql = !empty( $where_conditions ) ? 'WHERE ' . join( ' AND ', $where_conditions ) : '';
 
 
         $limit = " LIMIT ".( $page - 1 ) * $per_page . "," . $per_page ;
-        $sql = "SELECT * FROM " . $table_name . " a $where_sql ORDER BY a.news_id DESC " . $limit;
+        $sql = "SELECT * FROM " . $table_name . " a $where_sql ORDER BY a.".$pk." DESC " . $limit;
 
-        $totalSql = "SELECT count(news_id) as `total` FROM " . $table_name;
+        $totalSql = "SELECT count(".$pk.") as `total` FROM " . $table_name;
 
         $ret['items']  = $wpdb->get_results( $sql );
         $ret['total'] = $wpdb->get_var( $totalSql );

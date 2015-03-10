@@ -34,7 +34,8 @@ class C_Tao_List_Table extends WP_List_Table{
             //'sort'             => $sort,
 //            'spam'             => $spam,
 //            'count_total'      => 'count_query',
-            'table_name'        => 'cmc_tao'
+            'table_name'        => 'cmc_tao',
+            'pk'                => 'tao_id'
         ) );
 
         $this->items = $dataList['items'];
@@ -166,7 +167,8 @@ class C_Tao_Edit {
             //'sort'             => $sort,
 //            'spam'             => $spam,
 //            'count_total'      => 'count_query',
-            'table_name'        => 'cmc_tao'
+            'table_name'        => 'cmc_tao',
+            'pk'        => 'tao_id'
         ) );
         $activity = $tao['items'][0];
         // Construct URL for form

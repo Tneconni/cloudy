@@ -34,7 +34,8 @@ class C_News_List_Table extends WP_List_Table{
             //'sort'             => $sort,
 //            'spam'             => $spam,
 //            'count_total'      => 'count_query',
-            'table_name'        => 'cmc_news'
+            'table_name'        => 'cmc_news',
+            'pk'                => 'news_id'
         ) );
 
         $this->items = $dataList['items'];
@@ -166,7 +167,8 @@ class C_News_Edit {
             //'sort'             => $sort,
 //            'spam'             => $spam,
 //            'count_total'      => 'count_query',
-            'table_name'        => 'cmc_news'
+            'table_name'        => 'cmc_news',
+            'pk'                => 'news_id'
         ) );
         $activity = $news['items'][0];
         // Construct URL for form

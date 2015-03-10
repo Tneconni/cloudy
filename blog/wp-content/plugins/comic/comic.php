@@ -85,14 +85,16 @@ class Comic {
 
         if ( ( 'edit' == $doaction || 'save' == $doaction ) && ! empty( $_GET['aid'] ) ){
 
-            $cNewsEdit = new C_News_Edit();
+            $cNewsEdit = new C_Tao_Edit();
             if( 'save' == $doaction ){
                 $cNewsEdit->save();
             }
             $cNewsEdit->display();
 
+        }else if( 'create' == $doaction ){
+            $cNewsEdit = new C_Tao_Edit();
+            $cNewsEdit->display();
         }else{
-
 
             $cNewsList = new C_Tao_List_Table();
             $cNewsList->prepare_items();
