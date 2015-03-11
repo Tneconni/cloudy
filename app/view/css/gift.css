@@ -1,0 +1,28 @@
+.gift ul.gift-list li.item div {
+  width: 310px;
+  height: 350px;
+  border: solid 1px #cdcdcd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+.gift ul.gift-list li.item div .img-mask {
+  width: 100%;
+  height: 140px;
+  display: block;
+  overflow: hidden;
+}
+.gift ul.gift-list li.item div .img-mask img {
+  width: 100%;
+  display: block;
+}
+.gift ul.gift-list li.item div h3 {
+  font-size: 18px;
+  padding: 15px;
+  line-height: 25px;
+  text-align: left;
+}
+.gift ul.gift-list li.item div h3 a {
+  color: #333;
+  font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
