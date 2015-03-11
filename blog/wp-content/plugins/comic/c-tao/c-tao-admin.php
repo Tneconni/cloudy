@@ -14,6 +14,15 @@ class C_Tao_List_Table extends WP_List_Table{
 
     }
 
+    public function extra_tablenav(){
+
+        $createUrl = get_admin_url(null, 'admin.php?page=comic_tao&action=create');
+        ?>
+        <div><a href="<?php echo $createUrl;?>">添加新的tao页面：</a></div>
+    <?php
+
+    }
+
     public function prepare_items(){
 
         $this->_column_headers = array(
@@ -34,7 +43,8 @@ class C_Tao_List_Table extends WP_List_Table{
             //'sort'             => $sort,
 //            'spam'             => $spam,
 //            'count_total'      => 'count_query',
-            'table_name'        => 'cmc_tao'
+            'table_name'        => 'cmc_tao',
+            'pk'                => 'tao_id'
         ) );
 
         $this->items = $dataList['items'];
@@ -166,7 +176,8 @@ class C_Tao_Edit {
             //'sort'             => $sort,
 //            'spam'             => $spam,
 //            'count_total'      => 'count_query',
-            'table_name'        => 'cmc_tao'
+            'table_name'        => 'cmc_tao',
+            'pk'        => 'tao_id'
         ) );
         $activity = $tao['items'][0];
         // Construct URL for form
@@ -175,57 +186,55 @@ class C_Tao_Edit {
         ?>
         <div class="wrap">
             <?php screen_icon( 'comic-tao' ); ?>
-            <h2><?php printf( __( 'Editing Activity (ID #%s)', 'comic' ), number_format_i18n( (int) $_REQUEST['aid'] ) ); ?></h2>
+            <?php if(!empty($activity)) :?>
+                <h2><?php printf( __( 'Editing Activity (ID #%s)', 'comic' ), number_format_i18n( (int) $_REQUEST['aid'] ) ); ?></h2>
+            <?php else: ?>
+                <h2>添加新的tao产品</h2>
+            <?php endif; ?>
 
-            <?php if ( ! empty( $activity ) ) : ?>
+            <form action="<?php echo esc_attr( $form_url ); ?>" id="comic-tao-edit-form" method="post">
+                <div id="poststuff">
 
-                <form action="<?php echo esc_attr( $form_url ); ?>" id="comic-tao-edit-form" method="post">
-                    <div id="poststuff">
-
-                        <div id="post-body" class="metabox-holder columns-<?php echo 1 == get_current_screen()->get_columns() ? '1' : '2'; ?>">
-                            <div id="post-body-content">
-                                <div id="postdiv">
-                                    <div id="bp_activity_action" class="postbox">
-                                        <h3><?php _e( 'Title', 'comic' ); ?></h3>
-                                        <div class="inside">
-                                            <?php wp_editor( stripslashes( $activity->title ), 'title',
-                                                array( 'media_buttons' => false, 'textarea_rows' => 7,
-                                                    'teeny' => true, 'quicktags' =>
-                                                    array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
-                                        </div>
-                                    </div>
-
-                                    <div id="comic_tao_content" class="postbox">
-                                        <h3><?php _e( 'Url', 'comic' ); ?></h3>
-                                        <div class="inside">
-                                            <?php wp_editor( stripslashes( $activity->url ), 'url',
-                                                array( 'media_buttons' => false, 'teeny' => true,
-                                                    'quicktags' =>
-                                                        array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
-                                        </div>
+                    <div id="post-body" class="metabox-holder columns-<?php echo 1 == get_current_screen()->get_columns() ? '1' : '2'; ?>">
+                        <div id="post-body-content">
+                            <div id="postdiv">
+                                <div id="bp_activity_action" class="postbox">
+                                    <h3><?php _e( 'Title', 'comic' ); ?></h3>
+                                    <div class="inside">
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->title : ''), 'title',
+                                            array( 'media_buttons' => false, 'textarea_rows' => 7,
+                                                'teeny' => true, 'quicktags' =>
+                                                array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
                                     </div>
                                 </div>
-                            </div><!-- #post-body-content -->
 
-                            <div id="postbox-container-1" class="postbox-container">
-                                <?php do_meta_boxes( get_current_screen()->id, 'side', $activity ); ?>
+                                <div id="comic_tao_content" class="postbox">
+                                    <h3><?php _e( 'Url', 'comic' ); ?></h3>
+                                    <div class="inside">
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->url:'' ), 'url',
+                                            array( 'media_buttons' => false, 'teeny' => true,
+                                                'quicktags' =>
+                                                    array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
+                                    </div>
+                                </div>
                             </div>
+                        </div><!-- #post-body-content -->
 
-                            <div id="postbox-container-2" class="postbox-container">
-                                <?php do_meta_boxes( get_current_screen()->id, 'normal', $activity ); ?>
-                                <?php do_meta_boxes( get_current_screen()->id, 'advanced', $activity ); ?>
-                            </div>
-                        </div><!-- #post-body -->
+                        <div id="postbox-container-1" class="postbox-container">
+                            <?php do_meta_boxes( get_current_screen()->id, 'side', $activity ); ?>
+                        </div>
 
-                    </div><!-- #poststuff -->
-                    <?php wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false ); ?>
-                    <?php wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false ); ?>
-                    <?php wp_nonce_field( 'edit-comic-tao_' . $activity->tao_id ); ?>
-                </form>
+                        <div id="postbox-container-2" class="postbox-container">
+                            <?php do_meta_boxes( get_current_screen()->id, 'normal', $activity ); ?>
+                            <?php do_meta_boxes( get_current_screen()->id, 'advanced', $activity ); ?>
+                        </div>
+                    </div><!-- #post-body -->
 
-            <?php else : ?>
-                <p><?php printf( __( 'No activity found with this ID. <a href="%s">Go back and try again</a>.', 'comic' ), esc_url( get_admin_url( null,'admin.php?page=comic-tao' ) ) ); ?></p>
-            <?php endif; ?>
+                </div><!-- #poststuff -->
+                <?php wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false ); ?>
+                <?php wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false ); ?>
+                <?php wp_nonce_field( 'edit-comic-tao_' . ! empty( $activity )?$activity->tao_id:0 ); ?>
+            </form>
 
         </div><!-- .wrap -->
 <?php
@@ -269,7 +278,7 @@ url = '%s' WHERE tao_id = '%s'";
             $q = $wpdb->prepare( $sql, $this->title, $this->url, $this->tao_id );
         } else {
             $sql = "INSERT INTO cmc_tao SET title = '%s',
-url = '%s'";
+url = '%s', public_date=now(), date_add=now() ";
             $q = $wpdb->prepare( $sql , $this->title,$this->url );
         }
 
