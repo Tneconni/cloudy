@@ -154,7 +154,6 @@ class C_News_Edit {
 
     public function display(){
 
-
         $news = C_Core_Class::get( array(
 //            'display_comments' => 'stream',
 //            'filter'           => $filter,

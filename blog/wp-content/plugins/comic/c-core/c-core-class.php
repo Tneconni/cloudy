@@ -55,7 +55,7 @@ class C_Core_Class{
 //                    $select_sql, $from_sql, $where_sql, $sort ) );
 //        }
         $where_conditions = array();
-        if ( !empty( $in ) ) {
+        if ( $in !== false ) {
             $in = implode( ',', wp_parse_id_list( $in ) );
             $where_conditions['in'] = "a.".$pk." IN ({$in})";
         }
