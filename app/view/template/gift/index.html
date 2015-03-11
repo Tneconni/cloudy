@@ -6,7 +6,24 @@
 <body ng-controller="giftController">
 <?php echo $header;?>
 
-<p>正在施工中...</p>
+<div class="gift row">
+    <ul class="gift-list small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+        <li class="item" ng-repeat="single in gift">
+            <div >
+                <a class="img-mask" target="_blank">
+                    <img src="{{single.img}}" alt=""/>
+                </a>
+                <h3>
+                    <a href="{{single.url}}" target="_blank">
+                        {{single.title}}
+                    </a>
+                </h3>
+            </div>
+
+        </li>
+    </ul>
+
+</div>
 
 <?php echo $footer;?>
 </body>

@@ -13,5 +13,22 @@ $app->get('/', function() use($app){
 
 });
 
+$app->get('/index', function() use($app){
+
+    $number = isset($_GET['number']) ? $_GET['number'] : '10';
+    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+    $page = $number * ($page - 1);
+    $sql = "SELECT * FROM cmc_tao order by `public_date` desc limit " . $page . "," . $number;
+    $res = MyPdo::query( $sql );
+    $defaultImg = baseUrl . '/app/view/images/taobao/room.png';
+    foreach( $res as &$v){
+        $v['public_date']=date('m/d',strtotime($v['public_date']));
+        $v['title']=str_replace('#动漫美图#','',$v['title']);
+        $v['img'] = !empty($v['img']) ? $v['img'] : $defaultImg;
+    }
+
+    echo json_encode( $res );
+
+});
 
 
