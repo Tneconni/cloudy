@@ -14,6 +14,15 @@ class C_Tao_List_Table extends WP_List_Table{
 
     }
 
+    public function extra_tablenav(){
+
+        $createUrl = get_admin_url(null, 'admin.php?page=comic_tao&action=create');
+        ?>
+        <div><a href="<?php echo $createUrl;?>">添加新的tao页面：</a></div>
+    <?php
+
+    }
+
     public function prepare_items(){
 
         $this->_column_headers = array(
