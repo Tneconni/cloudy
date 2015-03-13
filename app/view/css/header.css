@@ -1,7 +1,7 @@
 #header_1 {
   width: 100%;
   height: auto;
-  padding: 10px 0;
+  padding: 10px 0 5px;
 }
 #header_1 p,
 #header_1 button {
@@ -18,11 +18,13 @@
 }
 #header_1 .nav ul li {
   float: left;
-  padding-right: 10px;
-  font-weight: bold;
+  padding-bottom: 2px;
+  text-align: left;
 }
 #header_1 .nav ul li a {
   color: #791115;
+  border-left: solid 1px #cdcdcd;
+  padding-left: 10px;
 }
 .footer {
   width: 100%;
