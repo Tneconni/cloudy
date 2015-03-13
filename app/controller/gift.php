@@ -15,7 +15,7 @@ $app->get('/', function() use($app){
 
 $app->get('/index', function() use($app){
 
-    $number = isset($_GET['number']) ? $_GET['number'] : '10';
+    $number = isset($_GET['number']) ? $_GET['number'] : '12';
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
     $page = $number * ($page - 1);
     $sql = "SELECT * FROM cmc_tao order by `public_date` desc limit " . $page . "," . $number;
