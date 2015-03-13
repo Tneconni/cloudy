@@ -24,7 +24,12 @@ $app->get('/index', function() use($app){
     foreach( $res as &$v){
         $v['public_date']=date('m/d',strtotime($v['public_date']));
         $v['title']=str_replace('#动漫美图#','',$v['title']);
-        $v['img'] = !empty($v['img']) ? $v['img'] : $defaultImg;
+        $v['img'] = $defaultImg;
+        if(!empty($v['img'])){
+            $v['img'] =  explode('|',trim($v['img'],'|'))[0];
+
+        }
+
     }
 
     echo json_encode( $res );
