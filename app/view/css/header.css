@@ -25,6 +25,9 @@
   color: #791115;
   border-left: solid 1px #cdcdcd;
   padding-left: 10px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 .footer {
   width: 100%;

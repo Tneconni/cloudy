@@ -7,21 +7,23 @@
 <?php echo $header;?>
 
 <div class="gift row">
-    <ul class="gift-list small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-        <li class="item" ng-repeat="single in gift">
-            <div >
-                <a class="img-mask" target="_blank" href="{{single.url}}">
-                    <img src="{{single.img}}" alt=""/>
-                </a>
-                <h3>
-                    <a href="{{single.url}}" target="_blank">
-                        {{single.title}}
+    <div class="small-12 medium-12 large-12 columns">
+        <ul class="gift-list small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+            <li class="item" ng-repeat="single in gift">
+                <div >
+                    <a class="img-mask" target="_blank" href="{{single.url}}">
+                        <img src="{{single.img}}" alt=""/>
                     </a>
-                </h3>
-            </div>
+                    <h3>
+                        <a href="{{single.url}}" target="_blank">
+                            {{single.title}}
+                        </a>
+                    </h3>
+                </div>
+            </li>
+        </ul>
+    </div>
 
-        </li>
-    </ul>
 
 </div>
 

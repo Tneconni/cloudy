@@ -7,20 +7,21 @@
 <?php echo $header;?>
 
 <div class="row p-t20 cmc-comment" >
-    <ul class="comment-list small-block-grid-1 medium-block-grid-2 large-block-grid-3"
-        ng-controller="listController">
-        <li ng-repeat="item in comments">
-            <div class="img">
-                <a href="{{item.href}}"><img src="<?php echo baseUrl; ?>/app/view/images/comic/lufei.jpg" alt=""/></a>
-            </div>
-            <div class="text">
-                <a href="{{item.href}}" class="title" href="{{item.href}}" title="{{item.title}}">{{item.title}}</a>
-                <span class="time">[{{item.public_time}}]</span>
-            </div>
+    <div class="small-12 medium-12 large-12 columns">
+        <ul class="comment-list small-block-grid-1 medium-block-grid-2 large-block-grid-3"
+            ng-controller="listController">
+            <li ng-repeat="item in comments">
+                <div class="img">
+                    <a href="{{item.href}}"><img src="<?php echo baseUrl; ?>/app/view/images/comic/lufei.jpg" alt=""/></a>
+                </div>
+                <div class="text">
+                    <a href="{{item.href}}" class="title" href="{{item.href}}" title="{{item.title}}">{{item.title}}</a>
+                    <span class="time">[{{item.public_time}}]</span>
+                </div>
 
-        </li>
-    </ul>
-
+            </li>
+        </ul>
+    </div>
 </div>
 <?php echo $footer;?>
 </body>
