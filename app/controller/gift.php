@@ -15,7 +15,7 @@ $app->get('/', function() use($app){
 
 $app->get('/index', function() use($app){
 
-    $number = isset($_GET['number']) ? $_GET['number'] : '10';
+    $number = isset($_GET['number']) ? $_GET['number'] : '12';
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
     $page = $number * ($page - 1);
     $sql = "SELECT * FROM cmc_tao order by `public_date` desc limit " . $page . "," . $number;
@@ -24,7 +24,15 @@ $app->get('/index', function() use($app){
     foreach( $res as &$v){
         $v['public_date']=date('m/d',strtotime($v['public_date']));
         $v['title']=str_replace('#动漫美图#','',$v['title']);
-        $v['img'] = !empty($v['img']) ? $v['img'] : $defaultImg;
+        if(!empty($v['img'])){
+            $imgString =  explode('|',trim($v['img'],'|'))[0];
+            $imgSplit = explode('_',$imgString);
+            $imgTail = '310x310.jpg';
+            array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
+            $v['img'] = implode( '_', $imgSplit );
+        }else{
+            $v['img'] = $defaultImg;
+        }
     }
 
     echo json_encode( $res );
