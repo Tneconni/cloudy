@@ -1,6 +1,6 @@
 -- 添加表属性 --
 CREATE TABLE `cmc_tao_attribute` (
-  `tao_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `tao_id` INT(11) NOT NULL,
   `price` DECIMAL(9,2) DEFAULT '0' NOT NULL,
   `special` DECIMAL(9,2) DEFAULT '0' NOT NULL,
   `discount` DECIMAL(5,2) DEFAULT '0' NOT NULL,
