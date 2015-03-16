@@ -24,20 +24,21 @@ $app->get('/index', function() use($app){
     foreach( $res as &$v){
         $v['public_date']=date('m/d',strtotime($v['public_date']));
         $v['title']=str_replace('#动漫美图#','',$v['title']);
-
+        $v['price'] = $v['price'];
+        $v['special'] = $v['special'];
+        $v['discount'] = $v['discount'];
+        $v['source'] = $v['source'];
+        $v['like_count'] = $v['like_count'];
         if(!empty($v['img'])){
             $imgString =  explode('|',trim($v['img'],'|'))[0];
             $imgSplit = explode('_',$imgString);
             $imgTail = '310x310.jpg';
             array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
-            $v['price'] = $v['price'];
-            $v['special'] = $v['special'];
-            $v['discount'] = $v['discount'];
-            $v['source'] = $v['source'];
-            $v['like_count'] = $v['like_count'];
+            $v['img'] = implode('_',$imgSplit);
         }else{
             $v['img'] = $defaultImg;
         }
+
     }
 
     echo json_encode( $res );
