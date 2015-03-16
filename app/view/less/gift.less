@@ -5,8 +5,8 @@
     li{
       &.item{
 
-        div{
-
+        &>div{
+          position:relative;
           width:310px;
           height:350px;
           border:solid 1px #cdcdcd;
@@ -52,7 +52,45 @@
               font-family: "Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
             }
           }
+          .attribute{
+            position:absolute;
+            width:100%;
 
+            bottom:10px;
+            right:5px;
+            span{
+              display:inline-block;
+              width:22%;
+            }
+            .tmall{
+              background-image: url('../images/taobao/shop_source.png');
+              background-repeat: no-repeat;
+              background-position: 0px 0px;
+              width:24px;
+              height:18px;
+              overflow: hidden;
+            }
+            .tao{
+              background-repeat: repeat-x;
+              background-image: url('../images/taobao/shop_source.png');
+              background-position: 102px 0px;
+              width:24px;
+              height:18px;
+              overflow: hidden;
+            }
+            .price{
+
+            }
+            .like{
+              background-image: url('../images/taobao/like.png');
+              background-repeat: no-repeat;
+              background-position: 0px 5px;
+              padding-left:18px;
+            }
+            .discount{
+
+            }
+          }
         }
       }
 

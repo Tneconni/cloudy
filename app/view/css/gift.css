@@ -1,4 +1,5 @@
-.gift ul.gift-list li.item div {
+.gift ul.gift-list li.item > div {
+  position: relative;
   width: 310px;
   height: 350px;
   border: solid 1px #cdcdcd;
@@ -6,7 +7,7 @@
   overflow: hidden;
   margin: 20px 0;
 }
-.gift ul.gift-list li.item div:hover {
+.gift ul.gift-list li.item > div:hover {
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
@@ -20,23 +21,55 @@
   -o-box-shadow: 0 5px 10px rgba(67, 72, 84, 0.3);
   box-shadow: 0 5px 10px rgba(67, 72, 84, 0.3);
 }
-.gift ul.gift-list li.item div .img-mask {
+.gift ul.gift-list li.item > div .img-mask {
   width: 100%;
   height: 140px;
   display: block;
   overflow: hidden;
 }
-.gift ul.gift-list li.item div .img-mask img {
+.gift ul.gift-list li.item > div .img-mask img {
   width: 100%;
   display: block;
 }
-.gift ul.gift-list li.item div h3 {
+.gift ul.gift-list li.item > div h3 {
   font-size: 18px;
   padding: 15px;
   line-height: 25px;
   text-align: left;
 }
-.gift ul.gift-list li.item div h3 a {
+.gift ul.gift-list li.item > div h3 a {
   color: #333;
   font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+.gift ul.gift-list li.item > div .attribute {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  right: 5px;
+}
+.gift ul.gift-list li.item > div .attribute span {
+  display: inline-block;
+  width: 22%;
+}
+.gift ul.gift-list li.item > div .attribute .tmall {
+  background-image: url('../images/taobao/shop_source.png');
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  width: 24px;
+  height: 18px;
+  overflow: hidden;
+}
+.gift ul.gift-list li.item > div .attribute .tao {
+  background-repeat: repeat-x;
+  background-image: url('../images/taobao/shop_source.png');
+  background-position: 102px 0px;
+  width: 24px;
+  height: 18px;
+  overflow: hidden;
+}
+.gift ul.gift-list li.item > div .attribute .like {
+  background-image: url('../images/taobao/like.png');
+  background-repeat: no-repeat;
+  background-position: 0px 5px;
+  padding-left: 18px;
 }
