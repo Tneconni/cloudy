@@ -73,3 +73,10 @@
   background-position: 0px 5px;
   padding-left: 18px;
 }
+.more-btn h3 {
+  border: solid 1px #cdcdcd;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 15px;
+  padding: 5px 0;
+}
