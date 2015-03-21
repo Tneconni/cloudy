@@ -1,6 +1,6 @@
 <!--logo+搜索-->
 <div id="header_1" class="bd-b" >
-    <div class=" row">
+    <div class=" row hide" >
         <div class="large-3 medium-2 columns">
             <a class="logo "  style="margin-top:20px">
                 <img class="p-t10" src="<?php echo baseUrl; ?>/app/view/images/logo.png" width="80" />
@@ -29,12 +29,7 @@
         <div class="large-2 medium-2 columns show-for-medium-up t-r">
             <img width="120" src="<?php echo baseUrl; ?>/app/view/images/qq_group.png"/>
         </div>
-        <span id="qqLoginBtn"></span>
-        <script type="text/javascript">
-            QC.Login({
-                btnId:"qqLoginBtn"    //插入按钮的节点id
-            });
-        </script>
+
     </div>
 
     <div class="row nav">
@@ -48,7 +43,14 @@
                 <li><a href="<?php echo baseUrl; ?>/app/gift">礼物</a></li>
             </ul>
         </div>
-
+        <div class=" medium-2 large-4 columns ">
+            <span id="qqLoginBtn"></span>
+            <script type="text/javascript">
+                QC.Login({
+                    btnId:"qqLoginBtn"    //插入按钮的节点id
+                });
+            </script>
+        </div>
     </div>
 
 </div>
