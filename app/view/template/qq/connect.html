@@ -5,13 +5,15 @@
 <body >
 <!--头部公共开始-->
 <!--页眉-->
-<?php echo $header;?>
+<script type="text/javascript"
+        src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
+        charset="utf-8" data-callback="true"></script>
 
 <h3 class=""> QQ登陆成功 </h3>
 <script>
     setTimeout(function(){
-        parent.refreshPage();
         var userAgent = navigator.userAgent;
+        window.returnValue = 1;
         if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Presto") != -1) {
             window.location.replace("about:blank");
             window.open('','_parent','');
