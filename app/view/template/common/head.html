@@ -18,10 +18,13 @@
             src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
             data-appid="101197313" data-redirecturi="http://www.mankaa.com/app/qq/connect" charset="utf-8"></script>
     <script>
-
+        var initLoginStatus = QC.Login.check();
         function checkLogin(){
             var chk = QC.Login.check();
             console.log(chk);
+            if(initLoginStatus != chk && initLoginStatus == false){
+                location.reload();
+            }
             setTimeout(function(){
                 checkLogin();
             },3000);
