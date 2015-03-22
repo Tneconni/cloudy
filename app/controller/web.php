@@ -1,5 +1,5 @@
 <?php
-require_once( BASEDIR . '/../library/pdo/my_pdo.php' );
+
 $app->get('/', function() use($app){
     $template_head = $app->view->fetch('view/template/common/head.html');
     $template_header = $app->view->fetch('view/template/common/header.html');

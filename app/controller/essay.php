@@ -4,7 +4,6 @@
  *
  */
 
-require_once( BASEDIR . '/../library/pdo/my_pdo.php' );
 require_once( BASEDIR . '/../library/sys.php' );
 sys::session_start();
 $app->get('/', function() use($app){
