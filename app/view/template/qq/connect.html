@@ -9,14 +9,17 @@
 
 <h3 class=""> QQ登陆成功 </h3>
 <script>
-    var userAgent = navigator.userAgent;
-    if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Presto") != -1) {
-        window.location.replace("about:blank");
-    } else {
-        window.opener = null;
-        window.open("", "_self");
-        window.close();
-    }
+    setTimeout(function(){
+        var userAgent = navigator.userAgent;
+        if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Presto") != -1) {
+            window.location.replace("about:blank");
+        } else {
+            window.opener = null;
+            window.open("", "_self");
+            window.close();
+        }
+    },3000);
+
 </script>
 <!--头部公共结束-->
 
