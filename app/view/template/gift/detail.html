@@ -6,8 +6,66 @@
 <body ng-controller="giftController">
 <?php echo $header;?>
 
-<div class="" >
-this is the gift detail page
+<div class="gift-detail row" >
+
+
+    <div class="small-8 medium-8 large-8 columns gift-main" ng-controller="detailController">
+
+        <div class="author">
+            发布者：管理员
+        </div>
+        <div class="item">
+            <div class="pic">
+                <div class="show">
+                    <img src="http://img02.taobaocdn.com/bao/uploaded/i2/13633031051401441/T1uFibXBphXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
+                         width="298" height="198" alt=""/>
+                </div>
+                <ul class="gallery">
+                    <li>
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/13633031051401441/T1uFibXBphXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
+                             width="298" height="198" alt=""/>
+                    </li>
+                    <li>
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/13633031051401441/T1uFibXBphXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
+                             width="298" height="198" alt=""/>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="attribute">
+                <h3 class="name"></h3>
+                <div>
+                    <span class="price">
+
+                    </span>
+                    <span class="shop">
+
+                    </span>
+                    <span class="buy">
+
+                    </span>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+        </div>
+        <div class="message">
+            <ul>
+                <li class="customer">
+                    <div class="photo"></div>
+                    <div class="user-talk">
+                        <h3 class="name"></h3>
+                        <div class="talk"></div>
+                    </div>
+                    <div class="time"></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="small-3 medium-3 large-3 columns aside" ng-controller="asideController">
+zxc
+    </div>
 </div>
 
 <?php echo $footer;?>
