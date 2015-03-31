@@ -74,20 +74,39 @@ $app->get('/detail/:id',function( $id ) use($app){
 
 $app->get('/single/:id', function( $id ){
 
-    $sql = "SELECT * FROM cmc_tao WHERE tao_id='$id'";
+    $sql = "SELECT
+  *
+FROM
+  cmc_tao t
+  LEFT JOIN cmc_tao_attribute ta
+    ON t.`tao_id` = ta.`tao_id`
+WHERE t.tao_id = '$id'";
     $res = MyPdo::query( $sql );
     $tao = $res[0];
     $tao['imgGroup'] = array();
     if(!empty($tao['img'])){
-        $imgString =  explode('|',trim($tao['img'],'|'))[0];
-        $imgSplit = explode('_',$imgString);
-        $imgTail = '310x310.jpg';
-        array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
-        $tao['imgGroup'] = implode('_',$imgSplit);
+
+        $imgArr  =  explode('|',trim($tao['img'],'|'));
+        foreach( $imgArr as $img ){
+
+            $imgSplit = explode('_',$img);
+            $imgTail = '310x310.jpg';
+            array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
+
+            $tao['imgGroup'][] = array(
+                'small'=> $img,
+                'big'  => implode('_',$imgSplit)
+            );
+        }
+        $tao['shop'] = $tao['source'] == 'tmall' ? '天猫' : '淘宝';
+        $tao['final_price'] = empty($tao['special']) ? $tao['price'] : $tao['special'];
+
     }else{
         $defaultImg = baseUrl . '/app/view/images/taobao/room.png';
-        $tao['img'] = $defaultImg;
-        $tao['imgGroup'][] = $defaultImg;
+        $tao['imgGroup'][] = array(
+            'small'=> $defaultImg,
+            'big'  => $defaultImg
+        );;
     }
 
 

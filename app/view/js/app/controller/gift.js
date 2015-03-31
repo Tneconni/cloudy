@@ -12,11 +12,17 @@ function giftDetailController($scope,$http){
         $http.get( indexUrl ).success(function( json ){
 
             $scope.tao = json;
+            $scope.imgShow = $scope.tao.imgGroup[0].big;
         });
 
     };
     $scope.getTaoDetail();
 
+    $scope.selectImg = function( itemImg ){
+
+        $scope.imgShow = itemImg.big;
+
+    };
 }
 
 function giftController($scope,$http){

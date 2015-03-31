@@ -18,42 +18,42 @@
         <div class="item">
             <div class="pic">
                 <div class="show">
-                    <img src="http://img02.taobaocdn.com/bao/uploaded/i2/13633031051401441/T1uFibXBphXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
+                    <img src="{{imgShow}}"
                          width="298" height="198" alt=""/>
                 </div>
                 <ul class="gallery">
 
-                    <li ng-repeat="itemImg in tao.imgGroup">
-                        <img src="{{itemImg}}" width="298" height="198" alt=""/>
+                    <li ng-repeat="itemImg in tao.imgGroup" ng-click="selectImg(itemImg)">
+                        <img src="{{itemImg.small}}" width="298" height="198" alt=""/>
                     </li>
 
                 </ul>
 
             </div>
             <div class="attribute">
-                <h3 class="name">商品名称</h3>
+                <h3 class="name">{{tao.title}}</h3>
                 <div class="blank20"></div>
                 <div class="purchase">
                     <span class="price">
-                        ￥168.24
+                        ￥{{tao.final_price}}
                     </span>
                     <span class="shop">
-                        天猫
+                        {{tao.shop}}
                     </span>
-                    <a class="buy" href="http://www.mankaa.com">
+                    <a class="buy" target="_blank" href="{{tao.url}}">
                         购买
                     </a>
                 </div>
                 <div class="blank20"></div>
                 <div class="actions">
-                    <span class="like">24</span>
+                    <span class="like">{{tao.like_count}}</span>
                     <span class="share">分享</span>
                 </div>
             </div>
             <div class="clear"></div>
 
         </div>
-        <div class="message">
+        <div class="message hide">
 
             <ul>
 

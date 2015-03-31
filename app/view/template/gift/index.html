@@ -11,11 +11,11 @@
         <ul class="gift-list small-block-grid-1 medium-block-grid-2 large-block-grid-3">
             <li id="tao-{{single.tao_id}}" class="item" ng-repeat="single in gift">
                 <div >
-                    <a class="img-mask" target="_blank" href="{{single.url}}">
+                    <a class="img-mask" target="_blank" href="/app/gift/detail/{{single.tao_id}}">
                         <img src="{{single.img}}" alt=""/>
                     </a>
                     <h3>
-                        <a href="{{single.url}}" target="_blank">
+                        <a href="/app/gift/detail/{{single.tao_id}}" target="_blank">
                             {{single.title}}
                         </a>
                     </h3>
