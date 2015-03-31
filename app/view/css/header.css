@@ -2,6 +2,8 @@
   width: 100%;
   height: auto;
   padding: 10px 0 5px;
+  position: fixed;
+  z-index: 1;
   background: #F7F8ED;
 }
 #header_1 p,
