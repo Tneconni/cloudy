@@ -51,7 +51,8 @@ $app->get('/index', function() use($app){
 
 });
 
-$app->get('/detail',function() use($app){
+$app->get('/detail/:id',function( $id ) use($app){
+
     global $mem;
     if(is_a( $mem, 'Memcache' )){
         $template_head = $mem->get('template_head');
@@ -63,6 +64,7 @@ $app->get('/detail',function() use($app){
         $template_footer = $app->view->fetch('view/template/common/footer.html');
     }
 
+    $app->view->setData('tao_id', $id);
     $app->view->setData('head', $template_head);
     $app->view->setData('header', $template_header);
     $app->view->setData('footer', $template_footer);
@@ -70,4 +72,26 @@ $app->get('/detail',function() use($app){
 
 });
 
+$app->get('/single/:id', function( $id ){
+
+    $sql = "SELECT * FROM cmc_tao WHERE tao_id='$id'";
+    $res = MyPdo::query( $sql );
+    $tao = $res[0];
+    $tao['imgGroup'] = array();
+    if(!empty($tao['img'])){
+        $imgString =  explode('|',trim($tao['img'],'|'))[0];
+        $imgSplit = explode('_',$imgString);
+        $imgTail = '310x310.jpg';
+        array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
+        $tao['imgGroup'] = implode('_',$imgSplit);
+    }else{
+        $defaultImg = baseUrl . '/app/view/images/taobao/room.png';
+        $tao['img'] = $defaultImg;
+        $tao['imgGroup'][] = $defaultImg;
+    }
+
+
+    echo json_encode( $tao );
+
+});
 

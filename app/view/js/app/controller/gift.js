@@ -1,6 +1,24 @@
 var eApp = angular.module('gift-app',[]);
 
 eApp.controller('giftController',['$scope', '$http', giftController]);
+eApp.controller('giftDetailController',['$scope', '$http', giftDetailController]);
+
+function giftDetailController($scope,$http){
+
+    $scope.taoId = document.getElementById('tao-id').value;
+    $scope.getTaoDetail = function(){
+
+        var indexUrl = baseUrl + "/app/gift/single/"+ $scope.taoId;
+        $http.get( indexUrl ).success(function( json ){
+
+            $scope.tao = json;
+        });
+
+    };
+    $scope.getTaoDetail();
+
+}
+
 function giftController($scope,$http){
 
     $scope.moreTurn = 1;
@@ -44,6 +62,8 @@ function giftController($scope,$http){
 
 
     };
+
+
 }
 
 
