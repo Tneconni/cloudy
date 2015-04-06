@@ -124,6 +124,13 @@ class Comic {
             'manage_options', 'comic_tao',
             array($this,'comic_tao')
         );
+        add_submenu_page(
+            'comic/comic.php',
+            '动漫淘小组',
+            'comic_squad',
+            'manage_options', 'comic_squad',
+            array($this,'comic_squad')
+        );
         add_meta_box( 'submitdiv',
             _x( 'Status', 'activity admin edit screen', 'comic' ),
             array($this,'comic_news_admin_edit_metabox_status'),
