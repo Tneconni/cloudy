@@ -78,6 +78,32 @@ class Comic {
 
     }
 
+    public function comic_squad(){
+
+        $doaction = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
+        require_once(sprintf("%s/c-squad/c-squad-admin.php", dirname(__FILE__)));
+
+        if ( 'edit' == $doaction || 'save' == $doaction ){
+
+            $cNewsEdit = new C_Squad_Edit();
+            if( 'save' == $doaction ){
+                $cNewsEdit->save();
+            }
+            $cNewsEdit->display();
+
+        }else if( 'create' == $doaction ){
+            $cNewsEdit = new C_Squad_Edit();
+            $cNewsEdit->display();
+        }else{
+
+            $cNewsList = new C_Squad_List_Table();
+            $cNewsList->prepare_items();
+            $cNewsList->display();
+
+        }
+
+    }
+
     public function comic_tao(){
 
         $doaction = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
