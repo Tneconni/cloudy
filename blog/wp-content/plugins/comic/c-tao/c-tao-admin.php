@@ -19,6 +19,17 @@ class C_Tao_List_Table extends WP_List_Table{
         $createUrl = get_admin_url(null, 'admin.php?page=comic_tao&action=create');
         ?>
         <div><a href="<?php echo $createUrl;?>">添加新的tao页面：</a></div>
+        <script>
+            $('.squad').click(function(){
+                var url = 'admin-ajax.php';
+                var data = {
+                    action : 'select_squad'
+                };
+                $.post(url, data, function(d){
+                    console.log(d);
+                });
+            });
+        </script>
     <?php
 
     }

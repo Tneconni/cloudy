@@ -2123,3 +2123,9 @@ function wp_ajax_get_revision_diffs() {
 	}
 	wp_send_json_success( $return );
 }
+
+function wp_ajax_select_squad() {
+
+    echo 'this squad';
+    die();
+}
