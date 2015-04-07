@@ -64,7 +64,7 @@ class C_Tao_List_Table extends WP_List_Table{
             'title'   => _x('Title', 'Admin SWA column header', 'comic' ),
             'url'  => _x( 'Url', 'Admin SWA column header', 'comic' ),
             'img'   => _x( 'Img', 'Admin SWA column header', 'comic' ),
-            'website_id' => _x( 'Website Id', 'Admin SWA column header', 'comic' ),
+            'squad' => _x( 'Squads', 'Admin SWA column header', 'comic' ),
         );
     }
 
@@ -78,11 +78,6 @@ class C_Tao_List_Table extends WP_List_Table{
 
     public function column_title( $item ){
 
-        // Determine what type of item (row) we're dealing with
-//        if ( $item['is_spam'] )
-//            $item_status = 'spam';
-//        else
-//            $item_status = 'all';
 
         // Preorder items: Reply | Edit | Spam | Delete Permanently
         $actions = array(
@@ -107,23 +102,9 @@ class C_Tao_List_Table extends WP_List_Table{
 
         // Reply - javascript only; implemented by AJAX.
 
-//        if ( 'spam' != $item_status ) {
-//            if ( $this->can_comment( $item ) ) {
-//                $actions['reply'] = sprintf( '<a href="#" class="reply hide-if-no-js">%s</a>', __( 'Reply', 'comic' ) );
-//            } else {
-//                $actions['reply'] = sprintf( '<span class="form-input-tip" title="%s">%s</span>', __( 'Replies are disabled for this activity item', 'comic' ), __( 'Replies disabled', 'comic' ) );
-//            }
-//
-//            // Edit
-//            $actions['edit'] = sprintf( '<a href="%s">%s</a>', $edit_url, __( 'Edit', 'comic' ) );
-//        }
+
         $actions['edit'] = sprintf( '<a href="%s">%s</a>', $edit_url, __( 'Edit', 'comic' ) );
         // Spam/unspam
-//        if ( 'spam' == $item_status )
-//            $actions['unspam'] = sprintf( '<a href="%s">%s</a>', $ham_url, __( 'Not Spam', 'comic' ) );
-//        else
-//            $actions['spam'] = sprintf( '<a href="%s">%s</a>', $spam_url, __( 'Spam', 'comic' ) );
-
 
         // Delete
         $actions['delete'] = sprintf( '<a href="%s" onclick="%s">%s</a>', $delete_url, "javascript:return confirm('" . esc_js( __( 'Are you sure?', 'comic' ) ) . "'); ", __( 'Delete Permanently', 'comic' ) );
@@ -144,16 +125,37 @@ class C_Tao_List_Table extends WP_List_Table{
         // End timestamp
         echo '</div>';
         $content = $item->title;
-        // Get activity content - if not set, use the action
-//        if ( ! empty( $item['content'] ) ) {
-//            $content = apply_filters_ref_array( 'bp_get_activity_content_body', array( $item['content'] ) );
-//        } else {
-//            $content = apply_filters_ref_array( 'bp_get_activity_action', array( $item['action'] ) );
-//        }
 
         echo $content . ' ' . $this->row_actions( $actions );
 
     }
+
+    public function column_squad($item){
+        global $wpdb;
+
+        $sql = 'SELECT
+  *
+FROM
+  cmc_squad
+ORDER BY `date_add` DESC';
+        $squad = $wpdb->get_results( $sql );
+
+        $taoSquadSql = "SELECT squad_id FROM cmc_tao_to_squad WHERE tao_id = '".$item->tao_id."'";
+        $taoSquad = $wpdb->get_results( $taoSquadSql );
+        $taoSquads = array();
+        foreach($taoSquad as $v){
+            $taoSquads[] = $v->squad_id;
+        }
+
+        $html = "";
+        foreach( $squad as $v){
+
+            $squadChecked = in_array($v->squad_id, $taoSquads) ? 'checked' :  '';
+            $html .= "<span class='squad' id='squad-".$v->squad_id."' ><input name='squad-".$v->squad_id."' type='checkbox' $squadChecked />".$v->title."</span>";
+        }
+        echo $html;
+    }
+
 
 }
 
