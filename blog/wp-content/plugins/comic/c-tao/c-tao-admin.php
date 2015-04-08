@@ -14,24 +14,30 @@ class C_Tao_List_Table extends WP_List_Table{
 
     }
 
-    public function extra_tablenav(){
+    public function extra_tablenav( $witch ){
 
         $createUrl = get_admin_url(null, 'admin.php?page=comic_tao&action=create');
+
         ?>
         <div><a href="<?php echo $createUrl;?>">添加新的tao页面：</a></div>
+        <?php if( $witch == 'bottom'): ?>
         <script>
-            $('.squad').click(function(){
+            $('.squad-item').click(function(){
                 var url = 'admin-ajax.php';
                 var data = {
-                    action : 'select_squad'
+                    action   : 'select_squad',
+                    squad_id : $(this).attr('id').split('-')[1],
+                    tao_id   : $(this).parents('td').find('.input-tao').val(),
+                    connect  : $(this).find('input').prop('checked') ? '1' : '0'
                 };
+
                 $.post(url, data, function(d){
                     console.log(d);
                 });
             });
         </script>
     <?php
-
+        endif;
     }
 
     public function prepare_items(){
@@ -162,8 +168,9 @@ ORDER BY `date_add` DESC';
         foreach( $squad as $v){
 
             $squadChecked = in_array($v->squad_id, $taoSquads) ? 'checked' :  '';
-            $html .= "<span class='squad' id='squad-".$v->squad_id."' ><input name='squad-".$v->squad_id."' type='checkbox' $squadChecked />".$v->title."</span>";
+            $html .= "<span class='squad-item' id='squad-".$v->squad_id."' ><input name='squad-".$v->squad_id."' type='checkbox' $squadChecked />".$v->title."</span>";
         }
+        $html .= "<input class='input-tao' type='hidden' value='" . $item->tao_id ."' />";
         echo $html;
     }
 

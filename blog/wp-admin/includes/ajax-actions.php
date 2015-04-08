@@ -2125,7 +2125,20 @@ function wp_ajax_get_revision_diffs() {
 }
 
 function wp_ajax_select_squad() {
-
-    echo 'this squad';
+    $res = array(
+        'status'=>0
+    );
+    global $wpdb;
+    $tao_id = $_POST['tao_id'];
+    $squad_id = $_POST['squad_id'];
+    $connect = $_POST['connect'];
+    $deleteSql = "DELETE FROM cmc_tao_to_squad WHERE tao_id='$tao_id' AND squad_id='$squad_id'";
+    $wpdb->get_results( $deleteSql );
+    if($connect){
+        $insertSql = "INSERT INTO cmc_tao_to_squad SET tao_id='$tao_id', squad_id='$squad_id'";
+        $wpdb->get_results( $insertSql );
+    }
+    $res['status'] = 1;
+    echo json_encode( $res );
     die();
 }
