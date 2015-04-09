@@ -114,3 +114,28 @@ WHERE t.tao_id = '$id'";
 
 });
 
+$app->get('/squad/:id', function( $id ) use($app){
+
+    global $mem;
+    if(is_a( $mem, 'Memcache' )){
+        $template_head = $mem->get('template_head');
+        $template_header = $mem->get('template_header');
+        $template_footer = $mem->get('template_footer');
+    }else{
+        $template_head = $app->view->fetch('view/template/common/head.html');
+        $template_header = $app->view->fetch('view/template/common/header.html');
+        $template_footer = $app->view->fetch('view/template/common/footer.html');
+    }
+
+    $app->view->setData('squad_id', $id);
+    $app->view->setData('head', $template_head);
+    $app->view->setData('header', $template_header);
+    $app->view->setData('footer', $template_footer);
+    $app->view->display('view/template/gift/squad.html');
+
+});
+$app->get('/squad/single/:id', function( $id ){
+
+    
+
+});

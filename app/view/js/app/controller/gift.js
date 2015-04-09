@@ -2,6 +2,7 @@ var eApp = angular.module('gift-app',[]);
 
 eApp.controller('giftController',['$scope', '$http', giftController]);
 eApp.controller('giftDetailController',['$scope', '$http', giftDetailController]);
+eApp.controller('squadController',['$scope', '$http', squadController]);
 
 function giftDetailController($scope,$http){
 
@@ -71,5 +72,9 @@ function giftController($scope,$http){
 
 
 }
+function squadController($scope,$http){
 
+    alert('礼物小队页面');
+
+}
 
