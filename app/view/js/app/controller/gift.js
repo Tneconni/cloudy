@@ -74,7 +74,7 @@ function giftController($scope,$http){
 }
 function squadController($scope,$http){
 
-    alert('礼物小队页面');
+    console.log('礼物小队页面');
 
 }
 
