@@ -136,16 +136,18 @@ $app->get('/squad/:id', function( $id ) use($app){
 });
 $app->get('/squad/single/:id', function( $squad_id ){
 
-    $sql = "SELECT
+
+    $squadSql = "SELECT * FROM cmc_squad WHERE squad_id='$squad_id'";
+    $squad = MyPdo::query( $squadSql );
+
+    $taoSql = "SELECT
   t.*
 FROM
-  cmc_squad s
-  LEFT JOIN cmc_tao_to_squad t2s
-    ON s.`squad_id` = t2s.`squad_id`
+ cmc_tao_to_squad t2s
   LEFT JOIN cmc_tao t
     ON t2s.`tao_id` = t.`tao_id`
-WHERE s.`squad_id` = '$squad_id'";
-    $taos = MyPdo::query( $sql );
+WHERE t2s.`squad_id` = '$squad_id'";
+    $taos = MyPdo::query( $taoSql );
 
     $taoArr = array();
     foreach( $taos as $tao ){
@@ -168,7 +170,10 @@ WHERE s.`squad_id` = '$squad_id'";
         $taoArr[] = $tao;
     }
 
-
-    echo json_encode( $taoArr );
+    $json = array(
+        'squad' => $squad,
+        'taos'  => $taoArr
+    );
+    echo json_encode( $json );
 
 });

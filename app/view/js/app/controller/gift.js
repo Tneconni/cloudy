@@ -77,7 +77,8 @@ function squadController($scope,$http){
     $scope.squadId = document.getElementById('squad-id').value;
     var url = baseUrl + "/app/gift/squad/single/" + $scope.squadId;
     $http.get( url ).success(function( json ){
-        $scope.taos = json;
+        $scope.taos = json.taos;
+        $scope.squad = json.squad;
     });
 
 }
