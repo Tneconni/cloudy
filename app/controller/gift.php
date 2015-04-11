@@ -134,8 +134,41 @@ $app->get('/squad/:id', function( $id ) use($app){
     $app->view->display('view/template/gift/squad.html');
 
 });
-$app->get('/squad/single/:id', function( $id ){
+$app->get('/squad/single/:id', function( $squad_id ){
 
-    
+    $sql = "SELECT
+  t.*
+FROM
+  cmc_squad s
+  LEFT JOIN cmc_tao_to_squad t2s
+    ON s.`squad_id` = t2s.`squad_id`
+  LEFT JOIN cmc_tao t
+    ON t2s.`tao_id` = t.`tao_id`
+WHERE s.`squad_id` = '$squad_id'";
+    $taos = MyPdo::query( $sql );
+
+    $taoArr = array();
+    foreach( $taos as $tao ){
+        $imgArr  =  explode('|',trim($tao['img'],'|'));
+        $tao['imgGroup'] = array();
+        foreach( $imgArr as $img ){
+
+            $imgSplit = explode('_',$img);
+            $imgTail = '310x310.jpg';
+            array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
+
+            if( count($tao['imgGroup']) < 4 ){
+                $tao['imgGroup'][] = array(
+                    'small'=> $img,
+                    'big'  => implode('_',$imgSplit)
+                );
+            }
+
+        }
+        $taoArr[] = $tao;
+    }
+
+
+    echo json_encode( $taoArr );
 
 });

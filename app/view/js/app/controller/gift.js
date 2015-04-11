@@ -74,7 +74,11 @@ function giftController($scope,$http){
 }
 function squadController($scope,$http){
 
-    console.log('礼物小队页面');
+    $scope.squadId = document.getElementById('squad-id').value;
+    var url = baseUrl + "/app/gift/squad/single/" + $scope.squadId;
+    $http.get( url ).success(function( json ){
+        $scope.taos = json;
+    });
 
 }
 

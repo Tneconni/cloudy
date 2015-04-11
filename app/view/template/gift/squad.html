@@ -6,97 +6,22 @@
 <body ng-controller="squadController">
 <?php echo $header;?>
 <div class="row squad">
-
+    <input type="hidden" id="squad-id" value="<?php echo $squad_id; ?>"/>
     <div class="small-12 media-9 large-9 columns bd-r">
 
-        <div class="gift">
+        <div class="gift" ng-repeat="tao in taos">
             <ul class="img-group small-block-grid-1 medium-block-grid-4 large-block-grid-4 ">
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
+                <li ng-repeat="img in tao.imgGroup">
+                    <a href="/app/gift/detail/{{tao.tao_id}}">
+                        <img src="{{img.big}}" alt="{{tao.title}}" />
+                    </a>
                 </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
+
             </ul>
 
             <p>欢迎来到礼物队列页面，欢迎来到礼物队列页面欢迎来到礼物队列页面欢迎来到礼物队列页面，欢迎来到礼物队列页面欢迎来到礼物队列页面欢迎来到礼物队列页面</p>
         </div>
-        <div class="gift">
-            <ul class="img-group small-block-grid-1 medium-block-grid-4 large-block-grid-4">
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-            </ul>
 
-            <p>欢迎来到礼物队列页面，欢迎来到礼物队列页面欢迎来到礼物队列页面欢迎来到礼物队列页面，欢迎来到礼物队列页面欢迎来到礼物队列页面欢迎来到礼物队列页面</p>
-        </div>
-        <div class="gift">
-            <ul class="img-group small-block-grid-1 medium-block-grid-4 large-block-grid-4">
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-            </ul>
-
-            <p>欢迎来到礼物队列页面，欢迎来到礼物队列页面欢迎来到礼物队列页面欢迎来到礼物队列页面，欢迎来到礼物队列页面欢迎来到礼物队列页面欢迎来到礼物队列页面</p>
-        </div>
-        <div class="gift">
-            <ul class="img-group small-block-grid-1 medium-block-grid-4 large-block-grid-4">
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-                <li>
-                    <a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i1/TB1LYjmHXXXXXb1XpXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                                    alt=""/></a>
-                </li>
-            </ul>
-
-            <p>欢迎来到礼物队列页面，欢迎来到礼物队列页面欢迎来到礼物队列页面欢迎来到礼物队列页面，欢迎来到礼物队列页面欢迎来到礼物队列页面欢迎来到礼物队列页面</p>
-        </div>
     </div>
     <div class="small-12 media-3 large-3 columns">
         <div class="connect-qq bd-b">
