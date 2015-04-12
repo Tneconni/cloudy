@@ -3,6 +3,7 @@ var eApp = angular.module('gift-app',[]);
 eApp.controller('giftController',['$scope', '$http', giftController]);
 eApp.controller('giftDetailController',['$scope', '$http', giftDetailController]);
 eApp.controller('squadController',['$scope', '$http', squadController]);
+eApp.controller('squadListController',['$scope', '$http', squadListController]);
 
 function giftDetailController($scope,$http){
 
@@ -72,6 +73,7 @@ function giftController($scope,$http){
 
 
 }
+
 function squadController($scope,$http){
 
     $scope.squadId = document.getElementById('squad-id').value;
@@ -79,6 +81,15 @@ function squadController($scope,$http){
     $http.get( url ).success(function( json ){
         $scope.taos = json.taos;
         $scope.squad = json.squad;
+    });
+
+}
+
+function squadListController($scope,$http){
+
+    var url = baseUrl + "/app/gift/squad-list/json";
+    $http.get( url ).success(function( json ){
+        $scope.squadList = json;
     });
 
 }

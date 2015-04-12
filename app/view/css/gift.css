@@ -245,20 +245,44 @@
   font-size: 14px;
   line-height: 2;
 }
-.squad .connect-qq,
-.squad .connect-sina {
+.connect-qq,
+.connect-sina {
   text-align: left;
   margin-bottom: 20px;
   padding-bottom: 20px;
   line-height: 50px;
   clear: both;
 }
-.squad .connect-qq img,
-.squad .connect-sina img {
+.connect-qq img,
+.connect-sina img {
   border: solid 1px #cdcdcd;
 }
-.squad .connect-qq span,
-.squad .connect-sina span {
+.connect-qq span,
+.connect-sina span {
   margin-left: 10px;
   font-size: 14px;
+}
+.squad-list {
+  margin-top: 10px;
+}
+.squad-list .squad-item {
+  clear: both;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-top: solid 1px #cdcdcd;
+}
+.squad-list .squad-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+.squad-list .squad-item .picture {
+  display: block;
+  width: 200px;
+  height: 200px;
+  float: left;
+  overflow: hidden;
+}
+.squad-list .squad-item .text {
+  float: left;
 }
