@@ -282,7 +282,12 @@
   height: 200px;
   float: left;
   overflow: hidden;
+  margin-right: 10px;
 }
-.squad-list .squad-item .text {
-  float: left;
+.squad-list .squad-item .text h3 a {
+  color: #0079a1;
+}
+.squad-list .squad-item .text p {
+  text-indent: 30px;
+  font-size: 14px;
 }
