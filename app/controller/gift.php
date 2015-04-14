@@ -203,7 +203,7 @@ $app->get('/squad-list',function() use($app){
 $app->get('/squad-list/json',function() use($app){
 
     global $wpdb;
-    $sql = 'SELECT * FROM cmc_squad';
+    $sql = 'SELECT * FROM cmc_squad order by date_add desc';
     $squads = MyPdo::query( $sql );
     echo json_encode( $squads );
 });
