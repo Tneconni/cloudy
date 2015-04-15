@@ -202,8 +202,32 @@ $app->get('/squad-list',function() use($app){
 
 $app->get('/squad-list/json',function() use($app){
 
-    global $wpdb;
-    $sql = 'SELECT * FROM cmc_squad order by date_add desc';
+    $sql = 'SELECT * FROM cmc_squad order by date_add desc LIMIT 0,10';
+
+
     $squads = MyPdo::query( $sql );
+    foreach($squads as &$squad){
+        $taoSql = "SELECT
+  t.*
+FROM
+  cmc_tao_to_squad t2s
+  INNER JOIN cmc_tao t
+    ON t2s.`tao_id` = t.`tao_id`
+	WHERE t2s.`squad_id`='" . $squad['squad_id'] . "' LIMIT 0,1 ";
+        $tao = MyPdo::query($taoSql);
+        $squad['imgs'] = array();
+        if( !empty( $tao ) ){
+            $imgArr  =  explode('|',trim($tao[0]['img'],'|'));
+            foreach( $imgArr as $img ){
+                $imgSplit = explode('_',$img);
+                $imgTail = '200x200.jpg';
+                array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
+                $squad['imgs'][] = array(
+                    'small'  => $img,
+                    'big'    => implode('_',$imgSplit)
+                );
+            }
+        }
+    }
     echo json_encode( $squads );
 });

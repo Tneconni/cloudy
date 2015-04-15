@@ -10,8 +10,9 @@
     <div class="small-12 media-9 large-9 columns">
         <div class="squad-item" ng-repeat="item in squadList">
             <a href="/app/gift/squad/{{item.squad_id}}" class="picture" >
-                <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T16coGFq0fXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"
-                     alt="" />
+                <!--<img src="http://img02.taobaocdn.com/bao/uploaded/i2/T16coGFq0fXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"-->
+                     <!--alt="" />-->
+                <img src="{{item['imgs'][0]['big']}}"  alt="" />
             </a>
 
             <div class="text">
