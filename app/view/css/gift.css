@@ -294,3 +294,12 @@
   text-indent: 30px;
   font-size: 14px;
 }
+@media only screen and (max-width: 40.063em) {
+  .squad-item .picture {
+    width: 100%!important;
+    text-align: center;
+  }
+  .squad-item .text {
+    width: 100%;
+  }
+}
