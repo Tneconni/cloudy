@@ -1,5 +1,9 @@
 <?php
-require "C:/Users/J/AppData/Roaming/Composer/vendor/autoload.php";
+$composerFile = "C:/Users/J/AppData/Roaming/Composer/vendor/autoload.php";
+if( is_file($composerFile) && file_exists($composerFile)){
+    require $composerFile;
+}
+
 
 
 if( class_exists('PHPUnit_Framework_TestCase')){
