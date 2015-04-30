@@ -1,4 +1,5 @@
 <?php
+require_once('composer.php');
 require_once('../Slim/Slim/Slim.php');
 require_once('settings.php');
 
