@@ -77,6 +77,9 @@
 .gift-info {
   padding-bottom: 20px;
 }
+.gift-info .title {
+  color: #E79005;
+}
 .gift-info .description {
   text-indent: 18px;
   line-height: 2;
