@@ -137,7 +137,7 @@ $app->get('/squad/:id', function( $id ) use($app){
 $app->get('/squad/single/:id', function( $squad_id ){
 
 
-    $squadSql = "SELECT * FROM cmc_squad WHERE squad_id='$squad_id'";
+    $squadSql = "SELECT * FROM cmc_squad WHERE squad_id='$squad_id' LIMIT 0,1";
     $squad = MyPdo::query( $squadSql );
 
     $taoSql = "SELECT
@@ -171,7 +171,7 @@ WHERE t2s.`squad_id` = '$squad_id'";
     }
 
     $json = array(
-        'squad' => $squad,
+        'squad' => $squad[0],
         'taos'  => $taoArr
     );
     echo json_encode( $json );

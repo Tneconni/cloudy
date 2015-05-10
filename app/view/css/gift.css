@@ -74,6 +74,14 @@
   background-position: 0px 5px;
   padding-left: 18px;
 }
+.gift-info {
+  padding-bottom: 20px;
+}
+.gift-info .description {
+  text-indent: 18px;
+  line-height: 2;
+  text-align: left;
+}
 .more-btn h3 {
   border: solid 1px #cdcdcd;
   border-radius: 5px;

@@ -8,7 +8,14 @@
 <div class="row squad">
     <input type="hidden" id="squad-id" value="<?php echo $squad_id; ?>"/>
     <div class="small-12 media-9 large-9 columns bd-r">
-
+        <div class="gift-info">
+            <h3 class="title">
+                {{squad.title}}
+            </h3>
+            <div class="description">
+                {{squad.description}}
+            </div>
+        </div>
         <div class="gift" ng-repeat="tao in taos">
             <ul class="img-group small-block-grid-1 medium-block-grid-4 large-block-grid-4 ">
                 <li ng-repeat="img in tao.imgGroup">
