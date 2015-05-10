@@ -255,6 +255,13 @@ FROM
 	WHERE t2s.`squad_id`='" . $squad['squad_id'] . "' LIMIT 0,1 ";
         $tao = MyPdo::query($taoSql);
         $squad['imgs'] = array();
+        if( $squad['img'] ){
+            $squad['imgs'][] = array(
+                'small'  => '/blog/wp-content/uploads/' . $squad['img'],
+                'big'    => '/blog/wp-content/uploads/' . $squad['img']
+            );
+        }
+
         if( !empty( $tao ) ){
             $imgArr  =  explode('|',trim($tao[0]['img'],'|'));
             foreach( $imgArr as $img ){

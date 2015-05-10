@@ -209,14 +209,29 @@ class C_Squad_Edit {
                                 </div>
                                 <div id="comic_squad_img" class="postbox">
                                     <h3>图片</h3>
-                                    <div class="inside">
-                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->img:'' ), 'img',
+                                    <a href="#" id='add-post-image' class="button insert-media " data-editor="img" title="Add Media"><span class="wp-media-buttons-icon"></span> Add Image</a>
+                                    <div id='post-image-frm'>
+                                        <?php if(!empty( $activity->img )){ ?>
+                                            <img src="<?php echo BLOG_IMAGE_UPLOAD . $activity->img;?>">
+                                        <?php } ?>
+                                    </div>
+                                    <input id='post-image-path' name='img'
+                                           type='hidden' value="<?php echo $activity->img; ?>" />
+                                    <script>
+                                        var addPostImage = document.getElementById('add-post-image');
+                                        addPostImage.onmouseup = function(){
+                                            this.className += ' hanging';
+                                        };
+                                    </script>
+                                    <div class="inside" style="display:none">
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->img:'' ), 'nothing',
                                             array(
                                                 'dfw' => true,
                                                 'tabfocus_elements' => 'insert-media-button,save-post',
                                                 'editor_height' => 360,
                                             ) ); ?>
                                     </div>
+
                                 </div>
                                 <div id="comic_squad_content" class="postbox">
                                     <h3><?php _e( 'description', 'comic' ); ?></h3>
