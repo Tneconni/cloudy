@@ -22,6 +22,61 @@
             <p>{{tao.title}}</p>
         </div>
 
+        <div class="comment">
+            <div class="title">大家在说:</div>
+            <ul class="list">
+                <li ng-repeat="item in comment">
+                    <div class="customer-info">
+                        <a class="photo">
+                            <img class="" src="/app/view/images/qq.jpg" alt="" />
+                        </a>
+
+                        <span class="name">{{item.name}}</span>
+                        <span class="date">{{item.date_add}}</span>
+                    </div>
+                    <p class="content">{{item.content}}</p>
+                </li>
+                <!--
+                <li class="item in repeat ">
+                    <div class="customer-info">
+                        <a class="photo">
+                            <img class="" src="/app/view/images/qq.jpg" alt="" />
+                        </a>
+
+                        <span class="name">漫客</span>
+                        <span class="date">2015-05-10 12:30</span>
+                    </div>
+                    <p class="content">喜欢这个礼物，感觉还不错，有机会入手一个.喜欢这个礼物，感觉还不错，有机会入手一个.</p>
+                </li>
+                <li class="item in repeat ">
+                    <div class="customer-info">
+                        <a class="photo">
+                            <img class="" src="/app/view/images/qq.jpg" alt="" />
+                        </a>
+
+                        <span class="name">漫客</span>
+                        <span class="date">2015-05-10 12:30</span>
+                    </div>
+                    <p class="content">喜欢这个礼物，感觉还不错，有机会入手一个.喜欢这个礼物，感觉还不错，有机会入手一个.</p>
+                </li>
+                <li class="item in repeat ">
+                    <div class="customer-info">
+                        <a class="photo">
+                            <img class="" src="/app/view/images/qq.jpg" alt="" />
+                        </a>
+
+                        <span class="name">漫客</span>
+                        <span class="date">2015-05-10 12:30</span>
+                    </div>
+                    <p class="content">喜欢这个礼物，感觉还不错，有机会入手一个.喜欢这个礼物，感觉还不错，有机会入手一个.</p>
+                </li>
+                -->
+            </ul>
+            <div class="edit">
+                <textarea ng-keypress="doComment($event)" cols="30" rows="10" ng-model="comment_content"></textarea>
+            </div>
+        </div>
+
     </div>
     <div class="small-12 media-3 large-3 columns">
         <div class="connect-qq bd-b">

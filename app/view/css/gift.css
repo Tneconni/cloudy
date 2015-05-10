@@ -294,6 +294,45 @@
   text-indent: 30px;
   font-size: 14px;
 }
+.comment .title {
+  border-top: solid 3px #E79005;
+  font-size: 16px;
+  text-align: left;
+  line-height: 2;
+}
+.comment .list {
+  margin-left: 0;
+}
+.comment .list li {
+  overflow: hidden;
+  padding: 18px 0;
+  border-top: 1px solid #EFEFEF;
+  font: 12px Helvetica, Arial, sans-serif;
+}
+.comment .list li .customer-info {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.comment .list li .customer-info .photo {
+  float: left;
+  margin-right: 10px;
+}
+.comment .list li .customer-info .photo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.comment .list li .customer-info .name {
+  color: #7F4B2F;
+}
+.comment .list li .customer-info .date {
+  float: right;
+  color: #999;
+}
+.comment .list li .content {
+  overflow: hidden;
+  font: 12px Helvetica, Arial, sans-serif;
+}
 @media only screen and (max-width: 40.063em) {
   .squad-item .picture {
     width: 100%!important;
