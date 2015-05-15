@@ -101,6 +101,19 @@
   }
 
 }
+
+.gift-info{
+  padding-bottom:20px;
+  .title{
+    color: #E79005;
+  }
+  .description{
+    text-indent: 18px;
+    line-height:2;
+    text-align: left;
+  }
+}
+
 .more-btn{
 
   h3{
@@ -323,6 +336,7 @@
   span{
     margin-left:10px;
     font-size:14px;
+    color:#985D3C
   }
   clear:both;
 }
@@ -363,6 +377,56 @@
   }
 }
 
+.comment{
+  .title{
+    border-top:solid 3px #E79005;
+    font-size:16px;
+    text-align: left;
+    line-height:2;
+
+  }
+  .list{
+    margin-left:0;
+    li{
+      overflow: hidden;
+      padding: 18px 0;
+      border-top: 1px solid #EFEFEF;
+      font:12px Helvetica,Arial,sans-serif;
+      .customer-info{
+        text-align: left;
+        margin-bottom: 10px;
+        .photo{
+          float:left;
+          margin-right:10px;
+          img{
+            width: 50px;
+            height:50px;
+            border-radius: 25px;
+          }
+        }
+        .name{
+
+          color: #7F4B2F;
+        }
+        .date{
+          float:right;
+          color: #999;
+        }
+
+      }
+      .content{
+        overflow: hidden;
+        font:12px Helvetica,Arial,sans-serif;
+      }
+    }
+
+  }
+  .edit{
+    textarea{
+      
+    }
+  }
+}
 @media only screen and (max-width: 40.063em) {
   .squad-item{
     .picture{

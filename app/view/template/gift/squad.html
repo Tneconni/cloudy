@@ -8,7 +8,14 @@
 <div class="row squad">
     <input type="hidden" id="squad-id" value="<?php echo $squad_id; ?>"/>
     <div class="small-12 media-9 large-9 columns bd-r">
-
+        <div class="gift-info">
+            <h3 class="title">
+                {{squad.title}}
+            </h3>
+            <div class="description">
+                {{squad.description}}
+            </div>
+        </div>
         <div class="gift" ng-repeat="tao in taos">
             <ul class="img-group small-block-grid-1 medium-block-grid-4 large-block-grid-4 ">
                 <li ng-repeat="img in tao.imgGroup">
@@ -22,13 +29,75 @@
             <p>{{tao.title}}</p>
         </div>
 
+        <div class="comment">
+            <div class="title">大家在说:</div>
+            <ul class="list">
+                <li ng-repeat="item in comment">
+                    <div class="customer-info">
+                        <a class="photo">
+                            <img class="" src="/app/view/images/qq.jpg" alt="" />
+                        </a>
+
+                        <span class="name">{{item.name}}</span>
+                        <span class="date">{{item.date_add}}</span>
+                    </div>
+                    <p class="content">{{item.content}}</p>
+                </li>
+                <!--
+                <li class="item in repeat ">
+                    <div class="customer-info">
+                        <a class="photo">
+                            <img class="" src="/app/view/images/qq.jpg" alt="" />
+                        </a>
+
+                        <span class="name">漫客</span>
+                        <span class="date">2015-05-10 12:30</span>
+                    </div>
+                    <p class="content">喜欢这个礼物，感觉还不错，有机会入手一个.喜欢这个礼物，感觉还不错，有机会入手一个.</p>
+                </li>
+                <li class="item in repeat ">
+                    <div class="customer-info">
+                        <a class="photo">
+                            <img class="" src="/app/view/images/qq.jpg" alt="" />
+                        </a>
+
+                        <span class="name">漫客</span>
+                        <span class="date">2015-05-10 12:30</span>
+                    </div>
+                    <p class="content">喜欢这个礼物，感觉还不错，有机会入手一个.喜欢这个礼物，感觉还不错，有机会入手一个.</p>
+                </li>
+                <li class="item in repeat ">
+                    <div class="customer-info">
+                        <a class="photo">
+                            <img class="" src="/app/view/images/qq.jpg" alt="" />
+                        </a>
+
+                        <span class="name">漫客</span>
+                        <span class="date">2015-05-10 12:30</span>
+                    </div>
+                    <p class="content">喜欢这个礼物，感觉还不错，有机会入手一个.喜欢这个礼物，感觉还不错，有机会入手一个.</p>
+                </li>
+                -->
+            </ul>
+            <div class="edit">
+                <textarea ng-keypress="doComment($event)" cols="30" rows="10" ng-model="comment_content"></textarea>
+            </div>
+        </div>
+
     </div>
     <div class="small-12 media-3 large-3 columns">
         <div class="connect-qq bd-b">
-            <img src="/app/view/images/qq.jpg" alt="" width="50" height="50" />
-            <span>
-                漫客群：316387163
-            </span>
+            <a target="_blank"
+               href="http://shang.qq.com/wpa/qunwpa?idkey=80bd854c11a283ac779a9f44cb4e4487129cc79f3118c4009fdd5ec685bd0b05">
+                <img src="/app/view/images/qq.jpg" alt="" width="50" height="50" />
+            </a>
+            <a target="_blank"
+               href="http://shang.qq.com/wpa/qunwpa?idkey=80bd854c11a283ac779a9f44cb4e4487129cc79f3118c4009fdd5ec685bd0b05">
+                <span>
+                    漫客群：316387163
+                </span>
+                <!--    <img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="漫客小屋" title="漫客小屋">-->
+            </a>
         </div>
         <div class="connect-sina ">
             <img src="/app/view/images/sina.png" alt="" width="50" height="50" />

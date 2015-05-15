@@ -137,7 +137,7 @@ $app->get('/squad/:id', function( $id ) use($app){
 $app->get('/squad/single/:id', function( $squad_id ){
 
 
-    $squadSql = "SELECT * FROM cmc_squad WHERE squad_id='$squad_id'";
+    $squadSql = "SELECT * FROM cmc_squad WHERE squad_id='$squad_id' LIMIT 0,1";
     $squad = MyPdo::query( $squadSql );
 
     $taoSql = "SELECT
@@ -171,7 +171,7 @@ WHERE t2s.`squad_id` = '$squad_id'";
     }
 
     $json = array(
-        'squad' => $squad,
+        'squad' => $squad[0],
         'taos'  => $taoArr
     );
     echo json_encode( $json );
@@ -200,6 +200,45 @@ $app->get('/squad-list',function() use($app){
 
 });
 
+$app->get('/customer/comment/list',function() use($app){
+
+    $type = $_GET['type'];
+    $type_value = $_GET['type_value'];
+
+    $res = array(
+        'status' => 0
+    );
+    $sql = "SELECT * FROM cmc_customer_comment WHERE type='". $type
+        ."' AND type_value='" . $type_value . "' order by date_add desc LIMIT 0,10";
+    $comment = MyPdo::query( $sql );
+    $res['status'] = 1;
+    $res['comment'] = $comment;
+    echo json_encode( $res );
+});
+
+$app->post('/customer/comment/edit', function(){
+
+    $post = json_decode(file_get_contents('php://input'),true);
+    $type = $post['type'];
+    $type_value = $post['type_value'];
+    $content = $post['content'];
+
+    $res = array(
+        'status' => 0
+    );
+    $sql = "INSERT INTO cmc_customer_comment SET
+`content`='".$content."',
+`customer_name`='漫客',
+`customer_id`='0',
+`to_comment_id`='0',
+`type`='".$type."',
+`type_value`='".$type_value."',
+`date_add`=NOW();";
+    $comment = MyPdo::query( $sql );
+    $res['status'] = 1;
+    echo json_encode( $res );
+});
+
 $app->get('/squad-list/json',function() use($app){
 
     $sql = 'SELECT * FROM cmc_squad order by date_add desc LIMIT 0,10';
@@ -217,6 +256,13 @@ FROM
 
         $tao = MyPdo::query($taoSql);
         $squad['imgs'] = array();
+        if( $squad['img'] ){
+            $squad['imgs'][] = array(
+                'small'  => '/blog/wp-content/uploads/' . $squad['img'],
+                'big'    => '/blog/wp-content/uploads/' . $squad['img']
+            );
+        }
+
         if( !empty( $tao ) ){
             $imgArr  =  explode('|',trim($tao[0]['img'],'|'));
             foreach( $imgArr as $img ){

@@ -82,7 +82,44 @@ function squadController($scope,$http){
         $scope.taos = json.taos;
         $scope.squad = json.squad;
     });
+    $scope.comment = [];
+    $scope.commentList = function(){
 
+        var url = baseUrl + "/app/gift/customer/comment/list";
+        url += '?type=squad' ;
+        url += '&type_value=' +  $scope.squadId;
+        $http.get( url ).success(function( json ){
+
+            if(json.status ){
+                $scope.comment = json['comment'];
+            }
+
+        });
+
+    };
+    $scope.commentList();
+    $scope.doComment = function($event){ console.log( $event );
+
+        var key = $event.keyCode;
+        if(key == 13){
+            $scope.comment_content = $scope.comment_content.replace(/^(\s+)|(\s+)$/,'');
+            if( $scope.comment_content == ''){
+                return;
+            }
+            var url = baseUrl + "/app/gift/customer/comment/edit";
+            var data = {
+                content : $scope.comment_content,
+                type : 'squad',
+                type_value : $scope.squadId
+            };
+            $http.post( url, data ).success(function( json ){
+                $scope.comment_content = '';
+                $scope.commentList();
+
+            });
+        }
+
+    };
 }
 
 function squadListController($scope,$http){

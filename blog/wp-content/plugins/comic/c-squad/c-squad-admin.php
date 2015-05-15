@@ -207,7 +207,32 @@ class C_Squad_Edit {
                                                 array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
                                     </div>
                                 </div>
+                                <div id="comic_squad_img" class="postbox">
+                                    <h3>图片</h3>
+                                    <a href="#" id='add-post-image' class="button insert-media " data-editor="img" title="Add Media"><span class="wp-media-buttons-icon"></span> Add Image</a>
+                                    <div id='post-image-frm'>
+                                        <?php if(!empty( $activity->img )){ ?>
+                                            <img src="<?php echo BLOG_IMAGE_UPLOAD . $activity->img;?>">
+                                        <?php } ?>
+                                    </div>
+                                    <input id='post-image-path' name='img'
+                                           type='hidden' value="<?php echo $activity->img; ?>" />
+                                    <script>
+                                        var addPostImage = document.getElementById('add-post-image');
+                                        addPostImage.onmouseup = function(){
+                                            this.className += ' hanging';
+                                        };
+                                    </script>
+                                    <div class="inside" style="display:none">
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->img:'' ), 'nothing',
+                                            array(
+                                                'dfw' => true,
+                                                'tabfocus_elements' => 'insert-media-button,save-post',
+                                                'editor_height' => 360,
+                                            ) ); ?>
+                                    </div>
 
+                                </div>
                                 <div id="comic_squad_content" class="postbox">
                                     <h3><?php _e( 'description', 'comic' ); ?></h3>
                                     <div class="inside">
@@ -249,6 +274,9 @@ class C_Squad_Edit {
         if( isset($_POST['description']) ){
             $this->description = $_POST['description'];
         }
+        if( isset($_POST['img']) ){
+            $this->img = $_POST['img'];
+        }
 
         $this->title        = apply_filters_ref_array(
             'comic_squad_title_before_save',
@@ -263,7 +291,12 @@ class C_Squad_Edit {
                 $this->description,
                 &$this
             ) );
-
+        $this->img           = apply_filters_ref_array(
+            'comic_squad_url_before_save',
+            array(
+                $this->img,
+                &$this
+            ) );
         do_action_ref_array( 'comic_squad_before_save', array( &$this ) );
 
         if ( empty( $this->title ) || empty( $this->description ) ) {
@@ -274,13 +307,14 @@ class C_Squad_Edit {
         if ( ! empty( $this->squad_id ) ) {
             $sql = "UPDATE cmc_squad SET
 title='%s',
+img='%s',
 description = '%s' WHERE squad_id = '%s'";
 
-            $q = $wpdb->prepare( $sql, $this->title, $this->description, $this->squad_id );
+            $q = $wpdb->prepare( $sql, $this->title, $this->img, $this->description, $this->squad_id );
         } else {
-            $sql = "INSERT INTO cmc_squad SET title = '%s',
+            $sql = "INSERT INTO cmc_squad SET title = '%s',img = '%s',
 description = '%s', last_modified=now(), date_add=now() ";
-            $q = $wpdb->prepare( $sql , $this->title,$this->description );
+            $q = $wpdb->prepare( $sql , $this->title, $this->img,$this->description );
         }
 
         if ( false === $wpdb->query( $q ) ) {

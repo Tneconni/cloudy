@@ -2,7 +2,7 @@
 
 var wpActiveEditor;
 
-function send_to_editor(h) {     alert('add-post-image-asdd');
+function send_to_editor(h) {
 	var ed, mce = typeof(tinymce) != 'undefined', qt = typeof(QTags) != 'undefined';
 
 	if ( !wpActiveEditor ) {
