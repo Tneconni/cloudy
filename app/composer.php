@@ -19,5 +19,5 @@ if( class_exists('PHPUnit_Framework_TestCase')){
         }
     }
     $stack = new StackTest();
-    var_dump( $stack );
+
 }
