@@ -275,8 +275,8 @@ FROM
                 );
             }
         }
-        $squad['description'] = mb_strlen($squad['description'],'utf-8') > 200 ?
-            mb_substr($squad['description'],0,200,'utf-8') : $squad['description'];
+        $squad['description'] = mb_strlen($squad['description'],'utf-8') > 100 ?
+            mb_substr($squad['description'],0,100,'utf-8') . '...' : $squad['description'];
     }
     echo json_encode( $squads );
 });
