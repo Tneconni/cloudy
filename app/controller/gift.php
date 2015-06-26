@@ -41,6 +41,7 @@ $app->get('/index', function() use($app){
             $imgTail = '310x310.jpg';
             array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
             $v['img'] = implode('_',$imgSplit);
+            $v['img'] = $imgString .'_' . $imgTail;
         }else{
             $v['img'] = $defaultImg;
         }
