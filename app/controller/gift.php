@@ -254,6 +254,7 @@ FROM
   INNER JOIN cmc_tao t
     ON t2s.`tao_id` = t.`tao_id`
 	WHERE t2s.`squad_id`='" . $squad['squad_id'] . "' LIMIT 0,1 ";
+
         $tao = MyPdo::query($taoSql);
         $squad['imgs'] = array();
         if( $squad['img'] ){
@@ -275,6 +276,8 @@ FROM
                 );
             }
         }
+        $squad['description'] = mb_strlen($squad['description'],'utf-8') > 160 ?
+            mb_substr($squad['description'],0,160,'utf-8') . '...' : $squad['description'];
     }
     echo json_encode( $squads );
 });

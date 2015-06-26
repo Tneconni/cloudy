@@ -75,15 +75,16 @@
   padding-left: 18px;
 }
 .gift-info {
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 .gift-info .title {
   color: #E79005;
 }
 .gift-info .description {
-  text-indent: 18px;
+  text-indent: 30px;
   line-height: 2;
   text-align: left;
+  font-size: 16px;
 }
 .more-btn h3 {
   border: solid 1px #cdcdcd;
@@ -310,7 +311,7 @@
   border-top: solid 3px #E79005;
   font-size: 16px;
   text-align: left;
-  line-height: 2;
+  line-height: 3;
 }
 .comment .list {
   margin-left: 0;
