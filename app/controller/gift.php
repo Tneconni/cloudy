@@ -96,7 +96,8 @@ WHERE t.tao_id = '$id'";
 
             $tao['imgGroup'][] = array(
                 'small'=> $img,
-                'big'  => implode('_',$imgSplit)
+//                'big'  => implode('_',$imgSplit)
+                'big'  => $img ."_" . $imgTail
             );
         }
         $tao['shop'] = $tao['source'] == 'tmall' ? '天猫' : '淘宝';
