@@ -162,7 +162,8 @@ WHERE t2s.`squad_id` = '$squad_id'";
             if( count($tao['imgGroup']) < 4 ){
                 $tao['imgGroup'][] = array(
                     'small'=> $img,
-                    'big'  => implode('_',$imgSplit)
+//                    'big'  => implode('_',$imgSplit)
+                    'big'  => $img . '_' . $imgTail
                 );
             }
 
