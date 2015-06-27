@@ -1,5 +1,5 @@
 <?php
-
+require_once( BASEDIR . '/../library/Util.php' );
 $app->get('/', function() use($app){
 
     global $mem;
@@ -36,12 +36,8 @@ $app->get('/index', function() use($app){
         $v['source'] = $v['source'];
         $v['like_count'] = $v['like_count'];
         if(!empty($v['img'])){
-            $imgString =  explode('|',trim($v['img'],'|'))[0];
-            $imgSplit = explode('_',$imgString);
-            $imgTail = '310x310.jpg';
-            array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
-            $v['img'] = implode('_',$imgSplit);
-            $v['img'] = $imgString .'_' . $imgTail;
+            $v['img'] = Util::refactorImg( $v['img'] );
+
         }else{
             $v['img'] = $defaultImg;
         }
@@ -90,14 +86,10 @@ WHERE t.tao_id = '$id'";
         $imgArr  =  explode('|',trim($tao['img'],'|'));
         foreach( $imgArr as $img ){
 
-            $imgSplit = explode('_',$img);
-            $imgTail = '310x310.jpg';
-            array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
-
+            $newImg = Util::refactorImg( $img );
             $tao['imgGroup'][] = array(
                 'small'=> $img,
-//                'big'  => implode('_',$imgSplit)
-                'big'  => $img ."_" . $imgTail
+                'big'  => $newImg
             );
         }
         $tao['shop'] = $tao['source'] == 'tmall' ? '天猫' : '淘宝';
@@ -157,15 +149,13 @@ WHERE t2s.`squad_id` = '$squad_id'";
         $tao['imgGroup'] = array();
         foreach( $imgArr as $img ){
 
-            $imgSplit = explode('_',$img);
-            $imgTail = '310x310.jpg';
-            array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
 
             if( count($tao['imgGroup']) < 4 ){
+                $newImg = Util::refactorImg( $img );
                 $tao['imgGroup'][] = array(
                     'small'=> $img,
-//                    'big'  => implode('_',$imgSplit)
-                    'big'  => $img . '_' . $imgTail
+                    'big'  => $newImg
+
                 );
             }
 
@@ -269,12 +259,11 @@ FROM
         if( !empty( $tao ) ){
             $imgArr  =  explode('|',trim($tao[0]['img'],'|'));
             foreach( $imgArr as $img ){
-                $imgSplit = explode('_',$img);
-                $imgTail = '200x200.jpg';
-                array_splice($imgSplit, count($imgSplit) - 1, 1, $imgTail);
+
+                $newImg = Util::refactorImg( $img );
                 $squad['imgs'][] = array(
                     'small'  => $img,
-                    'big'    => implode('_',$imgSplit)
+                    'big'    => $newImg
                 );
             }
         }
