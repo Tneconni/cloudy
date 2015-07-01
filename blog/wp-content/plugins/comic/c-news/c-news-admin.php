@@ -299,4 +299,13 @@ url = '%s'";
         return true;
     }
 
+    public function delete( $newsId ){
+        global $wpdb;
+        $sql = "delete from cmc_news  WHERE news_id = '%s'";
+        $q = $wpdb->prepare( $sql, $newsId  );
+        if ( false === $wpdb->query( $q ) ) {
+            return false;
+        }
+    }
+
 }

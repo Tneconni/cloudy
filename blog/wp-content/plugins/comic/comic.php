@@ -59,15 +59,23 @@ class Comic {
         $doaction = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
         require_once(sprintf("%s/c-news/c-news-admin.php", dirname(__FILE__)));
 
-        if ( ( 'edit' == $doaction || 'save' == $doaction ) && ! empty( $_GET['aid'] ) ){
+        if ( ( 'edit' == $doaction || 'save' == $doaction || 'delete' == $doaction ) && ! empty( $_GET['aid'] ) ){
 
             $cNewsEdit = new C_News_Edit();
             if( 'save' == $doaction ){
                 $cNewsEdit->save();
+            }else if( 'delete' == $doaction ){
+                $cNewsEdit->delete( $_GET['aid'] );
+                $cNewsList = new C_News_List_Table();
+                $cNewsList->prepare_items();
+                $cNewsList->display();
+                return false;
             }
             $cNewsEdit->display();
 
-        }else{
+        }
+
+        else{
 
 
             $cNewsList = new C_News_List_Table();
