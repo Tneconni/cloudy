@@ -1,0 +1,38 @@
+<!DOCTYPE >
+<html ng-app="essay-app">
+
+<head>
+    <script src="/js/angular/angular.min.js"></script>
+    <title>
+        test
+    </title>
+</head>
+<body ng-controller="smartyController">
+asd
+<span>
+{$data}
+</span>
+
+
+<span ng-bind="ajax">
+
+</span>
+
+<script>
+
+    var eApp = angular.module('essay-app',[]);
+
+    eApp.controller('smartyController',['$scope', '$http', smartyController]);
+
+    function smartyController( $scope, $http ){
+
+
+        var testUrl = "/app/essay/smarty/ajax";
+        $http.get( testUrl ).success(function( text ){
+            $scope.ajax = text;
+        });
+    }
+</script>
+</body>
+
+</html>

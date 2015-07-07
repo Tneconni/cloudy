@@ -1,31 +1,35 @@
 <!DOCTYPE >
-<html ng-app="gift-app">
-<?php echo $head;?>
-<link href="<?php echo baseUrl; ?>/app/view/css/gift.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo baseUrl; ?>/app/view/js/app/controller/gift.js"></script>
+<html >
+{$head}
+<link href="/app/view/css/gift.css" rel="stylesheet" type="text/css" />
+<!--<script src="<?php echo baseUrl; ?>/app/view/js/app/controller/gift.js"></script>-->
 <body ng-controller="squadListController">
-<?php echo $header;?>
+{$header}
 <div class="row squad-list">
 
     <div class="small-12 media-9 large-9 columns">
-        <div class="squad-item" ng-repeat="item in squadList">
-            <a href="/app/gift/squad/{{item.squad_id}}" class="picture" >
+        {foreach from=$list item=li}
+
+
+        <div class="squad-item" >
+            <a href="/app/gift/squad/{$li.squad_id}" class="picture" >
                 <!--<img src="http://img02.taobaocdn.com/bao/uploaded/i2/T16coGFq0fXXXXXXXX_!!0-item_pic.jpg_310x310.jpg"-->
                      <!--alt="" />-->
-                <img src="{{item['imgs'][0]['big']}}"  alt="" />
+                <img src="{$li.photo}"  alt="" />
             </a>
 
             <div class="text">
                 <h3>
-                    <a href="/app/gift/squad/{{item.squad_id}}">
-                        {{item.title}}
+                    <a href="/app/gift/squad/{$li.squad_id}">
+                        {$li.title}
                     </a>
                 </h3>
                 <p>
-                    {{item.description}}
+                    {$li.description}
                 </p>
             </div>
         </div>
+        {/foreach}
     </div>
     <div class="small-12 media-3 large-3 columns">
         <div class="connect-qq bd-b">
@@ -49,6 +53,6 @@
         </div>
     </div>
 </div>
-<?php echo $footer;?>
+{$footer}
 </body>
 </html>

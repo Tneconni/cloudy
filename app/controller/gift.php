@@ -1,5 +1,6 @@
 <?php
 require_once( BASEDIR . '/../library/Util.php' );
+require_once( BASEDIR . '/../library/module/Gift.php' );
 $app->get('/', function() use($app){
 
     global $mem;
@@ -180,16 +181,24 @@ $app->get('/squad-list',function() use($app){
         $template_header = $mem->get('template_header');
         $template_footer = $mem->get('template_footer');
     }else{
-        $template_head = $app->view->fetch('view/template/common/head.html');
-        $template_header = $app->view->fetch('view/template/common/header.html');
-        $template_footer = $app->view->fetch('view/template/common/footer.html');
+        $template_head = $app->smarty->fetch('view/template/common/head.html');
+        $template_header = $app->smarty->fetch('view/template/common/header.html');
+        $template_footer = $app->smarty->fetch('view/template/common/footer.html');
     }
 
 
-    $app->view->setData('head', $template_head);
-    $app->view->setData('header', $template_header);
-    $app->view->setData('footer', $template_footer);
-    $app->view->display('view/template/gift/squad-list.html');
+//    $app->view->setData('head', $template_head);
+//    $app->view->setData('header', $template_header);
+//    $app->view->setData('footer', $template_footer);
+//    $app->view->display('view/template/gift/squad-list.html');
+    $app->smarty->assign('head', $template_head);
+    $app->smarty->assign('header', $template_header);
+    $app->smarty->assign('footer', $template_footer);
+
+    $gift = new \Module\Gift();
+    $list = $gift->getList();
+    $app->smarty->assign('list', $list);
+    $app->smarty->display('view/template/gift/squad-list.html');
 
 });
 
@@ -267,6 +276,7 @@ FROM
                 );
             }
         }
+
         $squad['description'] = mb_strlen($squad['description'],'utf-8') > 160 ?
             mb_substr($squad['description'],0,160,'utf-8') . '...' : $squad['description'];
     }

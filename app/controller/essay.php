@@ -6,6 +6,23 @@
 
 require_once( BASEDIR . '/../library/sys.php' );
 sys::session_start();
+
+$app->get('/smarty/ajax', function() use($app){
+
+    $ajax = 'this is the ajax response data.';
+    echo $ajax;
+    $app->smarty->assign('ajax', $ajax);
+});
+
+$app->get('/smarty', function() use($app){
+
+    $template_head = $app->smarty->fetch('view/template/common/head.html');
+    $app->smarty->assign('data', 'this is the test data.');
+    $app->smarty->assign('head', $template_head);
+//    echo $template_head;
+//    die();
+    $app->smarty->display('view/template/essay/smarty.html');
+});
 $app->get('/', function() use($app){
     global $mem, $redis;
 //    if( is_a($redis, 'Redis')){

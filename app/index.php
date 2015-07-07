@@ -2,6 +2,7 @@
 require_once('composer.php');
 require_once('../Slim/Slim/Slim.php');
 require_once('settings.php');
+require_once('../smarty/libs/Smarty.class.php');
 
 \Slim\Slim::registerAutoloader();
 
@@ -10,6 +11,8 @@ define('BASEDIR', __DIR__ );
 define('baseUrl', 'http://' . $_SERVER['HTTP_HOST'] . '');
 $app = new \Slim\Slim();
 $app->view->setTemplatesDirectory( BASEDIR );
+$app->smarty = new Smarty();
+//$app->smarty->caching = true;   //开启缓存
 $changeUri = $_SERVER['REQUEST_URI'];
 require_once( BASEDIR . '/../library/pdo/my_pdo.php' );
 
