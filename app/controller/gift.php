@@ -117,16 +117,22 @@ $app->get('/squad/:id', function( $id ) use($app){
         $template_header = $mem->get('template_header');
         $template_footer = $mem->get('template_footer');
     }else{
-        $template_head = $app->view->fetch('view/template/common/head.html');
-        $template_header = $app->view->fetch('view/template/common/header.html');
-        $template_footer = $app->view->fetch('view/template/common/footer.html');
+        $template_head = $app->smarty->fetch('view/template/common/head.html');
+        $template_header = $app->smarty->fetch('view/template/common/header.html');
+        $template_footer = $app->smarty->fetch('view/template/common/footer.html');
     }
 
-    $app->view->setData('squad_id', $id);
-    $app->view->setData('head', $template_head);
-    $app->view->setData('header', $template_header);
-    $app->view->setData('footer', $template_footer);
-    $app->view->display('view/template/gift/squad.html');
+    $gift = new \Module\Gift();
+    $gift = $gift->single( $id );
+    $app->smarty->assign( 'squad', $gift['squad'] );
+    $app->smarty->assign( 'taos', $gift['taos'] );
+
+    $app->smarty->assign( 'squad_id', $id );
+    $app->smarty->assign('head', $template_head);
+    $app->smarty->assign('header', $template_header);
+    $app->smarty->assign('footer', $template_footer);
+
+    $app->smarty->display('view/template/gift/squad.html');
 
 });
 $app->get('/squad/single/:id', function( $squad_id ){

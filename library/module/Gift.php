@@ -47,4 +47,46 @@ FROM
         return $squads;
     }
 
+    public function single( $squad_id ){
+
+        $squadSql = "SELECT * FROM cmc_squad WHERE squad_id='$squad_id' LIMIT 0,1";
+        $squad = self::query( $squadSql );
+
+        $taoSql = "SELECT
+  t.*
+FROM
+ cmc_tao_to_squad t2s
+  LEFT JOIN cmc_tao t
+    ON t2s.`tao_id` = t.`tao_id`
+WHERE t2s.`squad_id` = '$squad_id'";
+        $taos = self::query( $taoSql );
+
+        $taoArr = array();
+        foreach( $taos as $tao ){
+            $imgArr  =  explode('|',trim($tao['img'],'|'));
+            $tao['imgGroup'] = array();
+            foreach( $imgArr as $img ){
+
+
+                if( count($tao['imgGroup']) < 4 ){
+                    $newImg = \Util::refactorImg( $img );
+                    $tao['imgGroup'][] = array(
+                        'small'=> $img,
+                        'big'  => $newImg
+
+                    );
+                }
+
+            }
+            $taoArr[] = $tao;
+        }
+
+        $json = array(
+            'squad' => $squad[0],
+            'taos'  => $taoArr
+        );
+        return $json ;
+
+    }
+
 }

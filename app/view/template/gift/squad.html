@@ -1,34 +1,36 @@
 <!DOCTYPE >
 <html ng-app="gift-app">
-<?php echo $head;?>
-<link href="<?php echo baseUrl; ?>/app/view/css/gift.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo baseUrl; ?>/app/view/js/app/controller/gift.js"></script>
+{$head}
+<link href="/app/view/css/gift.css" rel="stylesheet" type="text/css" />
+<script src="/app/view/js/app/controller/gift.js"></script>
 <body ng-controller="squadController">
-<?php echo $header;?>
+{$header}
 <div class="row squad">
     <input type="hidden" id="squad-id" value="<?php echo $squad_id; ?>"/>
     <div class="small-12 media-9 large-9 columns bd-r">
         <div class="gift-info">
             <h3 class="title">
-                {{squad.title}}
+                {$squad.title}
             </h3>
             <div class="description">
-                {{squad.description}}
+                {$squad.description}
             </div>
         </div>
-        <div class="gift" ng-repeat="tao in taos">
+        {foreach from=$taos item=tao}
+        <div class="gift" >
             <ul class="img-group small-block-grid-1 medium-block-grid-4 large-block-grid-4 ">
-                <li ng-repeat="img in tao.imgGroup">
-                    <a href="/app/gift/detail/{{tao.tao_id}}">
-                        <img src="{{img.big}}" alt="{{tao.title}}" />
+                {foreach from=$tao.imgGroup item=img}
+                <li >
+                    <a href="/app/gift/detail/{$tao.tao_id}">
+                        <img src="{$img.big}" alt="{$tao.title}" />
                     </a>
                 </li>
-
+                {/foreach}
             </ul>
 
-            <p>{{tao.title}}</p>
+            <p>{$tao.title}</p>
         </div>
-
+        {/foreach}
         <div class="comment">
             <div class="title">大家在说:</div>
             <ul class="list">
@@ -38,10 +40,10 @@
                             <img class="" src="/app/view/images/qq.jpg" alt="" />
                         </a>
 
-                        <span class="name">{{item.name}}</span>
-                        <span class="date">{{item.date_add}}</span>
+                        <span class="name" ng-bind="item.name"></span>
+                        <span class="date" ng-bind="item.name"></span>
                     </div>
-                    <p class="content">{{item.content}}</p>
+                    <p class="content"  ng-bind="item.content"></p>
                 </li>
                 <!--
                 <li class="item in repeat ">
@@ -107,6 +109,6 @@
         </div>
     </div>
 </div>
-<?php echo $footer;?>
+{$footer}
 </body>
 </html>
