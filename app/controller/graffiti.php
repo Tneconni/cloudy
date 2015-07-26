@@ -18,3 +18,28 @@ $app->get('/', function() use($app){
     $app->view->display('view/template/graffiti/index.html');
 
 });
+
+$app->post('/tuya',function(){
+
+    $data = $_POST;
+
+    $sql = "INSERT INTO cmc_tuya SET
+`left`='".$data['left'] . "',
+`top`='".$data['top'] . "',
+`text`='".$data['text'] . "',
+create_time=NOW();
+";
+    $res = MyPdo::query( $sql );
+
+    echo json_encode( $res );
+
+});
+
+$app->get('/list',function( ){
+
+    $sql = "select * from cmc_tuya";
+    $res = MyPdo::query( $sql );
+
+    echo json_encode( $res );
+
+});

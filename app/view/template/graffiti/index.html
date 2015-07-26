@@ -1,16 +1,64 @@
 <!DOCTYPE >
-<html ng-app="essay-app">
+<html >
 <?php echo $head;?>
-<link href="<?php echo baseUrl; ?>/app/view/css/essay.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo baseUrl; ?>/app/view/js/app/controller/essay.js"></script>
-<body ng-controller="essayController">
+<link href="<?php echo baseUrl; ?>/app/view/css/graffiti.css" rel="stylesheet" type="text/css" />
+<script src="https://www.ucloud.cn/static/style/js/jquery-1.7.1.min.js"></script>
+<body >
 <?php echo $header;?>
 
-<div style="margin:50px auto">
+<div class="wall"  style="margin:0 auto">
 
-    正在施工中... ...
+
+    <input class="tuya-input" style="position:absolute; display:none; width:300px; border-radius: 10px" type="text"/>
 </div>
+<script>
+    var pageX,pageY,value;
+    function tuyaList(){
+        var url = '/app/graffiti/list';
+        $.get(url, {}, function( json ){
+            var i;
+            for(i=0;i<json.length ;i ++){
+                var span = "<span style='color:#008000;position:absolute; top:"+ json[i].top +";left:" + json[i].left + "'>" + json[i].text + "</span>";
+                $('.wall').append(span);
+            }
 
+
+        },'json');
+    }
+    tuyaList();
+
+    $('.wall').click(function( e ){
+
+        if(e.srcElement != $('.tuya-input')[0] ){
+            pageX = e.pageX;
+            pageY = e.pageY;
+            $('.tuya-input').css({
+                display:'',
+                left : e.pageX,
+                top  : e.pageY
+            });
+        }
+
+
+
+    });
+    $('.tuya-input').keypress(function(event){
+        var t= this;
+        if( event.keyCode == 13 ) {
+            var data = {
+                text : this.value,
+                left: pageX,
+                top: pageY
+            };
+            var url = '/app/graffiti/tuya';
+            $.post(url, data, function( json ){
+                $('.tuya-input').css({display:'none'});
+                var span = "<span style='color:red;position:absolute; top:"+ pageY +";left:" + pageX + "'>" + t.value + "</span>";
+                $('.wall').append(span);
+            },'json');
+        }
+    });
+</script>
 
 <?php echo $footer;?>
 </body>
