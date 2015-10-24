@@ -300,6 +300,7 @@
 .squad-list .squad-item .text {
   overflow: hidden;
   text-align: left;
+  height: 140px;
 }
 .squad-list .squad-item .text h3 {
   margin-top: 0;
