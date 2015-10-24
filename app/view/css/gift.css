@@ -357,11 +357,13 @@
 }
 .banner {
   padding: 2px;
+  margin: 0;
   border: solid 1px #cdcdcd;
   height: auto;
+  overflow: hidden;
 }
 .banner li {
-  width: 33%;
+  width: 32%;
   float: left;
   height: 160px;
   margin: 2px;
