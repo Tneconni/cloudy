@@ -301,8 +301,13 @@
   overflow: hidden;
   text-align: left;
 }
+.squad-list .squad-item .text h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .squad-list .squad-item .text h3 a {
   color: #0079a1;
+  font-size: 1.2rem;
 }
 .squad-list .squad-item .text p {
   font-size: 14px;
