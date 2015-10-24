@@ -187,10 +187,11 @@ $app->get('/squad-list',function() use($app){
         $template_header = $mem->get('template_header');
         $template_footer = $mem->get('template_footer');
     }else{
-        $template_head = $app->smarty->fetch('view/template/common/head.html');
-        $template_header = $app->smarty->fetch('view/template/common/header.html');
-        $template_footer = $app->smarty->fetch('view/template/common/footer.html');
+        $template_head = $app->view->fetch('view/template/common/head.html');
+        $template_header = $app->view->fetch('view/template/common/header.html');
+        $template_footer = $app->view->fetch('view/template/common/footer.html');
     }
+
 
 
 //    $app->view->setData('head', $template_head);
@@ -200,6 +201,10 @@ $app->get('/squad-list',function() use($app){
     $app->smarty->assign('head', $template_head);
     $app->smarty->assign('header', $template_header);
     $app->smarty->assign('footer', $template_footer);
+
+    
+    $template_banner = $app->view->fetch('view/template/gift/banner.html');
+    $app->smarty->assign('banner', $template_banner);
 
     $gift = new \Module\Gift();
     $list = $gift->getList();

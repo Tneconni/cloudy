@@ -355,3 +355,11 @@
     width: 100%;
   }
 }
+.banner {
+  height: 600px;
+  border: solid 1px #cdcdcd;
+}
+.banner li {
+  width: 25%;
+  float: left;
+}
