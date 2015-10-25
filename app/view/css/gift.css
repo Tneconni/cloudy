@@ -410,11 +410,11 @@
 }
 .banner ul li:first-child {
   float: right;
-  height: 320px;
+  height: 324px;
   overflow: hidden;
 }
 .banner ul li:first-child img {
   max-width: 1000px;
-  height: 320px;
+  height: 324px;
   width: auto;
 }
