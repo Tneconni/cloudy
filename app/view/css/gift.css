@@ -404,6 +404,7 @@
   font-weight: bold;
   position: absolute;
   bottom: 0px;
+  left: 0;
 }
 .banner ul li:first-child {
   float: right;
