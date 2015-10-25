@@ -469,6 +469,7 @@
     border:solid 1px #cdcdcd;
     height:auto;
     overflow: hidden;
+    position:relative;
     li{
       width:32%;
       float:left;
@@ -477,8 +478,8 @@
 //      overflow: hidden;
 
       img{
-//        width: 100%;
-        max-height: 160px;
+        min-width: 100%;
+        min-height: 160px;
       }
       .description{
         height:30px;
@@ -487,17 +488,20 @@
         opacity: 0.5;
         text-align: center;
         color: #ff0000;
-        margin-top:-30px;
+
         background-color:#000;
         width:100%;
         font-weight:bold;
+
+        position: absolute;
+        bottom:-30px;
       }
       &:first-child{
         float:right;
 
         img{
-          max-height:320px;
-          height:320px;
+          min-width:100%;
+          min-height:320px;
         }
       }
     }
