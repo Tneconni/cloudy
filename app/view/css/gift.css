@@ -388,7 +388,7 @@
   margin: 2px;
 }
 .banner ul li img {
-  min-width: 100%;
+  width: 100%;
   min-height: 160px;
 }
 .banner ul li .description {
@@ -408,6 +408,6 @@
   float: right;
 }
 .banner ul li:first-child img {
-  min-width: 100%;
+  width: 100%;
   min-height: 320px;
 }
