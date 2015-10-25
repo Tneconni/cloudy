@@ -4,9 +4,15 @@ namespace Module;
 class Gift extends \MyPdo{
 
 
-    public function getList(){
-
-        $sql = 'SELECT * FROM cmc_squad order by date_add desc LIMIT 0,10';
+    public function getList( $data = array(), $limit = 0, $page = 10 ){
+        $whereArr = array();
+        if( !empty( $data ) ){
+            foreach( $data as $key => $v ){
+                $whereArr[] = $key . '=' . $v;
+            }
+        }
+        $where = !empty($whereArr) ? 'where ' . implode(' and ', $whereArr ) : '';
+        $sql = 'SELECT * FROM cmc_squad ' . $where . ' order by date_add desc LIMIT ' . $limit . ',' . $page;
 
 
         $squads = self::query( $sql );
@@ -87,6 +93,11 @@ WHERE t2s.`squad_id` = '$squad_id'";
         );
         return $json ;
 
+    }
+
+    public function banner(){
+
+        return $this->getList( array('hot'=>1), 0, 5 );
     }
 
 }

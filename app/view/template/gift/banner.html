@@ -5,12 +5,15 @@
         </a>
     </h3>
     <ul>
-        <li style="float:right; height:320px">
-            <a>
-                <img src="http://www.mankaa.com/blog/wp-content/uploads/2015/10/trim-300x193.jpg" alt=""/>
+        <?php foreach( $squad_banner as $v ) { ?>
+        <li >
+            <a href="/app/gift/squad/<?php echo $v['squad_id']; ?>">
+                <img src="<?php echo $v['photo']; ?>" alt=""/>
             </a>
-            <span class="description">火影忍者分析专题</span>
+            <span class="description"><?php echo $v['title']; ?></span>
         </li>
+        <?php } ?>
+        <!--
         <li>
             <a>
                 <img src="http://www.mankaa.com/blog/wp-content/uploads/2015/10/trim-300x193.jpg" alt=""/>
@@ -35,5 +38,6 @@
             </a>
             <span class="description">火影忍者分析专题</span>
         </li>
+        -->
     </ul>
 </div>

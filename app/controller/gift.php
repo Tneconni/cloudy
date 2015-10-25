@@ -198,15 +198,19 @@ $app->get('/squad-list',function() use($app){
 //    $app->view->setData('header', $template_header);
 //    $app->view->setData('footer', $template_footer);
 //    $app->view->display('view/template/gift/squad-list.html');
+    $gift = new \Module\Gift();
+    $squad_banner = $gift->banner( );
+    $app->view->setData('squad_banner', $squad_banner);
+    $app->smarty->assign('squad_banner', $squad_banner);
+    $template_banner = $app->view->fetch('view/template/gift/banner.html');
+    $app->smarty->assign('banner', $template_banner);
+
     $app->smarty->assign('head', $template_head);
     $app->smarty->assign('header', $template_header);
     $app->smarty->assign('footer', $template_footer);
 
-    
-    $template_banner = $app->view->fetch('view/template/gift/banner.html');
-    $app->smarty->assign('banner', $template_banner);
 
-    $gift = new \Module\Gift();
+
     $list = $gift->getList();
     $app->smarty->assign('list', $list);
     $app->smarty->display('view/template/gift/squad-list.html');
