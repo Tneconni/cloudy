@@ -412,6 +412,6 @@
   overflow: hidden;
 }
 .banner ul li:first-child img {
-  width: 100%;
-  min-height: 320px;
+  max-width: 1000px;
+  height: 320px;
 }
