@@ -398,13 +398,15 @@
   display: inline-block;
   opacity: 0.5;
   text-align: center;
-  color: #ff0000;
   background-color: #000;
   width: 100%;
-  font-weight: bold;
   position: absolute;
   bottom: 0px;
   left: 0;
+  color: #fff;
+  text-align: left;
+  text-indent: 10px;
+  font-weight: normal;
 }
 .banner ul li:first-child {
   float: right;
