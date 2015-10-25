@@ -379,13 +379,13 @@
   border: solid 1px #cdcdcd;
   height: auto;
   overflow: hidden;
-  position: relative;
 }
 .banner ul li {
   width: 32%;
   float: left;
   height: 160px;
   margin: 2px;
+  position: relative;
 }
 .banner ul li img {
   width: 100%;
