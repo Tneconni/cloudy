@@ -57,7 +57,7 @@ $core_actions_post = array(
 	'wp-remove-post-lock', 'dismiss-wp-pointer', 'upload-attachment', 'get-attachment',
 	'query-attachments', 'save-attachment', 'save-attachment-compat', 'send-link-to-editor',
 	'send-attachment-to-editor', 'save-attachment-order', 'heartbeat', 'get-revision-diffs',
-    'select_squad'
+    'select_squad','comic_squad_hot'
 );
 
 // Register core Ajax calls.

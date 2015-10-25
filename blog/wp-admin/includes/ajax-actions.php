@@ -2142,3 +2142,19 @@ function wp_ajax_select_squad() {
     echo json_encode( $res );
     die();
 }
+
+function wp_ajax_comic_squad_hot() {
+    $res = array(
+        'status'=>0
+    );
+    global $wpdb;
+//    $tao_id = $_POST['tao_id'];
+    $squad_id = $_POST['squad_id'];
+    $hot = $_POST['hot'];
+    $sql = "UPDATE `cmc_squad` SET
+hot ='$hot' WHERE squad_id='$squad_id';";
+    $wpdb->get_results( $sql );
+    $res['status'] = 1;
+    echo json_encode( $res );
+    die();
+}

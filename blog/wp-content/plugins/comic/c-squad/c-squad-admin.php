@@ -19,6 +19,22 @@ class C_Squad_List_Table extends WP_List_Table{
         $createUrl = get_admin_url(null, 'admin.php?page=comic_squad&action=create');
         ?>
         <div><a href="<?php echo $createUrl;?>">添加新的Squad页面：</a></div>
+        <script>
+
+            $('.comic_squad_hot').click(function(){
+                var url = 'admin-ajax.php';
+                var data = {
+                    action   : 'comic_squad_hot',
+                    squad_id : $(this).attr('id').split('-')[1],
+//                    tao_id   : $(this).parents('td').find('.input-tao').val(),
+                    hot  : $(this).prop('checked') ? '1' : '0'
+                };
+
+                $.post(url, data, function(d){
+                });
+            });
+
+        </script>
     <?php
 
     }
@@ -64,6 +80,7 @@ class C_Squad_List_Table extends WP_List_Table{
             'title'   => _x('Title', 'Admin SWA column header', 'comic' ),
             'url'  => _x( 'Url', 'Admin SWA column header', 'comic' ),
             'img'   => _x( 'Img', 'Admin SWA column header', 'comic' ),
+            'hot'   => _x( 'Hot', 'Admin SWA column header', 'comic' ),
             'website_id' => _x( 'Website Id', 'Admin SWA column header', 'comic' ),
         );
     }
@@ -74,6 +91,12 @@ class C_Squad_List_Table extends WP_List_Table{
 
     public function column_cb( $item ){
         return "<input id='comic_squad-{$item->squad_id}' type='checkbox' />";
+    }
+
+    public function column_hot( $item ){
+        $checked = $item->hot  ? 'checked' : '';
+        echo "<input class='comic_squad_hot' id='comic_squad_hot-{$item->squad_id}' type='checkbox' $checked />";
+
     }
 
     public function column_title( $item ){
