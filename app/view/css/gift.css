@@ -407,6 +407,9 @@
   text-align: left;
   text-indent: 10px;
   font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .banner ul li:first-child {
   float: right;
