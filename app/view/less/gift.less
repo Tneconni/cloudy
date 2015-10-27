@@ -469,16 +469,17 @@
     border:solid 1px #cdcdcd;
     height:auto;
     overflow: hidden;
+
     li{
       width:32%;
       float:left;
       height:160px;
       margin:2px;
-//      overflow: hidden;
-
+      overflow: hidden;
+      position:relative;
       img{
-//        width: 100%;
-        max-height: 160px;
+        width: 100%;
+        min-height: 160px;
       }
       .description{
         height:30px;
@@ -486,18 +487,31 @@
         display:inline-block;
         opacity: 0.5;
         text-align: center;
-        color: #ff0000;
-        margin-top:-30px;
+
         background-color:#000;
         width:100%;
-        font-weight:bold;
+
+        position: absolute;
+        bottom:0px;
+        left:0;
+
+        color: #fff;
+        text-align: left;
+        text-indent: 10px;
+        font-weight: normal;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       &:first-child{
         float:right;
-
+        height:324px;
+        overflow: hidden;
         img{
-          max-height:320px;
-          height:320px;
+          max-width:1000px;
+          height:324px;
+          width:auto;
         }
       }
     }
