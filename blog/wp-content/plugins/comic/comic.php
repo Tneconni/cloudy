@@ -138,6 +138,32 @@ class Comic {
 
     }
 
+    public function comic_stack(){
+
+        $doaction = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
+        require_once(sprintf("%s/c-comic/c-comic-admin.php", dirname(__FILE__)));
+
+        if ( 'edit' == $doaction || 'save' == $doaction ){
+
+            $cComicEdit = new C_Comic_Edit();
+            if( 'save' == $doaction ){
+                $cComicEdit->save();
+            }
+            $cComicEdit->display();
+
+        }else if( 'create' == $doaction ){
+            $cComicEdit = new C_Comic_Edit();
+            $cComicEdit->display();
+        }else{
+
+            $cComicList = new C_Comic_List_Table();
+            $cComicList->prepare_items();
+            $cComicList->display();
+
+        }
+
+    }
+
     public function admin_menus() {
         set_current_screen( 'toplevel_page_comic-news' );
         add_options_page('comic setting', 'comic',
@@ -165,6 +191,14 @@ class Comic {
             'manage_options', 'comic_squad',
             array($this,'comic_squad')
         );
+        add_submenu_page(
+            'comic/comic.php',
+            '动漫库',
+            '动漫库',
+            'manage_options', 'comic_stack',
+            array($this,'comic_stack')
+        );
+
         add_meta_box( 'submitdiv',
             _x( 'Status', 'activity admin edit screen', 'comic' ),
             array($this,'comic_news_admin_edit_metabox_status'),
