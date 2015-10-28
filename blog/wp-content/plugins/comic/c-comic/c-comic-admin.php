@@ -16,7 +16,7 @@ class C_Comic_List_Table extends WP_List_Table{
 
     public function extra_tablenav( $witch ){
 
-        $createUrl = get_admin_url(null, 'admin.php?page=comic&action=create');
+        $createUrl = get_admin_url(null, 'admin.php?page=comic_stack&action=create');
 
         ?>
         <div><a href="<?php echo $createUrl;?>">添加新的comic页面：</a></div>
@@ -132,16 +132,16 @@ class C_Comic_Edit {
                 <h2>添加新的动漫</h2>
             <?php endif; ?>
 
-            <form action="<?php echo esc_attr( $form_url ); ?>" id="comic-tao-edit-form" method="post">
+            <form action="<?php echo esc_attr( $form_url ); ?>" id="comic-stack-edit-form" method="post">
                 <div id="poststuff">
 
                     <div id="post-body" class="metabox-holder columns-<?php echo 1 == get_current_screen()->get_columns() ? '1' : '2'; ?>">
                         <div id="post-body-content">
                             <div id="postdiv">
                                 <div id="bp_activity_action" class="postbox">
-                                    <h3><?php _e( 'Title', 'comic' ); ?></h3>
+                                    <h3><?php _e( 'Name', 'comic' ); ?></h3>
                                     <div class="inside">
-                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->title : ''), 'title',
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->name : ''), 'name',
                                             array( 'media_buttons' => false, 'textarea_rows' => 7,
                                                 'teeny' => true, 'quicktags' =>
                                                 array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
@@ -149,9 +149,9 @@ class C_Comic_Edit {
                                 </div>
 
                                 <div id="comic_tao_content" class="postbox">
-                                    <h3><?php _e( 'Url', 'comic' ); ?></h3>
+                                    <h3><?php _e( 'Ename', 'comic' ); ?></h3>
                                     <div class="inside">
-                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->url:'' ), 'url',
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->ename:'' ), 'ename',
                                             array( 'media_buttons' => false, 'teeny' => true,
                                                 'quicktags' =>
                                                     array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
@@ -173,7 +173,7 @@ class C_Comic_Edit {
                 </div><!-- #poststuff -->
                 <?php wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false ); ?>
                 <?php wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false ); ?>
-                <?php wp_nonce_field( 'edit-comic-tao_' . ! empty( $activity )?$activity->tao_id:0 ); ?>
+                <?php wp_nonce_field( 'edit-comic-stack_' . ! empty( $activity )?$activity->comic_id:0 ); ?>
             </form>
 
         </div><!-- .wrap -->
@@ -183,43 +183,43 @@ class C_Comic_Edit {
     public function save() {
         global $wpdb;
 
-        if( isset($_POST['title']) ){
-            $this->title = $_POST['title'];
+        if( isset($_POST['name']) ){
+            $this->name = $_POST['name'];
         }
-        if( isset($_POST['url']) ){
-            $this->url = $_POST['url'];
+        if( isset($_POST['ename']) ){
+            $this->ename = $_POST['ename'];
         }
 
-        $this->title        = apply_filters_ref_array(
-            'comic_tao_title_before_save',
+        $this->name        = apply_filters_ref_array(
+            'comic_stack_name_before_save',
             array(
-                $this->title,
+                $this->name,
                 &$this
             )
         );
-        $this->url           = apply_filters_ref_array(
-            'comic_tao_url_before_save',
+        $this->ename           = apply_filters_ref_array(
+            'comic_stack_ename_before_save',
             array(
-                $this->url,
+                $this->ename,
                 &$this
             ) );
 
-        do_action_ref_array( 'comic_tao_before_save', array( &$this ) );
+        do_action_ref_array( 'comic_stack_before_save', array( &$this ) );
 
-        if ( empty( $this->title ) || empty( $this->url ) ) {
+        if ( empty( $this->name ) || empty( $this->ename ) ) {
             return false;
         }
-        $this->tao_id = ( isset($_GET['aid']) && !empty( $_GET['aid']) ) ? $_GET['aid'] : 0;
+        $this->comic_id = ( isset($_GET['aid']) && !empty( $_GET['aid']) ) ? $_GET['aid'] : 0;
         // If we have an existing ID, update the activity item, otherwise insert it.
-        if ( ! empty( $this->tao_id ) ) {
-            $sql = "UPDATE cmc_tao SET
-title='%s',
-url = '%s' WHERE tao_id = '%s'";
-            $q = $wpdb->prepare( $sql, $this->title, $this->url, $this->tao_id );
+        if ( ! empty( $this->comic_id ) ) {
+            $sql = "UPDATE cmc_comic SET
+name='%s',
+ename = '%s' WHERE comic_id = '%s'";
+            $q = $wpdb->prepare( $sql, $this->name, $this->ename, $this->comic_id );
         } else {
-            $sql = "INSERT INTO cmc_tao SET title = '%s',
-url = '%s', public_date=now(), date_add=now() ";
-            $q = $wpdb->prepare( $sql , $this->title,$this->url );
+            $sql = "INSERT INTO cmc_comic SET name = '%s',
+ename = '%s', status='1' ";
+            $q = $wpdb->prepare( $sql , $this->name,$this->ename );
         }
 
         if ( false === $wpdb->query( $q ) ) {
@@ -227,12 +227,12 @@ url = '%s', public_date=now(), date_add=now() ";
         }
 
         // If this is a new activity item, set the $id property
-        if ( empty( $this->tao_id ) ) {
-            $this->tao_id = $wpdb->insert_id;
+        if ( empty( $this->comic_id ) ) {
+            $this->comic_id = $wpdb->insert_id;
 
             // If an existing activity item, prevent any changes to the content generating new @mention notifications.
         } else {
-            add_filter( 'comic_tao_at_name_do_notifications', '__return_false' );
+            add_filter( 'comic_at_name_do_notifications', '__return_false' );
         }
 
         /**
@@ -242,7 +242,7 @@ url = '%s', public_date=now(), date_add=now() ";
          *
          * @param BP_Activity_Activity Reference to current instance of activity being saved.
          */
-        do_action_ref_array( 'comic_tao_after_save', array( &$this ) );
+        do_action_ref_array( 'comic_after_save', array( &$this ) );
 
         return true;
     }

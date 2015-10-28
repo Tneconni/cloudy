@@ -205,6 +205,9 @@ $app->get('/squad-list',function() use($app){
     $template_banner = $app->view->fetch('view/template/gift/banner.html');
     $app->smarty->assign('banner', $template_banner);
 
+    $template_person_banner = $app->view->fetch('view/template/gift/person_banner.html');
+    $app->smarty->assign('person_banner', $template_person_banner);
+
     $app->smarty->assign('head', $template_head);
     $app->smarty->assign('header', $template_header);
     $app->smarty->assign('footer', $template_footer);
