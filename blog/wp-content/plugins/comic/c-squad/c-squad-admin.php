@@ -365,4 +365,13 @@ description = '%s', last_modified=now(), date_add=now() ";
         return true;
     }
 
+    public function delete( $squadId ){
+        global $wpdb;
+        $sql = "delete from cmc_squad  WHERE squad_id = '%s'";
+        $q = $wpdb->prepare( $sql, $squadId  );
+        if ( false === $wpdb->query( $q ) ) {
+            return false;
+        }
+    }
+
 }
