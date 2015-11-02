@@ -75,15 +75,31 @@ class C_Comic_List_Table extends WP_List_Table{
     function get_columns() {
         return array(
             'cb'       => '<input name type="checkbox" />',
-            'comic_id'   => _x('Comic_id', 'Admin SWA column header', 'comic' ),
-            'name'  => _x( 'Name', 'Admin SWA column header', 'comic' ),
-            'ename'   => _x( 'Ename', 'Admin SWA column header', 'comic' ),
-            'status' => _x( 'Status', 'Admin SWA column header', 'comic' ),
+            'id'   => _x('Comic ID', 'Admin SWA column header', 'comic' ),
+            'name'  => _x( '名称', 'Admin SWA column header', 'comic' ),
+            'ename'   => _x( '字母名称', 'Admin SWA column header', 'comic' ),
+            'status' => _x( '状态', 'Admin SWA column header', 'comic' ),
         );
     }
 
     public function column_default( $item, $column_name ){
         return $item->{$column_name};
+    }
+
+    public function column_id( $item ){
+
+        $actions = array(
+            'edit'   => '',
+            'delete' => '',
+        );
+        $base_url   = get_admin_url(null, 'admin.php?page=comic_stack&amp;aid=' . $item->comic_id );
+        $delete_url = $base_url . "&amp;action=delete";
+        $edit_url   = $base_url . '&amp;action=edit';
+        $actions['edit'] = sprintf( '<a href="%s">%s</a>', $edit_url, __( 'Edit', 'comic' ) );
+        $actions['delete'] = sprintf( '<a href="%s" onclick="%s">%s</a>', $delete_url, "javascript:return confirm('" . esc_js( __( 'Are you sure?', 'comic' ) ) . "'); ", __( 'Delete Permanently', 'comic' ) );
+
+
+        return $item->comic_id . ' ' . $this->row_actions( $actions );
     }
 
     public function column_cb( $item ){
@@ -245,6 +261,15 @@ ename = '%s', status='1' ";
         do_action_ref_array( 'comic_after_save', array( &$this ) );
 
         return true;
+    }
+
+    public function delete( $comicId ){
+        global $wpdb;
+        $sql = "delete from cmc_comic  WHERE comic_id = '%s'";
+        $q = $wpdb->prepare( $sql, $comicId  );
+        if ( false === $wpdb->query( $q ) ) {
+            return false;
+        }
     }
 
 }

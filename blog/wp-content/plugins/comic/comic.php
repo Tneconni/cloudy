@@ -102,6 +102,13 @@ class Comic {
         }else if( 'create' == $doaction ){
             $cNewsEdit = new C_Squad_Edit();
             $cNewsEdit->display();
+        }else if( 'delete' == $doaction ){
+            $cNewsEdit = new C_Squad_Edit();
+            $cNewsEdit->delete( $_GET['aid'] );
+            $cNewsList = new C_Squad_List_Table();
+            $cNewsList->prepare_items();
+            $cNewsList->display();
+            return false;
         }else{
 
             $cNewsList = new C_Squad_List_Table();
@@ -154,6 +161,13 @@ class Comic {
         }else if( 'create' == $doaction ){
             $cComicEdit = new C_Comic_Edit();
             $cComicEdit->display();
+        }else if( 'delete' == $doaction ){
+            $cNewsEdit = new C_Comic_Edit();
+            $cNewsEdit->delete( $_GET['aid'] );
+            $cNewsList = new C_Comic_List_Table();
+            $cNewsList->prepare_items();
+            $cNewsList->display();
+            return false;
         }else{
 
             $cComicList = new C_Comic_List_Table();
