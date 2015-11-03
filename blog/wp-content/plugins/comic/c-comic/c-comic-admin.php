@@ -164,7 +164,7 @@ class C_Comic_Edit {
                                     </div>
                                 </div>
 
-                                <div id="comic_tao_content" class="postbox">
+                                <div id="comic_ename" class="postbox">
                                     <h3><?php _e( 'Ename', 'comic' ); ?></h3>
                                     <div class="inside">
                                         <?php wp_editor( stripslashes( ! empty( $activity )?$activity->ename:'' ), 'ename',
@@ -173,6 +173,35 @@ class C_Comic_Edit {
                                                     array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
                                     </div>
                                 </div>
+
+                                <div id="comic_description" class="postbox">
+                                    <h3><?php _e( 'Description', 'comic' ); ?></h3>
+                                    <div class="inside">
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->description:'' ), 'description',
+                                            array( 'media_buttons' => false, 'teeny' => true,
+                                                'quicktags' =>
+                                                    array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
+                                    </div>
+                                </div>
+
+                                <div id="comic_content" class="postbox">
+                                    <h3><?php _e( 'Content', 'comic' ); ?></h3>
+                                    <div class="inside">
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->content:'' ), 'content',
+                                            array( 'media_buttons' => false, 'teeny' => true,
+                                                'quicktags' =>
+                                                    array( 'buttons' => 'strong,em,link,block,del,ins,img,code,spell,close' ) ) ); ?>
+                                    </div>
+                                </div>
+
+                                <div id="comic_score" class="postbox">
+                                    <h3><?php _e( 'Score', 'comic' ); ?></h3>
+                                    <div class="inside">
+                                        <input type="text" name="score" id="score" value="<?php echo $activity->score;?>"  />
+
+                                    </div>
+                                </div>
+
                             </div>
                         </div><!-- #post-body-content -->
 
@@ -205,6 +234,15 @@ class C_Comic_Edit {
         if( isset($_POST['ename']) ){
             $this->ename = $_POST['ename'];
         }
+        if( isset($_POST['description']) ){
+            $this->description = $_POST['description'];
+        }
+        if( isset($_POST['content']) ){
+            $this->content = $_POST['content'];
+        }
+        if( isset($_POST['score']) ){
+            $this->score = $_POST['score'];
+        }
 
         $this->name        = apply_filters_ref_array(
             'comic_stack_name_before_save',
@@ -219,6 +257,24 @@ class C_Comic_Edit {
                 $this->ename,
                 &$this
             ) );
+        $this->content           = apply_filters_ref_array(
+            'comic_stack_ename_before_save',
+            array(
+                $this->content,
+                &$this
+            ) );
+        $this->description           = apply_filters_ref_array(
+            'comic_stack_ename_before_save',
+            array(
+                $this->description,
+                &$this
+            ) );
+        $this->score           = apply_filters_ref_array(
+            'comic_stack_ename_before_save',
+            array(
+                $this->score,
+                &$this
+            ) );
 
         do_action_ref_array( 'comic_stack_before_save', array( &$this ) );
 
@@ -230,12 +286,19 @@ class C_Comic_Edit {
         if ( ! empty( $this->comic_id ) ) {
             $sql = "UPDATE cmc_comic SET
 name='%s',
-ename = '%s' WHERE comic_id = '%s'";
-            $q = $wpdb->prepare( $sql, $this->name, $this->ename, $this->comic_id );
+ename = '%s',
+ description = '%s',
+ content = '%s',
+ score = '%s' WHERE comic_id = '%s'";
+            $q = $wpdb->prepare( $sql, $this->name, $this->ename, $this->description, $this->content, $this->score, $this->comic_id );
         } else {
             $sql = "INSERT INTO cmc_comic SET name = '%s',
-ename = '%s', status='1' ";
-            $q = $wpdb->prepare( $sql , $this->name,$this->ename );
+ename = '%s',
+ description = '%s',
+ content = '%s',
+ score = '%s',
+ status='1' ";
+            $q = $wpdb->prepare( $sql , $this->name,$this->ename, $this->description, $this->content, $this->score );
         }
 
         if ( false === $wpdb->query( $q ) ) {
