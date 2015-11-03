@@ -174,6 +174,33 @@ class C_Comic_Edit {
                                     </div>
                                 </div>
 
+                                <div id="comic_img" class="postbox">
+                                    <h3>图片</h3>
+                                    <a href="#" id='add-post-image' class="button insert-media " data-editor="img" title="Add Media"><span class="wp-media-buttons-icon"></span> Add Image</a>
+                                    <div id='post-image-frm'>
+                                        <?php if(!empty( $activity->image )){ ?>
+                                            <img src="<?php echo BLOG_IMAGE_UPLOAD . $activity->image;?>">
+                                        <?php } ?>
+                                    </div>
+                                    <input id='post-image-path' name='image'
+                                           type='hidden' value="<?php echo $activity->image; ?>" />
+                                    <script>
+                                        var addPostImage = document.getElementById('add-post-image');
+                                        addPostImage.onmouseup = function(){
+                                            this.className += ' hanging';
+                                        };
+                                    </script>
+                                    <div class="inside" style="display:none">
+                                        <?php wp_editor( stripslashes( ! empty( $activity )?$activity->image:'' ), 'nothing',
+                                            array(
+                                                'dfw' => true,
+                                                'tabfocus_elements' => 'insert-media-button,save-post',
+                                                'editor_height' => 360,
+                                            ) ); ?>
+                                    </div>
+
+                                </div>
+
                                 <div id="comic_description" class="postbox">
                                     <h3><?php _e( 'Description', 'comic' ); ?></h3>
                                     <div class="inside">
@@ -243,7 +270,9 @@ class C_Comic_Edit {
         if( isset($_POST['score']) ){
             $this->score = $_POST['score'];
         }
-
+        if( isset($_POST['image']) ){
+            $this->image = $_POST['image'];
+        }
         $this->name        = apply_filters_ref_array(
             'comic_stack_name_before_save',
             array(
@@ -275,6 +304,12 @@ class C_Comic_Edit {
                 $this->score,
                 &$this
             ) );
+        $this->image           = apply_filters_ref_array(
+            'comic_stack_ename_before_save',
+            array(
+                $this->image,
+                &$this
+            ) );
 
         do_action_ref_array( 'comic_stack_before_save', array( &$this ) );
 
@@ -287,18 +322,20 @@ class C_Comic_Edit {
             $sql = "UPDATE cmc_comic SET
 name='%s',
 ename = '%s',
+ image = '%s',
  description = '%s',
  content = '%s',
  score = '%s' WHERE comic_id = '%s'";
-            $q = $wpdb->prepare( $sql, $this->name, $this->ename, $this->description, $this->content, $this->score, $this->comic_id );
+            $q = $wpdb->prepare( $sql, $this->name, $this->ename, $this->image, $this->description, $this->content, $this->score, $this->comic_id );
         } else {
             $sql = "INSERT INTO cmc_comic SET name = '%s',
 ename = '%s',
+image = '%s',
  description = '%s',
  content = '%s',
  score = '%s',
  status='1' ";
-            $q = $wpdb->prepare( $sql , $this->name,$this->ename, $this->description, $this->content, $this->score );
+            $q = $wpdb->prepare( $sql , $this->name,$this->ename, $this->image, $this->description, $this->content, $this->score );
         }
 
         if ( false === $wpdb->query( $q ) ) {
