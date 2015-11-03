@@ -421,3 +421,8 @@
   height: 324px;
   width: auto;
 }
+.banner.person_banner ul li {
+  float: left;
+  width: 19.5%;
+  height: 100px;
+}

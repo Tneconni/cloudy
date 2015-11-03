@@ -1,6 +1,7 @@
 <?php
 require_once( BASEDIR . '/../library/Util.php' );
 require_once( BASEDIR . '/../library/module/Gift.php' );
+require_once( BASEDIR . '/../library/module/Comic.php' );
 $app->get('/', function() use($app){
 
     global $mem;
@@ -204,6 +205,11 @@ $app->get('/squad-list',function() use($app){
     $app->smarty->assign('squad_banner', $squad_banner);
     $template_banner = $app->view->fetch('view/template/gift/banner.html');
     $app->smarty->assign('banner', $template_banner);
+
+    $comic = new \Module\Comic();
+    $rank = $comic->rank();
+    $app->view->setData('rank', $rank);
+    $app->smarty->assign('rank', $rank);
 
     $template_person_banner = $app->view->fetch('view/template/gift/person_banner.html');
     $app->smarty->assign('person_banner', $template_person_banner);
