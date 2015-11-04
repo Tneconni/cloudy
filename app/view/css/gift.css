@@ -410,6 +410,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  border-radius: 5px;
 }
 .banner ul li:first-child {
   float: right;
