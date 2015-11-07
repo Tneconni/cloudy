@@ -1,0 +1,15 @@
+<div class="rank" >
+    <h3><a href="">
+        动漫推荐榜
+    </a></h3>
+    <ul>
+        <?php foreach( $rank as $v ) { ?>
+        <li>
+            <img src="<?php echo $v['image']; ?>" alt="" />
+            <a >
+                <?php echo $v['name']; ?>
+            </a>
+        </li>
+        <?php } ?>
+    </ul>
+</div>
