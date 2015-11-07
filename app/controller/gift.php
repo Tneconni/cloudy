@@ -128,6 +128,13 @@ $app->get('/squad/:id', function( $id ) use($app){
     $app->smarty->assign( 'squad', $gift['squad'] );
     $app->smarty->assign( 'taos', $gift['taos'] );
 
+
+    $comic = new \Module\Comic();
+    $rank = $comic->rank();
+    $app->view->setData('rank', $rank);
+    $template_rank = $app->view->fetch('view/template/gift/rank.html');
+    $app->smarty->assign('template_rank', $template_rank);
+
     $app->smarty->assign( 'squad_id', $id );
     $app->smarty->assign('head', $template_head);
     $app->smarty->assign('header', $template_header);
