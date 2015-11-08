@@ -12,7 +12,7 @@ $app->get('/single/:comic_id', function( $comic_id ) use($app){
         $template_header = $app->view->fetch('view/template/common/header.html');
         $template_footer = $app->view->fetch('view/template/common/footer.html');
     }
-
+    $app->smarty->assign('head', $template_head);
     $app->smarty->assign('header', $template_header);
     $app->smarty->assign('footer', $template_footer);
 
