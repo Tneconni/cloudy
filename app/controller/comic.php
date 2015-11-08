@@ -23,7 +23,7 @@ $app->get('/single/:comic_id', function( $comic_id ) use($app){
     $rank = $comic->rank();
     $app->view->setData('rank', $rank);
     $template_rank = $app->view->fetch('view/template/gift/rank.html');
-    $app->smarty->assign('rank', $template_rank);
+    $app->smarty->assign('rank', $template_rank);print_r($comic);
 
     $app->smarty->display('view/template/comic/detail.html');
 });
