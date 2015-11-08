@@ -26,8 +26,8 @@ class Comic extends \MyPdo{
 
         $res = \MyPdo::query( $sql );
         $comic = $res[0];
-        $comic['description'] = trim($comic['description']);
-        $comic['image'] = '/blog/wp-content/uploads/' . $comic['image'];
+        $comic->description = trim($comic->description);
+        $comic->image = '/blog/wp-content/uploads/' . $comic->image;
         return $comic;
 
     }
