@@ -18,7 +18,7 @@ $app->get('/single/:comic_id', function( $comic_id ) use($app){
 
     $comic = new \Module\Comic();
     $thisComic = $comic->detail( $comic_id );
-    $this->view->setData( 'comic', $thisComic );
+    $this->smarty->assign( 'comic', $thisComic );
 
     $rank = $comic->rank();
     $app->view->setData('rank', $rank);
