@@ -78,6 +78,7 @@ class C_Comic_List_Table extends WP_List_Table{
             'id'   => _x('Comic ID', 'Admin SWA column header', 'comic' ),
             'name'  => _x( '名称', 'Admin SWA column header', 'comic' ),
             'ename'   => _x( '字母名称', 'Admin SWA column header', 'comic' ),
+            'score'   => _x( '评分', 'Admin SWA column header', 'comic' ),
             'status' => _x( '状态', 'Admin SWA column header', 'comic' ),
         );
     }
@@ -114,6 +115,10 @@ class C_Comic_List_Table extends WP_List_Table{
 
     public function column_ename($item){
         echo $item->ename;
+    }
+
+    public function column_score($item){
+        echo $item->score;
     }
 
     public function column_status($item){
