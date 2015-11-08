@@ -16,14 +16,14 @@ $app->get('/single/:comic_id', function( $comic_id ) use($app){
     $app->smarty->assign('header', $template_header);
     $app->smarty->assign('footer', $template_footer);
 
-    $comic = new \Module\Comic();
+    $comic = new \Module\Comic(); print_r($comic);die();
     $thisComic = $comic->detail( $comic_id );
     $this->smarty->assign( 'comic', $thisComic );
 
     $rank = $comic->rank();
     $app->view->setData('rank', $rank);
     $template_rank = $app->view->fetch('view/template/gift/rank.html');
-    $app->smarty->assign('rank', $template_rank);print_r($comic);die();
+    $app->smarty->assign('rank', $template_rank);
 
     $app->smarty->display('view/template/comic/detail.html');
 });
