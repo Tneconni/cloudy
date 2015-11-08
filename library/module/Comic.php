@@ -25,12 +25,8 @@ class Comic extends \MyPdo{
         $sql = "SELECT * FROM cmc_comic WHERE comic_id ='" . $comic_id . "'";
 
         $res = \MyPdo::query( $sql );
-        foreach( $res as &$v){
-
-            $v['description'] = trim($v['description']);
-            $v['image'] = '/blog/wp-content/uploads/' . $v['image'];
-
-        }
+        $res['description'] = trim($res['description']);
+        $res['image'] = '/blog/wp-content/uploads/' . $res['image'];
         return $res;
 
     }
