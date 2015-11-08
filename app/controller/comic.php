@@ -1,5 +1,5 @@
 <?php
-
+require_once( BASEDIR . '/../library/module/Comic.php' );
 $app->get('/single/:comic_id', function( $comic_id ) use($app){
 
     global $mem;
@@ -16,7 +16,7 @@ $app->get('/single/:comic_id', function( $comic_id ) use($app){
     $app->smarty->assign('header', $template_header);
     $app->smarty->assign('footer', $template_footer);
 
-    $comic = new \Module\Comic(); print_r($comic);die();
+    $comic = new \Module\Comic();
     $thisComic = $comic->detail( $comic_id );
     $this->smarty->assign( 'comic', $thisComic );
 
