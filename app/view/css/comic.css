@@ -1,0 +1,23 @@
+.comic {
+  margin-top: 20px;
+}
+.comic .content .basic-info {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #cdcdcd;
+}
+.comic .content .basic-info .format {
+  float: left;
+}
+.comic .content .basic-info .format table {
+  width: 100%;
+}
+.comic .content .basic-info .cover {
+  float: left;
+}
+.comic .content .recommend {
+  text-align: left;
+}
+.comic .content .recommend .description p {
+  text-indent: 20px;
+}
