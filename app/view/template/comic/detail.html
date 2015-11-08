@@ -7,7 +7,36 @@
 {$header}
 <div class="row comic">
 
+    <div class="small-12 media-9 large-9 columns content">
+        <div class="format">
+            <div class="basic-info">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>名称</td>
+                        <td>{$comic['name']}</td>
+                    </tr>
+                    <tr>
+                        <td>评分</td>
+                        <td>{$comic['score']}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="cover">
+                <img src="{$comic['image']}" alt=""/>
+            </div>
+        </div>
+        <div class="recommend">
+            <h3>
+                <span>看点</span>
+            </h3>
+            <div class="description">
+                {$comic['description']}
 
+            </div>
+        </div>
+    </div>
     <div class="small-12 media-3 large-3 columns">
         <div class="connect-qq bd-b">
             <a target="_blank"
