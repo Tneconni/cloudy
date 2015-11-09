@@ -5,7 +5,9 @@
     <ul>
         <?php foreach( $rank as $v ) { ?>
         <li>
-            <img src="<?php echo $v['image']; ?>" alt="" />
+            <a href="/app/comic/single/<?php echo $v['comic_id']; ?>">
+                <img src="<?php echo $v['image']; ?>" alt="" />
+            </a>
             <a href="/app/comic/single/<?php echo $v['comic_id']; ?>">
                 <?php echo $v['name']; ?>
             </a>
