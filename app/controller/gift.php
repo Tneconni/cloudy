@@ -207,14 +207,14 @@ $app->get('/squad-list',function() use($app){
 //    $app->view->setData('footer', $template_footer);
 //    $app->view->display('view/template/gift/squad-list.html');
     $gift = new \Module\Gift();
-    $squad_banner = $gift->banner( );
+    $squad_banner = $gift->banner( ); //print_r( $squad_banner ); die();
     $app->view->setData('squad_banner', $squad_banner);
     $app->smarty->assign('squad_banner', $squad_banner);
     $template_banner = $app->view->fetch('view/template/gift/banner.html');
     $app->smarty->assign('banner', $template_banner);
 
     $comic = new \Module\Comic();
-    $rank = $comic->rank();
+    $rank = $comic->rank(5);
     $app->view->setData('rank', $rank);
     $app->smarty->assign('rank', $rank);
 

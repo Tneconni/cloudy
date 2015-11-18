@@ -4,15 +4,17 @@ namespace Module;
 class Gift extends \MyPdo{
 
 
-    public function getList( $data = array(), $limit = 0, $page = 10 ){
+    public function getList( $data = array(), $limit = 10, $page = 0 ){
         $whereArr = array();
         if( !empty( $data ) ){
             foreach( $data as $key => $v ){
                 $whereArr[] = $key . '=' . $v;
             }
         }
+
+        $start = $limit * $page;
         $where = !empty($whereArr) ? 'where ' . implode(' and ', $whereArr ) : '';
-        $sql = 'SELECT * FROM cmc_squad ' . $where . ' order by date_add desc LIMIT ' . $limit . ',' . $page;
+        $sql = 'SELECT * FROM cmc_squad ' . $where . ' order by date_add desc LIMIT ' . $start . ',' . $limit;
 
 
         $squads = self::query( $sql );
@@ -97,7 +99,7 @@ WHERE t2s.`squad_id` = '$squad_id'";
 
     public function banner(){
 
-        return $this->getList( array('hot'=>1), 0, 5 );
+        return $this->getList( array('hot'=>1), 8, 0 );
     }
 
 }

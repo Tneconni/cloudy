@@ -381,10 +381,10 @@
   overflow: hidden;
 }
 .banner ul li {
-  width: 32%;
+  width: 23%;
   float: left;
   height: 160px;
-  margin: 2px;
+  margin: 10px 1%;
   overflow: hidden;
   position: relative;
 }
@@ -411,16 +411,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 5px;
-}
-.banner ul li:first-child {
-  float: right;
-  height: 324px;
-  overflow: hidden;
-}
-.banner ul li:first-child img {
-  max-width: 1000px;
-  height: 324px;
-  width: auto;
 }
 .banner.person_banner ul li {
   float: left;

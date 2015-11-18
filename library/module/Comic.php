@@ -3,10 +3,10 @@ namespace Module;
 
 class Comic extends \MyPdo{
 
-    public function rank(){
+    public function rank( $limit = 5 , $page = 0 ){
 
-        $number = 5;
-        $sql = "SELECT * FROM cmc_comic  order by `score` desc limit 0,".$number;
+        $start = $limit * $page ;
+        $sql = "SELECT * FROM cmc_comic  order by `score` desc limit $start,$limit";
         $res = \MyPdo::query( $sql );
         foreach( $res as &$v){
 
