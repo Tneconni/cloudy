@@ -21,3 +21,34 @@
 .comic .content .recommend .description p {
   text-indent: 20px;
 }
+.search {
+  height: 80px;
+  border: solid 1px #cdcdcd;
+}
+.search input {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.list {
+  margin-top: 20px;
+}
+.list ul {
+  margin: 0;
+  padding: 0;
+}
+.list ul li {
+  float: left;
+  width: 230px;
+  height: 220px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: solid 1px #cdcdcd;
+}
+.list ul li .img {
+  height: 180px;
+  overflow: hidden;
+}
+.list ul li .img a img {
+  width: 100%;
+}
