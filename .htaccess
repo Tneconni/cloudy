@@ -5,8 +5,8 @@ RewriteEngine On
 # absolute physical path to the directory that contains this htaccess file.
 #
 # RewriteBase /
-RewriteRule index.php$ app [L]
+RewriteRule index.php$ /app [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ app [L]
+RewriteRule ^ /app [L]
 
