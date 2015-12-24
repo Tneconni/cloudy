@@ -5,7 +5,8 @@ RewriteEngine On
 # absolute physical path to the directory that contains this htaccess file.
 #
 # RewriteBase /
-
+RewriteRule index.php$ app [QSA,L]
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ app/gift/squad-list [QSA,L]
 
