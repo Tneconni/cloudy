@@ -21,7 +21,7 @@ if( strpos( $changeUri, '?' ) !== false ){
 	$changeUri = explode('?', $_SERVER['REQUEST_URI'])[0];
 
 }
-$changeUri = ($changeUri == '/' || $changeUri == '' ) ? '/app/gift/squad-list': $changeUri;
+$changeUri = ($changeUri == '/' || $changeUri == '' || $changeUri == '/app' || $changeUri == '/app/' ) ? '/app/gift/squad-list': $changeUri;
 
 $changeUriChange = explode('/app', $changeUri)[1];
 $changeUriChange = '/app' . $changeUriChange;
