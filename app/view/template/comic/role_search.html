@@ -1,0 +1,66 @@
+<!DOCTYPE >
+<html ng-app="comic-role-app">
+{$head}
+<link href="/app/view/css/comic.css" rel="stylesheet" type="text/css" />
+<script src="/js/jQuery/jQuery.1.10.2.js"></script>
+<script src="/app/view/js/app/controller/comic_role.js"></script>
+<body ng-controller="comicRoleController">
+{$header}
+
+<div class="comic row">
+    <div class="small-12 media-9 large-9 columns">
+
+        <div class="search"><input type="text" placeholder="搜索功能正在开发中..."/></div>
+        <span ng-model="roles">  </span>
+
+        <div class="list">
+            <ul>
+
+                <li ng-repeat="item in roles">
+                    <div class="img">
+                        <a href="/app/comic/single/123">
+                            <img src="" alt="" />
+                        </a>
+                    </div>
+                    <span ng-model="item.value">  </span>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="small-12 media-3 large-3 columns">
+        <div class="connect-qq bd-b">
+            <a target="_blank"
+               href="http://shang.qq.com/wpa/qunwpa?idkey=80bd854c11a283ac779a9f44cb4e4487129cc79f3118c4009fdd5ec685bd0b05">
+                <img src="/app/view/images/qq.jpg" alt="" width="50" height="50" />
+            </a>
+            <a target="_blank"
+               href="http://shang.qq.com/wpa/qunwpa?idkey=80bd854c11a283ac779a9f44cb4e4487129cc79f3118c4009fdd5ec685bd0b05">
+                <span>
+                    漫客群：316387163
+                </span>
+                <!--    <img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="漫客小屋" title="漫客小屋">-->
+            </a>
+        </div>
+        <div class="connect-sina ">
+            <img src="/app/view/images/sina.png" alt="" width="50" height="50" />
+            <span>
+                <a href="http://weibo.com/mankaa" target="_blank">漫客小屋微博</a>
+            </span>
+        </div>
+
+
+
+        <script type="text/javascript">
+            /*250*250 创建于 2015-10-10*/
+            var cpro_id = "u2346015";
+        </script>
+        <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+
+    </div>
+</div>
+<?php echo $footer;?>
+</body>
+</html>
