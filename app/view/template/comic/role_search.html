@@ -2,8 +2,8 @@
 <html ng-app="comic-role-app">
 {$head}
 <link href="/app/view/css/comic.css" rel="stylesheet" type="text/css" />
-<script src="/js/jQuery/jQuery.1.10.2.js"></script>
-<script src="/app/view/js/app/controller/comic_role.js"></script>
+<!--<script src="/js/jQuery/jQuery.1.10.2.js"></script>-->
+
 <body ng-controller="comicRoleController">
 {$header}
 
@@ -11,8 +11,6 @@
     <div class="small-12 media-9 large-9 columns">
 
         <div class="search"><input type="text" placeholder="搜索功能正在开发中..."/></div>
-        <span ng-model="roles">  </span>
-
         <div class="list">
             <ul>
 
@@ -22,7 +20,7 @@
                             <img src="" alt="" />
                         </a>
                     </div>
-                    <span ng-model="item.value">  </span>
+                    <span ng-bind="item.value"> </span>
                 </li>
 
             </ul>
@@ -62,5 +60,6 @@
     </div>
 </div>
 <?php echo $footer;?>
+<script src="/app/view/js/app/controller/comic_role.js"></script>
 </body>
 </html>
