@@ -15,12 +15,12 @@
     var pageX,pageY,value;
     function tuyaList(){
         var url = '/app/graffiti/list';
-        $.get(url, {}, function( json ){
+        $.get(url, <{}>, function( json ){
             var i;
-            for(i=0;i<json.length ;i ++){
+            for(i=0;i<json.length ;i ++)<{
                 var span = "<span style='font-weight:bold;font-size:18px;color:#008000;position:absolute; top:"+ json[i].top +";left:" + json[i].left + "'>" + json[i].text + "</span>";
                 $('.wall').append(span);
-            }
+            }>
 
 
         },'json');
@@ -32,11 +32,11 @@
         if(e.srcElement != $('.tuya-input')[0] ){
             pageX = e.pageX;
             pageY = e.pageY;
-            $('.tuya-input').css({
+            $('.tuya-input').css(<{
                 display:'',
                 left : e.pageX,
                 top  : e.pageY
-            });
+            }>);
         }
 
 
@@ -45,14 +45,14 @@
     $('.tuya-input').keypress(function(event){
         var t= this;
         if( event.keyCode == 13 ) {
-            var data = {
+            var data = <{
                 text : this.value,
                 left: pageX,
                 top: pageY
-            };
+            }>;
             var url = '/app/graffiti/tuya';
             $.post(url, data, function( json ){
-                $('.tuya-input').css({display:'none'});
+                $('.tuya-input').css(<{display:'none'}>);
                 var span = "<span style='font-weight:bold;font-size:18px; color:red;position:absolute; top:"+ pageY +";left:" + pageX + "'>" + t.value + "</span>";
                 $('.wall').append(span);
             },'json');

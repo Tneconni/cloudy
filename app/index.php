@@ -12,6 +12,8 @@ define('baseUrl', 'http://' . $_SERVER['HTTP_HOST'] . '');
 $app = new \Slim\Slim();
 $app->view->setTemplatesDirectory( BASEDIR );
 $app->smarty = new Smarty();
+$app->smarty->left_delimiter = '<{';
+$app->smarty->right_delimiter = '}>';
 //$app->smarty->caching = true;   //开启缓存
 $changeUri = $_SERVER['REQUEST_URI'];
 require_once( BASEDIR . '/../library/pdo/my_pdo.php' );

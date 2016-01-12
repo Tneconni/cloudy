@@ -1,10 +1,10 @@
 <!DOCTYPE >
 <html ng-app="gift-app">
-{$head}
+<{$head}>
 <link href="<?php echo baseUrl; ?>/app/view/css/comic.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo baseUrl; ?>/app/view/js/app/controller/gift.js"></script>
 <body >
-{$header}
+<{$header}>
 
 <div class="comic row">
     <div class="small-12 media-9 large-9 columns">
@@ -14,16 +14,16 @@
 
         <div class="list">
             <ul>
-                {foreach from=$rank item=li}
+                <{foreach from=$rank item=li}>
                 <li>
                     <div class="img">
                         <a href="/app/comic/single/{{$li.comic_id}}">
-                            <img src="{$li.image}" alt="" />
+                            <img src="<{$li.image}>" alt="" />
                         </a>
                     </div>
-                    <span> {$li.name} </span>
+                    <span> <{$li.name}> </span>
                 </li>
-                {/foreach}
+                <{/foreach}>
             </ul>
         </div>
 

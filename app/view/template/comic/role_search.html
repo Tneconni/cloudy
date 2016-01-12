@@ -1,11 +1,11 @@
 <!DOCTYPE >
 <html ng-app="comic-role-app">
-{$head}
+<{$head}>
 <link href="/app/view/css/comic.css" rel="stylesheet" type="text/css" />
 <!--<script src="/js/jQuery/jQuery.1.10.2.js"></script>-->
 
 <body ng-controller="comicRoleController">
-{$header}
+<{$header}>
 
 <div class="comic row">
     <div class="small-12 media-9 large-9 columns">
@@ -17,7 +17,7 @@
                 <li ng-repeat="item in roles">
                     <div class="img">
                         <a href="/app/comic/single/123">
-                            <img src="" alt="" />
+                            <img ng-src="{{item.image}}" />
                         </a>
                     </div>
                     <span ng-bind="item.value"> </span>
