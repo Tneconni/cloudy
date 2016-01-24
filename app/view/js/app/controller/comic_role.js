@@ -1,7 +1,7 @@
 var eApp = angular.module('comic-role-app',[]);
 
 eApp.controller('comicRoleController',['$scope', '$http', comicRoleController]);
-eApp.controller('comicRoleDetailController',['$scope', '$http', comicRoleDetailController]);
+eApp.controller('comicRoleDetailController',['$scope', '$http', '$sce', comicRoleDetailController]);
 
 function comicRoleController( $scope, $http ){
 
@@ -18,7 +18,7 @@ function comicRoleController( $scope, $http ){
 
 }
 
-function comicRoleDetailController( $scope, $http ){
+function comicRoleDetailController( $scope, $http, $sce ){
 
     $scope.baseUrl = 'http://stock.mankaa.com/index.php';
     $scope.sku = document.getElementById('person_sku').value;
@@ -27,6 +27,7 @@ function comicRoleDetailController( $scope, $http ){
         var indexUrl = $scope.baseUrl + "/comic/index/person/sku/" + $scope.sku;
         $http.get( indexUrl ).success(function( json ){
             $scope.person = json;
+            $scope.person.description = $sce.trustAsHtml($scope.person.description);
         });
     };
 
