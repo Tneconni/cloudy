@@ -20,7 +20,9 @@
                             <img ng-src="{{item.img_url}}" />
                         </a>
                     </div>
-                    <span ng-bind="item.value"> </span>
+                    <a href="/app/comic/role/person/{{item.sku}}">
+                        <span ng-bind="item.name"></span>
+                    </a>
                 </li>
 
             </ul>
