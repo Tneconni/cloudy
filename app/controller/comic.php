@@ -78,3 +78,27 @@ $app->get('/role/search', function( ) use( $app ){
 
 
 });
+
+$app->get('/role/person/:sku', function( $sku ) use( $app ){
+
+
+    global $mem;
+    if(is_a( $mem, 'Memcache' )){
+        $template_head = $mem->get('template_head');
+        $template_header = $mem->get('template_header');
+        $template_footer = $mem->get('template_footer');
+    }else{
+        $template_head = $app->view->fetch('view/template/common/head.html');
+        $template_header = $app->view->fetch('view/template/common/header.html');
+        $template_footer = $app->view->fetch('view/template/common/footer.html');
+    }
+    $app->smarty->assign('sku', $sku);
+    $app->smarty->assign('head', $template_head);
+    $app->smarty->assign('header', $template_header);
+    $app->smarty->assign('footer', $template_footer);
+
+
+    $app->smarty->display('view/template/comic/role_detail.html');
+
+
+});
