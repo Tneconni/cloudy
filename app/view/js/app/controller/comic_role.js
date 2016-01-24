@@ -21,10 +21,10 @@ function comicRoleController( $scope, $http ){
 function comicRoleDetailController( $scope, $http ){
 
     $scope.baseUrl = 'http://stock.mankaa.com/index.php';
-    $scope.sku = document.getElementById('person_sku');
+    $scope.sku = document.getElementById('person_sku').value;
     $scope.getRoleData = function(){
 
-        var indexUrl = $scope.baseUrl + "/comic/index/person/sku" + $scope.sku;
+        var indexUrl = $scope.baseUrl + "/comic/index/person/sku/" + $scope.sku;
         $http.get( indexUrl ).success(function( json ){
             $scope.person = json;
         });
