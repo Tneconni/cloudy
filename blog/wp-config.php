@@ -25,7 +25,7 @@ define('DB_USER', 'cloud');
 define('DB_PASSWORD', '111111');
 
 /** MySQL hostname */
-define('DB_HOST', '121.42.42.110');
+define('DB_HOST', 'rds2t146085kg0yme308.mysql.rds.aliyuncs.com');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
