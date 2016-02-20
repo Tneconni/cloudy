@@ -417,3 +417,52 @@
   width: 19.4%;
   height: 100px;
 }
+.shop-window {
+  border-top: solid 3px #E79005;
+}
+.shop-window ul {
+  margin: 0;
+  padding: 0;
+}
+.shop-window ul li {
+  float: left;
+  width: 170px;
+  height: 170px;
+  position: relative;
+}
+.shop-window ul li a {
+  position: absolute;
+  left: 90px;
+  top: 50px;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  overflow: hidden;
+}
+.shop-window ul li a img {
+  border: none;
+  width: 120px;
+  height: 120px;
+}
+.shop-window ul li p {
+  display: none;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 2;
+}

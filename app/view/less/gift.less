@@ -530,3 +530,60 @@
     }
   }
 }
+
+.shop-window{
+  border-top: solid 3px #E79005;
+  ul{
+    margin:0;
+    padding:0;
+    li{
+      float:left;
+      width:170px;
+      height:170px;
+      position:relative;
+
+
+      a{
+        position:absolute;
+        left: 90px;
+        top: 50px;
+        display:inline-block;
+        width:120px;
+        height:120px;
+//        margin-left:2px;
+        border-radius: 5px;
+
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        -o-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform:rotate(-45deg);
+        -moz-transform:rotate(-45deg);
+        -o-transform:rotate(-45deg);
+        -ms-transform:rotate(-45deg);
+        transform:rotate(-45deg);
+        overflow: hidden;
+        img{
+          border:none;
+          width:120px;
+          height:120px;
+
+        }
+
+      }
+      p{
+        display:none;
+        text-align: center;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0;
+        padding:0;
+        font-size: 12px;
+        line-height:2;
+      }
+    }
+  }
+
+}
