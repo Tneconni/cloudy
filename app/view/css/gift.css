@@ -425,19 +425,18 @@
   padding: 0;
 }
 .shop-window ul li {
-  float: left;
-  width: 170px;
-  height: 170px;
+  height: 120px;
   position: relative;
 }
 .shop-window ul li a {
   position: absolute;
   left: 90px;
-  top: 50px;
+  top: 30px;
   display: inline-block;
-  width: 120px;
-  height: 120px;
-  border-radius: 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  border: solid 1px #cdcdcd;
   -webkit-transform-origin: 0 100%;
   -moz-transform-origin: 0 100%;
   -o-transform-origin: 0 100%;
@@ -452,8 +451,8 @@
 }
 .shop-window ul li a img {
   border: none;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
 }
 .shop-window ul li p {
   display: none;
