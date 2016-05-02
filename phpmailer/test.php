@@ -9,16 +9,20 @@ try {
 	$mail = new PHPMailer(true); 
 	$mail->IsSMTP();
 	$mail->CharSet='UTF-8'; //设置邮件的字符编码，这很重要，不然中文乱码
-	$mail->SMTPAuth   = true;                  //开启认证
+//	$mail->SMTPAuth   = true;                  //开启认证
 	$mail->Port       = 25;                    
-	$mail->Host       = "smtp.163.com"; 
-	$mail->Username   = "phpddt1990@163.com";    
-	$mail->Password   = "";            
+//	$mail->Host       = "smtp.163.com";
+	$mail->Host       = "localhost";
+//	$mail->Username   = "phpddt1990@163.com";
+	$mail->Username   = "root";
+//	$mail->Password   = "";
+	$mail->Password   = "643f2f8a";
 	//$mail->IsSendmail(); //如果没有sendmail组件就注释掉，否则出现“Could  not execute: /var/qmail/bin/sendmail ”的错误提示
 	$mail->AddReplyTo("phpddt1990@163.com","mckee");//回复地址
-	$mail->From       = "phpddt1990@163.com";
-	$mail->FromName   = "www.phpddt.com";
-	$to = "987044391@qq.com";
+	$mail->From       = "cloud@mankaa.com";
+//	$mail->FromName   = "www.phpddt.com";
+	$mail->FromName   = "cloud";
+	$to = "792724991@qq.com";
 	$mail->AddAddress($to);
 	$mail->Subject  = "phpmailer测试标题";
 	$mail->Body = "<h1>phpmail演示</h1>这是php点点通（<font color=red>www.phpddt.com</font>）对phpmailer的测试内容";
